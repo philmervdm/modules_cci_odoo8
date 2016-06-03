@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+	    <!-- CCI MailChimp Proxies -->
+		<record model="ir.ui.view" id="view_cci_mailchimp_proxy_form">
+			<field name="name">MailChimp Proxy</field>
+			<field name="model">mailchimp_proxy</field>
+			<field name="arch" type="xml">
+				<form string="MailChimp Proxy">
+					<group>
+					    <field name="name" readonly="1" colspan="4" />
+					    <field name="list_name" readonly="1" />
+						<group>
+						    <field name="first_name" readonly="1"/>
+						    <field name="company" readonly="1" />
+						    <field name="courtesy_code" readonly="1"/>
+						    <field name="courtesy_full2" readonly="1"/>
+						    <field name="member" readonly="1" />
+						    <field name="source" readonly="1" />
+						    <field name="contact_id" readonly="1"/>
+						    <field name="dirty" />
+						    <field name="active" readonly="1" />
+						</group>
+						<group>
+						    <field name="last_name" readonly="1" />
+						    <field name="categs" readonly="1"/>
+						    <field name="courtesy_full1" readonly="1"/>
+						    <field name="area_rdp" readonly="1" />
+						    <field name="subscriber_id" readonly="1"/>
+						    <field name="todelete" readonly="1" />
+						</group>
+				    </group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_cci_mailchimp_proxy_tree">
+			<field name="name">MailChimp Proxy</field>
+			<field name="model">mailchimp_proxy</field>
+			<field name="arch" type="xml">
+				<tree string="MailChimp Proxy">
+				    <field name="name"/>
+				    <field name="first_name"/>
+				    <field name="last_name"/>
+				    <field name="company"/>
+				    <field name="list_name"/>
+				    <field name="title"/>
+				    <field name="member"/>
+				    <field name="area_rdp"/>
+				    <field name="source"/>
+				    <field name="dirty"/>
+				    <field name="todelete"/>
+				    <field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_cci_mailchimp_proxy">
+			<field name="name">MailChimp Proxy</field>
+			<field name="res_model">mailchimp_proxy</field>
+			<field name="view_type">form</field>
+		</record>
+		
+		<menuitem name="MailChimp Proxy" id="menu_mailchimp_proxy" action="action_cci_mailchimp_proxy"
+                  parent="cci_newsletter.menu_cci_subscriber" sequence="50"/>
+        
+	    <!-- CCI MailChimp mail_bounce -->
+		<record model="ir.ui.view" id="view_mail_bounce_form">
+			<field name="name">Mail Bounce</field>
+			<field name="model">mail_bounce</field>
+			<field name="arch" type="xml">
+				<form string="Mail Bounce">
+					<group>
+					    <field name="name" readonly="1" colspan="4" />
+					    <group>
+						    <field name="date" readonly="1" />
+						    <field name="active" readonly="1" />
+					    </group>
+					    <group>
+						    <field name="type" readonly="1" />
+					    </group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_mail_bounce_tree">
+			<field name="name">Mail Bounce</field>
+			<field name="model">mail_bounce</field>
+			<field name="arch" type="xml">
+				<tree string="Mail Bounce">
+				    <field name="name"/>
+				    <field name="date"/>
+				    <field name="type"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_mail_bounce">
+			<field name="name">Mail Bounce</field>
+			<field name="res_model">mail_bounce</field>
+			<field name="view_type">form</field>
+		</record>
+		
+		<menuitem name="Mail Bounce" id="menu_mail_bounce" action="action_mail_bounce"
+                  parent="cci_newsletter.menu_cci_subscriber" sequence="99"  groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+	    <!-- CCI MailChimp Mail Usage -->
+		<record model="ir.ui.view" id="view_mail_usage_form">
+			<field name="name">Mail Usage</field>
+			<field name="model">mail_usage</field>
+			<field name="arch" type="xml">
+				<form string="Mail Usage">
+				    <field name="name" readonly="1" colspan="4" select="1"/>
+				    <field name="source" readonly="1" select="1"/>
+				    <field name="source_id" readonly="1" select="1"/>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_mail_usage_tree">
+			<field name="name">Mail Usage</field>
+			<field name="model">mail_usage</field>
+			<field name="arch" type="xml">
+				<tree string="Mail Usage">
+				    <field name="name"/>
+				    <field name="source_id"/>
+				    <field name="source"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_mail_usage">
+			<field name="name">Mail Usage</field>
+			<field name="res_model">mail_usage</field>
+			<field name="view_type">form</field>
+		</record>
+
+        <!-- adding new fields to res.partner.contact form -->
+        <record model="ir.ui.view" id="cci_view_partner_contact_form_inherit1">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//notebook" position="inside">
+	            	<page string="Mail Chimp">
+	            		<group>
+							<field name="rdp_subscribe" />
+							<field name="agenda_subscribe" />
+							<field name="alterego_subscribe" />
+							<newline/>
+							<field name="rdp_forced_area" />
+							<newline/>
+							<field name="leid" readonly="1"/>
+							<field name="euid" readonly="1"/>
+						</group>
+	                </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- adding new field to cci_newsletter.source -->
+		<record model="ir.ui.view" id="view_cci_newsletter_source_form_inherit1">
+			<field name="name">CCI Newsletter Source</field>
+			<field name="model">cci_newsletter.source</field>
+			<field name="inherit_id" ref="cci_newsletter.view_cci_newsletter_source_form"/>
+			<field name="arch" type="xml">
+				<field name="next_id" position="after">
+				    <field name="followup_email"/>
+				</field>
+			</field>
+		</record>
+		
+    </data>
+</openerp>

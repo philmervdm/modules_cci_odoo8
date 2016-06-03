@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+        <!-- Wizard to extract the PPI file (personalised sendings of the magazine) -->
+		<wizard string="Get personalised sendings file"
+			model="res.partner.address"
+			name="cci_magazine.get_ppi"
+			id="cci_magazine_get_ppi"
+			menu="False"/>
+		<menuitem name="Get Personalised sendings file" id="menu_get_ppi"
+			action="cci_magazine_get_ppi" type="wizard"
+			parent="l10n_be_postal_subscriber.postal_subscriber_root"
+            sequence="10"
+            groups="group_cci_magazine_user"/>
+
+        <!-- Wizard to extract the postal sendings file for the belgian Post -->
+		<wizard string="Get postal sendings file"
+			model="res.partner.address"
+			name="cci_magazine.get_postal"
+			id="cci_magazine_get_postal"
+			menu="False"/>
+		<menuitem name="Get postal sendings file" id="menu_get_postal"
+			action="cci_magazine_get_postal" type="wizard"
+			parent="l10n_be_postal_subscriber.postal_subscriber_root"
+            sequence="05"
+            groups="group_cci_magazine_user"/>
+
+        <!-- Wizard to extract current list of subscriber from various sources -->
+        <wizard string="CCI Mag Subscription"
+			    name="extract_subscriptions"
+			    id="cci_magazine.extract_subscriptions"
+			    menu="False"/>
+
+	    <menuitem name="CCI Mag Subscriptions" id="menu_extract_subscriptions"
+			    action="extract_subscriptions" type="wizard"
+			    parent="l10n_be_postal_subscriber.postal_subscriber_root"
+                sequence="20"
+                groups="group_cci_magazine_user"/>
+
+        <!-- Wizard to inactivate old jobs with a past date_stop -->
+        <wizard string="Inactivate old Jobs"
+			    name="inactivate_old_jobs"
+			    id="cci_magazine.inactivate_old_jobs"
+			    menu="False"/>
+
+	    <menuitem name="Inactivate old Jobs" id="menu_inactivate_old_jobs"
+			    action="inactivate_old_jobs" type="wizard"
+			    parent="l10n_be_postal_subscriber.postal_subscriber_root"
+                sequence="99"
+                groups="group_cci_magazine_user"/>
+	</data>
+</openerp>

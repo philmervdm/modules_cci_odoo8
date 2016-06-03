@@ -1,0 +1,1265 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_membership_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-01-19 16:38:06+0000\n"
+"PO-Revision-Date: 2015-01-19 16:38:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,base_amount:0
+msgid "Base Amount"
+msgstr "Montant de base"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_prospect_addsite,init:0
+msgid "Extract Prospects Additional Sites"
+msgstr "Extraire les prospects pour des sites supplémentaires"
+
+#. module: cci_membership_extend
+#: wizard_field:compare_paid_multiple_years,init,first_year:0
+msgid "First year"
+msgstr "Année de début"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,address_type:0
+#: selection:membership_calls,init,address_type:0
+#: selection:membership_calls_2_excel,init,address_type:0
+#: selection:membership_followup,init,address_type:0
+msgid "Default address"
+msgstr "Adresse par défaut"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,ignore_if_not_in_activity:0
+msgid "Ignore if partner not in activity"
+msgstr "Ignorer partenaires non actifs"
+
+#. module: cci_membership_extend
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_membership_extend
+#: wizard_view:extract_special_calls_in_excel,init:0
+msgid "Special calls for Membership"
+msgstr "Appels de membership spéciaux"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,title:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: cci_membership_extend
+#: wizard_view:compare_paid_multiple_years,init:0
+msgid "Compare multiple Years of paid Members"
+msgstr "Comparaison entre plusiuers années de membres payants"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "Membership invoice"
+msgstr "Facture de Membership"
+
+#. module: cci_membership_extend
+#: wizard_field:new_members_since,init,since:0
+msgid "New Since"
+msgstr "Nouveau depuis"
+
+#. module: cci_membership_extend
+#: help:compare_paid_multiple_years,init,last_year:0
+msgid "Last of the years to compoare"
+msgstr "La dernière des années à comparer"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_special_calls_in_excel,init:0
+#: wizard_view:membership_calls,init:0
+#: wizard_view:membership_calls_2_excel,init:0
+#: wizard_view:membership_followup,init:0
+msgid "If you want to choose the address of the Membership Contact, you MUST give his letter as first category"
+msgstr "Si vous voulez choisir l'adresse avec le Contact de Membership, vous DEVEZ donner sa lettre en premier"
+
+#. module: cci_membership_extend
+#: help:cci_membership.membership_range,amount:0
+msgid "Amount to invoice by default for this range of employees"
+msgstr "Montant à facturer par défaut pour cette tranche d'employés"
+
+#. module: cci_membership_extend
+#: wizard_button:extract_calls_in_excel,init,getfile:0
+#: wizard_button:extract_membership_by_year,init,getfile:0
+msgid "Get Excel File"
+msgstr "Obtenir le fichier Excel"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,zip_code:0
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_explanation_again
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_explanation_again
+msgid "Members with a membership explanation to re-read"
+msgstr "Membres avec une explication membership à relire"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_special_calls_in_excel,init,job_categs:0
+#: wizard_field:membership_calls,init,job_categs:0
+#: wizard_field:membership_calls_2_excel,init,job_categs:0
+#: wizard_field:membership_followup,init,job_categs:0
+msgid "Categories of searched contacts"
+msgstr "Catégories de contacts recherchés"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,email_contact:0
+msgid "Professionnal Email"
+msgstr "EMail professionnel"
+
+#. module: cci_membership_extend
+#: wizard_field:compare_paid2years,getfile,compare2paidmembers.xls:0
+#: wizard_field:compare_paid_multiple_years,getfile,compare_paidmembers.xls:0
+#: wizard_field:extract_calls_in_excel,getfile,calls.xls:0
+#: wizard_field:extract_membership_by_year,getfile,membership_by_year.xls:0
+#: wizard_field:extract_special_calls_in_excel,getfile,calls.xls:0
+#: wizard_field:membership_calls_2_excel,getfile,calls.xls:0
+#: wizard_field:membership_followup,go,membership_followup.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_askedused,type:0
+msgid "Type of selection"
+msgstr "Type de sélection"
+
+#. module: cci_membership_extend
+#: selection:extract_membership_by_year,init,choice:0
+msgid "Toutes les fiches préparées"
+msgstr "Toutes les fiches préparées"
+
+#. module: cci_membership_extend
+#: wizard_field:membership_followup,init,year:0
+msgid "Current year"
+msgstr "Année actuelle"
+
+#. module: cci_membership_extend
+#: wizard_button:compare_paid2years,getfile,end:0
+#: wizard_button:compare_paid_multiple_years,getfile,end:0
+#: wizard_button:extract_calls_in_excel,getfile,end:0
+#: wizard_button:extract_membership_by_year,getfile,end:0
+#: wizard_button:extract_special_calls_in_excel,getfile,end:0
+#: wizard_button:membership_calls_2_excel,getfile,end:0
+#: wizard_button:membership_followup,go,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_asked_less_billed,init:0
+#: wizard_view:extract_used_membership_amount,init:0
+msgid "Extract Partners with lower membership than last invoiced"
+msgstr "Extraire les partenaires avec une cotisation demandée inférieur à la dernière facturée"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_askedused:0
+msgid "Membership Asked Usage"
+msgstr "Utilisation des cotisations demandées"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/membership_partners_to_invoice.py:0
+#, python-format
+msgid "Partners to Invoice"
+msgstr "Partenaires à facturer"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#: field:cci_membership.membership_askedused,amount:0
+#, python-format
+msgid "Amount"
+msgstr "Montant"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_nonstandard_amounts,init:0
+msgid "Extract Non-Standard Amounts"
+msgstr "Extraire des cotisations demandées non-standard"
+
+#. module: cci_membership_extend
+#: help:compare_paid2years,init,year:0
+msgid "Last of the two years; the first will be calculed from the last ... difficult ..."
+msgstr "La dernière des deux années: la première sera calculé à partir de la première ... difficile ..."
+
+#. module: cci_membership_extend
+#: help:res.partner,next_membership_bill_forced:0
+msgid "The next time we'll use the automatic bill or call for membreship, this partner will be taken into account"
+msgstr "La prochaine fois que vous utiliserez l'appel à cotisation ou la facturation annuelle, ce partenaire sera pris en charge"
+
+#. module: cci_membership_extend
+#: wizard_field:membership_calls,init,also_invoiced:0
+#: wizard_field:membership_calls_2_excel,init,also_invoiced:0
+#: wizard_field:membership_partners_to_invoice,init,also_invoiced:0
+msgid "Also the invoiced members, else only paid"
+msgstr "Aussi les membres facturés, sinon seulement les cotisants"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,target:0
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_free
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_free
+msgid "Free Members"
+msgstr "Membres gratuits"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "Warning !"
+msgstr "Attention !"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_partners_by_amount.py:0
+#, python-format
+msgid "Members with Membership Amounts [%s]"
+msgstr "Membres avec la cotisation demandée [%s]"
+
+#. module: cci_membership_extend
+#: field:res.partner,desc_add_site:0
+msgid "Explanation of additional sites"
+msgstr "Explication pour les sites supplémentaires"
+
+#. module: cci_membership_extend
+#: wizard_view:detect_old_but_not_yet_billed,init:0
+msgid "This wizard detect partners billed for membership on past years (from->to) but not yet billed this year (current)"
+msgstr "Cet assistant détecte les partenaires facturés en membership les années précédentes (depuis->à) mais pas encore refacturés cette année (courante)"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,partner_name:0
+msgid "Sending Name"
+msgstr "Nom pour l'envoi"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "No invoice created, because this partner has an empty membership amount !"
+msgstr "Aucune facture de créée parce que ce partenaire a un montant à demander nul !"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.new_members_since
+#: model:ir.ui.menu,name:cci_membership_extend.menu_new_members_since
+msgid "New Members since a precise date"
+msgstr "Nouveaux membres depuis une date précise"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,target:0
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_old
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_old
+msgid "Old Members"
+msgstr "Anciens membres"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_range,amount:0
+msgid "Standard amount"
+msgstr "Montant standard"
+
+#. module: cci_membership_extend
+#: wizard_view:new_members_since,init:0
+msgid "Extract New Members"
+msgstr "Extraire les nouveaux membres"
+
+#. module: cci_membership_extend
+#: wizard_button:extract_asked_less_billed,init,go:0
+#: wizard_button:extract_nonstandard_amounts,init,go:0
+#: wizard_button:extract_prospect_addsite,init,go:0
+#: wizard_button:extract_sponsor_partners,init,go:0
+#: wizard_button:extract_used_membership_amount,init,go:0
+#: wizard_button:membership_calls,init,go:0
+#: wizard_button:membership_followup,init,go:0
+#: wizard_button:membership_partners_to_invoice,init,go:0
+#: wizard_button:new_members_since,init,go:0
+msgid "Go"
+msgstr "Go"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.compare_paid_multiple_years
+#: model:ir.ui.menu,name:cci_membership_extend.menu_compare_paid_multiple_years
+msgid "Compare Multiple Years of paid Members"
+msgstr "Comparaison de plusieurs années de membres payants"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/detect_old_but_not_yet_billed.py:0
+#, python-format
+msgid "Partners"
+msgstr "Partenaires"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_sponsor_partners
+#: model:ir.ui.menu,name:cci_membership_extend.menu_sponsor_partners
+msgid "Membership Sponsor Partners"
+msgstr "Partenaires Parrains"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_sponsor_partners.py:0
+#, python-format
+msgid "Sponsor Partners"
+msgstr "Partenaires Parrains"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,ignore_if_refuse:0
+msgid "Ignore if partner noted as 'Refuse membership'"
+msgstr "Ignorer si le partenaire a refusé le membership"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.membership_special_calls_2_excel
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_special_calls_2_excel
+msgid "Special calls for membership in Excel"
+msgstr "Appels spéciaux de membership en Excel"
+
+#. module: cci_membership_extend
+#: help:cci_membership.membership_range,from:0
+msgid "Lower number of local employees for this range"
+msgstr "Limite inférieure du nombre d'employés locaux pour cette tranche"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_range,from:0
+msgid "From"
+msgstr "De"
+
+#. module: cci_membership_extend
+#: selection:extract_calls_in_excel,init,choice:0
+msgid "Seulement les sélectionnés"
+msgstr "Seulement les sélectionnés"
+
+#. module: cci_membership_extend
+#: wizard_button:extract_membership_by_partner,init,ok:0
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "You must give the year of membership concerned; between 1900 and the next year"
+msgstr "Vous devez donner l'année de membersghip concernée : entre 1900 et l'année prochaine"
+
+#. module: cci_membership_extend
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control
+msgid "Controls"
+msgstr "Contrôles"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Amounts by membership Year and Period"
+msgstr "Montants par Année de membership et par Période"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.membership_calls_2_excel
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_calls_2_excel
+msgid "Calls for membership in Excel"
+msgstr "Appels à cotisations en Excel"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/membership_calls.py:0
+#: view:cci_membership.membership_call:0
+#, python-format
+msgid "Membership Call"
+msgstr "Appel à cotisation"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,title_categs:0
+msgid "Categs"
+msgstr "Catégories"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Fidelity Rate"
+msgstr "Taux de fidélité"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_explanation
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_explanation
+msgid "Members with a membership explanation"
+msgstr "Membres avec un texte explicatif du membership"
+
+#. module: cci_membership_extend
+#: wizard_view:detect_old_but_not_yet_billed,init:0
+#: model:ir.actions.wizard,name:cci_membership_extend.detect_old_but_not_yet_billed
+#: model:ir.ui.menu,name:cci_membership_extend.menu_detect_old_but_not_yet_billed
+msgid "Detect old billed members, not yet re-billed"
+msgstr "Détecter les anciens membres facturés mais pas encore refacturés"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "Error !"
+msgstr "Erreur !"
+
+#. module: cci_membership_extend
+#: field:res.partner,read_before_next_membership_bill:0
+msgid "Re-read before billing"
+msgstr "A relire avant facturation"
+
+#. module: cci_membership_extend
+#: model:ir.module.module,shortdesc:cci_membership_extend.module_meta_information
+msgid "CCI Membership Extend"
+msgstr "CCI Membership Extend"
+
+#. module: cci_membership_extend
+#: wizard_view:compare_paid2years,getfile:0
+#: wizard_view:compare_paid_multiple_years,getfile:0
+#: wizard_view:extract_calls_in_excel,getfile:0
+#: wizard_view:extract_membership_by_year,getfile:0
+#: wizard_view:extract_special_calls_in_excel,getfile:0
+#: wizard_view:membership_calls_2_excel,getfile:0
+#: wizard_view:membership_followup,go:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_range:0
+#: model:ir.actions.act_window,name:cci_membership_extend.action_cci_membership_range
+#: model:ir.ui.menu,name:cci_membership_extend.menu_cci_membership_range
+msgid "Membership Range"
+msgstr "Tranche de membership"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Paid means Reconciled Entries"
+msgstr "Membre payant signifie que sa facture a été acquittée et réconciliée"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,job_id:0
+msgid "Job"
+msgstr "Fonction"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "Some partners have no address (%s) !' % ','.join([str(id) for id in partners_wo_address]) ))\n"
+"    else:\n"
+"        invoice_obj = pool.get('account.invoice"
+msgstr "Certains partenaires n'ont pas d'adresse (%s) !' % ','.join([str(id) for id in partners_wo_address]) ))\n"
+"    else:\n"
+"        invoice_obj = pool.get('account.invoice"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.membership_followup
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_followup
+msgid "Follow-Up of Membership Invoices"
+msgstr "Relance pour les factures Membership"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Less money"
+msgstr "Montant inférieur"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_prospect_addsite,init:0
+msgid "Extraction of partners with multiple addresses but no additional sites invoiced with membership."
+msgstr "Extraction des partenaires avec plusieurs adresses mais aucun site supplémentaire à facturer."
+
+#. module: cci_membership_extend
+#: help:compare_paid_multiple_years,init,first_year:0
+msgid "First of the years to compare"
+msgstr "Première des années à comparer"
+
+#. module: cci_membership_extend
+#: model:ir.model,name:cci_membership_extend.model_cci_membership_membership_by_partner
+msgid "Subtotal Membership by Partner"
+msgstr "Sous-total du membership par partenaire"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,salesman_phone:0
+msgid "Salesman Phone"
+msgstr "Tél. Commercial"
+
+#. module: cci_membership_extend
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_special_calls_in_excel,init,target:0
+msgid "Target"
+msgstr "Cible"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Global Data"
+msgstr "Données globales"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,name:0
+msgid "Contact Name"
+msgstr "Nom du contact"
+
+#. module: cci_membership_extend
+#: help:extract_special_calls_in_excel,init,year:0
+#: help:membership_calls,init,year:0
+#: help:membership_calls_2_excel,init,year:0
+#: help:membership_partners_to_invoice,init,year:0
+msgid "New year of the called membership..."
+msgstr "Nouvelle année de membership appellée..."
+
+#. module: cci_membership_extend
+#: wizard_field:membership_followup,init,limit_date:0
+msgid "Limit Date"
+msgstr "Date limite"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,address_type:0
+#: selection:membership_calls,init,address_type:0
+#: selection:membership_calls_2_excel,init,address_type:0
+#: selection:membership_followup,init,address_type:0
+msgid "Membership Contact else invoice address otherwise defaut address"
+msgstr "Contact Membership sinon adresse de facturation sinon adresse par défaut"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_nonstandard_amounts,init:0
+msgid "Extraction of partners with an asked membership different of the amount given by ranges."
+msgstr "Extraction des partenaires avec une cotisation demandée différente de celle spécifiée par les tranches."
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_by_partner,partner_id:0
+#: field:cci_membership.membership_call,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_special_calls_in_excel,init,address_type:0
+#: wizard_field:membership_calls,init,address_type:0
+#: wizard_field:membership_calls_2_excel,init,address_type:0
+#: wizard_field:membership_followup,init,address_type:0
+msgid "Type of address"
+msgstr "Type d'adresse"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_calls_in_excel,init:0
+#: wizard_view:extract_membership_by_year,init:0
+msgid "Options"
+msgstr "Options"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,street:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_calls_in_excel,init,choice:0
+#: wizard_field:extract_membership_by_year,init,choice:0
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,salesman_mobile:0
+msgid "Salesman Mobile"
+msgstr "GSM Commercial"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_sponsor_partners,init:0
+msgid "Extract Sponsor Partners"
+msgstr "Extraire les Partenaires Parrains"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,salesman_fax:0
+msgid "Salesman Fax"
+msgstr "Fax Commercial"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,unit_price_site:0
+msgid "Unit Price per Site"
+msgstr "Prix unitaire par site"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/use_membership_products.py:0
+#, python-format
+msgid "Products used for membership's bills between %s and %s"
+msgstr "Produits utilisés pour les factures de membership entre %s et %s"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_membership_by_partner,init:0
+msgid "Choose membership year"
+msgstr "Choisissez l'année de membership"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_by_partner:0
+#: field:cci_membership.membership_by_partner,canceled:0
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_call:0
+#: field:cci_membership.membership_call,contact_id:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/detect_old_but_not_yet_billed.py:0
+#, python-format
+msgid "No sale journal found."
+msgstr "Aucun journal de vente trouvé."
+
+#. module: cci_membership_extend
+#: wizard_field:compare_paid2years,init,year:0
+#: wizard_field:compare_paid_multiple_years,init,last_year:0
+msgid "Last year"
+msgstr "Dernière année"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_by_partner,user_id:0
+#: field:cci_membership.membership_call,salesman:0
+msgid "Salesman"
+msgstr "Commercial"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.use_membership_products
+#: model:ir.ui.menu,name:cci_membership_extend.menu_use_membership_products
+msgid "Use of products for membership's bills"
+msgstr "Utilisation de produits sur les factures de membership"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_by_partner:0
+#: field:cci_membership.membership_by_partner,invoiced:0
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Faithfull"
+msgstr "Fidèles"
+
+#. module: cci_membership_extend
+#: help:res.partner,cci_date_start_membership:0
+msgid "Date of first membership"
+msgstr "Date de premier membership"
+
+#. module: cci_membership_extend
+#: wizard_view:compare_paid2years,getfile:0
+#: wizard_view:compare_paid_multiple_years,getfile:0
+#: wizard_view:extract_calls_in_excel,getfile:0
+#: wizard_view:extract_membership_by_year,getfile:0
+#: wizard_view:extract_special_calls_in_excel,getfile:0
+#: wizard_view:membership_calls_2_excel,getfile:0
+#: wizard_view:membership_followup,go:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_membership_extend
+#: wizard_field:membership_calls,init,also_forced:0
+#: wizard_field:membership_partners_to_invoice,init,also_forced:0
+msgid "Also the forced partners"
+msgstr "Egalement les partenaires forcés"
+
+#. module: cci_membership_extend
+#: wizard_field:membership_partners_to_invoice,init,old_product_id:0
+msgid "Old Product to Search"
+msgstr "Ancien produit à rechercher"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/new_members_since.py:0
+#, python-format
+msgid "New Members Since '%s'"
+msgstr "Nouveau membre depuis '%s'"
+
+#. module: cci_membership_extend
+#: field:res.partner,site_membership:0
+msgid "Additional sites for membership"
+msgstr "Site supplémentaires"
+
+#. module: cci_membership_extend
+#: help:membership_followup,init,year:0
+msgid "Year of the invoiced membership to follow-up"
+msgstr "Année des factures de membership à relancer"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_by_partner:0
+#: field:cci_membership.membership_by_partner,paid:0
+msgid "Paid"
+msgstr "Payé"
+
+#. module: cci_membership_extend
+#: help:cci_membership.membership_range,to:0
+msgid "Upper number of employees for this range"
+msgstr "Nombre maximum d'employés pour cette tranche"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Shown partners are based on membership_lines, not exactly invoice lines, to be more exact"
+msgstr "Les partenaires repris sont basés sur les lignes d'adéhsion dans la mesure du possible, pour être plus précis que les lignes de facture."
+
+#. module: cci_membership_extend
+#: help:res.partner,cci_date_stop_membership:0
+msgid "Last date of membership loss"
+msgstr "Dernière date de perte de membership"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,ignore_if_free_or_associated:0
+msgid "Ignore if Free or Associated"
+msgstr "Ignorer si gratuit ou associé"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.membership_calls
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_call
+msgid "Calls for membership"
+msgstr "Appels à Cotisation"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,phone_addr:0
+msgid "Phone Address"
+msgstr "Tél Adresse"
+
+#. module: cci_membership_extend
+#: model:ir.model,name:cci_membership_extend.model_cci_membership_membership_call
+msgid "Data for calling membership"
+msgstr "Données pour l'appel à cotisation"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,street2:0
+msgid "Street2"
+msgstr "Rue2"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.act_sponsorised_partners
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_associated
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_associated
+msgid "Sponsorised Partners"
+msgstr "Partenaires filleuls"
+
+#. module: cci_membership_extend
+#: help:extract_nonstandard_amounts,init,only_members:0
+msgid "If not checked, the list will give ALL active partners with non-standard membership..."
+msgstr "Si pas coché, la liste donnera tous les partenaires en activité avec une cotisation demandée non-standard..."
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,courtesy:0
+msgid "Courtesy"
+msgstr "Civilité"
+
+#. module: cci_membership_extend
+#: help:res.partner,desc_add_site:0
+msgid "Text inserted on invoice to explain the number of additional sites"
+msgstr "Texte inséré sur les factures pour expliquer le nombre de sites supplémentaires"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_membership_extend
+#: selection:extract_membership_by_year,init,choice:0
+msgid "Seulement les sélectionnées"
+msgstr "Seulement les sélectionnées"
+
+#. module: cci_membership_extend
+#: model:ir.model,name:cci_membership_extend.model_cci_membership_membership_askedused
+msgid "Used asked amount of membership"
+msgstr "Cotisation demandée utilisée"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#: field:cci_membership.membership_askedused,count:0
+#, python-format
+msgid "Count"
+msgstr "Comptage"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_asked_less_billed,init,only_members:0
+#: wizard_field:extract_nonstandard_amounts,init,only_members:0
+#: wizard_field:extract_used_membership_amount,init,only_members:0
+msgid "Only for current members"
+msgstr "Seulement pour les membres actuels"
+
+#. module: cci_membership_extend
+#: wizard_button:detect_old_but_not_yet_billed,init,search:0
+#: wizard_button:use_membership_products,init,search:0
+msgid "Search"
+msgstr "Chercher"
+
+#. module: cci_membership_extend
+#: help:extract_used_membership_amount,init,only_members:0
+msgid "If not checked, the list will count ALL active partners ..."
+msgstr "Si pas cochée, la liste comptera tous les partenaires en activité ..."
+
+#. module: cci_membership_extend
+#: wizard_field:extract_special_calls_in_excel,init,year:0
+#: wizard_field:membership_calls,init,year:0
+#: wizard_field:membership_calls_2_excel,init,year:0
+#: wizard_field:membership_partners_to_invoice,init,year:0
+msgid "New year"
+msgstr "Nouvelle année"
+
+#. module: cci_membership_extend
+#: wizard_view:compare_paid2years,init:0
+#: model:ir.actions.wizard,name:cci_membership_extend.compare_paid2years
+#: model:ir.ui.menu,name:cci_membership_extend.menu_compare_paid2years
+msgid "Compare two Years of paid Members"
+msgstr "Comparaison de deux années de membres payants"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_used_membership_amount,init:0
+msgid "Extraction of used membership amount."
+msgstr "Extraction des montants de cotisation demandée utilisés."
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Global Results"
+msgstr "Résultats globaux"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,salesman_email:0
+msgid "Salesman Email"
+msgstr "Email Commercial"
+
+#. module: cci_membership_extend
+#: field:res.partner,cci_date_stop_membership:0
+msgid "End of Membership"
+msgstr "Fin du membership"
+
+#. module: cci_membership_extend
+#: help:extract_asked_less_billed,init,only_members:0
+msgid "If not checked, the list will give ALL partners billed once in the last years with a next membership lower than the last invoiced..."
+msgstr "Si pas cochée, la liste donnera tous les partenaires facturés au moins une fois avec une cotisation demandée inférieure à la dernière facturée..."
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_membership_by_partner.py:0
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_membership_by_partner
+#: model:ir.ui.menu,name:cci_membership_extend.menu_extract_membership_by_partner
+#, python-format
+msgid "Total membership(s) by Partner by year"
+msgstr "Totaux Membership par partenaire par an"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/detect_old_but_not_yet_billed.py:0
+#, python-format
+msgid "Empty Selection !"
+msgstr "Sélection vide !"
+
+#. module: cci_membership_extend
+#: wizard_view:membership_followup,init:0
+msgid "Follow-Up for Membership"
+msgstr "Relance pour Membership"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,wvat_amount:0
+msgid "Invoiced Price with VAT"
+msgstr "Prix facturé TVAC"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_partners_by_amount
+msgid "List of Partners"
+msgstr "Liste des Partenaires"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_sponsor_partners,init,only_active:0
+msgid "Only active partners"
+msgstr "Seulement les partenaires en activité"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,wovat_amount:0
+msgid "Invoiced Price without VAT"
+msgstr "Prix facturé HTVA"
+
+#. module: cci_membership_extend
+#: wizard_field:extract_membership_by_partner,init,year:0
+msgid "Membership year"
+msgstr "Année de membership"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_prospect_addsite
+#: model:ir.ui.menu,name:cci_membership_extend.menu_prospect_addsite
+msgid "Members with multiple addresses but no additional site"
+msgstr "Membres avec plusieurs adresses mais pas de site supplémentaire"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/detect_old_but_not_yet_billed.py:0
+#, python-format
+msgid "No membership products for years between %s and %s, so no selection possible."
+msgstr "Aucun produits de membership pour les années entre %s et %s, donc aucune sélection possible"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Period"
+msgstr "Période"
+
+#. module: cci_membership_extend
+#: wizard_view:extract_asked_less_billed,init:0
+msgid "Extraction of partners with an asked membership inferior to the last invoiced amount but superior to 0."
+msgstr "Extraction des partenaires avec une cotisation demandée inférieure à la dernière facturée mais supérieur à 0."
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_call:0
+msgid "To view the full data"
+msgstr "Pour voir les données complètes"
+
+#. module: cci_membership_extend
+#: wizard_field:compare_paid2years,getfile,msg:0
+#: wizard_field:compare_paid_multiple_years,getfile,msg:0
+#: wizard_field:extract_calls_in_excel,getfile,msg:0
+#: wizard_field:extract_membership_by_year,getfile,msg:0
+#: wizard_field:extract_special_calls_in_excel,getfile,msg:0
+#: wizard_field:membership_calls_2_excel,getfile,msg:0
+#: wizard_field:membership_followup,go,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_membership_extend
+#: wizard_button:compare_paid2years,init,end:0
+#: wizard_button:compare_paid_multiple_years,init,end:0
+#: wizard_button:detect_old_but_not_yet_billed,init,end:0
+#: wizard_button:extract_asked_less_billed,init,end:0
+#: wizard_button:extract_calls_in_excel,init,end:0
+#: wizard_button:extract_membership_by_partner,init,end:0
+#: wizard_button:extract_membership_by_year,init,end:0
+#: wizard_button:extract_nonstandard_amounts,init,end:0
+#: wizard_button:extract_prospect_addsite,init,end:0
+#: wizard_button:extract_special_calls_in_excel,init,end:0
+#: wizard_button:extract_sponsor_partners,init,end:0
+#: wizard_button:extract_used_membership_amount,init,end:0
+#: wizard_button:membership_calls,init,end:0
+#: wizard_button:membership_calls_2_excel,init,end:0
+#: wizard_button:membership_followup,init,end:0
+#: wizard_button:membership_partners_to_invoice,init,end:0
+#: wizard_button:new_members_since,init,end:0
+#: wizard_button:use_membership_products,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_membership_extend
+#: wizard_view:use_membership_products,init:0
+msgid "Search for products used for membership's bills"
+msgstr "Recherche des produits utilisés sur les factures de membership"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,ignore_if_creditnote:0
+msgid "Ignore if refund"
+msgstr "Ignorer si note de crédit"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_by_partner:0
+#: field:cci_membership.membership_by_partner,open:0
+msgid "Open"
+msgstr "Ouvrir"
+
+#. module: cci_membership_extend
+#: wizard_view:membership_calls,init:0
+#: wizard_view:membership_calls_2_excel,init:0
+msgid "Calls for Membership"
+msgstr "Appels à cotisation"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,city:0
+msgid "City"
+msgstr "Localité"
+
+#. module: cci_membership_extend
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "The Object name must start with x_ and not contain any special character !"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/detect_old_but_not_yet_billed.py:0
+#, python-format
+msgid "No membership products found for the current year."
+msgstr "Aucun produit de membership n'a été trouvé pour l'année en cours."
+
+#. module: cci_membership_extend
+#: wizard_field:extract_special_calls_in_excel,init,price_site:0
+#: wizard_field:membership_calls,init,price_site:0
+#: wizard_field:membership_calls_2_excel,init,price_site:0
+msgid "W/o VAT Price per Site"
+msgstr "Prix HTVA par site"
+
+#. module: cci_membership_extend
+#: field:res.partner,cci_date_start_membership:0
+msgid "Start of Membership"
+msgstr "Début de membership"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,count_add_sites:0
+msgid "Additional Sites"
+msgstr "Sites supplémentaires"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_asked0
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_asked0
+msgid "Partners with no asked membership amount"
+msgstr "Partenaires avec une cotisation demandée de 0"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_range,to:0
+msgid "To"
+msgstr "à"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/cci_invoice_membership.py:0
+#, python-format
+msgid "No Address defined for this partner"
+msgstr "Aucune adresse définie pour ce partenaire"
+
+#. module: cci_membership_extend
+#: wizard_view:detect_old_but_not_yet_billed,init:0
+msgid "Search on past year(s)"
+msgstr "Recherche sur les années passées"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_asked_less_billed
+#: model:ir.ui.menu,name:cci_membership_extend.menu_asked_less_billed
+msgid "Extract Partners with asked Membership less than last invoiced"
+msgstr "Extraire les Partenaires avec une cotisation demandée inférieure à la dernière facturée"
+
+#. module: cci_membership_extend
+#: field:res.partner,next_membership_bill_forced:0
+msgid "Force the next automatic bill"
+msgstr "Force la prochaine facturation automatique"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_nonstandard_amounts.py:0
+#, python-format
+msgid "Non-Standard Membership Amounts"
+msgstr "Cotisation demandée non-standard"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_addsite
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_addsite
+msgid "Partners with additional sites to invoice"
+msgstr "Partenaires avec des sites supplémentaires à facturer"
+
+#. module: cci_membership_extend
+#: model:ir.module.module,description:cci_membership_extend.module_meta_information
+msgid "\n"
+"        cci membership extend\n"
+"            - extend the membership\n"
+"    "
+msgstr "\n"
+"        cci membership extend\n"
+"            - extend the membership\n"
+"    "
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,address_type:0
+#: selection:membership_calls,init,address_type:0
+#: selection:membership_calls_2_excel,init,address_type:0
+#: selection:membership_followup,init,address_type:0
+msgid "Invoice address otherwise defaut address"
+msgstr "Adresse de facturation sinon celle par défaut"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,from_year:0
+#: wizard_field:use_membership_products,init,from_year:0
+msgid "From (membership year)"
+msgstr "Depuis (année membership)"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_prospect_addsite.py:0
+#, python-format
+msgid "Prospects Additional Site Membership"
+msgstr "Prospects pour des sites supplémentaires"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,target:0
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_canceled
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_canceled
+msgid "Canceled Members"
+msgstr "Membres annulés"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,first_name:0
+msgid "Contact First Name"
+msgstr "Prénom Contact"
+
+#. module: cci_membership_extend
+#: wizard_button:compare_paid2years,init,getfile:0
+#: wizard_button:compare_paid_multiple_years,init,getfile:0
+#: wizard_button:extract_special_calls_in_excel,init,getfile:0
+#: wizard_button:membership_calls_2_excel,init,getfile:0
+msgid "Get File"
+msgstr "Obtenir Fichier"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_used_membership_amount
+#: model:ir.ui.menu,name:cci_membership_extend.menu_used_membership_amount
+msgid "List of used membership amount"
+msgstr "Liste des montants de cotisation demandés"
+
+#. module: cci_membership_extend
+#: wizard_view:membership_partners_to_invoice,init:0
+msgid "Select Partners to Invoice"
+msgstr "Sélectionnez les partenaires à Facturer"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_call:0
+msgid "Sending Address"
+msgstr "Adresse d'envoi"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,address_id:0
+msgid "Address"
+msgstr "Adresse"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_by_partner:0
+msgid "Membership By Partner"
+msgstr "Membership par Partenaire"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.membership_partners_to_invoice
+#: model:ir.ui.menu,name:cci_membership_extend.menu_prepare_yearly_membership_invoices
+msgid "Prepare Invoicing Yearly Membership"
+msgstr "Préparation de la facturation annuelle du Membership"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_askedused:0
+#: field:cci_membership.membership_askedused,total_value:0
+msgid "Total Value"
+msgstr "Valeur totale"
+
+#. module: cci_membership_extend
+#: model:ir.model,name:cci_membership_extend.model_cci_membership_membership_range
+msgid "Range of employees with standard membership price"
+msgstr "Tranche d'employés avec le prix standard de membership"
+
+#. module: cci_membership_extend
+#: help:detect_old_but_not_yet_billed,init,ignore_if_creditnote:0
+msgid "Ignore if partner has credit nota that cancel the bill(s) of the last year"
+msgstr "Ignorer si le partenaire a des note de credit qui annulent entièrement les factures de l'année précédente"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_by_partner,year:0
+#: wizard_field:extract_nonstandard_amounts,init,year:0
+msgid "Membership Year"
+msgstr "Année de Membership"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,email_addr:0
+msgid "Email Address"
+msgstr "Email de l'adresse"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "Lost"
+msgstr "Perdu"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_calls_in_excel
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_membership_by_year
+msgid "Extract Excel"
+msgstr "Extraction Excel"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_forced_bill
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_forced_bill
+msgid "Partners forced for automatic bill/call"
+msgstr "Partenaires forcés pour l'appel ou la facturation annuelle"
+
+#. module: cci_membership_extend
+#: selection:extract_special_calls_in_excel,init,address_type:0
+#: selection:membership_calls,init,address_type:0
+#: selection:membership_calls_2_excel,init,address_type:0
+#: selection:membership_followup,init,address_type:0
+msgid "Membership Contact else default address"
+msgstr "Contact Membership sinon adresse par défaut"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_asked_less_billed.py:0
+#, python-format
+msgid "Partners with lower membership than last invoiced"
+msgstr "Partenaires avec une cotisation demandée inférieur à la dernière facturée"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,vcs:0
+msgid "VCS"
+msgstr "VCS"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,to_year:0
+#: wizard_field:use_membership_products,init,to_year:0
+msgid "To (membership year)"
+msgstr "A (année membership)"
+
+#. module: cci_membership_extend
+#: wizard_field:detect_old_but_not_yet_billed,init,current_year:0
+msgid "Current Year"
+msgstr "Année courante"
+
+#. module: cci_membership_extend
+#: model:ir.actions.wizard,name:cci_membership_extend.extract_nonstandard_amounts
+#: model:ir.ui.menu,name:cci_membership_extend.menu_nonstandard_amounts
+msgid "Extract Non-Standard Membership"
+msgstr "Extraire les cotisations demandées non-standard"
+
+#. module: cci_membership_extend
+#: view:cci_membership.membership_call:0
+msgid "On the Call for Membership"
+msgstr "Sur l'appel à cotisation"
+
+#. module: cci_membership_extend
+#: selection:extract_calls_in_excel,init,choice:0
+msgid "Tous les appels préparés"
+msgstr "Tous les appels préparés"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/compare_paid_multiple_years.py:0
+#, python-format
+msgid "More money"
+msgstr "Montant plus élevé"
+
+#. module: cci_membership_extend
+#: help:res.partner,read_before_next_membership_bill:0
+msgid "Selected if this text must be re-read before the next automatic billing"
+msgstr "Coché si le texte doit être relu avant la prochaine facturation automatique"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,desc_add_site:0
+msgid "Explanation Additional Sites"
+msgstr "Explication Sites supplémentaires"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_call,fax_addr:0
+msgid "Fax Address"
+msgstr "Fax de l'adresse"
+
+#. module: cci_membership_extend
+#: field:cci_membership.membership_range,year:0
+msgid "Year"
+msgstr "Année"
+
+#. module: cci_membership_extend
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_yearly
+msgid "Yearly Operations"
+msgstr "Opérations annuelles"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_partners_by_amount.py:0
+#, python-format
+msgid "Partners with Membership Amounts [%s]"
+msgstr "Partenaires avec la cotisation demandée [%s]"
+
+#. module: cci_membership_extend
+#: code:addons/cci_membership_extend/wizard/extract_used_membership_amount.py:0
+#, python-format
+msgid "Used Membership Amounts"
+msgstr "Cotisations demandées utilisées"
+
+#. module: cci_membership_extend
+#: model:ir.actions.act_window,name:cci_membership_extend.action_membership_control_refuse
+#: model:ir.ui.menu,name:cci_membership_extend.menu_membership_control_refuse
+msgid "Partners who refuse membership"
+msgstr "Partenaires qui refusent la cotisation"
+

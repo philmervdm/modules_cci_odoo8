@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="paperformat_account_sheet" model="report.paperformat">
+            <field name="name">Account Sheets 281 50</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">3</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">3</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <report auto="False"
+            id="cci_account_281_50.sheet_281_50"
+            model="account.partner281_50"
+            name="cci_account_281_50.report_sheet_281_50"
+            file="cci_account_281_50.report_sheet_281_50"
+            report_type="qweb-pdf"
+            string="Sheets 281.50"
+            header="False"/>
+        
+        <record id="cci_account_281_50.sheet_281_50" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="cci_account_281_50.paperformat_account_sheet"/>
+        </record>
+    </data>
+</openerp>

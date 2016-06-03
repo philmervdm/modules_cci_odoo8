@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+	<!--
+ Users Groups
+-->
+	    <record model="res.groups" id="group_partner_supervisor">
+	        <field name="name">Partner Controler</field>
+	    </record>
+	    
+	    <record model="res.groups" id="group_partner_pubdpt">
+	        <field name="name">Partner access to dpt Publications</field>
+	    </record>
+
+	</data>
+</openerp>
+

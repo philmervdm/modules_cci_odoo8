@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_crm_cci_toto","CRM CCI Todo","cci_salesman.model_crm_cci_todo","",1,1,1,1
+"access_commission_exception_manager","Commission Exception Manager","model_cci_salesman_commission_exception","group_cci_salesman_commission",1,1,1,1
+"access_commission_payement_manager","Commission Payment Manager","model_cci_salesman_commission_payment","group_cci_salesman_commission",1,1,1,1
+"access_crm_user_period","CRM User Access to Period","account.model_account_period","base.group_sale_salesman",1,0,0,0
+"access_commission_slice_manager","Commission Slice Manager","model_cci_salesman_commission_slice","group_cci_salesman_commission",1,1,1,1
+"access_commission_slice_user","Commission Slice User","model_cci_salesman_commission_slice","base.group_sale_salesman",1,0,0,0
+
+

@@ -1,0 +1,62 @@
+<openerp>
+	<data>
+
+		<record id="view_wizard_extract_special_calls_in_excel_msg_form" model="ir.ui.view">
+            <field name="name">wizard.extract.special.calls_in_excel.msg.form</field>
+            <field name="model">wizard.extract.special.calls_in_excel.msg</field>
+            <field name="arch" type="xml">
+				<form string="Result">
+				    <group>
+                        <separator string="File has been created."  colspan="4"/>
+                        <field name="name" invisible="1"/>
+					    <field name="msg" nolabel="1"/>
+                        <field name="calls_xls" filename="name" nolabel="1"/>
+					</group>
+				    <footer>
+	                    <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_extract_special_calls_in_excel_form" model="ir.ui.view">
+			<field name="name">extract.special.calls_in_excel.form</field>
+			<field name="model">extract.special.calls_in_excel</field>
+			<field name="arch" type="xml">
+				<form string="Special calls for Membership">
+					<group  colspan="2">
+					    <field name="year"/>
+                        <field name="address_type"/>
+					</group>
+					<group>
+						<group>
+							<field name="target"/>
+							<field name="job_categs" />
+						</group>
+						<group>
+                            <label col="1" string="If you want to choose the address of the Membership Contact, you MUST give his letter as first category"/>
+						</group>
+					</group>
+					<group>
+                        <field name="price_site" />
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="open_window_results" string="Get File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+
+        <act_window id="action_extract_special_calls_in_excel"
+            key2="client_action_multi"
+            name="Special calls for membership in Excel"
+            res_model="extract.special.calls_in_excel"
+            src_model="res.partner"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+	</data>
+</openerp>

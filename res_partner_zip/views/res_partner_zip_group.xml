@@ -1,0 +1,40 @@
+<openerp>
+    <data>
+		<!-- VIEWS -->
+		<record model="ir.ui.view" id="view_partner_zip_group_form">
+			<field name="name">res.partner.zip.group.form</field>
+			<field name="model">res.partner.zip.group</field>
+			<field name="arch" type="xml">
+				<form string="Zip Group">
+					<group>
+						<field name="name" />
+						<field name="type_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_partner_zip_group_tree">
+			<field name="name">res.partner.zip.group.tree</field>
+			<field name="model">res.partner.zip.group</field>
+			<field name="arch" type="xml">
+				<tree string="Zip Group">
+					<field name="type_id" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+        <!-- ACTIONS -->
+		<record model="ir.actions.act_window" id="action_partner_zip_group">
+			<field name="name">Zip Group</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner.zip.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+        <!-- MENUS -->
+		<menuitem parent="menu_partner_zip_main" action="action_partner_zip_group" id="menu_partner_zip_group" />
+    </data>
+</openerp>

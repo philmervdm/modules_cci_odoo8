@@ -1,0 +1,795 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_premium_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2014-04-02 14:34:27+0000\n"
+"PO-Revision-Date: 2014-04-02 14:34:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_premium_data
+#: model:ir.module.module,shortdesc:cci_premium_data.module_meta_information
+msgid "CCI Premium Data"
+msgstr "Données Premium"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_direction:0
+msgid "Patron associé"
+msgstr "Patron associé"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_nighter:0
+msgid "Sorteur en soirée"
+msgstr "Sorteur en soirée"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_thu_evening:0
+msgid "Dispo activ. jeudi soir"
+msgstr "Dispo activ. jeudi soir"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_mon_evening:0
+msgid "Dispo activ. lundi soir"
+msgstr "Dispo activ. lundi soir"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sun_evening:0
+msgid "Dispo activ. dimanche soir"
+msgstr "Dispo activ. dimanche soir"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_tablet_press:0
+msgid "Lit infos sur tablette"
+msgstr "Lit infos sur tablette"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,premium_mp:0
+msgid "Mot de passe"
+msgstr "Mot de passe"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_other_names:0
+msgid "Autres - Noms"
+msgstr "Nom autre clubs"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_direction:0
+msgid "Patron propriétaire"
+msgstr "Patron propriétaire"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_pay_creditcard:0
+msgid "Utilise carte de crédit"
+msgstr "Utilise carte de crédit"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sat_evening:0
+msgid "Dispo activ. samedi soir"
+msgstr "Dispo activ. samedi soir"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,decision_level:0
+msgid "Direction"
+msgstr "Direction"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_thu_lunch:0
+msgid "Dispo activ. jeudi midi"
+msgstr "Dispo activ. jeudi midi"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_tablet:0
+msgid "Tablette"
+msgstr "Tablette"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_18_20:0
+msgid "Dispo Conférence 18h-20h"
+msgstr "Dispo Conférence 18h-20h"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_price_event:0
+msgid "Type prix pour events"
+msgstr "Type prix pour events"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_eleccar:0
+msgid "Voiture écolo"
+msgstr "Voiture écolo"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,shareholder_count:0
+msgid "4"
+msgstr "4"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Société de management"
+msgstr "Société de management"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_facebook_freq:0
+#: selection:res.partner.contact,pf_linkedin_freq:0
+#: selection:res.partner.contact,pf_twitter_freq:0
+msgid "1x/jour"
+msgstr "1x/jour"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "250-499"
+msgstr "250-499"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "20-49"
+msgstr "20-49"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_ecustomer:0
+msgid "eClient"
+msgstr "eClient"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_fri_evening:0
+msgid "Dispo activ. vendredi soir"
+msgstr "Dispo activ. vendredi soir"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sun_morning:0
+msgid "Dispo activ. dimanche matin"
+msgstr "Dispo activ. dimanche matin"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_freq_network:0
+msgid "2 à 3 x/an"
+msgstr "2 à 3 x/an"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_bni:0
+msgid "BNI"
+msgstr "BNI"
+
+#. module: cci_premium_data
+#: view:res.partner.job:0
+msgid "Premium's Data"
+msgstr "Données Premium"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_linkedin_freq:0
+msgid "Fréquence LinkedIN"
+msgstr "Fréquence LinkedIN"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_golf:0
+msgid "Golf"
+msgstr "Golf"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_size_100:0
+msgid "+100 personnes"
+msgstr "+100 personnes"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_price_event:0
+msgid "A la carte"
+msgstr "A la carte"
+
+#. module: cci_premium_data
+#: field:res.partner.job,others_name:0
+msgid "Autre département"
+msgstr "Autre département"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_sc:0
+msgid "Service Club"
+msgstr "Service Club"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_other:0
+msgid "Autre"
+msgstr "Autre"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_apm:0
+msgid "APM"
+msgstr "APM"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_invit_post:0
+msgid "Invitation postale"
+msgstr "Invitation postale"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_network_dinner:0
+msgid "Dispo networking diner"
+msgstr "Dispo networking diner"
+
+#. module: cci_premium_data
+#: field:res.partner,formation_invest:0
+msgid "Invest in formation"
+msgstr "Invest in formation"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_networker:0
+msgid "Networking"
+msgstr "Networking"
+
+#. module: cci_premium_data
+#: field:res.partner.job,personal_statut:0
+msgid "Personal Status"
+msgstr "Status personel"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,from_purchase:0
+msgid "Tiers"
+msgstr "Tiers"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_facebook_freq:0
+msgid "Fréquence Facebook"
+msgstr "Fréquence Facebook"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_children:0
+msgid "Enfants à la maison"
+msgstr "Enfants à la maison"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_network_morning:0
+msgid "Dispo networking matin"
+msgstr "Dispo networking matin"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Employee"
+msgstr "Employés"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "En Recherche d'emploi"
+msgstr "En Recherche d'emploi"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_tue_evening:0
+msgid "Dispo activ. mardi soir"
+msgstr "Dispo activ. mardi soir"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_zoning:0
+msgid "Zoning"
+msgstr "Dans un Zoning"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_10_12:0
+msgid "Dispo Conférence 10h-12h"
+msgstr "Dispo Conférence 10h-12h"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_freq_network:0
+msgid "1 ou 2 x/trim"
+msgstr "1 ou 2 x/trim"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,shareholder_count:0
+msgid "3"
+msgstr "3"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_facebook:0
+msgid "Facebook"
+msgstr "Facebook"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_invit_mail:0
+msgid "Invit seulement par courriel"
+msgstr "Invit seulement par courriel"
+
+#. module: cci_premium_data
+#: field:res.partner,can_check_formation:0
+msgid "Can Use Checks Formation"
+msgstr "Peut utiliser des chèques formations"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,from_purchase:0
+msgid "Membre de la famille"
+msgstr "Membre de la famille"
+
+#. module: cci_premium_data
+#: field:res.partner,formation_priority:0
+msgid "Priority to formation"
+msgstr "Priorité à la formation"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,from_purchase:0
+msgid "Ancien patron"
+msgstr "Ancien patron"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_price_event:0
+msgid "All-In"
+msgstr "All-In"
+
+#. module: cci_premium_data
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour l'architecture de la vue"
+
+#. module: cci_premium_data
+#: field:res.partner.job,executive_committee:0
+msgid "Membre du comité de direction"
+msgstr "Membre du comité de direction"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_wed_evening:0
+msgid "Dispo activ. mercredi soir"
+msgstr "Dispo activ. mercredi soir"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_freq_network:0
+msgid "1 x/sem"
+msgstr "1 x/sem"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "50-99"
+msgstr "50-99"
+
+#. module: cci_premium_data
+#: field:res.partner.job,shareholder_count:0
+msgid "Nbre actionnaires"
+msgstr "Nbre actionnaires"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,decision_level:0
+msgid "Employé"
+msgstr "Employé"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_tue_lunch:0
+msgid "Dispo activ. mardi midi"
+msgstr "Dispo activ. mardi midi"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,decision_level:0
+msgid "Cadre"
+msgstr "Cadre"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "6-9"
+msgstr "6-9"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "500+"
+msgstr "500+"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_mon_morning:0
+msgid "Dispo activ. lundi matin"
+msgstr "Dispo activ. lundi matin"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_14_16:0
+msgid "Dispo Conférence 14h-16h"
+msgstr "Dispo Conférence 14h-16h"
+
+#. module: cci_premium_data
+#: field:res.partner,international_company:0
+msgid "Work Internationaly"
+msgstr "Work Internationaly"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_wed_lunch:0
+msgid "Dispo activ. mercredi midi"
+msgstr "Dispo activ. mercredi midi"
+
+#. module: cci_premium_data
+#: field:res.partner.address,zoning:0
+msgid "Situated in Zoning"
+msgstr "Situated in Zoning"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Profession libérale"
+msgstr "Profession libérale"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_smartphone:0
+msgid "Possède Smartphone"
+msgstr "Possède Smartphone"
+
+#. module: cci_premium_data
+#: field:res.partner.job,share_crowdfund:0
+msgid "Crowfunding"
+msgstr "Crowfunding"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Etudiant"
+msgstr "Etudiant"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_size_50100:0
+msgid "entre 50 et 100 personnes"
+msgstr "entre 50 et 100 personnes"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_9_11:0
+msgid "Dispo Conférence 9h-11h"
+msgstr "Dispo Conférence 9h-11h"
+
+#. module: cci_premium_data
+#: field:res.partner.job,decision_level:0
+msgid "Niveau de décision"
+msgstr "Niveau de décision"
+
+#. module: cci_premium_data
+#: view:res.partner.address:0
+msgid "Pers. occupées (Site)"
+msgstr "Pers. occupées (Site)"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_use_language:0
+msgid "Utilise des langues étrangères"
+msgstr "Utilise des langues étrangères"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_ypowpo:0
+msgid "YPO/WPO"
+msgstr "YPO/WPO"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_owner:0
+msgid "Actionnaire ou propriétaire autres sociétés"
+msgstr "Actionnaire ou propriétaire autres sociétés"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Dirigeant d'entreprise"
+msgstr "Dirigeant d'entreprise"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_12_14:0
+msgid "Dispo Conférence 12h-14h"
+msgstr "Dispo Conférence 12h-14h"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_new:0
+msgid "NEW"
+msgstr "NEW"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_fri_lunch:0
+msgid "Dispo activ. vendredi midi"
+msgstr "Dispo activ. vendredi midi"
+
+#. module: cci_premium_data
+#: selection:res.partner,can_check_formation:0
+msgid "OUI"
+msgstr "OUI"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_network_night:0
+msgid "Dispo networking soirée"
+msgstr "Dispo networking soirée"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,shareholder_count:0
+msgid "2"
+msgstr "2"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_fce:0
+msgid "FCE"
+msgstr "FCE"
+
+#. module: cci_premium_data
+#: field:res.partner.job,type_direction:0
+msgid "Direction générale"
+msgstr "Direction générale"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_twitter_freq:0
+msgid "Fréquence Twitter"
+msgstr "Fréquence Twitter"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_invit_network:0
+msgid "Invit seulement par R.S"
+msgstr "Invit seulement par R.S"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_size_25:0
+msgid "-25 personnes"
+msgstr "-25 personnes"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "2-5"
+msgstr "2-5"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_cluber:0
+msgid "Participe à des Business Clubs"
+msgstr "Participe à des Business Clubs"
+
+#. module: cci_premium_data
+#: field:res.partner.job,share_investor:0
+msgid "Présence investisseur ou Business Angel"
+msgstr "Présence investisseur ou Business Angel"
+
+#. module: cci_premium_data
+#: field:res.partner.job,from_purchase:0
+msgid "Acquise auprès de"
+msgstr "Acquise auprès de"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_tue_morning:0
+msgid "Dispo activ. mardi matin"
+msgstr "Dispo activ. mardi matin"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_network_lunch:0
+msgid "Dispo networking midi"
+msgstr "Dispo networking midi"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_fri_morning:0
+msgid "Dispo activ. vendredi matin"
+msgstr "Dispo activ. vendredi matin"
+
+#. module: cci_premium_data
+#: field:res.partner,employee_slice:0
+msgid "Employees' Slice"
+msgstr "Tranche employés"
+
+#. module: cci_premium_data
+#: field:res.partner.job,year_purchase:0
+msgid "Année arrivée"
+msgstr "Année arrivée"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_direction:0
+msgid "Numéro 1"
+msgstr "Numéro 1"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_twitter:0
+msgid "Twitter"
+msgstr "Twitter"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_conf_8_10:0
+msgid "Dispo Conférence 8h-10h"
+msgstr "Dispo Conférence 8h-10h"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,premium_login:0
+msgid "Login Premium"
+msgstr "Login Premium"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sat_lunch:0
+msgid "Dispo activ. samedi midi"
+msgstr "Dispo activ. samedi midi"
+
+#. module: cci_premium_data
+#: view:res.partner.contact:0
+msgid "Premium's data"
+msgstr "Données Premium"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_facebook_freq:0
+#: selection:res.partner.contact,pf_linkedin_freq:0
+#: selection:res.partner.contact,pf_twitter_freq:0
+msgid "- 1x/sem"
+msgstr "- 1x/sem"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_sms:0
+msgid "Pas de SMS"
+msgstr "Pas de SMS"
+
+#. module: cci_premium_data
+#: field:res.partner.job,share_invest:0
+msgid "Présence Invest"
+msgstr "Présence Invest"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_freq_network:0
+msgid "Plusieurs x/sem"
+msgstr "Plusieurs x/sem"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "10-19"
+msgstr "10-19"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,shareholder_count:0
+msgid "Société cotée en Bourse"
+msgstr "Société cotée en Bourse"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_purchase:0
+msgid "Créé son entreprise"
+msgstr "Créé son entreprise"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_purchase:0
+msgid "Repris une entreprise"
+msgstr "Repris une entreprise"
+
+#. module: cci_premium_data
+#: field:res.partner.job,type_purchase:0
+msgid "Patron qui a"
+msgstr "Patron qui a"
+
+#. module: cci_premium_data
+#: field:res.partner,equal_representation:0
+msgid "Equal Representation"
+msgstr "Commission paritaire"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_app_pro:0
+msgid "App professionnelles"
+msgstr "App professionnelles"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_mon_lunch:0
+msgid "Dispo activ. lundi midi"
+msgstr "Dispo activ. lundi midi"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,personal_statut:0
+msgid "Independent"
+msgstr "Indépendant"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "100-249"
+msgstr "100-249"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_far:0
+msgid "FAR"
+msgstr "FAR"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_smart_info:0
+msgid "Lit infos sur SamrtPhone"
+msgstr "Lit infos sur SamrtPhone"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_linkedin:0
+msgid "LinkedIN"
+msgstr "LinkedIN"
+
+#. module: cci_premium_data
+#: selection:res.partner,employee_slice:0
+msgid "1"
+msgstr "1"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_direction:0
+msgid "Patron majoritaire"
+msgstr "Patron majoritaire"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_cl:0
+msgid "Cercle du Lac"
+msgstr "Cercle du Lac"
+
+#. module: cci_premium_data
+#: field:res.partner.job,share_family:0
+msgid "Membres de la famille"
+msgstr "Membres de la famille"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_want_invest:0
+msgid "Investisseur déjà ou désireux"
+msgstr "Investisseur déjà ou désireux"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_gceq:0
+msgid "Gr. C.E. du Québec"
+msgstr "Gr. C.E. du Québec"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_care_cci:0
+msgid "Demande prise en charge par la CCI"
+msgstr "Demande prise en charge par la CCI"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_facebook_freq:0
+#: selection:res.partner.contact,pf_linkedin_freq:0
+#: selection:res.partner.contact,pf_twitter_freq:0
+msgid "1x/sem"
+msgstr "1x/sem"
+
+#. module: cci_premium_data
+#: selection:res.partner,can_check_formation:0
+msgid "Non"
+msgstr "Non"
+
+#. module: cci_premium_data
+#: field:res.partner.job,main_direction:0
+msgid "Poste au sein de la direction générale"
+msgstr "Poste au sein de la direction générale"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_facebook_freq:0
+#: selection:res.partner.contact,pf_linkedin_freq:0
+#: selection:res.partner.contact,pf_twitter_freq:0
+msgid "2 ou 3x/sem"
+msgstr "2 ou 3x/sem"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,shareholder_count:0
+msgid "5 et +"
+msgstr "5 et +"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_size_2550:0
+msgid "entre 25 et 50 personnes"
+msgstr "entre 25 et 50 personnes"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sun_lunch:0
+msgid "Dispo activ. dimanche midi"
+msgstr "Dispo activ. dimanche midi"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_sat_morning:0
+msgid "Dispo activ. samedi matin"
+msgstr "Dispo activ. samedi matin"
+
+#. module: cci_premium_data
+#: selection:res.partner,can_check_formation:0
+msgid "Ne sais pas"
+msgstr "Ne sais pas"
+
+#. module: cci_premium_data
+#: selection:res.partner.job,type_purchase:0
+msgid "Acquis des patrs en cours de route"
+msgstr "Acquis des parts en cours de route"
+
+#. module: cci_premium_data
+#: selection:res.partner.contact,pf_freq_network:0
+msgid "1 ou 2 x/mois"
+msgstr "1 ou 2 x/mois"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_freq_network:0
+msgid "Fréquence Networking"
+msgstr "Fréquence Networking"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_zip_code:0
+msgid "Code Postal lieu résidence"
+msgstr "Code Postal lieu résidence"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_thu_morning:0
+msgid "Dispo activ. jeudi matin"
+msgstr "Dispo activ. jeudi matin"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_dispo_wed_morning:0
+msgid "Dispo activ. mercredi matin"
+msgstr "Dispo activ. mercredi matin"
+
+#. module: cci_premium_data
+#: field:res.partner.contact,pf_club_cw:0
+msgid "Cercle Wallonie"
+msgstr "Cercle Wallonie"
+

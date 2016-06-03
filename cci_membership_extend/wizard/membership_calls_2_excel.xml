@@ -1,0 +1,71 @@
+<openerp>
+	<data>
+
+		<record id="view_wizard_membership_calls_2_excel_msg_form" model="ir.ui.view">
+            <field name="name">wizard.membership.calls.2.excel.msg.form</field>
+            <field name="model">wizard.membership.calls_2_excel.msg</field>
+            <field name="arch" type="xml">
+				<form string="Result">
+				    <group>
+                        <separator string="File has been created."  colspan="4"/>
+                        <field name="name" invisible="1"/>
+					    <field name="msg" nolabel="1"/>
+                        <field name="calls_xls" filename="name" nolabel="1"/>
+					</group>
+				    <footer>
+	                    <button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_membership_calls_2_excel_form" model="ir.ui.view">
+			<field name="name">membership.calls.2.excel.form</field>
+			<field name="model">membership.calls_2_excel</field>
+			<field name="arch" type="xml">
+				<form string="Calls for Membership">
+					<group  colspan="2">
+					    <field name="year"/>
+                        <field name="address_type"/>
+                        <field name="also_invoiced"/>
+					</group>
+					<group>
+						<group>
+                            <field name="job_categs" />
+						</group>
+						<group>
+                            <newline/>
+							<label col="1" string="If you want to choose the address of the Membership Contact, you MUST give his letter as first category"/>
+						</group>
+					</group>
+					<group>
+                        <field name="price_site" />
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="open_window_results" string="Get File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_membership_calls_2_excel_form" model="ir.actions.act_window">
+            <field name="name">Calls for Membership</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">membership.calls_2_excel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_membership_calls_2_excel_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem 
+            id="menu_membership_calls_2_excel"
+            name="Calls for membership in Excel"
+			action="action_membership_calls_2_excel_form"
+			parent="menu_membership_yearly"
+            sequence="15" />
+	</data>
+</openerp>

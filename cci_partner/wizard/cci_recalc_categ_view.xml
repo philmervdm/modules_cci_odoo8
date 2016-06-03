@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        <record id="view_wizard_recalc_categs" model="ir.ui.view">
+            <field name="name">Recalculation of Customer Type Categories</field>
+            <field name="model">cci.recalc.categs</field>
+            <field name="arch" type="xml">
+            	<form string="Recalculation of Customer Type Categories" >
+				    <separator string="Parameters"/>
+				    <group>
+					    <field name="excluded_ids" width="640" height="100"/>
+					    <field name="addition_ids" width="640" height="100"/>
+					    <field name="last_period_id"/>
+				    </group>
+				    <group colspan="4" col="5">
+				        <label string="Employee &gt;" colspan="1" />
+				        <!--<label string="Categories" colspan="4" />-->
+				        <separator string="Categories" colspan="4"/>
+				        <newline/>
+				        <field name="valueA" nolabel="1" colspan="1"/>
+				        <label string="A1" colspan="1"/>
+				        <label string="A2" colspan="1"/>
+				        <label string="A3" colspan="1"/>
+				        <label string="A4" colspan="1"/>
+				        <newline/>
+				        <field name="valueB" nolabel="1" colspan="1"/>
+				        <label string="B1" colspan="1"/>
+				        <label string="B2" colspan="1"/>
+				        <label string="B3" colspan="1"/>
+				        <label string="B4" colspan="1"/>
+				        <newline/>
+				        <label string="&lt; = prec" colspan="1"/>
+				        <label string="C1" colspan="1"/>
+				        <label string="C2" colspan="1"/>
+				        <label string="C3" colspan="1"/>
+				        <label string="C4" colspan="1"/>
+				        <newline/>
+				        <label string="C.A. &gt;" colspan="1"/>
+				        <field name="value1" colspan="1" nolabel="1"/>
+				        <field name="value2" colspan="1" nolabel="1"/>
+				        <field name="value3" colspan="1" nolabel="1"/>
+				        <label string="&lt; = prec" colspan="1"/>
+				    </group>
+				    <footer>
+						<button name="make_calculation" string="Compare with last data" type="object" class="oe_highlight"/>
+	                     or
+	                    <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+            </field>
+        </record>
+        
+        
+        <record id="action_wizard_recalc_categs" model="ir.actions.act_window">
+            <field name="name">Calculation of Customer Categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.recalc.categs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wizard_recalc_categs"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Calculation of Customer Categories"
+            action="action_wizard_recalc_categs"
+            id="menu_action_wizard_recalc_categs"
+            parent="base.menu_base_config"/>
+        
+        
+        <record id="view_wizard_recalc_categs_result" model="ir.ui.view">
+            <field name="name">Result of re-calculation</field>
+            <field name="model">wizard.recalc.categs.result</field>
+            <field name="arch" type="xml">
+            	<form string="Result of re-calculation" >
+            		<field name="result" colspan="4" width="640" heigth="400" readonly="1" />
+            		<footer>
+            			<button string="Cancel" class="oe_link" special="cancel" />
+            		</footer>
+            	</form>
+           </field>
+       </record>
+            
+	</data>
+</openerp>

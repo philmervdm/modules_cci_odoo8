@@ -1,0 +1,54 @@
+<openerp>
+	<data>
+		
+		<record id="event_partner_registration_view" model="ir.ui.view">
+            <field name="name">event.partner.registration.form</field>
+            <field name="model">event.partner.registration</field>
+            <field name="arch" type="xml">
+                <form string="Create Registration">
+                	<group>
+                		<group>
+		                    <field name="event_id" />
+                		</group>
+                		<group>
+		   					<field name="function_id" />
+                		</group>
+                	</group>
+                    <footer>
+                        <button string="Create" name="create_reg" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_event_partner_registration"
+            multi="True"
+            key2="client_action_multi" 
+            name="Create Registration"
+            res_model="event.partner.registration" 
+            src_model="res.partner"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+        
+        
+        <record id="event_partner_registration_msg_view" model="ir.ui.view">
+            <field name="name">event.partner.registration.msg.form</field>
+            <field name="model">event.partner.registration.msg</field>
+            <field name="arch" type="xml">
+                <form string="Result">
+                	<group>
+                		 <label string="Registration created" />
+                	</group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>   
+	
+	</data>
+</openerp>

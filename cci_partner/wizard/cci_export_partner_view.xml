@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="cci_export_partner_form" model="ir.ui.view">
+			<field name="name">cci.export.partner.form</field>
+			<field name="model">cci.export.partner</field>
+			<field name="arch" type="xml">
+				<form string="Export Partners for SUMO">
+					<separator string="Export partners data for SUMO software" colspan="4"/>
+					<footer>
+						 <button name="make_calculation" string="Compare with last data" type="object" class="oe_highlight"/>
+	                      or
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_export_partner" model="ir.actions.act_window">
+            <field name="name">Export Partners for SUMO</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.export.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_export_partner_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Export Partners for SUMO"
+            action="action_cci_export_partner"
+            id="menu_cci_export_partner"
+            parent="menu_partner_photo"/>
+		
+		<record id="cci_export_partner_extract_form" model="ir.ui.view">
+			<field name="name">cci.export.partner.extract.form</field>
+			<field name="model">cci.export.partner.extract</field>
+			<field name="arch" type="xml">
+				<form string="Extract Data">
+					<separator string="Export data in excel file for SUMO software" colspan="4"/>
+					<footer>
+						 <button name="make_excel_file" string="Extract last data in Excel File" type="object" class="oe_highlight"/>
+	                     or
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="cci_export_partner_finish_form" model="ir.ui.view">
+			<field name="name">cci.export.partner.finish.form</field>
+			<field name="model">cci.export.partner.finish</field>
+			<field name="arch" type="xml">
+				<form string="Export Partners for SUMO">
+					<group>
+						<separator string="Export done" colspan="4"/>
+						<field name="file_name" invisible="1" />
+						<field name="data" readonly="1" filename="file_name"/>
+        				<label string="Save this document to a .xls file and open it with\n your favorite spreadsheet software. The file\n encoding is UTF-8." colspan="4"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

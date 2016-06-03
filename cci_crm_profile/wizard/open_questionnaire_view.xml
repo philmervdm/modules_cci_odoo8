@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+		<record id="view_open_questionnaire_form_inherit" model="ir.ui.view">
+            <field name="name">Open Questionnaires</field>
+            <field name="model">open.questionnaire</field>
+            <field name="inherit_id" ref="crm_profiling.view_open_questionnaire_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='questionnaire_id']" position="attributes">
+                    <attribute name='required'>True</attribute>
+				</xpath>
+            </field>
+        </record>
+
+        <record id="view_open_questionnaire_line_tree_inherit" model="ir.ui.view">
+            <field name="name">open.questionnaire.line.list</field>
+            <field name="model">open.questionnaire.line</field>
+           <field name="inherit_id" ref="crm_profiling.view_open_questionnaire_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='answer_id']" position="replace">
+                    <field name="answer_id" attrs="{'readonly':[('chek_open_question','=',True)]}" domain="[('question_id', '=', question_id)]"/>
+					<field name="open_answer" attrs="{'readonly':[('chek_open_question','=',False)]}"/>
+					<field name="chek_open_question" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

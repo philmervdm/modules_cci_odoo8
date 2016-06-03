@@ -1,0 +1,40 @@
+<openerp>
+	<data>
+		<record id="view_extract_asked_less_billed_form" model="ir.ui.view">
+			<field name="name">extract.asked.less.billed.form</field>
+			<field name="model">extract.asked.less.billed</field>
+			<field name="arch" type="xml">
+				<form string="Extract Partners with lower membership than last invoiced">
+					<group>
+					    <field name="only_members"/>
+					</group>
+                    <group>
+                        <label string="Extraction of partners with an asked membership inferior to the last invoiced amount but superior to 0."/>
+                    </group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_extract_asked_less_billed_form" model="ir.actions.act_window">
+            <field name="name">Extract Partners with lower membership than last invoiced</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.asked.less.billed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_asked_less_billed_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="menu_asked_less_billed"
+            name="Extract Partners with lower membership than last invoiced"
+            action="action_extract_asked_less_billed_form"
+            parent="menu_membership_control"
+            sequence="14" />
+	</data>
+</openerp>

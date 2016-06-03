@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+	<template id="cci_count_invoice">
+		<t t-call="report.html_container">
+			<t t-call="cci_partner.external_layout_custom">
+				<div class="page">
+					<div class="oe_structure"/>
+					<style>
+						table{width:100%; padding: 6px;}
+						table tr td{padding: 6px;}
+						.border_bottom{border-bottom:2px solid black;}
+						.border_bottomlg{border-bottom:1px solid #cccccc;}
+					</style>
+					<h3 class="text-center"><strong>Counted Invoices:</strong></h3>
+					<h4 class="text-center mt32">
+						<strong>Printing date: <span t-esc="time.strftime('%Y-%m-%d')"/> at 
+						<span t-esc="time.strftime('%H:%M:%S')"/></strong>
+					</h4>
+					<t t-foreach="docs" t-as="o">
+						<div style="page-break-inside: avoid;">
+							<h3 class="text-center mt64">
+								<strong><span t-field="o.title"/> <span t-field="o.name"/></strong>
+							</h3>
+							<table class="mt32 mb32">
+								<tr class="border_bottom">
+									<th class="text-center">Invoice Type</th>
+									<th class="text-center">Draft</th>
+									<th class="text-center">Pro-Forma</th>
+									<th class="text-center">Open</th>
+									<th class="text-center">Paid</th>
+									<th class="text-center">Cancelled</th>
+								</tr>
+								<tr t-foreach="get_data(o)" t-as="a" class="text-center border_bottomlg">
+									<td><span t-esc="a['type']"/></td>
+									<td><span t-esc="a['draft']"/></td>
+									<td><span t-esc="a['proforma']"/></td>
+									<td><span t-esc="a['open']"/></td>
+									<td><span t-esc="a['paid']"/></td>
+									<td><span t-esc="a['cancel']"/></td>
+								</tr>
+							</table>
+						</div>
+					</t>		
+				</div>
+			</t>
+		</t>
+	</template>
+</data>
+</openerp>

@@ -1,0 +1,36 @@
+<openerp>
+	<data>
+		<record id="view_extract_new_members_since_form" model="ir.ui.view">
+			<field name="name">extract.new.members.since.form</field>
+			<field name="model">extract.new.members.since</field>
+			<field name="arch" type="xml">
+				<form string="Extract New Members">
+					<group>
+                        <field name="since"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_extract_new_members_since_form" model="ir.actions.act_window">
+            <field name="name">Extract New Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.new.members.since</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_new_members_since_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem name="New Members since a precise date" id="menu_new_members_since"
+            action="action_extract_new_members_since_form"
+            parent="membership.menu_members" 
+            sequence="80" />
+	</data>
+</openerp>

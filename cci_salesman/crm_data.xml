@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--
+        Case Sections
+        -->
+        <record model="crm.case.section" id="section_interest">
+            <field name="name">CRM marques d'interet</field>
+            <field name="code">CRMInt</field>
+		</record>
+        <record model="crm.case.section" id="section_partner_histo">
+            <field name="name">CRM Historique sur partenaire</field>
+            <field name="code">CRMHisto</field>
+		</record>
+    </data>
+</openerp>

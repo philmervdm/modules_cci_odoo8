@@ -1,0 +1,43 @@
+<openerp>
+	<data>
+		<record id="view_membership_partners_to_invoice_form" model="ir.ui.view">
+			<field name="name">membership.partners_to_invoice.form</field>
+			<field name="model">membership.partners_to_invoice</field>
+			<field name="arch" type="xml">
+				<form string="Select Partners to Invoice">
+                    <group>
+    					<group>
+                            <field name="year"/>
+                            <field name="also_forced"/>
+                            <field name="old_product_id" />
+                        </group>
+                        <group>
+                            <field name="also_invoiced"/>
+                        </group>
+                    </group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="open_window_results" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_membership_partners_to_invoice_form" model="ir.actions.act_window">
+            <field name="name">Select Partners to Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">membership.partners_to_invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_membership_partners_to_invoice_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem name="Prepare Invoicing Yearly Membership" id="menu_prepare_yearly_membership_invoices"
+            action="action_membership_partners_to_invoice_form"
+            parent="menu_membership_yearly" 
+            sequence="20" />
+	</data>
+</openerp>

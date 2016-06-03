@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="carnet_before_validity">
+            <t t-call="report.html_container">
+                <t t-foreach="carnet_before()" t-as="ata_carnet">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <div class="text-right" t-esc="ata_carnet['partner_name']"/>
+                                <div class="text-right" t-esc="ata_carnet['partner_address']"/>
+                                <div class="mt32 text-right">Liège, le  <span t-esc="time.strftime('%Y-%m-%d')"/></div>
+                                <div class="mt16">Madame/Monsieur,</div>
+                                <div class="mt16">
+                                    <strong>Concerne: votre carnet A.T.A. n° <span t-esc="ata_carnet['name']"/> <small> <span t-esc="ata_carnet['type']"/></small></strong>
+                                </div>
+                                <div class="mt16 col-xs-offset-1"><strong>
+                                    <div>Date d’émission :  <span t-esc="ata_carnet['creation_date']"/></div>
+                                    <div>Date d’expiration: <span t-esc="ata_carnet['validity_date']"/></div></strong>
+                                </div>
+                                <div class="mt16">
+                                    Le carnet sous rubrique arrive à échéance.
+                                </div>
+                                <div class="mt16">
+                                    A toutes fins utiles, nous croyons devoir vous rappeler deux points fondamentaux :
+                                </div>
+                               <div class="mt16 col-xs-offset-1">
+                                    <table width="100%">
+                                        <tr>
+                                            <td width="4%">1.</td>
+                                            <td class="text-justify">Toutes les marchandises doivent être réexportées de l'étranger et réimportées en Belgique <strong>AVANT</strong> la date limite de validité du carnet.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td class="text-justify">Veuillez contrôler si cette réexportation et cette réimportation ont bien été constatées par les douanes respectives au moyen d'un cachet qu'elles apposent à l'endroit réservé.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Si ce n'est pas le cas, nous vous conseillons de les représenter,<strong> avant la date d'échéance</strong>, à un bureau de douane belge pour apporter la preuve de leur présence en UE.
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Pour vous éviter tout problème, nous vous invitons à suivre ces conseils avec diligence et ensuite nous renvoyer le carnet concerné.
+                                </div>
+                                <div class="mt16 text-justify">
+                                    En espérant ainsi vous rendre service, nous vous remercions de votre  bienveillante attention et vous prions de croire, Madame, Monsieur, à nos meilleures salutations.
+                                </div>
+                                <div class="text-right mt64">
+                                    Chantale Cool,<br/>
+                                    Service « Légalisations »<br/>
+                                    Tél. : 04/341.91.91<br/>
+                                    <strong>Courriel : cc@cciconnect.be</strong><br/>
+                                </div>
+                            </div>
+                            <div class="col-xs-1"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

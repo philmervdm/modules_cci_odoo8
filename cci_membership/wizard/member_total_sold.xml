@@ -1,0 +1,41 @@
+<openerp>
+	<data>
+		<record id="view_member_total_sold_form" model="ir.ui.view">
+			<field name="name">member.total.sold.form</field>
+			<field name="model">wizard.check.total</field>
+			<field name="arch" type="xml">
+				<form string="Members Total Sold">
+					<group>
+					    <field name="start_date"/>
+						<field name="end_date"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_member_total_sold_form" model="ir.actions.act_window">
+            <field name="name">Members Total Sold</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.check.total</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_member_total_sold_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_member_total_sold_values">
+            <field name="model_id" ref="model_wizard_check_total"/>
+            <field name="name">Members Total Sold</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_member_total_sold_form'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>	
+	</data>
+</openerp>

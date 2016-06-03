@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_extract_comm_results_form">
+            <field name="name">extract.comm.results.form</field>
+            <field name="model">extract.comm.results</field>
+            <field name="arch" type="xml">
+                <form string="Extract Commissions">
+                    <group>
+                        <group>
+                            <field name="from_period"/>
+                            <field name="years"/>
+                        </group>
+                        <group>
+                            <field name="to"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="get_file" type="object" string="Get Excel File "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_extract_extract_comm_results_form_action" model="ir.actions.act_window">
+            <field name="name">Extract Commissions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.comm.results</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_extract_comm_results_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Extract Commissions Result" id="menu_extract_extract_comm_results"
+                action="wizard_extract_extract_comm_results_form_action"
+                parent="menu_cci_salesman_main" 
+                sequence="80" />
+        
+        <record model="ir.ui.view" id="wizard_extract_extract_comm_results2_form">
+            <field name="name">extract.comm.results2.form</field>
+            <field name="model">extract.comm.results2</field>
+            <field name="arch" type="xml">
+                <form string="File has been created">
+                    <group>
+                        <group>
+                            <field name="name" invisible='1'/>
+                            <field name="msg"/>
+                            <field name="comm_results" filename="name"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Ok" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

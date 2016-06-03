@@ -1,0 +1,67 @@
+<openerp>
+	<data>
+		<record id="view_certi_fedration_form" model="ir.ui.view">
+			<field name="name">wizard.cert.fed.form</field>
+			<field name="model">wizard.cert.fed</field>
+			<field name="arch" type="xml">
+				<form string="Select Options">
+					<group>
+					    <field name="month"/>
+					    <field name="year"/>
+					    <field name="canceled" />
+						<field name="email_rcp"/>
+					</group>
+					<footer>
+						<button name="create_file" string="Get File" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="End" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_certi_fedration_form" model="ir.actions.act_window">
+            <field name="name">Federation Sending</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.cert.fed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_certi_fedration_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<record id="view_certi_fedration_msg_form" model="ir.ui.view">
+			<field name="name">wizard.cert.fed.msg.form</field>
+			<field name="model">wizrad.cert.fed.msg</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+					<group>
+						<field name="name" invisible="1"/>
+					    <field name="msg"/>
+					    <field name="file_save" filename="name"/>
+					</group>
+					<footer>
+	                   <button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_certi_fedration_msg_form" model="ir.actions.act_window">
+            <field name="name">Notification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizrad.cert.fed.msg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_certi_fedration_msg_form"/>
+            <field name="target">new</field>
+        </record>
+	
+	<menuitem name="Federation Sending(Certificates)" id="menu_fed_send_ata"
+			action="action_certi_fedration_form" 
+			parent="menu_mission_configure" />
+
+	</data>
+</openerp>

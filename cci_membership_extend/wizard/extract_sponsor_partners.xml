@@ -1,0 +1,36 @@
+<openerp>
+	<data>
+		<record id="view_extract_sponsor_partners_form" model="ir.ui.view">
+			<field name="name">extract.sponsor.partners.form</field>
+			<field name="model">extract.sponsor.partners</field>
+			<field name="arch" type="xml">
+				<form string="Extract Sponsor Partners">
+					<group>
+					       <field name="only_active"/>
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_extract_sponsor_partners_form" model="ir.actions.act_window">
+            <field name="name">Extract Sponsor Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.sponsor.partners</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_sponsor_partners_form"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem name="Membership Sponsor Partners" id="menu_sponsor_partners"
+			action="action_extract_sponsor_partners_form" 
+			parent="menu_membership_control" 
+            sequence="12" />
+	</data>
+</openerp>

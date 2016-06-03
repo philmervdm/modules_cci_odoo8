@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+ 		<record id="view_confirm_registration_form" model="ir.ui.view">
+            <field name="name">Confirm Registration</field>
+            <field name="model">confirm.registration</field>
+            <field name="arch" type="xml">
+                <form string="Questions">
+                    <separator col="4" colspan="4" string="sure to Confirm Registration?"/>
+                    <field name="new_state"/>
+                    <field name="msg"/>
+                    <footer>
+                        <button icon="gtk-ok" name="try_to_confirm" string="Show Result" type="object" class="oe_highlight"  />
+                                            or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_id_confirm_registration"
+            name="Confirm Registration"
+            target="new"
+            res_model="confirm.registration"
+            key2="client_action_multi"
+            src_model="cci_event_proxy.registration"
+            view_type="form" view_mode="form"/>
+
+		<record id="view_confirm_registration_msg" model="ir.ui.view">
+            <field name="name">Result</field>
+            <field name="model">confirm.registration.msg</field>
+            <field name="arch" type="xml">
+                <form string="Result">
+                    <field name="msg"/>
+                </form>
+            </field>
+        </record>
+
+<!-- 	    <wizard string="Confirm Registration"
+			model="cci_event_proxy.registration"
+			menu="True"
+			name="confirm_registration"
+			id="wizard_proxy_confirm_registration" />
+ -->	</data>
+</openerp>

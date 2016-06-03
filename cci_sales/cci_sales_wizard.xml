@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_extract_proof_form">
+            <field name="name">wizard.extract.proof.form</field>
+            <field name="model">wizard.extract.proof</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+                        <group>
+                            <field name="choice"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="get_file" type="object" string="Get Excel File "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_extract_proof_form_action" model="ir.actions.act_window">
+            <field name="name">Extract Proofs of Parution</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.extract.proof</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_extract_proof_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_extract_proof_form_values">
+            <field name="model_id" ref="cci_sales.model_wizard_extract_proof"/>
+            <field name="name">Extract Proofs of Parution</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_extract_proof_form_action'))" />
+            <field name="key">action</field>
+            <field name="model">sale.advertising.issue</field>
+        </record>
+        
+        <record model="ir.ui.view" id="wizard_extract_proof2_form">
+            <field name="name">wizard.extract.proof2.form</field>
+            <field name="model">wizard.extract.proof2</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <group>
+                            <field name="name" invisible='1'/>
+                            <field name="msg"/>
+                            <field name="proofs" filename="name"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Ok"  special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

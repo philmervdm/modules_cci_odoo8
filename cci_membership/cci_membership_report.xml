@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+		
+		<report string="Members Total Sold"
+		    model="res.partner"
+			name="cci_membership.report_total_sold" 
+			id="invoice_transfolder_report"
+			report_type="qweb-pdf"
+			auto="False"
+			file="cci_membership.report_total_sold"
+			header="False"
+			menu="False"
+		/>
+	</data>
+</openerp>

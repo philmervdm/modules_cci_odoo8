@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+    	<!-- RES.PARTNER -->
+	    <record model="ir.ui.view" id="view_activsector_address">
+		    <field name="name">Address</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form"/>
+		    <field name="arch" type="xml">
+			    <data>
+					<xpath expr="//field[@name='child_ids']/form/sheet/group" position="after">
+						<group string="Activity Sector" colspan="4">
+				            <field name="sector1"/>
+				            <field name="sector2"/>
+				            <field name="sector3"/>
+						</group>
+			        </xpath>
+			    </data>
+		    </field>
+	    </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,64 @@
+<openerp>
+	<data>
+		<record id="view_prepare_281_50_form" model="ir.ui.view">
+			<field name="name">wizard.prepare281_50.form</field>
+			<field name="model">wizard.prepare281_50</field>
+			<field name="arch" type="xml">
+				<form string="Prepare control file for annual 281.50 records">
+					<group>
+					    <label string="This wizard help you to control data for edition of belgian 281.50 records." colspan="4" />
+						<group>
+							<field name="year_id"/>
+						</group>
+						<group>
+							<field name="tag_id"/>
+						</group>
+					</group>
+					<group>
+						<field name="account_starts_list" colspan="4"/>
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="create_control_file" string="Control" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_prepare_281_50_form" model="ir.actions.act_window">
+            <field name="name">Control data before extraction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.prepare281_50</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_prepare_281_50_form"/>
+            <field name="target">new</field>
+        </record>
+
+       	<menuitem name="Control data before extraction" id="menu_prepare281_50"
+	    action="action_prepare_281_50_form" 
+		parent="cci_account_281_50.root_281_50"
+        sequence="10" 
+        groups="account.group_account_user"
+        />
+
+	<record id="view_prepare_281_50_msgform" model="ir.ui.view">
+			<field name="name">wizard.prepare281_50.msg.form</field>
+			<field name="model">wizard.prepare281_50.msg</field>
+			<field name="arch" type="xml">
+				<form string="Message">
+					<group>
+						<group>
+							<field name="name" invisible="1"/>
+							<field name="control_281_50" filename="name"/>
+						</group>
+					</group>
+				</form>
+				
+			</field>
+		</record>
+
+	</data>
+</openerp>

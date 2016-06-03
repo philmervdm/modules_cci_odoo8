@@ -1,0 +1,46 @@
+<openerp>
+	<data>
+		
+		<record id="event_confirm_registrations_view" model="ir.ui.view">
+            <field name="name">event.confirm.registrations.form</field>
+            <field name="model">event.confirm.registrations</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Registration">
+                    <footer>
+                        <button string="OK" name="confirm_reg" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_event_confirm_registrations"
+            multi="True"
+            key2="client_action_multi" 
+            name="Confirm Draft Registrations"
+            res_model="event.confirm.registrations" 
+            src_model="event.registration"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+        
+        
+        <record id="event_confirm_registrations_msg_view" model="ir.ui.view">
+            <field name="name">event.confirm.registrations.msg.form</field>
+            <field name="model">event.confirm.registrations.msg</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Registration">
+                	<group>
+                		<field name="message" />
+                	</group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record> 
+	
+	</data>
+</openerp>

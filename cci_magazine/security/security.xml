@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+	<!-- Users Groups -->
+    <!-- Manager : to manage the source -->
+    <record model="res.groups" id="group_cci_magazine_manager">
+        <field name="name">CCI Magazine Manager</field>
+    </record>
+    <!-- User : to control, and extract subscriptions -->
+    <record model="res.groups" id="group_cci_magazine_user">
+        <field name="name">CCI Magazine User</field>
+    </record>
+</data>
+</openerp>
+

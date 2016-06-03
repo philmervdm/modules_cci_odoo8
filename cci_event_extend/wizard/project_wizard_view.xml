@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="cci_event_extend_project_view" model="ir.ui.view">
+            <field name="name">cci.event.extend.project.form</field>
+            <field name="model">cci.event.extend.project</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                	<group>
+                		<field name="project_id" />
+                	</group>
+                    <footer>
+                        <button string="Duplicate" name="create_duplicate" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_cci_event_extend_project"
+            multi="True"
+            key2="client_action_multi" 
+            name="Project"
+            res_model="cci.event.extend.project" 
+            src_model="event.event"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+		
+	</data>
+</openerp>

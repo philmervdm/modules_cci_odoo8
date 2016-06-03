@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+	<template id="cci_product_report_control1">
+		<t t-call="report.html_container">
+			<t t-call="cci_product_report.external_layout_custom">
+				<div class="page">
+					<div class="oe_structure"/>
+					<style>
+						.table_border{border:1px solid black; padding: 5px; width:100%; border-collapse: collapse;}
+						.table_border tr td{border:1px solid black; padding: 5px;}
+					</style>
+					<div class="text-center">
+						<h2><strong>Produits</strong></h2>
+					</div>
+					<table class="table_border mt32">
+						<tr>
+							<td><strong>Code<br/>Nom</strong></td>
+							<td><strong>Categorie<br/>Produit commercial</strong></td>
+							<td><strong>Prix mbre<br/>Prix NonMbre</strong></td>
+							<td><strong>Compte/TVA vente<br/>Compte/TVA achat</strong></td>
+							<td><strong>Distribution<br/>Emails confirme</strong></td>
+						</tr>
+						<tr t-foreach="docs" t-as="o">
+							<td>
+								<span t-field="o.code"/><br/><span t-field="o.name"/> 
+							</td>
+							<td>
+								<span t-field="o.product_tmpl_id.categ_id.name"/><br/><!-- <span t-field="o.cci_product_id.name"/>  -->
+							</td>
+							<td>
+								<!-- <span t-field="o.product_tmpl_id.member_price"/><br/> --><span t-field="o.product_tmpl_id.list_price"/> 
+							</td>
+							<td>
+								<span t-esc="income_details(o.id)"/><br/><span t-esc="expense_details(o.id)"/>  
+							</td>
+							<td>
+								<!-- <span t-esc="dist_name(o.id)"/><br/><span t-field="o.cci_add_sale_emails"/>  -->
+							</td>
+						</tr>
+					</table>
+				</div>
+			</t>
+		</t>
+	</template>
+</data>
+</openerp>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_sheet_281_50">
+    <div class="page">
+        <style>
+            .cust_table{
+                border:1px solid black;
+                border-collapse:collapse;
+                width:100%;
+            }
+            .cust_table td{
+                border:1px solid black;
+                padding:8px;
+            }
+            .white{
+                color:white;
+            }
+        </style>
+        <t t-foreach="get_datas(objects)" t-as="o">
+            <table class="cust_table">
+                <tr>
+                    <td class="text-center"><strong>FICHE N° 281.50 (commissions, courtages, etc.)</strong></td>
+                </tr>
+            </table>
+            <table class="cust_table">
+                <tr>
+                    <td>1 <span class="white">.....</span>N° <span t-esc="o['sequence']"/> (à reprendre au 325.50)</td>
+                </tr>
+            </table>
+            <table class="cust_table">
+              <tr>
+                    <td>2.<span class="white"> ....</span> <span t-esc="o['year']"/></td>
+              </tr>
+            </table>
+            <table class="cust_table">
+                <tr>
+                    <td>3.<span class="white"> ....</span>Nom (ou dénomination) et adresse du débiteur des <br/>
+                        <span class="white"> ........</span>revenus<br/>
+                        <span class="white"> ........</span> <span t-esc="o['issuing_company']"/><br/>
+                        <span class="white"> ........</span> <span t-esc="o['issuing_street1']"/><br/>
+                        <span class="white"> ........</span> <span t-esc="o['issuing_street2']"/><br/>
+                        <span class="white"> ........</span> <span t-esc="o['issuing_zip_code']"/> <span t-esc="o['issuing_city']"/><br/>
+                        <span class="white"> .........</span>N° d'entreprise ou n° national : <span t-esc="o['issuing_vat']"/>
+                    </td>
+                    <td>
+                        Nom, prénom (ou dénomination) et adresse du bénéficiaire des revenus :<br/>
+                        <span t-esc="o['company_name']"/><br/>
+                        <span t-esc="o['company_street1']"/><br/>
+                        <span t-esc="o['company_street2']"/><br/>
+                        <span t-esc="o['company_zip_code']"/> <span t-esc="o['company_city']"/><br/>
+                        Numéro d'entreprise : <span t-esc="o['company_vat']"/><br/>
+                        Profession exercée : <span t-esc="o['profession']"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td>
+                        A complèter facultativement<br/>
+                        Numéro national : <span t-esc="o['national_number']"/><br/>
+                        Numéro d'identification fiscal à l'étranger :<br/>
+                        Date de naissance :
+                    </td>
+                </tr>
+            </table>
+            <table class="cust_table">
+                <tr>
+                    <td>4.<span class="white"> .........</span>Nature</td>
+                    <td>Montant</td>
+                </tr>
+                <tr>
+                    <td>
+                        a)<span class="white"> .........</span>Commissions, courtages, ristournes commerciales, etc. :<br/>
+                        b)<span class="white"> .........</span>Honoraires ou vacations :<br/>
+                        c)<span class="white"> .........</span>Avantages de toute nature (nature . . . . . . . . . . . . . . . . :) :<br/>
+                        d)<span class="white"> .........</span>Frais exposés pour compte du bénéficiaire :
+                    </td>
+                    <td class="text-right">
+                        <strong>0,00</strong><br/>
+                        <span t-esc="o['sum_b']"/><br/>
+                        <strong>0,00</strong><br/>
+                        <strong>0,00</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>e)<span class="white"> .........</span>Total (voir aussi lit. F et g) :<br/></td>
+                    <td>
+                        <table class="cust_table">
+                            <tr>
+                                <td class="text-right"><strong><span t-esc="o['sum_e']"/></strong></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        f)<span class="white"> .........</span>Mentionner ici, le cas échéant, le montant compris au litt. E qui se rapporte à des indemnités<br/>
+                        <span class="white"> .........</span>versées à :<br/>
+                        <span class="white"> .........</span>- des sportifs :<br/>
+                        <span class="white"> .........</span>- des formateurs, entraîneurs et accompagnateurs pour leur activité en faveur des sportifs :
+                    </td>
+                    <td>
+                        <table class="cust_table">
+                            <tr><td class="text-right"><strong>0,00</strong></td></tr>
+                        </table>
+                        <table class="cust_table mt16">
+                            <tr><td class="text-right"><strong>0,00</strong></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        g)<span class="white"> .........</span>Si le montant indiqué sub litt. E ne coïncide pas avec le montant payé au cours de l'année mentionnée au cadre 2, inscrivez ci-contre le montant réellement payé au cours de cette même année (y compris, les sommes qui ont un rapport avec d'autres périodes imposables) :
+                    </td>
+                    <td>
+                        <table class="cust_table">
+                            <tr><td class="text-right"><strong>0,00</strong></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table class="cust_table">
+                <tr>
+                    <td>
+                        5. Commentaires : . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                    </td>
+                </tr>
+            </table>
+            <div class="row col-xs-12 text-center mt32">
+                <p>Service Public Fédéral</p>
+                <div>FINANCES</div>
+                <div>---------------</div>
+                <div><strong>ADMINISTRATION GENERALE DE LA FISCALITE</strong></div>
+                <div>---------------</div>
+                <div><strong>IMPOTS SUR LES REVENUS</strong></div>
+                <div>---------------</div>
+                <p>Fiche n° 281.50</p>
+                <p class="mt16">relative aux commissions, courtages, ristournes commerciales ou autres, vacations ou honoraires occasionnels ou non, </p>
+                <p>gratifications, rétributions ou avantages de toute nature qui constituent pour les bénéficiaires, des revenus</p>
+                <p>professionnels imposables ou non en Belgique, à l'exclusion des rémunérations des conjoints aidants.</p>
+                <p>(Modèle établi en exécution de l'article 30 de l'Arrêté royal d'exécution du Code des impôts sur les revenus 1992)</p>
+            </div>
+            <div class="row col-xs-12 mt16">N° 281.50 – DTP - 2010</div>
+        </t>
+    </div>
+</template>
+
+</data>
+</openerp>
+

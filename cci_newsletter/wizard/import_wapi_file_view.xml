@@ -1,0 +1,59 @@
+<openerp>
+	<data>
+	
+		<record id="view_wizard_import_rdp_wapi_form" model="ir.ui.view">
+			<field name="name">wizard.import.rdp.wapi.form</field>
+			<field name="model">wizard.import.rdp.wapi</field>
+			<field name="arch" type="xml">
+				<form string="Options">
+					<group>
+				    	<field name="explanation" colspan="4" nolabel="1"/>
+					    <field name="source_id" />
+					    <field name="input" width="600"/>
+					    <field name="treatment"/>
+					</group>
+					<footer>
+                        <button name="import_data" string="Import File" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_wizard_import_rdp_wapi" model="ir.actions.act_window">
+            <field name="name">Import WAPI File</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.import.rdp.wapi</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wizard_import_rdp_wapi_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Import WAPI file"
+            action="action_wizard_import_rdp_wapi"
+            id="menu_wizard_import_rdp_wapi"
+            sequence="100"
+            parent="menu_cci_subscriber"/>
+		
+		<record id="view_wizard_import_rdp_wapi_msg_form" model="ir.ui.view">
+			<field name="name">wizard.import.rdp.wapi.msg.form</field>
+			<field name="model">wizard.import.rdp.wapi.msg</field>
+			<field name="arch" type="xml">
+		    	<form string="Results">
+		    		<group>
+			    		<field name="msg" colspan="4" nolabel="1"/>
+		    		</group>
+		    		<footer>
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+	
+	
+	</data>
+</openerp>

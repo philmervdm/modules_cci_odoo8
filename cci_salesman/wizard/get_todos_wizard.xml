@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+  <data>
+        <record model="ir.ui.view" id="get_cci_todos_wizard_form">
+            <field name="name">get.cci.todos.form</field>
+            <field name="model">get.cci.todos</field>
+            <field name="arch" type="xml">
+                <form string="Open My Todo List">
+                    <footer>
+                        <button name="open_window_results" type="object" string="OK"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="get_cci_todos_wizard_action" model="ir.actions.act_window">
+            <field name="name">My Todo List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">get.cci.todos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="get_cci_todos_wizard_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem name="My Todo List" id="menu_cci_todos"
+                action="get_cci_todos_wizard_action" 
+                parent="menu_cci_salesman_main" 
+                sequence="50" />
+  </data>
+</openerp>

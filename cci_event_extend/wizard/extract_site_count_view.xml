@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="cci_extract_site_count_view" model="ir.ui.view">
+            <field name="name">extract.site.count.form</field>
+            <field name="model">extract.site.count</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                	<group>
+					    <field name="from_count"/>
+					    <field name="to"/>
+					    <field name="user_id" />
+                	</group>
+                	<footer>
+                        <button string="Get Excel File" name="get_file" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                	</footer>
+				</form>
+            </field>
+        </record>
+        
+        
+        <record id="action_extract_site_count" model="ir.actions.act_window">
+             <field name="name">Extract Site Inscriptions</field>
+             <field name="res_model">extract.site.count</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="cci_extract_site_count_view"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Extract Site Inscriptions"
+            action="action_extract_site_count"
+            id="menu_extract_site_count"
+            parent="event.event_main_menu"/>
+		
+		<record id="cci_extract_site_count_msg_view" model="ir.ui.view">
+            <field name="name">extract.site.count.msg.form</field>
+            <field name="model">extract.site.count.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                	<group>
+					    <separator string="File has been created."  colspan="4"/>
+					    <field name="name" invisible="1" />
+					    <field name="msg" colspan="4" nolabel="1"/>
+					    <field name="site_counting_xls" colspan="4" filename="name"/>
+                	</group>
+                	<footer>
+                	</footer>
+				</form>
+            </field>
+        </record>
+	
+	
+	</data>
+</openerp>

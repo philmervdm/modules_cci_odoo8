@@ -1,0 +1,62 @@
+<openerp>
+	<data>
+	
+		<record id="export_all_emails_form" model="ir.ui.view">
+			<field name="name">export.all.emails.form</field>
+			<field name="model">export.all.emails</field>
+			<field name="arch" type="xml">
+				<form string="Export all Emails of Members">
+					<group>
+						<field name="address"/>
+<!-- 					    <field name="job" /> -->
+<!-- 					    <field name="contact"/> -->
+					    <field name="tag_ids" width="600" />
+					    <field name="format" />
+					</group>
+					<footer>
+						 <button name="make_file" string="Export" type="object" class="oe_highlight"/>
+	                      or
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_export_all_emails" model="ir.actions.act_window">
+            <field name="name">Export Emails all Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.all.emails</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="export_all_emails_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Export Emails all Members"
+            action="action_export_all_emails"
+            id="menu_export_all_emails"
+            parent="base.menu_base_config"/>
+        
+        
+        <record id="export_all_emails_finish_form" model="ir.ui.view">
+			<field name="name">export.all.emails.finish.form</field>
+			<field name="model">export.all.emails.finish</field>
+			<field name="arch" type="xml">
+				<form string="Export all Emails of Members">
+				    <group colspan="2" col="4">
+				        <separator string="Export done" colspan="4"/>
+				        <field name="file_name" invisible="1" />
+				        <field name="data" readonly="1" filename="file_name"/>
+				        <label align="0.0" string="Save this document to a .xls file and open it with\n your favorite spreadsheet software. The file\n encoding is UTF-8." colspan="4"/>
+				    </group>
+					<footer>
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record> 
+	
+	</data>
+</openerp>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_mailchimp_unsubscribe_emails" model="ir.ui.view">
+            <field name="name">cci.mailchimp.unsubscribe.emails.form</field>
+            <field name="model">cci.mailchimp.unsubscribe.emails</field>
+            <field name="arch" type="xml">
+				<form string="Unsubscribe Emails">
+					<group>
+					    <field name="emails" />
+					    <field name="list_name"/>
+					    <field name="send_warning"/>
+					</group>
+					<footer>
+						<button name="unsubscribe" string="Unsubscribe Them All" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_mailchimp_unsubscribe_emails" model="ir.actions.act_window">
+             <field name="name">Unsubscribe Emails</field>
+             <field name="res_model">cci.mailchimp.unsubscribe.emails</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_mailchimp_unsubscribe_emails"/>
+             <field name="target">new</field>
+       </record>
+
+       <menuitem 
+        	name="Unsubscribe Emails" 
+        	id="menu_unsubscribe_emails"
+			action="action_cci_mailchimp_unsubscribe_emails" 
+			parent="cci_newsletter.menu_cci_subscriber"
+            sequence="89" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+       
+       
+       <record id="view_cci_mailchimp_unsubscribe_emails_final" model="ir.ui.view">
+            <field name="name">cci.mailchimp.unsubscribe.emails.final.form</field>
+            <field name="model">cci.mailchimp.unsubscribe.emails.final</field>
+            <field name="arch" type="xml">
+				<form string="Results">
+					<group>
+					    <field name="final_count" />
+					</group>
+					<footer>
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

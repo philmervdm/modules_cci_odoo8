@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <!-- Wizard to add the output of 'customer/supplier state of payments' on res.partner screen -->
+        <!--<wizard string="Customer/Supplier Account Status"
+            model="res.partner"
+            name="ccih_customer_status"
+            id="ccih_customer_status" />
+-->
+		<record model="ir.ui.view" id="ccih_customer_status_form">
+            <field name="name">wizard.ccih.customer.status.form</field>
+            <field name="model">cust.status</field>
+            <field name="arch" type="xml">
+                <form string="Customer/Supplier Account Status">
+                    <group>
+						<field name="type"/>
+                        <field name="only_open"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" type="object" string="Print"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_ccih_customer_status_action" model="ir.actions.act_window">
+            <field name="name">Customer/Supplier Account Status</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cust.status</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ccih_customer_status_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_ccih_customer_status_action_values">
+            <field name="model_id" ref="model_cust_status"/>
+            <field name="name">Customer/Supplier Account Status</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_ccih_customer_status_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+    </data>
+</openerp>

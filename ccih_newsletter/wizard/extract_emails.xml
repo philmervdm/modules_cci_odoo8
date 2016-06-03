@@ -1,0 +1,57 @@
+<openerp>
+	<data>
+		<record id="view_extract_emails_form" model="ir.ui.view">
+			<field name="name">wizard.extract.emails.form</field>
+			<field name="model">wizard.extract.emails</field>
+			<field name="arch" type="xml">
+				<form string="Explanations">
+						<group>
+							<field name="explanation"/>
+							<field name="jobs"/>
+							<field name="addresses"/>
+							<field name="contacts"/>
+						</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="get_file" string="Get Excel File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_extract_emails_form" model="ir.actions.act_window">
+            <field name="name">Extract Emails</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.extract.emails</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_emails_form"/>
+            <field name="target">new</field>
+        </record>
+
+       <menuitem name="Extract Emails" id="menu_ccih_newsletter_extract_emails"
+			action="action_extract_emails_form" 
+			parent="cci_newsletter.menu_cci_subscriber"
+            sequence="60" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+
+		<record id="view_extract_emails_msg_form" model="ir.ui.view">
+			<field name="name">wizard.extract.emails.msg.form</field>
+			<field name="model">wizard.extract.emails.msg</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+						<group>
+							<separator string="Fichie créé."  colspan="4"/>
+							<field name="name" invisible="1"/>
+							<field name="msg" filename="name"/>
+							<field name="newsletter" filename="name"/>
+						</group>
+				</form>
+				
+			</field>
+		</record>
+	</data>
+</openerp>

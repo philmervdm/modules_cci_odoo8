@@ -1,0 +1,601 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_premium_subscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-03-24 13:57:19+0000\n"
+"PO-Revision-Date: 2015-03-24 13:57:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_premium_subscription
+#: wizard_view:wizard_create_sub_full_page_from_premium,create:0
+#: wizard_view:wizard_create_sub_full_page_premium,create:0
+#: wizard_view:wizard_create_sub_mag,create:0
+#: wizard_view:wizard_create_sub_mag_from_premium,create:0
+#: wizard_view:wizard_create_sub_rdp,create:0
+#: wizard_view:wizard_create_sub_rdp_from_premium,create:0
+msgid "Created Record(s)"
+msgstr "Enregistrement(s) créé(s)"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_zip_id:0
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: cci_premium_subscription
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_mag,second_form,begin_date:0
+#: wizard_field:wizard_create_sub_mag_from_premium,second_form,begin_date:0
+#: wizard_field:wizard_create_sub_rdp,second_form,begin_date:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,second_form,begin_date:0
+msgid "Begin Date"
+msgstr "Date de début"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_mag,create,msg:0
+#: wizard_field:wizard_create_sub_mag_from_premium,create,msg:0
+#: wizard_field:wizard_create_sub_rdp,create,msg:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,create,msg:0
+msgid "File imported"
+msgstr "Fichier importé"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_mag,second_form,partner_id:0
+#: wizard_field:wizard_create_sub_mag_from_premium,second_form,partner_id:0
+#: wizard_field:wizard_create_sub_rdp,second_form,partner_id:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,second_form,partner_id:0
+msgid "Company"
+msgstr "Partenaire"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,create,show_sub:0
+#: wizard_button:wizard_create_sub_full_page_premium,create,show_sub:0
+#: wizard_button:wizard_create_sub_mag,create,show_sub:0
+#: wizard_button:wizard_create_sub_mag_from_premium,create,show_sub:0
+#: wizard_button:wizard_create_sub_rdp,create,show_sub:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,create,show_sub:0
+msgid "Show Subscription"
+msgstr "Affiche l'abonnement"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,auto_invoice:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,auto_invoice:0
+#: wizard_field:wizard_create_sub_mag,second_form,auto_invoice:0
+#: wizard_field:wizard_create_sub_mag_from_premium,second_form,auto_invoice:0
+#: wizard_field:wizard_create_sub_rdp,second_form,auto_invoice:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,second_form,auto_invoice:0
+msgid "Make Invoice"
+msgstr "Faire la facture"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_name:0
+msgid "Specific Name"
+msgstr "Nom spécifique"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,partner_id:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,partner_id:0
+msgid "Partner Invoice"
+msgstr "Partenaire facturé"
+
+#. module: cci_premium_subscription
+#: model:ir.model,name:cci_premium_subscription.model_premium_subscription_usage
+msgid "Usage of Subscriptions for an issue of magazine"
+msgstr "Numéros de la revue pour abonné Premium"
+
+#. module: cci_premium_subscription
+#: wizard_view:wizard_send_memberdirectory_access,send:0
+msgid "Sended"
+msgstr "Envoyé"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_rdp
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_rdp_from_premium
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_create_sub_rdp
+#: wizard_view:wizard_create_sub_rdp,init:0
+#: wizard_view:wizard_create_sub_rdp_from_premium,init:0
+msgid "Create Revue de Presse Subscription"
+msgstr "Créer Abonnement Revue de Presse"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,close_date:0
+msgid "Close Date"
+msgstr "Date de Fermeture"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.act_window,name:cci_premium_subscription.action_premium_subscription
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_premium_subscription
+msgid "Premium Subscription"
+msgstr "Abonnement Premium"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,send_url:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,send_url:0
+msgid "Send URL for Managing Data"
+msgstr "Envoi de l'URL pour gérer ses données"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,end:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,end:0
+msgid "End"
+msgstr "Fin"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,partner_id:0
+msgid "Partner (for invoice)"
+msgstr "Partenaire (pour facture)"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_send_memberdirectory_access,init,send:0
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: cci_premium_subscription
+#: selection:wizard_create_sub_mag,init,duration:0
+#: selection:wizard_create_sub_mag_from_premium,init,duration:0
+msgid "One Year (10 issues)"
+msgstr "Une année (10 parutions)"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,state:0
+msgid "State"
+msgstr "Etat"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "close"
+msgstr "Fermé"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,date:0
+msgid "Date of subscription"
+msgstr "Date d'abonnement"
+
+#. module: cci_premium_subscription
+#: code:addons/cci_premium_subscription/wizard/create_sub_full_page.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_full_page_from_premium.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_mag.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_mag_from_premium.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_rdp.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_rdp_from_premium.py:0
+#, python-format
+msgid "Added Subscription"
+msgstr "Abonnement ajouté"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,type_id:0
+#: field:premium_subscription.renew,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.renew,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: cci_premium_subscription
+#: view:res.partner.contact:0
+#: field:res.partner.contact,subscription_ids:0
+msgid "Subscriptions"
+msgstr "Abonnements"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.act_window,name:cci_premium_subscription.action_premium_sub_usage
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_premium_sub_usage
+msgid "Premium Subscription Usage"
+msgstr "Parutions reçues"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "current"
+msgstr "En cours"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_street:0
+msgid "Specific Street"
+msgstr "Adresse spécifique"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.renew,subscription_id:0
+#: field:premium_subscription.usage,subscription_id:0
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: cci_premium_subscription
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_premium_subscription
+#: code:addons/cci_premium_subscription/wizard/create_sub_full_page.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_full_page_from_premium.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_mag.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_mag_from_premium.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_rdp.py:0
+#: code:addons/cci_premium_subscription/wizard/create_sub_rdp_from_premium.py:0
+#, python-format
+msgid "Associated Invoice"
+msgstr "Facture associée"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,begin:0
+msgid "Begin of Subscription"
+msgstr "Début Abonnement"
+
+#. module: cci_premium_subscription
+#: wizard_view:wizard_create_sub_full_page_from_premium,init:0
+#: wizard_view:wizard_create_sub_full_page_premium,init:0
+msgid "Create Yearly Full Page on App Subscription"
+msgstr "Créer Abonnement annuel Pleine Page dans l'App"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,close_source:0
+msgid "Source of Close"
+msgstr "Source Fermeture"
+
+#. module: cci_premium_subscription
+#: wizard_view:wizard_create_sub_full_page_from_premium,second_form:0
+#: wizard_view:wizard_create_sub_full_page_premium,second_form:0
+#: wizard_view:wizard_create_sub_mag,second_form:0
+#: wizard_view:wizard_create_sub_mag_from_premium,second_form:0
+#: wizard_view:wizard_create_sub_rdp,second_form:0
+#: wizard_view:wizard_create_sub_rdp_from_premium,second_form:0
+msgid "Options"
+msgstr "Options"
+
+#. module: cci_premium_subscription
+#: selection:premium_subscription,state:0
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_send_memberdirectory_access
+#: wizard_view:wizard_send_memberdirectory_access,init:0
+msgid "(Re)Send access to directory"
+msgstr "(Ré)Envoyer accès au répertoire"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,forced_address:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,forced_address:0
+#: wizard_field:wizard_send_memberdirectory_access,init,forced_address:0
+msgid "Forced EMail Address"
+msgstr "Adresse email forcée"
+
+#. module: cci_premium_subscription
+#: model:ir.model,name:cci_premium_subscription.model_premium_subscription
+msgid "Subscriptions for Premium Members"
+msgstr "Abonnements pour les membres freemium"
+
+#. module: cci_premium_subscription
+#: wizard_view:wizard_create_sub_full_page_from_premium,create:0
+#: wizard_view:wizard_create_sub_full_page_premium,create:0
+#: wizard_view:wizard_create_sub_mag,create:0
+#: wizard_view:wizard_create_sub_mag_from_premium,create:0
+#: wizard_view:wizard_create_sub_rdp,create:0
+#: wizard_view:wizard_create_sub_rdp_from_premium,create:0
+#: wizard_view:wizard_send_memberdirectory_access,send:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,create,show_inv:0
+#: wizard_button:wizard_create_sub_full_page_premium,create,show_inv:0
+#: wizard_button:wizard_create_sub_mag,create,show_inv:0
+#: wizard_button:wizard_create_sub_mag_from_premium,create,show_inv:0
+#: wizard_button:wizard_create_sub_rdp,create,show_inv:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,create,show_inv:0
+msgid "Show Invoice"
+msgstr "Afficher la facture"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,close_user_id:0
+msgid "Close User"
+msgstr "Utilisateur clôture"
+
+#. module: cci_premium_subscription
+#: selection:premium_subscription,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: cci_premium_subscription
+#: selection:premium_subscription,state:0
+msgid "Closed"
+msgstr "Clôturé"
+
+#. module: cci_premium_subscription
+#: selection:wizard_create_sub_rdp,init,duration:0
+#: selection:wizard_create_sub_rdp_from_premium,init,duration:0
+msgid "One Year"
+msgstr "Un an"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "cancel"
+msgstr "Annulé"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,left_usages:0
+msgid "Left Usages"
+msgstr "Parutions restantes"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_email:0
+msgid "Specific EMail"
+msgstr "Email Spécifique"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "draft"
+msgstr "Brouillon"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,active:0
+#: field:premium_subscription.usage,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_mag,second_form,first_issue_id:0
+#: wizard_field:wizard_create_sub_mag_from_premium,second_form,first_issue_id:0
+msgid "First Issue Manualy Sended"
+msgstr "Première parution envoyée manuellement"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.type,product_ids:0
+msgid "Linked Products"
+msgstr "Produits liés"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,template_id:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,template_id:0
+#: wizard_field:wizard_send_memberdirectory_access,init,template_id:0
+msgid "Email Template"
+msgstr "Template EMail"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.renew,date:0
+#: field:premium_subscription.usage,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_street2:0
+msgid "Specific Street2"
+msgstr "Rue2 spécifique"
+
+#. module: cci_premium_subscription
+#: model:ir.model,name:cci_premium_subscription.model_premium_subscription_renew
+msgid "Record of sending of renew of subscriptions"
+msgstr "Enregistrement des envois de renouvellement d'abonnement"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.type,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,refuse_renew:0
+msgid "Refuse Renew"
+msgstr "Refuse le renouvellement"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "For Magazine"
+msgstr "Pour le Magazine"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,invoice_id:0
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,init,end:0
+#: wizard_button:wizard_create_sub_full_page_from_premium,second_form,end:0
+#: wizard_button:wizard_create_sub_full_page_premium,init,end:0
+#: wizard_button:wizard_create_sub_full_page_premium,second_form,end:0
+#: wizard_button:wizard_create_sub_mag,init,end:0
+#: wizard_button:wizard_create_sub_mag,second_form,end:0
+#: wizard_button:wizard_create_sub_mag_from_premium,init,end:0
+#: wizard_button:wizard_create_sub_mag_from_premium,second_form,end:0
+#: wizard_button:wizard_create_sub_rdp,init,end:0
+#: wizard_button:wizard_create_sub_rdp,second_form,end:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,init,end:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,second_form,end:0
+#: wizard_button:wizard_send_memberdirectory_access,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,create,end:0
+#: wizard_button:wizard_create_sub_full_page_premium,create,end:0
+#: wizard_button:wizard_create_sub_mag,create,end:0
+#: wizard_button:wizard_create_sub_mag_from_premium,create,end:0
+#: wizard_button:wizard_create_sub_rdp,create,end:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,create,end:0
+#: wizard_button:wizard_send_memberdirectory_access,send,end:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,price:0
+msgid "Price WoVAT"
+msgstr "Prix HTVA"
+
+#. module: cci_premium_subscription
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_premium_subscription
+#: model:ir.module.module,shortdesc:cci_premium_subscription.module_meta_information
+msgid "CCI Premium Subscriptions"
+msgstr "Abonnements Premiums"
+
+#. module: cci_premium_subscription
+#: selection:premium_subscription,state:0
+msgid "Current"
+msgstr "En cours"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.act_window,name:cci_premium_subscription.action_premium_sub_renew
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_premium_sub_renew
+msgid "Premium Subscription Renew"
+msgstr "Renouvellement d'abonnement Freemium"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.usage,issue_id:0
+msgid "Issue"
+msgstr "Parution"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,second_form,begin:0
+#: wizard_field:wizard_create_sub_full_page_premium,second_form,begin:0
+msgid "Begin"
+msgstr "Début"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,name:0
+msgid "Description"
+msgstr "Description"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "State Management"
+msgstr "Gestion Etat"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,contact_id:0
+#: wizard_field:wizard_create_sub_full_page_from_premium,init,contact_id:0
+#: wizard_field:wizard_create_sub_full_page_premium,init,contact_id:0
+#: wizard_field:wizard_create_sub_mag,init,contact_id:0
+#: wizard_field:wizard_create_sub_mag_from_premium,init,contact_id:0
+#: wizard_field:wizard_create_sub_rdp,init,contact_id:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,init,contact_id:0
+msgid "Premium Member"
+msgstr "Membre Freemium"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_full_page_from_premium
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_full_page_premium
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_create_sub_full_page_premium
+msgid "Create Full Page on App Subscription"
+msgstr "Créer un abonnement aux pages pleines électroniques"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_rdp,second_form,email:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,second_form,email:0
+msgid "Specific Email (if asked)"
+msgstr "Email spécifique (si demandé)"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_mag
+#: model:ir.actions.wizard,name:cci_premium_subscription.wizard_create_sub_mag_from_premium
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_create_sub_mag
+#: wizard_view:wizard_create_sub_mag,init:0
+#: wizard_view:wizard_create_sub_mag_from_premium,init:0
+msgid "Create Yearly CCI Mag Subscription"
+msgstr "Créer Abonnement annuel CCI Mag"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription.renew,name:0
+#: field:premium_subscription.type,name:0
+#: field:premium_subscription.usage,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,specific_country_id:0
+msgid "Country"
+msgstr "Pays"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,product_id:0
+#: wizard_field:wizard_create_sub_full_page_from_premium,init,product_id:0
+#: wizard_field:wizard_create_sub_full_page_premium,init,product_id:0
+#: wizard_field:wizard_create_sub_mag,init,product_id:0
+#: wizard_field:wizard_create_sub_mag_from_premium,init,product_id:0
+#: wizard_field:wizard_create_sub_rdp,init,product_id:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,init,product_id:0
+msgid "Product"
+msgstr "Produit"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,init,second_form:0
+#: wizard_button:wizard_create_sub_full_page_premium,init,second_form:0
+#: wizard_button:wizard_create_sub_mag,init,second_form:0
+#: wizard_button:wizard_create_sub_mag_from_premium,init,second_form:0
+#: wizard_button:wizard_create_sub_rdp,init,second_form:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,init,second_form:0
+msgid "Continue"
+msgstr "Continuer"
+
+#. module: cci_premium_subscription
+#: model:ir.actions.act_window,name:cci_premium_subscription.action_premium_sub_type
+#: model:ir.ui.menu,name:cci_premium_subscription.menu_premium_sub_type
+#: field:product.product,premium_subscription_type_id:0
+msgid "Premium Subscription Type"
+msgstr "Type d'abonnement Premium"
+
+#. module: cci_premium_subscription
+#: model:ir.model,name:cci_premium_subscription.model_premium_subscription_type
+msgid "Type/Group of Subscriptions"
+msgstr "Type/Group d'Abonnements"
+
+#. module: cci_premium_subscription
+#: view:premium_subscription:0
+msgid "For Revue de Presse"
+msgstr "Pour la Revue de Presse"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,usage_ids:0
+#: field:premium_subscription,usages:0
+msgid "Usages"
+msgstr "Parutions reçues"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,source:0
+msgid "Source"
+msgstr "Source"
+
+#. module: cci_premium_subscription
+#: field:premium_subscription,end:0
+msgid "End of Subscription"
+msgstr "Fin de l'abonnement"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_full_page_from_premium,create,msg:0
+#: wizard_field:wizard_create_sub_full_page_premium,create,msg:0
+#: wizard_field:wizard_send_memberdirectory_access,send,msg:0
+msgid "Results"
+msgstr "Résultats"
+
+#. module: cci_premium_subscription
+#: wizard_button:wizard_create_sub_full_page_from_premium,second_form,create:0
+#: wizard_button:wizard_create_sub_full_page_premium,second_form,create:0
+#: wizard_button:wizard_create_sub_mag,second_form,create:0
+#: wizard_button:wizard_create_sub_mag_from_premium,second_form,create:0
+#: wizard_button:wizard_create_sub_rdp,second_form,create:0
+#: wizard_button:wizard_create_sub_rdp_from_premium,second_form,create:0
+msgid "Subscribe"
+msgstr "Abonner"
+
+#. module: cci_premium_subscription
+#: wizard_field:wizard_create_sub_mag,init,duration:0
+#: wizard_field:wizard_create_sub_mag_from_premium,init,duration:0
+#: wizard_field:wizard_create_sub_rdp,init,duration:0
+#: wizard_field:wizard_create_sub_rdp_from_premium,init,duration:0
+msgid "Duration"
+msgstr "Durée"
+

@@ -1,0 +1,247 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_event_proxy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2014-11-21 10:31:34+0000\n"
+"PO-Revision-Date: 2014-11-21 10:31:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_event_proxy
+#: selection:cci_event_proxy.registration,state:0
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: cci_event_proxy
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,zip_city:0
+msgid "Zip City"
+msgstr "Localité"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,title:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: cci_event_proxy
+#: wizard_view:confirm_registration,show_result:0
+#: wizard_field:confirm_registration,show_result,msg:0
+msgid "Results"
+msgstr "Résultats"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,first_name:0
+msgid "First Name"
+msgstr "Prénom"
+
+#. module: cci_event_proxy
+#: wizard_field:confirm_registration,init,new_state:0
+msgid "State"
+msgstr "Etat"
+
+#. module: cci_event_proxy
+#: selection:cci_event_proxy.registration,state:0
+#: selection:confirm_registration,init,new_state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: cci_event_proxy
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: cci_event_proxy
+#: model:ir.module.module,description:cci_event_proxy.module_meta_information
+msgid "\n"
+"        manage the data send by new website 2013\n"
+"    "
+msgstr "\n"
+"        manage the data send by new website 2013\n"
+"    "
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,partner_id:0
+msgid "Linked Partner"
+msgstr "Partenaire lié"
+
+#. module: cci_event_proxy
+#: model:ir.model,name:cci_event_proxy.model_cci_event_proxy_registration
+msgid "cci_event_proxy_registration"
+msgstr "cci_event_proxy_registration"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,contact_id:0
+msgid "Linked Contact"
+msgstr "Contact lié"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,zip_code:0
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: cci_event_proxy
+#: view:cci_event_proxy.registration:0
+#: model:ir.actions.act_window,name:cci_event_proxy.action_event_reg_proxy
+#: model:ir.ui.menu,name:cci_event_proxy.menu_event_reg_proxy
+msgid "Registration Proxy"
+msgstr "Proxy Inscription"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,phone:0
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,courtesy:0
+msgid "Courtesy"
+msgstr "Civilité"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,motpasse:0
+msgid "Password Premium"
+msgstr "Mot de passe Premium"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,vat:0
+msgid "VAT/Company ID"
+msgstr "TVA/ID Partenaire"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,company_name:0
+msgid "Company Name"
+msgstr "Nom Société"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: cci_event_proxy
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_event_proxy
+#: wizard_button:confirm_registration,show_result,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,mobile:0
+msgid "Mobile"
+msgstr "GSM"
+
+#. module: cci_event_proxy
+#: model:ir.actions.wizard,name:cci_event_proxy.wizard_proxy_confirm_registration
+msgid "Confirm Registration"
+msgstr "Confirmer l'inscription"
+
+#. module: cci_event_proxy
+#: model:ir.module.module,shortdesc:cci_event_proxy.module_meta_information
+msgid "CCI Event Proxy"
+msgstr "CCI Event Proxy"
+
+#. module: cci_event_proxy
+#: selection:confirm_registration,init,new_state:0
+msgid "Same as Proxy"
+msgstr "Même que Proxy"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,price_w_vat:0
+msgid "Price with VAT"
+msgstr "Prix TVAC"
+
+#. module: cci_event_proxy
+#: wizard_view:confirm_registration,init:0
+msgid "Options"
+msgstr "Options"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,price_wo_vat:0
+msgid "Price wo VAT"
+msgstr "Prix HTVA"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,site_id:0
+msgid "Event ID on WebSite"
+msgstr "ID Evénement sur site Web"
+
+#. module: cci_event_proxy
+#: wizard_button:confirm_registration,init,show_result:0
+msgid "OK"
+msgstr "OK"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,last_name:0
+msgid "Last Name"
+msgstr "Nom"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,login:0
+msgid "Login Premium"
+msgstr "Login Premium"
+
+#. module: cci_event_proxy
+#: selection:cci_event_proxy.registration,state:0
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,street:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_event_proxy
+#: selection:cci_event_proxy.registration,state:0
+#: selection:confirm_registration,init,new_state:0
+msgid "Done"
+msgstr "Fait"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,registration_id:0
+msgid "Registration"
+msgstr "Inscription"
+
+#. module: cci_event_proxy
+#: wizard_button:confirm_registration,init,end:0
+#: selection:confirm_registration,init,new_state:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,comments:0
+msgid "User Comments"
+msgstr "Commentaires utilisateurs"
+
+#. module: cci_event_proxy
+#: selection:confirm_registration,init,new_state:0
+msgid "Open"
+msgstr "Ouvert"
+
+#. module: cci_event_proxy
+#: field:cci_event_proxy.registration,event_id:0
+msgid "Event"
+msgstr "Rencontre"
+

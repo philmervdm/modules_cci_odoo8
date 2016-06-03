@@ -1,0 +1,61 @@
+<openerp>
+    <data>
+		<!-- VIEWS -->
+		<record model="ir.ui.view" id="res_partner_zip_form">
+			<field name="name">res.partner.zip.form</field>
+			<field name="model">res.partner.zip</field>
+			<field name="arch" type="xml">
+				<form string="Partner Zip Code">
+					<group>
+						<group>
+							<field name="code" />
+							<field name="partner_id" />
+							<field name="post_center_special" />
+							<field name="distance" />
+							<field name="country_id"/>
+							<field name="groups_id"/>
+                            <field name="latitude"/>
+        					<field name="longitude"/>
+						</group>
+						<group>
+							<field name="city" select="1" />
+							<field name="post_center_id" />
+							<field name="user_id" />
+							<field name="old_city" />
+							<!--<field name="state_id"/>-->
+                            <field name="other_names"/>
+						</group>
+					</group>
+					<newline />
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_partner_zip_tree">
+			<field name="name">res.partner.zip.tree</field>
+			<field name="model">res.partner.zip</field>
+			<field name="arch" type="xml">
+				<tree string="Partner Zip Code">
+					<field name="code" />
+					<field name="city" />
+					<field name="post_center_id" />
+					<field name="distance" />
+					<field name="user_id" />
+				</tree>
+			</field>
+		</record>
+
+        <!-- ACTIONS -->
+		<record model="ir.actions.act_window" id="action_partner_zip">
+			<field name="name">Partner Zip Code</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner.zip</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+        <!-- MENUS -->
+		<menuitem name="Zip Codes configuration" id="menu_partner_zip_main" parent="base.menu_base_config" />
+		<menuitem name="Zip Code" action="action_partner_zip" id="menu_partner_zip" parent="menu_partner_zip_main" />
+    </data>
+</openerp>

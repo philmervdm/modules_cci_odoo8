@@ -1,0 +1,35 @@
+<openerp>
+	<data>
+		
+		<record id="event_reg_make_invoice_cci_extend_form_view" model="ir.ui.view">
+            <field name="name">event.reg.make.invoice.cci_extend.form</field>
+            <field name="model">event.reg.make.invoice.cci_extend</field>
+            <field name="arch" type="xml">
+                <form string="Create Invoices">
+                	<group>
+					    <field name="inv_created"/>
+					    <field name="inv_rejected"/>
+					    <field name="inv_rej_reason" />
+                	</group>
+                    <footer>
+                        <button string="Create" name="list_invoice" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_event_reg_make_invoice_cci_extend"
+            multi="True"
+            key2="client_action_multi" 
+            name="Confirm Draft Invoices"
+            res_model="event.reg.make.invoice.cci_extend" 
+            src_model="event.registration"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+	
+	</data>
+</openerp>

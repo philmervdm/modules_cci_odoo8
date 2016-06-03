@@ -1,0 +1,809 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_account_281_50
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2013-07-02 12:19:04+0000\n"
+"PO-Revision-Date: 2013-07-02 12:19:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Don\'t forget to control also the second sheet of this excel file !"
+msgstr "N'oubliez pas aussi de contrôler la seconde feuille de ce fichier Excel !"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "d)"
+msgstr "d)"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "bénéficiaire"
+msgstr "bénéficiaire"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Fiche n° 281.50"
+msgstr "Fiche n° 281.50"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "not only for the selected year but also preceding year, because the concerned"
+msgstr "pas seulement de l'année sélectionnée mais aussi celle d'avant, parce que la"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Numéro d'entreprise :"
+msgstr "Numéro d'entreprise :"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "....."
+msgstr "....."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Street number"
+msgstr "Numéro Rue"
+
+#. module: cci_account_281_50
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Tag Profession"
+msgstr "Tag Profession"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "gratifications, rétributions ou avantages de toute nature qui constituent pour les bénéficiaires, des revenus"
+msgstr "gratifications, rétributions ou avantages de toute nature qui constituent pour les bénéficiaires, des revenus"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "1"
+msgstr "1"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,zip_code:0
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Payment(s) Moves"
+msgstr "Mouvement(s) d'acquittement"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "0,00"
+msgstr "0,00"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "2."
+msgstr "2."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Account"
+msgstr "Compte"
+
+#. module: cci_account_281_50
+#: wizard_button:prepare281_50,control,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Numéro d'identification fiscal à l'étranger :"
+msgstr "Numéro d'identification fiscal à l'étranger :"
+
+#. module: cci_account_281_50
+#: wizard_button:prepare281_50,init,control:0
+msgid "Control Excel File"
+msgstr "Fichier Excel de contrôle"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "in more than a year, that is a problem to solve before extracting final data !"
+msgstr "sur plus d'une année, car c'est un problème à solutionner AVANT d'extraire les données !"
+
+#. module: cci_account_281_50
+#: wizard_field:extract281_50,init,account_starts_list:0
+#: wizard_field:prepare281_50,init,account_starts_list:0
+msgid "Accounts list"
+msgstr "Liste des comptes"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Amount"
+msgstr "Montant"
+
+#. module: cci_account_281_50
+#: wizard_field:extract281_50,init,limit:0
+msgid "Limit"
+msgstr "Limite"
+
+#. module: cci_account_281_50
+#: wizard_field:prepare281_50,control,control_281_50.xls:0
+msgid "Prepared control file"
+msgstr "Fichier de contrôle préparé"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "g)"
+msgstr "g)"
+
+#. module: cci_account_281_50
+#: model:ir.actions.wizard,name:cci_account_281_50.wizard_extract281_50
+#: model:ir.ui.menu,name:cci_account_281_50.menu_extract281_50
+msgid "Extraction of 281.50 records"
+msgstr "Extraction des fiches 281.50"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Move Name"
+msgstr "Nom Mouvement"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,profession:0
+msgid "Profession"
+msgstr "Profession"
+
+#. module: cci_account_281_50
+#: wizard_view:extract281_50,init:0
+msgid "This wizard extract data from bookkeeping to create official belgian 281.50 records. You'll be abel to correct and select the final datas to print, but the best, is to correct financial datas and re-extract correct data."
+msgstr "Cet assistant extrait les données de la comptabilité pour créer les fiches 281.50 officielles. Vous pourrez corriger et sélectionner les données finales à imprimer, mais le mieux est de corriger directement les données comptables et de ré-extraire les données corrigées."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Tag"
+msgstr "Tag"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "This list gives you all lines of purchase invoices linked to tagged partners,"
+msgstr "Cette liste vous donne toutes les LIGNES des factures d'achat liées à un partenaire taggué,"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "We extract also open invoices to show them and control if they are not paid."
+msgstr "On extrait aussi les factures ouvertes pour les montrer et contrôler si elles sont payées mais pas réconciliées."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "The goal of this list is to find partners not yet tagged, but to be tagged."
+msgstr "Le but de cette liste est de trouver les partenaires pas encore taggués mais qui devraient l'être."
+
+#. module: cci_account_281_50
+#: wizard_field:extract281_50,init,year_id:0
+#: wizard_field:prepare281_50,init,year_id:0
+msgid "Concerned Year"
+msgstr "Année concernée"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "File created %s"
+msgstr "Fichier créé %s"
+
+#. module: cci_account_281_50
+#: wizard_view:prepare281_50,init:0
+msgid "Prepare control file for annual 281.50 records"
+msgstr "Prépare le fichier de contrôle pour les fiches 281.50 annuelles"
+
+#. module: cci_account_281_50
+#: model:ir.ui.menu,name:cci_account_281_50.root_281_50
+msgid "Belgian 281.50 records"
+msgstr "Fiches belges 281.50"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Payment(s) year(s)"
+msgstr "Année(s) de paiement"
+
+#. module: cci_account_281_50
+#: model:ir.actions.act_window,name:cci_account_281_50.action_record_281_50
+#: model:ir.ui.menu,name:cci_account_281_50.menu_record_281_50
+msgid "Final 281.50 records"
+msgstr "Fiches 281.50 finales"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Corresponding accounts"
+msgstr "Comptes associés"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Line ID"
+msgstr "ID Ligne"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "belgian 281.50 records, to correct them BEFORE extraction of the final data."
+msgstr "fiches 281.50 belges, pour les corriger AVANT l'extraction des données finales."
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_fa:0
+msgid "Sum Fa"
+msgstr "Somme Fa"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "professionnels imposables ou non en Belgique, à l'exclusion des rémunérations des conjoints aidants."
+msgstr "professionnels imposables ou non en Belgique, à l'exclusion des rémunérations des conjoints aidants."
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Service Public Fédéral"
+msgstr "Service Public Fédéral"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Montant"
+msgstr "Montant"
+
+#. module: cci_account_281_50
+#: model:ir.actions.wizard,name:cci_account_281_50.wizard_prepare281_50
+#: model:ir.ui.menu,name:cci_account_281_50.menu_prepare281_50
+msgid "Control data before extraction"
+msgstr "Contrôle des données avant extraction"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Account Starts List"
+msgstr "Liste des débuts de compte"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,final_output:0
+msgid "Final Output"
+msgstr "Résultat final"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_fb:0
+msgid "Sum Fb"
+msgstr "Somme Fb"
+
+#. module: cci_account_281_50
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour l'architecture de la vue"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "e)"
+msgstr "e)"
+
+#. module: cci_account_281_50
+#: help:extract281_50,init,min_natnum_percent:0
+msgid "Minimum percent of national number"
+msgstr "Pourcenatge minimum de présences des numéros nationaux"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "The goal of this list is to find moves on wrong accounts not extracted for"
+msgstr "Le but de cette liste est de trouver des mouvements sur de mauvais comptes non extraits pour "
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "strange profession"
+msgstr "profession étrange"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "N° d'entreprise ou n° national :"
+msgstr "N° d'entreprise ou n° national :"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Purchases for tagged suppliers"
+msgstr "Achats pour des fournisseurs taggués"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Numéro national :"
+msgstr "Numéro national :"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "(Modèle établi en exécution de l'article 30 de l'Arrêté royal d'exécution du Code des impôts sur les revenus 1992)"
+msgstr "(Modèle établi en exécution de l'article 30 de l'Arrêté royal d'exécution du Code des impôts sur les revenus 1992)"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Nom (ou dénomination) et adresse du"
+msgstr "Nom (ou dénomination) et adresse du"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_d:0
+msgid "Sum D"
+msgstr "Somme D"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_e:0
+msgid "Sum E"
+msgstr "Somme E"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_g:0
+msgid "Sum G"
+msgstr "Somme G"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "3."
+msgstr "3."
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_b:0
+msgid "Sum B"
+msgstr "Somme B"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_c:0
+msgid "Sum C"
+msgstr "Somme C"
+
+#. module: cci_account_281_50
+#: wizard_view:extract281_50,init:0
+msgid "Extract 281.50 records"
+msgstr "Extraction des fiches 281.50"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "A complèter facultativement"
+msgstr "A complèter facultativement"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Partner Name"
+msgstr "Nom Partenaire"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "but also on another years if linked payment(s) are in specified year."
+msgstr "mais aussi les autres années si des paiements liés sont dans l'année concernée."
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "revenus"
+msgstr "revenus"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "........."
+msgstr "........."
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "........"
+msgstr "........"
+
+#. module: cci_account_281_50
+#: wizard_field:extract281_50,init,min_natnum_percent:0
+msgid "Percent minimum Nat.Number"
+msgstr "Pourcentage min. de Numéros nationaux"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "This list gives you all moves on specified accounts, not only in the given year"
+msgstr "Cette liste donne tous les mouvements sur des comptes spécifiés, non seulement dans l'année spécifiée"
+
+#. module: cci_account_281_50
+#: help:extract281_50,init,limit:0
+msgid "Limit under witch no 281.50 are emitted."
+msgstr "Lilmite en dessous de laquelle des fiches 281.50 ne sont pas émises."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "date is the date of the payment, not the date of the purchase."
+msgstr "date est la date de paiement, pas la date de l'achat."
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,street1:0
+msgid "Street1"
+msgstr "Rue1"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,street2:0
+msgid "Street2"
+msgstr "Rue2"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "relative aux commissions, courtages, ristournes commerciales ou autres, vacations ou honoraires occasionnels ou non,"
+msgstr "relative aux commissions, courtages, ristournes commerciales ou autres, vacations ou honoraires occasionnels ou non,"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "---------------"
+msgstr "---------------"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Payment(s) Year(s)"
+msgstr "Année(s) de paiement"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "débiteur"
+msgstr "débiteur"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,national_number:0
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Personal National Number"
+msgstr "Numéro national personnel"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Profession exercée :"
+msgstr "Profession exercée :"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Payment(s)"
+msgstr "Paiement(s)"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "c)"
+msgstr "c)"
+
+#. module: cci_account_281_50
+#: wizard_view:extract281_50,init:0
+msgid "Be CAREFULL : this new extraction will REPLACE the old one, deleting all data you have manually corrected."
+msgstr "Soyez PRUDENTS : cette nouvelle extraction va REMPLACER l'ancienne, en effaçant toutes les données que vous y auriez changé manuellement."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "With this list, we can also find invoices where associated payments exist"
+msgstr "Avec cette liste, vous pouvez trouver les factures où des paiements associés existent"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "b)"
+msgstr "b)"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "5. Commentaires : . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+msgstr "5. Commentaires : . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Don\'t forget to extract this list again if you tag new partners !"
+msgstr "N'oubliez pas d'extraire cette liste à nouveau si vous tagguez de nouveaux partenaires !"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "VAT Number"
+msgstr "Numéro entreprise"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Invoice Period"
+msgstr "Période facture"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "ADMINISTRATION GENERALE DE LA FISCALITE"
+msgstr "ADMINISTRATION GENERALE DE LA FISCALITE"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Move ID"
+msgstr "ID mouvement"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "des"
+msgstr "des"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "...."
+msgstr "...."
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Period"
+msgstr "Période"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Last Name"
+msgstr "Nom"
+
+#. module: cci_account_281_50
+#: view:account.partner281_50:0
+msgid "Partner on 281.50"
+msgstr "Partenaire pour fiche 281.50"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Don\'t forget to control also the first sheet of this Excel file !"
+msgstr "N\'oubliez pas non plus de contrôle la première feille de ce fichier Excel !"
+
+#. module: cci_account_281_50
+#: wizard_button:extract281_50,init,end:0
+#: wizard_button:prepare281_50,init,end:0
+msgid "Cancel"
+msgstr "Annule"
+
+#. module: cci_account_281_50
+#: wizard_button:extract281_50,init,extract:0
+msgid "Extract"
+msgstr "Extraire"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Payment Normal"
+msgstr "Paiement Normal"
+
+#. module: cci_account_281_50
+#: model:ir.actions.report.xml,name:cci_account_281_50.sheet_281_50
+msgid "Sheets 281.50"
+msgstr "Fiches 281.50"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,city:0
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "City"
+msgstr "Localité"
+
+#. module: cci_account_281_50
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Nom, prénom (ou dénomination) et adresse du"
+msgstr "Nom, prénom (ou dénomination) et adresse du"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,company_number:0
+msgid "Company Number"
+msgstr "Numéro entreprise"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "First Name"
+msgstr "Prénom"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Only the lines on others accounts than thoses selected are printed here."
+msgstr "Seules les lignes sur d'autres comptes que ceux définis sont reprises ici."
+
+#. module: cci_account_281_50
+#: wizard_view:prepare281_50,control:0
+msgid "Control File"
+msgstr "Fichier de contrôle"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "f)"
+msgstr "f)"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,manual_sum_b:0
+msgid "Forced Sum B"
+msgstr "Somme B forcée"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "IMPOTS SUR LES REVENUS"
+msgstr "IMPOTS SUR LES REVENUS"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Moves on specified accounts"
+msgstr "Mouvements sur les comptes spécifiés"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "4."
+msgstr "4."
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "N° 281.50 – DTP - 2010"
+msgstr "N° 281.50 – DTP - 2010"
+
+#. module: cci_account_281_50
+#: model:ir.module.module,shortdesc:cci_account_281_50.module_meta_information
+msgid "Belgian 281.50 data"
+msgstr "Données Fiches 281.50 belges"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "FINANCES"
+msgstr "FINANCES"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,calc_sum_a:0
+msgid "Sum A"
+msgstr "Somme A"
+
+#. module: cci_account_281_50
+#: model:ir.module.module,description:cci_account_281_50.module_meta_information
+msgid "Accounting Extractions of belgian 281.50 data for the CCI\n"
+"                      The 281.50 data serve to communicate to suppliers not subjected\n"
+"                      to VAT the amount of purchases done by them,\n"
+"                      as the belgian VAT need this information for the annual tax declaration    \n"
+"    "
+msgstr "Accounting Extractions of belgian 281.50 data for the CCI\n"
+"                      The 281.50 data serve to communicate to suppliers not subjected\n"
+"                      to VAT the amount of purchases done by them,\n"
+"                      as the belgian VAT need this information for the annual tax declaration    \n"
+"    "
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Line Name"
+msgstr "Desc Ligne"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "a)"
+msgstr "a)"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Country"
+msgstr "Pays"
+
+#. module: cci_account_281_50
+#: model:ir.model,name:cci_account_281_50.model_account_partner281_50
+msgid "account.partner281_50"
+msgstr "account.partner281_50"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "FICHE N° 281.50 (commissions, courtages, etc.)"
+msgstr "FICHE N° 281.50 (commissions, courtages, etc.)"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Partner ID"
+msgstr "ID Partenaire"
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "des revenus :"
+msgstr "des revenus :"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Price wo VAT"
+msgstr "Prix HTVA"
+
+#. module: cci_account_281_50
+#: wizard_field:extract281_50,init,tag_id:0
+#: wizard_field:prepare281_50,init,tag_id:0
+msgid "Tag associated"
+msgstr "Tag associé"
+
+#. module: cci_account_281_50
+#: help:extract281_50,init,account_starts_list:0
+#: help:prepare281_50,init,account_starts_list:0
+msgid "List of accounts beginnings on wich extract purchases; i.e. \"603,613,612950\""
+msgstr "Liste des débuts de comptes pour limiter l'extraction; i.e. \"603,613,612950\""
+
+#. module: cci_account_281_50
+#: rml:sheet_281_50:0
+msgid "Date de naissance :"
+msgstr "Date de naissance :"
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,final_sequence:0
+msgid "Final Sequence"
+msgstr "Séquence finale"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_account_281_50
+#: wizard_view:prepare281_50,init:0
+msgid "This wizard help you to control data for edition of belgian 281.50 records."
+msgstr "Cet assistant vous aide à contrôler les données pour la sortie des fiches 281.50 belges."
+
+#. module: cci_account_281_50
+#: field:account.partner281_50,year:0
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Year"
+msgstr "Année"
+
+#. module: cci_account_281_50
+#: help:extract281_50,init,year_id:0
+#: help:prepare281_50,init,year_id:0
+msgid "The year of the extracted purchases"
+msgstr "L'année des paiements des achats"
+
+#. module: cci_account_281_50
+#: code:addons/cci_account_281_50/wizard/prepare281_50.py:0
+#, python-format
+msgid "Invoice ID"
+msgstr "ID Facture"
+

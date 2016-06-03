@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_memberdirectory_internal_validate" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.internal.validate.form</field>
+            <field name="model">cci.memberdirectory.internal.validate</field>
+            <field name="arch" type="xml">
+				<form string="Internal Validate">
+					<footer>
+						<button name="try_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_memberdirectory_internal_validate" model="ir.actions.act_window">
+             <field name="name">Record simple user changes</field>
+             <field name="res_model">cci.memberdirectory.internal.validate</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_memberdirectory_internal_validate"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Record simple user changes"
+            action="action_cci_memberdirectory_internal_validate"
+            id="cci_memberdirectory_internal_validate"
+            parent="menu_members_directory"/>
+		
+		<record id="view_cci_memberdirectory_internal_validate_msg" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.internal.validate.msg.form</field>
+            <field name="model">cci.memberdirectory.internal.validate.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+				    <separator string="Simple Changes Recorded."  colspan="4"/>
+     				<field name="msg" colspan="4" nolabel="1"/>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

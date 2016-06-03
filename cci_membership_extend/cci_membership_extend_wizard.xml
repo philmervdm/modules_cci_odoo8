@@ -1,0 +1,210 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+    <!-- Wizard to extract list of partners sponsors of membership for others partners -->
+    <wizard string="Membership Sponsor Partners"
+			name="extract_sponsor_partners"
+			id="cci_membership_extend.extract_sponsor_partners"
+			menu="False"/>
+
+	<menuitem name="Membership Sponsor Partners" id="menu_sponsor_partners"
+			action="extract_sponsor_partners" type="wizard"
+			parent="menu_membership_control" 
+            sequence="12" />
+
+    <!-- Wizard to extract list of partners with membership_amount less than last billed membership amount -->
+    <wizard string="Extract Partners with asked Membership less than last invoiced"
+			name="extract_asked_less_billed"
+			id="cci_membership_extend.extract_asked_less_billed"
+			menu="False"/>
+
+	<menuitem name="Extract Partners with asked Membership less than last invoiced" id="menu_asked_less_billed"
+			action="extract_asked_less_billed" type="wizard"
+			parent="menu_membership_control" 
+            sequence="14" />
+
+    <!-- Wizard to extract list of partners with membership_amount not corresponding to membership_ranges -->
+    <wizard string="Extract Non-Standard Membership"
+			name="extract_nonstandard_amounts"
+			id="cci_membership_extend.extract_nonstandard_amounts"
+			menu="False"/>
+
+	<menuitem name="Extract Non-Standard Membership" id="menu_nonstandard_amounts"
+			action="extract_nonstandard_amounts" type="wizard"
+			parent="menu_membership_control" 
+            sequence="15" />
+
+    <!-- Wizard to extract list of used membership amount -->
+    <wizard string="List of used membership amount"
+			name="extract_used_membership_amount"
+			id="cci_membership_extend.extract_used_membership_amount"
+			menu="False"/>
+
+	<menuitem name="List of used membership amount" id="menu_used_membership_amount"
+			action="extract_used_membership_amount" type="wizard"
+			parent="menu_membership_control" 
+            sequence="19" />
+
+    <!-- Wizard to extract list of members with multiple addresses but no additional sites -->
+    <wizard string="Members with multiple addresses but no additional site"
+			name="extract_prospect_addsite"
+			id="cci_membership_extend.extract_prospect_addsite"
+			menu="False"/>
+
+	<menuitem name="Members with multiple addresses but no additional site" id="menu_prospect_addsite"
+			action="extract_prospect_addsite" type="wizard"
+			parent="menu_membership_control" 
+            sequence="41" />
+
+    <!-- Wizard to view list of partners counting in the list of used membership amount -->
+    <wizard string="List of Partners"
+			name="extract_partners_by_amount"
+            model="cci_membership.membership_askedused"
+			id="cci_membership_extend.extract_partners_by_amount"
+			menu="True"/>
+
+    <!-- Wizard to extract list of 'calls for membership' -->
+    <wizard string="Calls for membership"
+			name="membership_calls"
+			id="cci_membership_extend.membership_calls"
+			menu="False"/>
+
+	<menuitem name="Calls for membership" id="menu_membership_call"
+			action="membership_calls" type="wizard"
+			parent="menu_membership_yearly" 
+            sequence="10" />
+
+    <!-- Wizard to extract list of 'calls for membership' direcly in Excel-->
+    <wizard string="Calls for membership in Excel"
+			name="membership_calls_2_excel"
+			id="cci_membership_extend.membership_calls_2_excel"
+			menu="False"/>
+
+	<menuitem name="Calls for membership in Excel" id="menu_membership_calls_2_excel"
+			action="membership_calls_2_excel" type="wizard"
+			parent="menu_membership_yearly" 
+            sequence="15" />
+
+    <!-- Wizard to extract list of special 'calls for membership' direcly in Excel-->
+    <wizard string="Special calls for membership in Excel"
+			name="extract_special_calls_in_excel"
+			id="cci_membership_extend.membership_special_calls_2_excel"
+			menu="False"/>
+
+	<menuitem name="Special calls for membership in Excel" id="menu_membership_special_calls_2_excel"
+			action="membership_special_calls_2_excel" type="wizard"
+			parent="menu_membership_yearly" 
+            sequence="18" />
+
+    <!-- Wizard to export the calls for membership prepared by the preceding wizard 'membership_calls' -->
+    <wizard string="Extract Excel"
+			name="extract_calls_in_excel"
+            model="cci_membership.membership_call"
+			id="cci_membership_extend.extract_calls_in_excel"
+			menu="True"/>
+
+    <!-- Wizard for preparing list of partners to invoice -->
+    <wizard string="Prepare Invoicing Yearly Membership"
+			name="membership_partners_to_invoice"
+			id="cci_membership_extend.membership_partners_to_invoice"
+			menu="False"/>
+
+	<menuitem name="Prepare Invoicing Yearly Membership" id="menu_prepare_yearly_membership_invoices"
+			action="membership_partners_to_invoice" type="wizard"
+			parent="menu_membership_yearly" 
+            sequence="20" />
+
+    <!-- Wizard to invoice membership from partner replacing the old one from cci_membership-->
+	<wizard string="Invoice Membership"
+            model="res.partner"
+            name="cci_wizard_extend_invoice_membership"
+            id="membership.wizard_invoice_membership" />
+
+    <!-- Wizard to get the total of membership by partner by year -->
+	<wizard string="Total membership(s) by Partner by year"
+			name="extract_membership_by_partner"
+			id="cci_membership_extend.extract_membership_by_partner"
+            menu="False" />
+	<menuitem
+			name="Total membership(s) by Partner by year" parent="membership.menu_reporting"
+			action="extract_membership_by_partner"
+			type="wizard"
+			id="menu_extract_membership_by_partner"
+            sequence="50" />
+
+    <!-- Wizard to extract list of partners for recall for not paid invoices by email, phone or mail -->
+    <wizard string="Follow-Up of Membership Invoices"
+			name="membership_followup"
+			id="cci_membership_extend.membership_followup"
+			menu="False"/>
+
+	<menuitem name="Follow-Up of Membership Invoices" id="menu_membership_followup"
+			action="membership_followup" type="wizard"
+			parent="menu_membership_yearly" 
+            sequence="30" />
+
+    <!-- Wizard to extract list of new members since a given date -->
+    <wizard string="New Members since a precise date"
+			name="new_members_since"
+			id="cci_membership_extend.new_members_since"
+			menu="False"/>
+
+	<menuitem name="New Members since a precise date" id="menu_new_members_since"
+			action="new_members_since" type="wizard"
+			parent="membership.menu_members" 
+            sequence="80" />
+
+    <!-- Wizard to extract list of products used to manage membership between years event if inactives -->
+    <wizard string="Use of products for membership's bills"
+			name="use_membership_products"
+			id="cci_membership_extend.use_membership_products"
+			menu="False"/>
+
+	<menuitem name="Use of products for membership's bills" id="menu_use_membership_products"
+			action="use_membership_products" type="wizard"
+			parent="menu_membership_control" 
+            sequence="42" />
+
+    <!-- Wizard to detect old billed partners but not yet billed this year -->
+    <wizard string="Detect old billed members, not yet re-billed"
+			name="detect_old_but_not_yet_billed"
+			id="cci_membership_extend.detect_old_but_not_yet_billed"
+			menu="False"/>
+
+	<menuitem name="Detect old billed members, not yet re-billed" id="menu_detect_old_but_not_yet_billed"
+			action="detect_old_but_not_yet_billed" type="wizard"
+			parent="menu_membership_control" 
+            sequence="90" />
+
+    <!-- Wizard to export the membership by partnet prepared by the wizard 'total of membership by year' -->
+    <wizard string="Extract Excel"
+			name="extract_membership_by_year"
+            model="cci_membership.membership_by_partner"
+			id="cci_membership_extend.extract_membership_by_year"
+			menu="True"/>
+
+    <!-- Wizard to compare the paying members between two years -->
+    <wizard string="Compare two Years of paid Members"
+			name="compare_paid2years"
+			id="compare_paid2years"
+			menu="False"/>
+
+	<menuitem name="Compare two Years of paid Members" id="menu_compare_paid2years"
+			action="compare_paid2years" type="wizard"
+			parent="membership.menu_reporting" 
+            sequence="80" />
+compare_paid_multiple_years
+    <!-- Wizard to compare the paying members between multiple years years -->
+    <wizard string="Compare Multiple Years of paid Members"
+			name="compare_paid_multiple_years"
+			id="compare_paid_multiple_years"
+			menu="False"/>
+
+	<menuitem name="Compare Multiple Years of paid Members" id="menu_compare_paid_multiple_years"
+			action="compare_paid_multiple_years" type="wizard"
+			parent="membership.menu_reporting" 
+            sequence="81" />
+
+	</data>
+</openerp>

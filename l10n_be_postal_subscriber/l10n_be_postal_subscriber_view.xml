@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <!-- Dated Photo -->
+        <record model="ir.ui.view" id="dated_photo_form">
+            <field name="name">dated.photo.form</field>
+            <field name="model">dated.photo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dated Photo">
+                    <group>
+                        <group>
+                            <field name="name" select="1"/>
+                        </group>
+                        <group>
+                            <field name="datetime" select="1"/>
+                        </group>
+                    </group>
+                    <field name="photo_details_ids"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dated_photo_tree">
+            <field name="name">dated.photo.tree</field>
+            <field name="model">dated.photo</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Dated Photo">
+                     <field name="name"/>
+                     <field name="datetime"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Top menu item -->
+        <menuitem name="Postal Subscriber"
+            id="base.postal_subscriber_root"
+            sequence="58"/>
+        <menuitem id="menu_postal_subscriber" name="Photos"
+            parent="base.postal_subscriber_root" sequence="10"/>
+            
+    <record id="open_view_dated_photo" model="ir.actions.act_window">
+            <field name="name">Photos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dated.photo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+        
+    <menuitem
+        action="open_view_dated_photo"
+        id="postal_subscriber_dated_photo_menu"
+        name="Photos"
+        parent="menu_postal_subscriber"/>
+
+<!-- Adding state_id field on res.partner -->
+<!-- View for res.partner object inherited from base module................ -->
+		<record model="ir.ui.view" id="view_pform_inherit1">
+			<field name="name">res.partner.form</field>
+			<field name="type">form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+			    <xpath expr="//label[@string='Address']" position = "before">
+			        <field name="activ_state_id"/>
+			    </xpath>
+				<field name="title" position="after">
+                    <field name="magazine_subscription"/>
+                    <field name="magazine_subscription_source"/>
+                </field>
+			</field>
+		</record>
+    </data>
+</openerp>

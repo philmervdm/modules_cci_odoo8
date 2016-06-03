@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="0">
+
+		<!-- Users Groups -->
+		<record model="res.groups" id="group_cci_memberdirectory_manager">
+			<field name="name">Member's Directory Changes Manager</field>
+		</record>
+
+		<!-- Menu accesses -->
+		<record model="ir.ui.menu" id="menu_members_directory">
+			<field name="name">Members Directory</field>
+			<field name="groups_id" eval="[(6,0, [ref('group_cci_memberdirectory_manager')])]" />
+		</record>
+		<record model="ir.ui.menu" id="menu_directory_address_proxy">
+			<field name="name">Directory Address Proxy</field>
+			<field name="groups_id" eval="[(6,0, [ref('group_cci_memberdirectory_manager')])]" />
+		</record>
+		<record model="ir.ui.menu" id="menu_directory_job_proxy">
+			<field name="name">Directory Job Proxy</field>
+			<field name="groups_id" eval="[(6,0, [ref('group_cci_memberdirectory_manager')])]" />
+		</record>
+		<record model="ir.ui.menu" id="menu_create_mdir_prospection">
+			<field name="name">Create Dir Prospection</field>
+			<field name="groups_id" eval="[(6,0, [ref('group_cci_memberdirectory_manager')])]" />
+		</record>
+	</data>
+</openerp>
+

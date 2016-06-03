@@ -1,0 +1,43 @@
+<openerp>
+	<data>
+		<record id="view_use_membership_products_form" model="ir.ui.view">
+			<field name="name">use.membership.products.form</field>
+			<field name="model">use.membership.products</field>
+			<field name="arch" type="xml">
+				<form string="Search for products used for membership's bills">
+					<group>
+                        <group>
+                            <field name="from_year"/>
+                        </group>
+                        <group>
+                            <field name="to_year"/>
+                        </group>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="search_products" string="Search" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_use_membership_products_form" model="ir.actions.act_window">
+            <field name="name">Search for products used for membership's bills</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">use.membership.products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_use_membership_products_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem
+            id="menu_use_membership_products"
+            name="Use of products for membership's bills"
+            action="action_use_membership_products_form"
+            parent="menu_membership_control"
+            sequence="42" />
+	</data>
+</openerp>

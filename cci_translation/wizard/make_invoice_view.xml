@@ -1,0 +1,46 @@
+<openerp>
+	<data>
+	
+		<record id="view_translation_create_invoice_form" model="ir.ui.view">
+			<field name="name">translation.create.invoice.form</field>
+			<field name="model">translation.create.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Create invoices">
+					<group>
+					    <field name="inv_created"/>
+					    <field name="inv_rejected"/>
+					    <field name="inv_rej_reason" />
+					    <field name="invoice_ids" invisible="1"/>
+					</group>
+					<footer>
+					<button name="open_invoice" string="Open Invoice" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_translation_create_invoice" model="ir.actions.act_window">
+            <field name="name">Make Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">translation.create.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_translation_create_invoice_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_translation_create_invoice_values">
+            <field name="model_id" ref="model_translation_folder" />
+            <field name="name">Make Invoice</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_translation_create_invoice'))" />
+            <field name="key">action</field>
+            <field name="model">translation.folder</field>
+        </record>
+		
+	
+	
+	</data>
+</openerp>

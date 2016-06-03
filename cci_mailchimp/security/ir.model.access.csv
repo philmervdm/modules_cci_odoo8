@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mailchimp_proxy_user","MailChimp Proxy Employee","cci_mailchimp.model_mailchimp_proxy","",1,1,1,1
+"access_mail_usage_user","Mail Usage Employee","cci_mailchimp.model_mail_usage","",1,1,1,1
+"access_mail_bounce_user","Mail Bounce Employee","cci_mailchimp.model_mail_bounce","",1,1,1,0

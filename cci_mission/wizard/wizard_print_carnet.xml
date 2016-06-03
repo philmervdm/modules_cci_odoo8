@@ -1,0 +1,58 @@
+<openerp>
+	<data>
+		<record id="view_print_carnet_form" model="ir.ui.view">
+			<field name="name">report.carnet.print.form</field>
+			<field name="model">report.carnet.print</field>
+			<field name="arch" type="xml">
+				<form string="ATA Carnet Printing">
+					<group>
+						<group col="2">
+							<field name="header"/>
+							<field name="export"/>
+							<field name="importpg" />
+							<field name="transit"/>
+							<field name="reexport"/>
+							<field name="reimport"/>
+							<field name="presence"/>
+							<field name="export_reimport"/>
+							<field name="import_reexport"/>
+							<field name="vtransit"/>
+						</group>
+						<group>
+							<button name="print_carnet_report1" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report2" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report3" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report4" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report5" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report6" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report7" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report8" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report9" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+							<button name="print_carnet_report10" colspan="2" string="Print" type="object" style="line-height:1.39"/>
+						</group>
+					</group>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_print_carnet_form" model="ir.actions.act_window">
+			<field name="name">ATA Carnet Printing</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">report.carnet.print</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_print_carnet_form"/>
+			<field name="target">new</field>
+		</record>
+
+		<record model="ir.values" id="action_print_carnet_values">
+			<field name="model_id" ref="model_report_carnet_print" />
+			<field name="name">ATA Carnet Printing</field>
+			<field name="key2">client_action_multi</field>
+			<field name="value" eval="'ir.actions.act_window,' + str(ref('action_print_carnet_form'))" />
+			<field name="key">action</field>
+			<field name="model">cci_missions.ata_carnet</field>
+		</record>
+	</data>
+</openerp>

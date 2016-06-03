@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+		<record id="view_wizard_extract_subscriber_form" model="ir.ui.view">
+			<field name="name">wizard.extract.subscriber.form</field>
+			<field name="model">wizard.extract.subscriber</field>
+			<field name="arch" type="xml">
+				<form string="Options">
+					<group>
+				    	<field name="source_id" />
+					</group>
+					<footer>
+                        <button name="get_file" string="Get Excel File" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window id="action_wizard_extract_subscriber"
+            multi="True"
+            key2="client_action_multi" 
+            name="Extract Subscribers"
+            res_model="wizard.extract.subscriber" 
+            src_model="cci_newsletter.subscriber"
+            view_mode="form"
+            target="new"
+            view_type="form" />
+		
+		<record id="view_wizard_extract_subscriber_msg_form" model="ir.ui.view">
+			<field name="name">wizard.extract.subscriber.msg.form</field>
+			<field name="model">wizard.extract.subscriber.msg</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+					<group>
+				    	<separator string="File has been created." colspan="4"/>
+				    	<field name="name" invisible="1" />
+					     <field name="msg" colspan="4" nolabel="1"/>
+					     <field name="subscribers_xls" filename="name" />
+					</group>
+					<footer>
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		
+	</data>
+</openerp>

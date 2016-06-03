@@ -1,0 +1,4 @@
+import res_partner_zip_group_type
+import res_partner_zip_group
+import res_partner_zip
+import res_partner

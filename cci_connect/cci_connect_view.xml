@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+	<!-- DELAYED PARTNER -->
+		<record model="ir.ui.view" id="view_delayed_partner_form">
+			<field name="name">Delayed Changes</field>
+			<field name="model">cci_connect.delayed_partner</field>
+			<field name="arch" type="xml">
+				<form string="Delayed Changes">
+                    <group colspan="4" col="6">
+                        <field name="partner_id"  readonly="1"/>
+                        <field name="address_id"  readonly="1"/>
+    					<field name="asker_id" readonly="1"/>
+                    </group>
+                    <separator string="Partner" colspan="4"/>
+                    <group colspan="4" col="7">
+                        <separator string="Field" colspan="1"/>
+                        <separator string="Current" colspan="2"/>
+                        <separator string="Proposed" colspan="2"/>
+                        <separator string="Recorded" colspan="2"/>
+                        <label string="Partner Name:" colspan="1"/>
+                        <field name="current_partner_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="partner_name" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="final_partner_name" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Title:" colspan="1"/>
+                        <field name="current_partner_title" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="partner_title" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_partner_title" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="WebSite:" colspan="1"/>
+				        <field name="current_website" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="website" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_website" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="VAT:" colspan="1"/>
+				        <field name="current_vat" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="vat" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_vat" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                    </group>
+                    <group colspan="4" col="3">
+					    <field name="searching" readonly="1"/>
+					    <field name="final_searching" nolabel="1" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+					    <field name="selling" readonly="1"/>
+					    <field name="final_selling" nolabel="1" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                    </group>
+                    <separator string="Address" colspan="4"/>
+                    <group colspan="4" col="7">
+                        <label string="Site Name:" colspan="1"/>
+					    <field name="current_address_name" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="address_name" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="final_address_name" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Street:" colspan="1"/>
+					    <field name="current_street" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="street" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="final_street" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Street2:" colspan="1"/>
+				        <field name="current_street2" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="street2" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_street2" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Zip code:" colspan="1"/>
+				        <field name="current_zip_id" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="zip_id" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_zip_id" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Country:" colspan="1"/>
+				        <field name="current_country_id" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="country_id" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_country_id" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="EMail:" colspan="1"/>
+					    <field name="current_email" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="email" nolabel="1" readonly="1" colspan="2"/>
+					    <field name="final_email" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Phone:" colspan="1"/>
+				        <field name="current_phone" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="phone" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_phone" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Fax:" colspan="1"/>
+				        <field name="current_fax" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="fax" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_fax" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Activity:" colspan="1"/>
+				        <field name="current_activity" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="activity" nolabel="1" readonly="1" colspan="2"/>
+				        <field name="final_activity" nolabel="1" colspan="2" attrs="{'readonly':[('state','in',['done','cancel'])]}"/>
+                        <label string="Old Functions:" colspan="1"/>
+				        <field name="old_functions" nolabel="1" readonly="1" colspan="6"/>
+                    </group>
+					<field name="state" readonly="1" nolabel="1"/>
+					<field name="state_changed" readonly="1" nolabel="1"/>
+                    <button string="Apply changes" confirm="Sure?" name="but_confirm_changes" states="draft" type="object" icon="STOCK_YES"/>
+                    <button string="Cancel changes" name="but_cancel" states="draft" type="object" icon="STOCK_STOP"/>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_delayed_partner_tree">
+			<field name="name">Delayed Changes</field>
+			<field name="model">cci_connect.delayed_partner</field>
+			<field name="arch" type="xml">
+				<tree string="Delayed Changes">
+                    <field name="partner_id"/>
+                    <field name="address_id"/>
+					<field name="state"/>
+					<field name="state_changed"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_delayed_partner_filter" model="ir.ui.view">
+            <field name="name">cci_connect.delayed_partner.select</field>
+            <field name="model">cci_connect.delayed_partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Delayed Partner">
+                    <field name="partner_id" />
+                    <field name="address_id" />
+               </search>
+            </field>
+        </record>
+
+		<record model="ir.actions.act_window" id="action_delayed_partner">
+			<field name="name">Connect Delayed</field>
+			<field name="res_model">cci_connect.delayed_partner</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="view_delayed_partner_filter"/>
+		</record>
+		
+		<menuitem name="Delayed Changes" id="main_menu_delayed_partner"  parent="base.menu_base_partner"/>
+		<menuitem name="Delayed Changes" id="menu_delayed_partner" action="action_delayed_partner" parent="main_menu_delayed_partner"/>
+
+		<record model="ir.actions.act_window" id="action_pending_delayed_partner">
+			<field name="name">Pending Connect Delayed</field>
+			<field name="res_model">cci_connect.delayed_partner</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('state','=','draft')]</field>
+		</record>
+		<menuitem name="Pending Delayed Changes" id="menu_pending_delayed_partner" action="action_pending_delayed_partner" parent="main_menu_delayed_partner"/>
+
+    <!-- CHANGES IN Partner, address, job and contacts VIEWS TO INTEGRATE WITH ESCAUX -->
+        <record model="ir.ui.view" id="view_partner_form_connect1">
+            <field name="name">res.partner.form.cciconnect1</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="/form/sheet/group/group[2]/field[@name='phone']" position="replace">
+						<group col="3" colspan="4">
+                            <field  name="phone" string="Téléphone:"  col="2" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" col="1" type="object" />
+						</group>
+                    </xpath>
+
+					<!-- <xpath expr="//page[@string='Contacts']/field[@name='child_ids']/form[@string='Contact']/sheet/group/field[@name='phone']" position="replace">
+	                	<label string="Téléphone:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="phone" nolabel="1" colspan="4" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" type="object" />
+                        </group>
+		            </xpath> -->
+
+                </data>
+            </field>
+        </record>
+
+   <!--    <record model="ir.ui.view" id="view_partner_form_connect2">
+            <field name="name">res.partner.form.cciconnect2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="cci_last_module.view_partner_form_new"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="/form/notebook/page[@string='General']/field[@name='address']/form/field[@name='job_ids']/form/field[@name='phone']" position="replace">
+                        <label string="Téléphone:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="phone" nolabel="1" colspan="4" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" type="object" />
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record> 
+ 	
+        <record model="ir.ui.view" id="view_address_form_connect1">
+            <field name="name">res.partner.address.form.cciconnect1</field>
+            <field name="model">res.partner.address</field>
+            <field name="inherit_id" ref="base.partner_normal_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="phone" position="replace">
+                        <label string="Tél.:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="phone" nolabel="1" colspan="4" select="2" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" type="object" />
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record> -->
+
+      <!--  <record model="ir.ui.view" id="view_address_form_connect2">
+            <field name="name">res.partner.address.form.cciconnect2</field>
+            <field name="model">res.partner.address</field>
+            <field name="inherit_id" ref="cci_last_module.view_partner_address_form1"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="/form/notebook/page[@string='General']/field[@name='job_ids']/form/field[@name='phone']" position="replace">
+                        <label string="Tél.professionnel:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="phone" nolabel="1" colspan="4" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" type="object" />
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_job_form_connect1">
+            <field name="name">res.partner.job.form.cciconnect1</field>
+            <field name="model">res.partner.job</field>
+            <field name="inherit_id" ref="cci_last_module.cci_view_partner_job_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="phone" position="replace">
+                        <label string="Tél. professionel:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="phone" nolabel="1" colspan="4" on_change="on_change_phone_num(phone)"/>
+                            <button name="action_dial_phone" string="Dial" type="object" />
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_contact_form_connect1">
+            <field name="name">res.partner.contact.form.cciconnect1</field>
+            <field name="model">res.partner.contact</field>
+            <field name="inherit_id" ref="cci_last_module.cci_view_partner_contact_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="mobile" position="replace">
+                        <label string="Mobile:" align="1.0" />
+                        <group colspan="1" col="5">
+                            <field name="mobile" nolabel="1" colspan="4" />
+                            <button name="action_dial_mobile" string="Dial" type="object" />
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record> -->
+
+	</data>
+</openerp>

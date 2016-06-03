@@ -1,0 +1,42 @@
+<openerp>
+    <data>
+
+        <record id="view_extract_membership_by_partner_form" model="ir.ui.view">
+            <field name="name">extract.membership.by_partner.form</field>
+            <field name="model">extract.membership.by_partner</field>
+            <field name="arch" type="xml">
+                <form string="Choose membership year">
+                    <group>
+                        <field name="year" />
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                         or
+                        <button name="extract_totals_by_partner" string="Confirm" type="object" class="oe_highlight"/>
+                    </footer>
+                </form>
+                
+            </field>
+        </record>
+        
+        <record id="action_extract_membership_by_partner" model="ir.actions.act_window">
+            <field name="name">Total membership(s) by Partner by year</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.membership.by_partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_membership_by_partner_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem
+            id="menu_extract_membership_by_partner"
+            name="Total membership(s) by Partner by year"
+            parent="base.menu_report_association"
+            action="action_extract_membership_by_partner"
+            sequence="50" />
+            <!-- parent="membership.menu_reporting" -->
+
+    </data>
+</openerp>
+

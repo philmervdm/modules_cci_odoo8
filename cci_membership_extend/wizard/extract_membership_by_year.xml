@@ -1,0 +1,50 @@
+<openerp>
+	<data>
+
+        <record id="view_wizard_extract_membership_by_year_msg_form" model="ir.ui.view">
+            <field name="name">wizard.extract.membership.by.year.msg.form</field>
+            <field name="model">wizard.extract.membership_by_year.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <separator string="File has been created."  colspan="4"/>
+                        <field name="name" invisible="1"/>
+                        <field name="msg" nolabel="1"/>
+                        <field name="membership_by_year_xls" filename="name" nolabel="1"/>
+                    </group>
+                    <footer>
+                        <button string="Ok" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<record id="view_extract_membership_by_year_form" model="ir.ui.view">
+			<field name="name">extract.special.calls_in_excel.form</field>
+			<field name="model">extract.membership_by_year</field>
+			<field name="arch" type="xml">
+				<form string="Options">
+					<group>
+                        <field name="choice" />
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="get_file" string="Get File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+
+        <act_window id="action_extract_membership_by_year"
+            key2="client_action_multi"
+            name="Extract Excel-Membership By year"
+            res_model="extract.membership_by_year"
+            src_model="res.partner"
+            view_mode="form"
+            target="new"
+            view_type="form" />
+
+	</data>
+</openerp>

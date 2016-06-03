@@ -1,0 +1,88 @@
+<openerp>
+	<data>
+		<record id="view_select_criteria_form" model="ir.ui.view">
+			<field name="name">select.criteria.form</field>
+			<field name="model">select.criteria</field>
+			<field name="arch" type="xml">
+				<form string="Selecting Partners">
+					<group>
+					    <field name="select"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="go" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_select_criteria_form" model="ir.actions.act_window">
+            <field name="name">Select Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">select.criteria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_select_criteria_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem
+			name="Select Specific Members" parent="base.menu_report_association"
+			action="action_select_criteria_form"
+			id="select_partners_menu" />
+
+
+		<record id="view_choose_crm_form" model="ir.ui.view">
+			<field name="name">choose.crm.form</field>
+			<field name="model">choose.crm</field>
+			<field name="arch" type="xml">
+				<form string="Select Criteria For Partners-CRM cases and sections">
+					<group>
+						<label string="This wizard will help you selecting the partners that have/haven't participated to a specific event." colspan="4" />
+					</group>
+					<group>
+					    <field name="section"/>
+						<field name="stage_id"/>
+						<field name="removing_from_list"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Choose" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_choose_lines_form" model="ir.ui.view">
+			<field name="name">choose.lines.form</field>
+			<field name="model">choose.lines</field>
+			<field name="arch" type="xml">
+				<form string="Select Criteria For Partners - Amount Sold">
+					<group>
+						<label string="This wizard will help you selecting the partners that have/haven't spend more than the specified amount in the specified period." colspan="4" />
+					</group>
+					<group>
+						<group>
+							<field name="date_from"/>
+							<field name="amount"/>
+							<field name="member_state"/>
+							<field name="removing_from_list"/>
+						</group>
+						<group>
+							<field name="date_to"/>
+						</group>
+						
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Choose" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

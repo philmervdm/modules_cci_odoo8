@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_delayed_partner_manager","Delayed Changes Manager","cci_connect.model_cci_connect_delayed_partner","group_cci_connect_delayed_partner_manager",1,1,1,1
+

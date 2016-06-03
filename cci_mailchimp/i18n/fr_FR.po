@@ -1,0 +1,585 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_mailchimp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-03-20 12:53:30+0000\n"
+"PO-Revision-Date: 2015-03-20 12:53:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "Liege"
+msgstr "Liège"
+
+#. module: cci_mailchimp
+#: model:ir.module.module,description:cci_mailchimp.module_meta_information
+msgid "\n"
+"        Module to synchronize emails list of subscriber of 'Revue de Presse' with MailChimp email service.\n"
+"        This module uses the MailChimp API wrapper : mailchimp-api-python\n"
+"            https://bitbucket.org/mailchimp/mailchimp-api-python\n"
+"    "
+msgstr "\n"
+"        Module to synchronize emails list of subscriber of 'Revue de Presse' with MailChimp email service.\n"
+"        This module uses the MailChimp API wrapper : mailchimp-api-python\n"
+"            https://bitbucket.org/mailchimp/mailchimp-api-python\n"
+"    "
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,todelete:0
+msgid "To delete"
+msgstr "A effacer"
+
+#. module: cci_mailchimp
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_mailchimp
+#: model:ir.model,name:cci_mailchimp.model_mail_bounce
+msgid "An email address that has bounced in MailChimp"
+msgstr "Un eMail qui n'a pas être délivré par MailChimp"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,categs:0
+msgid "Job Categories"
+msgstr "Catégories de Fonctions"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,contact_id:0
+msgid "Linked Contact"
+msgstr "Contact lié"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,company:0
+msgid "Company"
+msgstr "Partenaire"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_correct_emails,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_correct_emails
+msgid "Correct Emails"
+msgstr "Corriger emails"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_delete_emails,init,emails:0
+#: help:cci_mailchimp_unsubscribe_emails,init,emails:0
+msgid "List of emails separated by a <enter>"
+msgstr "Liste d'emails séparés par des <enter>"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_results_adv,extract,res_advert.xls:0
+#: wizard_field:cci_mailchimp_results_rdp,extract,res_rdp.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_results_adv,extract,end:0
+#: wizard_button:cci_mailchimp_results_rdp,extract,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_mailchimp
+#: code:addons/cci_mailchimp/wizard/search_emails.py:0
+#: view:mail_usage:0
+#, python-format
+msgid "Mail Usage"
+msgstr "Utilisation de l'eMail"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_delete_emails,init,delete:0
+msgid "Delete Them All"
+msgstr "Efface les tous !"
+
+#. module: cci_mailchimp
+#: model:ir.ui.menu,name:cci_mailchimp.menu_mail_bounce
+#: view:mail_bounce:0
+msgid "Mail Bounce"
+msgstr "eMails refusés"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_delete_emails,init,send_warning:0
+#: wizard_field:cci_mailchimp_unsubscribe_emails,init,send_warning:0
+msgid "Send Warning to Data Sources"
+msgstr "Envoi des avertissements aux sources de données"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+msgid "For Test"
+msgstr "Pour test"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,area_rdp:0
+msgid "Area for RdP"
+msgstr "Zone pour la RdP"
+
+#. module: cci_mailchimp
+#: model:ir.model,name:cci_mailchimp.model_mail_usage
+msgid "An usage of an email address"
+msgstr "Une utilisation de l'adresse eMail"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_delete_emails,init,send_warning:0
+#: help:cci_mailchimp_unsubscribe_emails,init,send_warning:0
+msgid "Send a warning of 'other chambers' responsibles if corrections in newsletter subscribers"
+msgstr "Envoie un avertissement aux responsables des 'autres CCI' si des corrections ont été faites dans les abonnés à la Revue de Presse"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "Brabant Wallon"
+msgstr "Brabant Wallon"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,member:0
+msgid "Member of source CCI"
+msgstr "Membre de la CCI Source"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_search_emails,init,email:0
+msgid "email or part of email address"
+msgstr "eMail ou partie d'eMail"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_results_adv,init,from:0
+#: wizard_field:cci_mailchimp_results_rdp,init,from:0
+msgid "From"
+msgstr "Du"
+
+#. module: cci_mailchimp
+#: code:addons/cci_mailchimp/wizard/mail_usage_show_record.py:0
+#, python-format
+msgid "Associated Record"
+msgstr "Fiche associée"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+msgid "None"
+msgstr "Aucune"
+
+#. module: cci_mailchimp
+#: field:mail_usage,source:0
+msgid "Source"
+msgstr "Source"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_resubscribe,init:0
+msgid "Subscribe Again Unsubscribed usersEmails"
+msgstr "Ré-Inscrit les utilisateurs qui se sont désabonnés"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_results_adv,extract:0
+#: wizard_view:cci_mailchimp_results_rdp,extract:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_results_adv,init,to:0
+#: help:cci_mailchimp_results_rdp,init,to:0
+msgid "Date of the last Revue de Presse"
+msgstr "Date de la dernière Revue de Presse"
+
+#. module: cci_mailchimp
+#: selection:res.partner.contact,agenda_subscribe:0
+#: selection:res.partner.contact,alterego_subscribe:0
+#: selection:res.partner.contact,rdp_subscribe:0
+msgid "Always"
+msgstr "Toujours"
+
+#. module: cci_mailchimp
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour l'architecture de la vue"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,title:0
+msgid "Job Title"
+msgstr "Titre de la Fonction"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,rdp_subscribe:0
+msgid "Sending of Revue de Presse"
+msgstr "Envoi de la Revue de Presse"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_delete_emails,init,emails:0
+msgid "email(s) to delete"
+msgstr "eMail(s) à effacer"
+
+#. module: cci_mailchimp
+#: selection:res.partner.contact,agenda_subscribe:0
+#: selection:res.partner.contact,alterego_subscribe:0
+#: selection:res.partner.contact,rdp_subscribe:0
+msgid "Unsubscribed by MailChimp"
+msgstr "Désinscrit via MailChimp"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_results_adv,init,from:0
+#: help:cci_mailchimp_results_rdp,init,from:0
+msgid "Date of the first Revue de Presse"
+msgstr "Date de la première Revue de Presse"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,last_name:0
+msgid "Last Name"
+msgstr "Nom"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_unsubscribe_emails,unsubscribe,final_count:0
+msgid "Unsubscribed Count"
+msgstr "Comptage des désincrits"
+
+#. module: cci_mailchimp
+#: field:mail_usage,source_id:0
+msgid "Source ID"
+msgstr "ID de la Source"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_search_emails,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_search_emails
+#: model:ir.ui.menu,name:cci_mailchimp.menu_search_emails
+msgid "Search Emails"
+msgstr "Chercher eMails"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_results_adv,extract:0
+#: wizard_view:cci_mailchimp_results_rdp,extract:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_mailchimp
+#: selection:cci_mailchimp_unsubscribe_emails,init,list_name:0
+#: selection:mailchimp_proxy,list_name:0
+msgid "Alter Ego"
+msgstr "Alter Ego"
+
+#. module: cci_mailchimp
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_results_adv,extract,msg:0
+#: wizard_field:cci_mailchimp_results_rdp,extract,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,agenda_subscribe:0
+msgid "Sending of Agenda"
+msgstr "Envoi de l'Agenda"
+
+#. module: cci_mailchimp
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_show_record
+msgid "View Record"
+msgstr "Voir fiche"
+
+#. module: cci_mailchimp
+#: field:mail_bounce,name:0
+#: field:mail_usage,name:0
+#: field:mailchimp_proxy,name:0
+msgid "Name-Email"
+msgstr "Nom-eMail"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_search_emails,init,search:0
+msgid "Search"
+msgstr "Rechercher"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_delete_emails,delete,final_count:0
+msgid "Deletions Count"
+msgstr "Comptage des effacements"
+
+#. module: cci_mailchimp
+#: selection:res.partner.contact,agenda_subscribe:0
+#: selection:res.partner.contact,alterego_subscribe:0
+#: selection:res.partner.contact,rdp_forced_area:0
+#: selection:res.partner.contact,rdp_subscribe:0
+msgid "Default"
+msgstr "Par défaut"
+
+#. module: cci_mailchimp
+#: model:ir.module.module,shortdesc:cci_mailchimp.module_meta_information
+msgid "CCI MailChimp"
+msgstr "CCI MailChimp"
+
+#. module: cci_mailchimp
+#: field:mail_bounce,active:0
+#: field:mailchimp_proxy,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,dirty:0
+msgid "Dirty"
+msgstr "A changer"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "WAPI"
+msgstr "WAPI"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_results_adv,init,url:0
+msgid "URL of the advertising"
+msgstr "URL de la publicité"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,source:0
+msgid "Source of Data"
+msgstr "Source de Données"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_delete_emails,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_delete_emails
+#: model:ir.ui.menu,name:cci_mailchimp.menu_delete_emails
+msgid "Delete Emails"
+msgstr "Effacer les eMails"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,job_id:0
+msgid "Linked Job"
+msgstr "Job lié"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_correct_emails,init,to:0
+#: wizard_field:cci_mailchimp_results_adv,init,to:0
+#: wizard_field:cci_mailchimp_results_rdp,init,to:0
+msgid "To"
+msgstr "Vers"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_results_adv,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_results_adv
+#: model:ir.ui.menu,name:cci_mailchimp.menu_maichimp_results_adv
+msgid "Extract Advertising Results"
+msgstr "Extraire les résultats d'une Pub"
+
+#. module: cci_mailchimp
+#: selection:cci_mailchimp_unsubscribe_emails,init,list_name:0
+#: selection:mailchimp_proxy,list_name:0
+msgid "Revue de Presse"
+msgstr "Revue de Presse"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,leid:0
+msgid "MailChimp leid"
+msgstr "MailChimp leid"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_correct_emails,init,end:0
+#: wizard_button:cci_mailchimp_delete_emails,init,end:0
+#: wizard_button:cci_mailchimp_resubscribe,init,end:0
+#: wizard_button:cci_mailchimp_results_adv,init,end:0
+#: wizard_button:cci_mailchimp_results_rdp,init,end:0
+#: wizard_button:cci_mailchimp_search_emails,init,end:0
+#: wizard_button:cci_mailchimp_unsubscribe_emails,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_correct_emails,correct,end:0
+#: wizard_button:cci_mailchimp_delete_emails,delete,end:0
+#: wizard_button:cci_mailchimp_unsubscribe_emails,unsubscribe,end:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_results_adv,init,extract:0
+#: wizard_button:cci_mailchimp_results_rdp,init,extract:0
+msgid "Extract"
+msgstr "Extraire"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,subscriber_id:0
+msgid "Linked Subscriber"
+msgstr "Abonné lié"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,courtesy_full2:0
+msgid "Courtesy Full 2"
+msgstr "Civilité complète 2"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,courtesy_full1:0
+msgid "Courtesy Full 1"
+msgstr "Civilité complète 1"
+
+#. module: cci_mailchimp
+#: model:ir.ui.menu,name:cci_mailchimp.menu_mailchimp_proxy
+#: view:mailchimp_proxy:0
+msgid "MailChimp Proxy"
+msgstr "MailChimp Proxy"
+
+#. module: cci_mailchimp
+#: selection:cci_mailchimp_unsubscribe_emails,init,list_name:0
+#: selection:mailchimp_proxy,list_name:0
+msgid "Agenda CCI"
+msgstr "Agenda CCI"
+
+#. module: cci_mailchimp
+#: field:mail_bounce,type:0
+msgid "Type of Bounce"
+msgstr "Type de refus"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,first_name:0
+msgid "First Name"
+msgstr "Prénom"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,alterego_subscribe:0
+msgid "Sending of Alter Ego newsletter"
+msgstr "Envoi de la newsletter Alter Ego"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_results_rdp,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_results_rdp
+#: model:ir.ui.menu,name:cci_mailchimp.menu_mailchimp_results_rdp
+msgid "Extract RDP Results"
+msgstr "Extraire les comptages RDP"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_correct_emails,init,correct:0
+#: wizard_field:cci_mailchimp_correct_emails,init,from:0
+msgid "Correct"
+msgstr "Correct"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_resubscribe,init,confirm:0
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: cci_mailchimp
+#: model:ir.model,name:cci_mailchimp.model_mailchimp_proxy
+msgid "An email address synchronised with MailChimp"
+msgstr "Un eMail synchronisé avec MailChimp"
+
+#. module: cci_mailchimp
+#: selection:res.partner.contact,agenda_subscribe:0
+#: selection:res.partner.contact,alterego_subscribe:0
+#: selection:res.partner.contact,rdp_subscribe:0
+msgid "Never"
+msgstr "Jamais"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,euid:0
+msgid "MailChimp euid"
+msgstr "MailChimp euid"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "Flandres"
+msgstr "Flandres"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_search_emails,init,email:0
+msgid "You can search on part of emails : like '@cci.', for example"
+msgstr "Vous pouvez faire des recherches sur des parties d'emails : comme '@cci.', par exemple"
+
+#. module: cci_mailchimp
+#: field:res.partner.contact,rdp_forced_area:0
+msgid "Forced Area for Revue de Presse"
+msgstr "Zone Forcée pour la Revue de Presse"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "Namur"
+msgstr "Namur"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,area_rdp:0
+#: selection:res.partner.contact,rdp_forced_area:0
+msgid "Hainaut"
+msgstr "Hainaut"
+
+#. module: cci_mailchimp
+#: selection:mailchimp_proxy,list_name:0
+msgid "RDP Vlanderen"
+msgstr "RDP Vlanderen"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_unsubscribe_emails,init,list_name:0
+#: field:mailchimp_proxy,list_name:0
+msgid "List"
+msgstr "Liste"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_resubscribe,init,resubscribe:0
+msgid "ReSubscribe"
+msgstr "Ré-Inscrire"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_resubscribe,init,confirm:0
+msgid "You must confirm you're trying to SPAM this user"
+msgstr "Vous devez confirmer que vous n'êtes pas en train de SPAMMER cet utilisateur."
+
+#. module: cci_mailchimp
+#: field:cci_newsletter.source,followup_email:0
+msgid "Email for Follow-Up"
+msgstr "Email pour suivi"
+
+#. module: cci_mailchimp
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_resubscribe
+msgid "Delete Unsubscribe on MailChimp"
+msgstr "Efface la désinscription de MailChimp"
+
+#. module: cci_mailchimp
+#: field:mailchimp_proxy,courtesy_code:0
+msgid "Courtesy Code"
+msgstr "Code Civilité"
+
+#. module: cci_mailchimp
+#: help:cci_mailchimp_results_adv,init,url:0
+msgid "You can give also only a part of the complete URL.\n"
+"All URL containing this part will be taken into account."
+msgstr "Vous pouvez aussi ne donner qu'ue partie de l'URL.\n"
+"Toutes les URL contenant cette partie d'URL seront prises en compte"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_correct_emails,correct:0
+#: wizard_view:cci_mailchimp_delete_emails,delete:0
+#: wizard_view:cci_mailchimp_unsubscribe_emails,unsubscribe:0
+msgid "Results"
+msgstr "Résultats"
+
+#. module: cci_mailchimp
+#: field:mail_bounce,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_mailchimp
+#: wizard_button:cci_mailchimp_unsubscribe_emails,init,unsubscribe:0
+msgid "Unsubscribe Them All"
+msgstr "Désinscrit les tous !"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_unsubscribe_emails,init,emails:0
+msgid "email(s) to unsubscribe"
+msgstr "eMail(s) à désinscrire"
+
+#. module: cci_mailchimp
+#: wizard_view:cci_mailchimp_unsubscribe_emails,init:0
+#: model:ir.actions.wizard,name:cci_mailchimp.cci_mailchimp_unsubscribe_emails
+#: model:ir.ui.menu,name:cci_mailchimp.menu_unsubscribe_emails
+msgid "Unsubscribe Emails"
+msgstr "Désinscrire Emails"
+
+#. module: cci_mailchimp
+#: wizard_field:cci_mailchimp_correct_emails,correct,final_count:0
+msgid "Corrections Count"
+msgstr "Comptage des corrections"
+

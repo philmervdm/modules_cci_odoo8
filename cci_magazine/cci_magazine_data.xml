@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record forcecreate="True" id="ir_cron_scheduler_end_jobs" model="ir.cron">
+            <field name="name">Inactivate old Jobs</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/><!-- for NOT to relaunch this calculation after a relaunch of the server, because it's very slow in dev environnement and unusefull in prod environnement-->
+            <field eval="'res.partner'" name="model"/>
+            <field eval="'_inactivate_old'" name="function"/>
+            <field eval="'()'" name="args"/>
+            <field eval="time.strftime('%Y-%m-%d 22:10:00')" name="nextcall"/>
+        </record>
+
+        <!-- values by default for CCI Connect -->
+        <record id="subscription_source1" model="cci_magazine.subscription_source">
+            <field name="name">Prospect</field>
+            <field name="code">Prospect</field>
+        </record>
+        <record id="subscription_source2" model="cci_magazine.subscription_source">
+            <field name="name">Prospect en cours ...</field>
+            <field name="code">Prospect en cours</field>
+        </record>
+        <record id="subscription_source3" model="cci_magazine.subscription_source">
+            <field name="name">Membre</field>
+            <field name="code">Membre</field>
+        </record>
+        <record id="subscription_source4" model="cci_magazine.subscription_source">
+            <field name="name">Payant</field>
+            <field name="code">Payant</field>
+        </record>
+        <record id="subscription_source5" model="cci_magazine.subscription_source">
+            <field name="name">Elu</field>
+            <field name="code">Elu</field>
+        </record>
+        <record id="subscription_source6" model="cci_magazine.subscription_source">
+            <field name="name">Province</field>
+            <field name="code">Province</field>
+        </record>
+        <record id="subscription_source7" model="cci_magazine.subscription_source">
+            <field name="name">Commune</field>
+            <field name="code">Commune</field>
+        </record>
+        <record id="subscription_source8" model="cci_magazine.subscription_source">
+            <field name="name">Ambassade</field>
+            <field name="code">Ambassade</field>
+        </record>
+        <record id="subscription_source9" model="cci_magazine.subscription_source">
+            <field name="name">Représentation</field>
+            <field name="code">Representation</field>
+        </record>
+        <record id="subscription_source10" model="cci_magazine.subscription_source">
+            <field name="name">Protocole</field>
+            <field name="code">Protocole</field>
+        </record>
+        <record id="subscription_source11" model="cci_magazine.subscription_source">
+            <field name="name">Presse</field>
+            <field name="code">Presse</field>
+        </record>
+        <record id="subscription_source12" model="cci_magazine.subscription_source">
+            <field name="name">Association</field>
+            <field name="code">Association</field>
+        </record>
+        <record id="subscription_source13" model="cci_magazine.subscription_source">
+            <field name="name">CCI</field>
+            <field name="code">CCI</field>
+        </record>
+        <record id="subscription_source14" model="cci_magazine.subscription_source">
+            <field name="name">Tribunal</field>
+            <field name="code">Tribunal</field>
+        </record>
+        <record id="subscription_source15" model="cci_magazine.subscription_source">
+            <field name="name">Enseignement</field>
+            <field name="code">Enseignement</field>
+        </record>
+        <record id="subscription_source16" model="cci_magazine.subscription_source">
+            <field name="name">Bibliothèque</field>
+            <field name="code">Bibliotheque</field>
+        </record>
+        <record id="subscription_source17" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Neuray</field>
+            <field name="code">Relation - Neuray</field>
+        </record>
+        <record id="subscription_source18" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Betsch</field>
+            <field name="code">Relation - Betsch</field>
+        </record>
+        <record id="subscription_source19" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Bonmariage</field>
+            <field name="code">Relation - Bonmariage</field>
+        </record>
+        <record id="subscription_source20" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Reintgens</field>
+            <field name="code">Relation - Reintgens</field>
+        </record>
+        <record id="subscription_source21" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Léonard</field>
+            <field name="code">Relation - Leonard</field>
+        </record>
+        <record id="subscription_source22" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Christophe Mausen</field>
+            <field name="code">Relation - Christophe Mausen</field>
+        </record>
+        <record id="subscription_source23" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Outmanns</field>
+            <field name="code">Relation - Outmanns</field>
+        </record>
+        <record id="subscription_source24" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Pirlet</field>
+            <field name="code">Relation - Pirlet</field>
+        </record>
+        <record id="subscription_source25" model="cci_magazine.subscription_source">
+            <field name="name">Relation - Trésegnie</field>
+            <field name="code">Relation - Tresegnie</field>
+        </record>
+        <record id="subscription_source26" model="cci_magazine.subscription_source">
+            <field name="name">Membre autre CCI</field>
+            <field name="code">Membre autre CCI</field>
+        </record>
+        <record id="subscription_source27" model="cci_magazine.subscription_source">
+            <field name="name">Culturel</field>
+            <field name="code">Culturel</field>
+        </record>
+        <record id="subscription_source28" model="cci_magazine.subscription_source">
+            <field name="name">Secretary Club</field>
+            <field name="code">Secretary Club</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_extract_subscriptions_form">
+            <field name="name">extract.subscriptions.form</field>
+            <field name="model">extract.subscriptions</field>
+            <field name="arch" type="xml">
+                <form string="CCI Magazine Subscription">
+                    <footer>
+                        <button name="open_window_results" type="object" string="Extract Magazine Subscription"  class="oe_highlight"/>
+                        or
+                        <button string="End" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_extract_subscriptions_action" model="ir.actions.act_window">
+            <field name="name">CCI Magazine Subscription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.subscriptions</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_extract_subscriptions_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="main_extract_subscriptions" name="CCI Mag Subscription" 
+			    parent="base.postal_subscriber_root"
+                sequence="20"
+                groups="group_cci_magazine_user"/>
+
+		<menuitem name="CCI Mag Subscription" id="menu_extract_subscriptions"
+			    action="wizard_extract_subscriptions_action" 
+			    parent="main_extract_subscriptions"
+                groups="group_cci_magazine_user"/>
+
+</data>
+</openerp>

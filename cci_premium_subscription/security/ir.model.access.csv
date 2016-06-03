@@ -1,0 +1,14 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_premium_sub_type_reader","Premium Subscription Type Reader","cci_premium_subscription.model_premium_subscription_type","group_cci_premium_subscription_reader",1,0,0,0
+"access_premium_sub_type_user","Premium Subscription Type User","cci_premium_subscription.model_premium_subscription_type","group_cci_premium_subscription_user",1,0,0,0
+"access_premium_sub_type_manager","Premium Subscription Type Manager","cci_premium_subscription.model_premium_subscription_type","group_cci_premium_subscription_manager",1,1,1,1
+"access_premium_sub_reader","Premium Subscription Reader","cci_premium_subscription.model_premium_subscription","group_cci_premium_subscription_reader",1,0,0,0
+"access_premium_sub_user","Premium Subscription User","cci_premium_subscription.model_premium_subscription","group_cci_premium_subscription_user",1,1,1,0
+"access_premium_sub_manager","Premium Subscription Manager","cci_premium_subscription.model_premium_subscription","group_cci_premium_subscription_manager",1,1,1,0
+"access_premium_sub_usage_reader","Premium Subscription Usage Reader","cci_premium_subscription.model_premium_subscription_usage","group_cci_premium_subscription_reader",1,0,0,0
+"access_premium_sub_usage_user","Premium Subscription Usage User","cci_premium_subscription.model_premium_subscription_usage","group_cci_premium_subscription_user",1,0,0,0
+"access_premium_sub_usage_manager","Premium Subscription Usage Manager","cci_premium_subscription.model_premium_subscription_usage","group_cci_premium_subscription_manager",1,1,1,0
+"access_premium_sub_renew_reader","Premium Subscription Renew Reader","cci_premium_subscription.model_premium_subscription_renew","group_cci_premium_subscription_reader",1,0,0,0
+"access_premium_sub_renew_user","Premium Subscription Renew User","cci_premium_subscription.model_premium_subscription_renew","group_cci_premium_subscription_user",1,0,0,0
+"access_premium_sub_renew_manager","Premium Subscription Renew Manager","cci_premium_subscription.model_premium_subscription_renew","group_cci_premium_subscription_manager",1,1,1,1
+

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<report 
+            string="ATA Carnet Header"
+            id="cci_mission1"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_header"
+            file="cci_mission.report_print_carnet_header" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet Export"
+            id="cci_mission2"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_export"
+            file="cci_mission.report_print_carnet_export" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet Import"
+            id="cci_mission3"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_import"
+            file="cci_mission.report_print_carnet_import" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet Transit"
+            id="cci_mission4"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_transit"
+            file="cci_mission.report_print_carnet_transit" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet ReExport"
+            id="cci_mission5"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_reexport"
+            file="cci_mission.report_print_carnet_reexport" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet ReImport"
+            id="cci_mission6"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_reimport"
+            file="cci_mission.report_print_carnet_reimport" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet Presence"
+            id="cci_mission7"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_presence"
+            file="cci_mission.report_print_carnet_presence" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet ExpReImport"
+            id="cci_mission8"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_export_reimport"
+            file="cci_mission.report_print_carnet_export_reimport" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet ExpReExport"
+            id="cci_mission9"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_import_reexport"
+            file="cci_mission.report_print_carnet_import_reexport" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="ATA Carnet VTtransit"
+            id="cci_mission10"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.report_print_carnet_vtransit"
+            file="cci_mission.report_print_carnet_vtransit" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="Carnet After Validity"
+            id="cci_mission11"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.carnet_after_validity"
+            file="cci_mission.carnet_after_validity" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        <report 
+            string="Carnet Before Validity"
+            id="cci_mission12"
+            model="cci_missions.ata_carnet"
+            name="cci_mission.carnet_before_validity"
+            file="cci_mission.carnet_before_validity" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+	</data>
+</openerp>
+

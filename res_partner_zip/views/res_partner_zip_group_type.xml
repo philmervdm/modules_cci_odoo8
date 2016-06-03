@@ -1,0 +1,38 @@
+<openerp>
+    <data>
+        <!-- VIEWS -->
+        <record model="ir.ui.view" id="view_partner_zip_group_type_form">
+            <field name="name">res.partner.zip.group.type.form</field>
+            <field name="model">res.partner.zip.group.type</field>
+            <field name="arch" type="xml">
+                <form string="Group Type">
+                    <group>
+                        <field name="name" select="1" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_partner_zip_group_type_tree">
+			<field name="name">res.partner.zip.group.type.tree</field>
+			<field name="model">res.partner.zip.group.type</field>
+			<field name="arch" type="xml">
+				<tree string="Group Type">
+					<field name="name" select="1" />
+				</tree>
+			</field>
+        </record>
+
+        <!-- ACTIONS -->
+	    <record model="ir.actions.act_window" id="action_partner_zip_type_group">
+            <field name="name">Group Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.zip.group.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- MENUS -->
+        <menuitem parent="menu_partner_zip_main" action="action_partner_zip_type_group" id="menu_partner_zip_group_type" />
+    </data>
+</openerp>

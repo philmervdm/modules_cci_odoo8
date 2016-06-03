@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_show_validated_simple" model="ir.ui.view">
+            <field name="name">show.validated.simple.form</field>
+            <field name="model">show.validated.simple</field>
+            <field name="arch" type="xml">
+				<form string="Complex Validated Partners for Members' Directory">
+					<footer>
+						<button name="show_all_simple" string="Show" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_show_validated_simple" model="ir.actions.act_window">
+             <field name="name">Simple Validated Partners for Members' Directory</field>
+             <field name="res_model">show.validated.simple</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_show_validated_simple"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Simple Validated Partners for Members' Directory"
+            action="action_show_validated_simple"
+            id="menu_show_validated_simple"
+            parent="menu_pending_directory_address_proxy"/>
+	
+	</data>
+</openerp>

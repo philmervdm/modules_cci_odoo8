@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+	<!-- Users Groups -->
+    <record model="res.groups" id="group_cci_connect_delayed_partner_manager">
+        <field name="name">Delayed Changes Manager</field>
+    </record>
+
+	<!-- Menu accesses -->
+	<record model="ir.ui.menu" id="menu_delayed_partner">
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_connect_delayed_partner_manager')])]"/>
+	</record>
+</data>
+</openerp>
+

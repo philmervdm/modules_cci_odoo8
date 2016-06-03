@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<report
+			string="Commercial Layout"
+			model="res.partner"
+			name="cci_report_extend.report_partner_commercial"
+            header="False"
+            auto="False"
+            report_type="qweb-pdf"
+			file="cci_report_extend.report_partner_commercial"
+			id="partner_print_commercial_extend"/>
+
+		<report
+			string="Internal Layout"
+			model="res.partner"
+			name="cci_report_extend.report_partner_internal"
+            header="False"
+            auto="False"
+            report_type="qweb-pdf"
+			file="cci_report_extend.report_partner_internal"
+			id="partner_print_internal_extend"/>
+	</data>
+</openerp>
+

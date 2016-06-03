@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+	<!-- Users Groups -->
+    <!-- Manager : to manage the configuration -->
+    <record model="res.groups" id="group_cci_newsletter_manager">
+        <field name="name">CCI Newsletter Manager</field>
+    </record>
+
+    <!-- User : to access to subscriber list -->
+    <record model="res.groups" id="group_cci_newsletter_user">
+        <field name="name">CCI Newsletter User</field>
+    </record>
+
+    <!-- External Users : to access to subscriber list only, for others CCIs -->
+    <record model="res.groups" id="group_cci_newsletter_extuser_wapi">
+        <field name="name">CCI Newsletter External User WAPI</field>
+    </record>
+    <record model="res.groups" id="group_cci_newsletter_extuser_bw">
+        <field name="name">CCI Newsletter External User CCI Brabant wallon</field>
+    </record>
+    <record model="res.groups" id="group_cci_newsletter_extuser_ccih">
+        <field name="name">CCI Newsletter External User CCIH</field>
+    </record>
+</data>
+</openerp>
+

@@ -1,0 +1,1365 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_salesman
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2013-12-19 08:05:26+0000\n"
+"PO-Revision-Date: 2013-12-19 08:05:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_salesman
+#: view:crm_cci.todo:0
+msgid "Dial"
+msgstr "Appel"
+
+#. module: cci_salesman
+#: field:account.account,cci_commission:0
+msgid "CCI Commission"
+msgstr "CCI Commission"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_partner
+msgid "Show Partner"
+msgstr "Afficher Partenaire"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "The number of years must be 1 or greater."
+msgstr "Le nombre d'années doit être supérieur ou égal à 1."
+
+#. module: cci_salesman
+#: view:cci_salesman.commission_exception:0
+#: field:cci_salesman.commission_exception,comments:0
+#: view:cci_salesman.commission_payment:0
+#: field:cci_salesman.commission_payment,comments:0
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: cci_salesman
+#: view:cci_salesman.commission_payment:0
+#: model:ir.actions.act_window,name:cci_salesman.action_commission_payment
+#: model:ir.ui.menu,name:cci_salesman.menu_commission_payment
+msgid "Commission Payment"
+msgstr "Paiement de Commission"
+
+#. module: cci_salesman
+#: selection:cci.product,order_type:0
+msgid "Adhesion"
+msgstr "Adhésion"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,mi:0
+msgid "MeetIN"
+msgstr "MeetIN"
+
+#. module: cci_salesman
+#: view:res.partner:0
+msgid "CCI"
+msgstr "CCI"
+
+#. module: cci_salesman
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Sale Order Details"
+msgstr "Détails Bons Commande"
+
+#. module: cci_salesman
+#: view:cci.contact:0
+msgid "Totaux:"
+msgstr "Totaux:"
+
+#. module: cci_salesman
+#: field:cci.contact,com2_total:0
+msgid "Com (2,5pourcent)"
+msgstr "Com (2,5%)"
+
+#. module: cci_salesman
+#: field:cci.contact,name:0
+msgid "Nom"
+msgstr "Nom"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/users.py:0
+#, python-format
+msgid "Error: You can let the 'CCI product' undefined but only for global commission change."
+msgstr "Erreur: Vous ne pouvez laisser le 'Produit commercial' sans valeur que pour un changement global de commission."
+
+#. module: cci_salesman
+#: field:crm_cci.todo,prof_phone:0
+msgid "Prof. Phone"
+msgstr "Tél Prof."
+
+#. module: cci_salesman
+#: constraint:crm.case.section:0
+msgid "Error ! You cannot create recursive sections."
+msgstr "Erreur ! Vous ne pouvez pas créer des sections en boucle mère->fille->mère."
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_res_partner_interest
+msgid "res.partner.interest"
+msgstr "res.partner.interest"
+
+#. module: cci_salesman
+#: wizard_field:extract_actions,getfile,actions.xls:0
+#: wizard_field:extract_comm_results,getfile,comm_results.xls:0
+#: wizard_field:extract_commissions,getfile,commissions.xls:0
+#: wizard_field:extract_pipeline,getfile,pipeline.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_salesman
+#: wizard_view:extract_actions,getfile:0
+#: wizard_view:extract_comm_results,getfile:0
+#: wizard_view:extract_commissions,getfile:0
+#: wizard_view:extract_pipeline,getfile:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_turnover_details
+msgid "cci.turnover.details"
+msgstr "cci.turnover.details"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Midi"
+msgstr "Midi"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.wizard_get_cci_product_turnover
+msgid "TurnOver by CCI Product"
+msgstr "C.A. par produit commercial"
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+msgid "Date Suivi"
+msgstr "Date Suivi"
+
+#. module: cci_salesman
+#: wizard_view:extract_actions,init:0
+#: model:ir.actions.wizard,name:cci_salesman.extract_actions
+#: model:ir.ui.menu,name:cci_salesman.menu_extract_actions
+msgid "Extract Actions"
+msgstr "Extraire Actions"
+
+#. module: cci_salesman
+#: wizard_button:cci_salesman_change_product_id,init,change:0
+msgid "Change"
+msgstr "Change"
+
+#. module: cci_salesman
+#: view:res.partner:0
+msgid "Marques d'interet"
+msgstr "Marques d'intérêt"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,company_email:0
+msgid "Company EMail"
+msgstr "EMail société"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_res_partner_interest_next
+msgid "res.partner.interest.next"
+msgstr "res.partner.interest.next"
+
+#. module: cci_salesman
+#: wizard_button:extract_actions,getfile,end:0
+#: wizard_button:extract_comm_results,getfile,end:0
+#: wizard_button:extract_commissions,getfile,end:0
+#: wizard_button:extract_pipeline,getfile,end:0
+#: wizard_button:get_cci_product_turnover,init,ok:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_res_commission
+msgid "res.commission"
+msgstr "res.commission"
+
+#. module: cci_salesman
+#: help:extract_pipeline,init,year:0
+msgid "If year given, only interests for that year will be extracted"
+msgstr "Si l'année est donnée, seules les marques d'intérêt de cette année seront extraites; sinon, laissez vide"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,mobile:0
+msgid "Mobile"
+msgstr "GSM"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Unkwnow user "
+msgstr "Utilisateur inconnu "
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_archive_interest
+msgid "Archive Interest by Year"
+msgstr "Archiver les marques d'intérêt d'une année"
+
+#. module: cci_salesman
+#: field:cci.objectif,user:0
+#: field:cci_salesman.commission_exception,user_id:0
+#: field:cci_salesman.commission_payment,user_id:0
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,cci_contact:0
+#: field:res.partner.history,cci_contact:0
+#: field:res.partner.interest,cci_contact:0
+msgid "Contact CCI"
+msgstr "Contact CCI"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#: field:cci.turnover,sum_price:0
+#: field:cci.turnover.details,price:0
+#, python-format
+msgid "Amount"
+msgstr "Montant cumulé"
+
+#. module: cci_salesman
+#: field:cci.contact,com1_total:0
+msgid "Com (1,5pourcent)"
+msgstr "Com (1,5%)"
+
+#. module: cci_salesman
+#: wizard_field:archive_interest,init,product_ids:0
+msgid "Products"
+msgstr "Produits"
+
+#. module: cci_salesman
+#: field:cci.contact,realised_total:0
+msgid "Realise"
+msgstr "Réalisé"
+
+#. module: cci_salesman
+#: wizard_field:get_cci_product_turnover,init,from:0
+msgid "From Year"
+msgstr "Depuis l'année"
+
+#. module: cci_salesman
+#: field:cci.turnover.details,turnover:0
+msgid "Turnover"
+msgstr "C.A."
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/partner_interest_next.py:0
+#: wizard_button:archive_interest,init,ok:0
+#: wizard_button:partner_interest_next,init,ok:0
+#, python-format
+msgid "OK"
+msgstr "OK"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Move Name"
+msgstr "Nom Mouvement"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_job
+msgid "Show Function Contact"
+msgstr "Afficher la fonction de contact"
+
+#. module: cci_salesman
+#: wizard_view:partner_interest_next,init:0
+msgid "Marques d'interets"
+msgstr "Marques d'intérêts"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_crm_cci_todo
+msgid "ToDos list of olds not recomputed"
+msgstr "Todos liste des anciens pour contrôle"
+
+#. module: cci_salesman
+#: help:res.users,cci_crm_follower:0
+msgid "Select only if this person will use his/her CCI CRM Todo list"
+msgstr "Select only if this person will use his/her CCI CRM Todo list"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_salesman_commission_exception
+msgid "cci_salesman.commission_exception"
+msgstr "cci_salesman.commission_exception"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_payment,amount:0
+msgid "Paid Amount"
+msgstr "Montant payé"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_objectif
+msgid "cci.objectif"
+msgstr "cci.objectif"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,event:0
+msgid "Event"
+msgstr "Event"
+
+#. module: cci_salesman
+#: wizard_field:get_cci_product_turnover,init,to:0
+msgid "To Year"
+msgstr "jusqu'à l'année"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_turnover
+msgid "cci.turnover"
+msgstr "cci.turnover"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,cci_contact_follow:0
+#: field:res.partner.history,cci_contact_follow:0
+#: field:res.partner.interest,cci_contact_follow:0
+msgid "Contact CCI Suivi"
+msgstr "Contact CCI Suivi"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,ae_job_id:0
+#: wizard_field:create_interests,init,ccimag_job_id:0
+#: wizard_field:create_interests,init,cnn_job_id:0
+#: wizard_field:create_interests,init,empl_job_id:0
+#: wizard_field:create_interests,init,event_job_id:0
+#: wizard_field:create_interests,init,histo_job_id:0
+#: wizard_field:create_interests,init,memb_job_id:0
+#: wizard_field:create_interests,init,mi_job_id:0
+#: wizard_field:create_interests,init,rep_job_id:0
+#: wizard_field:create_interests,init,spons_job_id:0
+#: wizard_field:create_interests,init,table_job_id:0
+msgid "Contact Partner"
+msgstr "Contact Partenaire"
+
+#. module: cci_salesman
+#: selection:crm_cci.todo,action:0
+msgid "Aucune"
+msgstr "Aucune"
+
+#. module: cci_salesman
+#: wizard_button:create_histo_from_mark,init,ok:0
+#: wizard_button:create_interests,init,create:0
+msgid "Create"
+msgstr "Créer"
+
+#. module: cci_salesman
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour l'architecture de la vue"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_exception,period_id:0
+#: field:cci_salesman.commission_payment,period_id:0
+msgid "Period"
+msgstr "Période"
+
+#. module: cci_salesman
+#: field:cci.contact,commission:0
+msgid "Commission"
+msgstr "Commission"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,state:0
+#: field:res.partner.history,state:0
+msgid "State"
+msgstr "Etat"
+
+#. module: cci_salesman
+#: model:crm.case.section,name:cci_salesman.section_interest
+msgid "CRM marques d'intéret"
+msgstr "CRM marques d'intérêt"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,positive:0
+#: field:res.partner.interest,positive:0
+msgid "Positive Conclusion"
+msgstr "Fin positive"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Line ID"
+msgstr "ID Ligne"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_current_history
+msgid "My Current History"
+msgstr "Mon historique courant"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/get_todos.py:0
+#: view:crm_cci.todo:0
+#, python-format
+msgid "ToDo"
+msgstr "ToDo"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Detail Sums"
+msgstr "Détail Sommes"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: field:cci.contact,years:0
+#, python-format
+msgid "Years"
+msgstr "Années"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_interests
+msgid "Show All Interest"
+msgstr "Afficher toutes les intérêts"
+
+#. module: cci_salesman
+#: view:cci.product.category:0
+#: model:ir.actions.act_window,name:cci_salesman.action_cci_product_category_form
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_product_category_form
+msgid "CCI Product Category"
+msgstr "Sous-produit"
+
+#. module: cci_salesman
+#: wizard_field:extract_comm_results,init,years:0
+msgid "Years to compare"
+msgstr "Nombre d'années à comparer"
+
+#. module: cci_salesman
+#: field:crm.case,partner_contact_id:0
+msgid "Contact Person"
+msgstr "Personne de contact"
+
+#. module: cci_salesman
+#: wizard_view:extract_actions,getfile:0
+#: wizard_view:extract_comm_results,getfile:0
+#: wizard_view:extract_commissions,getfile:0
+#: wizard_view:extract_pipeline,getfile:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_history
+msgid "Show All History"
+msgstr "Afficher tous les historiques"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.partner_interest_next_wizard
+msgid "Marques d'interets: Aller a l'an prochain"
+msgstr "Marques d'intérêts: Aller à l'an prochain"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#: field:cci_salesman.commission_exception,cci_product_id:0
+#, python-format
+msgid "CCI Product"
+msgstr "Produit commercial"
+
+#. module: cci_salesman
+#: view:cci.objectif:0
+#: model:ir.actions.act_window,name:cci_salesman.action_cci_objectif
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_objectif
+msgid "CCI Objectif"
+msgstr "Objectif annuel"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Appel sortant"
+msgstr "Appel sortant"
+
+#. module: cci_salesman
+#: field:cci.product,product_ids:0
+msgid "Produits comptables associes"
+msgstr "Produits comptables associés"
+
+#. module: cci_salesman
+#: view:cci.product:0
+#: field:cci.product,categories:0
+msgid "Categories"
+msgstr "Sous-produits"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,turnover_hoped:0
+#: field:res.partner.interest,turnover_hoped:0
+msgid "CA espere"
+msgstr "CA espéré"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_history
+msgid "All history"
+msgstr "Tous les historiques"
+
+#. module: cci_salesman
+#: selection:cci.product,order_type:0
+msgid "Participation Club"
+msgstr "Participation Club"
+
+#. module: cci_salesman
+#: view:res.partner:0
+msgid "BDC"
+msgstr "BDC"
+
+#. module: cci_salesman
+#: field:res.users,cci_crm_follower:0
+msgid "CRM Follower"
+msgstr "CRM Follower"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "No access"
+msgstr "Pas d'accès"
+
+#. module: cci_salesman
+#: wizard_view:extract_pipeline,init:0
+#: model:ir.actions.wizard,name:cci_salesman.extract_pipeline
+#: model:ir.ui.menu,name:cci_salesman.menu_extract_pipeline
+msgid "Extract Pipeline"
+msgstr "Extraire Pipeline"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/partner_interest_next.py:0
+#: wizard_button:archive_interest,init,end:0
+#: wizard_button:partner_interest_next,init,end:0
+#, python-format
+msgid "Annuler"
+msgstr "Annuler"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "You are not a commission manager or a salesman.\nYou don\'t have access to this tool"
+msgstr "You are not a commission manager or a salesman.\nYou don\'t have access to this tool"
+
+#. module: cci_salesman
+#: field:cci.turnover,partner:0
+#: wizard_field:create_interests,init,partner_id:0
+#: view:crm_cci.todo:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Save the File with '\".xls\"' extension."
+msgstr "Enregistrez ce fichier avec l'extension '\".xls\"'."
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Sale Order Name"
+msgstr "Nom Bon Commande"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Meeting CCI"
+msgstr "Meeting CCI"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,year:0
+#: field:res.partner.interest,year:0
+msgid "Prospection Year"
+msgstr "Année prospection"
+
+#. module: cci_salesman
+#: wizard_view:cci_salesman_change_product_id,init:0
+msgid "Usefull only if you have several lines marked for change."
+msgstr "Utile seulement si vous avze plusieurs lignes à changer."
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,ae_comment:0
+#: wizard_field:create_interests,init,ccimag_comment:0
+#: wizard_field:create_interests,init,cnn_comment:0
+#: wizard_field:create_interests,init,empl_comment:0
+#: wizard_field:create_interests,init,event_comment:0
+#: wizard_field:create_interests,init,histo_comment:0
+#: wizard_field:create_interests,init,memb_comment:0
+#: wizard_field:create_interests,init,mi_comment:0
+#: wizard_field:create_interests,init,rep_comment:0
+#: wizard_field:create_interests,init,spons_comment:0
+#: wizard_field:create_interests,init,table_comment:0
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: cci_salesman
+#: field:cci.contact,commissioned:0
+#: field:cci.product,commissioned:0
+msgid "Commissionned"
+msgstr "Commissionné"
+
+#. module: cci_salesman
+#: field:cci.contact,objective_total:0
+#: field:cci.objectif,objective:0
+#: field:res.commission,objectif:0
+msgid "Objectif"
+msgstr "Objectif"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.extract_amlines_wo_products
+#: model:ir.ui.menu,name:cci_salesman.menu_extract_amlines_wo_products
+msgid "Lines on sales journals without product"
+msgstr "Lignes sur des journaux de ventes, sans produits"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,company_phone:0
+msgid "Company Phone"
+msgstr "Tél Société"
+
+#. module: cci_salesman
+#: view:cci.contact:0
+msgid "Commissions"
+msgstr "Commissions"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_product
+msgid "cci.product"
+msgstr "cci.product"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_invoices
+msgid "Show Invoices"
+msgstr "Afficher factures"
+
+#. module: cci_salesman
+#: field:product.product,cci_product_id:0
+msgid "Produit commercial associe"
+msgstr "Produit commercial associé"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Meeting externe"
+msgstr "Meeting externe"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Produit inconnu"
+msgstr "Produit inconnu"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,ccimag:0
+msgid "CCI Mag"
+msgstr "CCI Mag"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_salesman_commission_payment
+msgid "cci_salesman.commission_payment"
+msgstr "cci_salesman.commission_payment"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_exception,commission:0
+msgid "Commission correction"
+msgstr "Correctif commission"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Commercial Product"
+msgstr "Commercial Product"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.get_cci_todos
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_todos
+msgid "My Todo List"
+msgstr "Ma Todo List"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.act_todo_show_saleorders
+msgid "Show Sales Orders"
+msgstr "Afficher Bons de commande"
+
+#. module: cci_salesman
+#: field:cci.contact,user:0
+msgid "Utilisateur"
+msgstr "Utilisateur"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Partner Name"
+msgstr "Nom Partenaire"
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+#: wizard_field:create_interests,init,histo:0
+#: view:res.partner:0
+#: field:res.partner,history:0
+#: view:res.partner.history:0
+msgid "Historique"
+msgstr "Historique"
+
+#. module: cci_salesman
+#: wizard_button:extract_actions,init,getfile:0
+#: wizard_button:extract_comm_results,init,getfile:0
+#: wizard_button:extract_commissions,init,getfile:0
+#: wizard_button:extract_pipeline,init,getfile:0
+msgid "Get Excel File"
+msgstr "Obtenir fichier Excel"
+
+#. module: cci_salesman
+#: view:res.users:0
+msgid "CCI CRM"
+msgstr "CCI CRM"
+
+#. module: cci_salesman
+#: model:crm.case.section,name:cci_salesman.section_partner_histo
+msgid "CRM Historique sur partenaire"
+msgstr "CRM Historique sur partenaire"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,rep:0
+msgid "REP"
+msgstr "REP"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: wizard_field:extract_actions,init,from:0
+#: wizard_field:extract_comm_results,init,from:0
+#: wizard_field:extract_commissions,init,from:0
+#, python-format
+msgid "From"
+msgstr "De"
+
+#. module: cci_salesman
+#: view:res.partner:0
+#: field:res.partner,interest_year:0
+#: view:res.partner.interest:0
+msgid "Marque d'interet"
+msgstr "Marque d'intérêt"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,spons:0
+msgid "Sponsoring"
+msgstr "Sponsoring"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,description:0
+#: field:res.partner.history,description:0
+#: field:res.partner.interest,description:0
+msgid "Description/commentaire"
+msgstr "Description/commentaire"
+
+#. module: cci_salesman
+#: selection:crm_cci.todo,state:0
+#: selection:res.partner.history,state:0
+msgid "Closed"
+msgstr "Clôturé"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_contact_all
+msgid "All CCI Commercials"
+msgstr "Tous les chargés de relation CCI"
+
+#. module: cci_salesman
+#: view:cci.contact:0
+#: model:ir.actions.act_window,name:cci_salesman.action_cci_contact
+#: model:ir.actions.act_window,name:cci_salesman.action_cci_contact_justme
+#: model:ir.module.module,description:cci_salesman.module_meta_information
+#: model:ir.module.module,shortdesc:cci_salesman.module_meta_information
+msgid "CCI Salesman"
+msgstr "Vendeur CCI"
+
+#. module: cci_salesman
+#: selection:cci.product,order_type:0
+msgid "Devis"
+msgstr "Devis"
+
+#. module: cci_salesman
+#: wizard_field:extract_actions,getfile,msg:0
+#: wizard_field:extract_comm_results,getfile,msg:0
+#: wizard_field:extract_commissions,getfile,msg:0
+#: wizard_field:extract_pipeline,getfile,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_salesman
+#: wizard_view:partner_interest_next,init:0
+msgid "Voulez-vous avancer d'un an?"
+msgstr "Voulez-vous avancer d'un an?"
+
+#. module: cci_salesman
+#: field:cci.product.category,name:0
+#: field:crm.case,product_category:0
+#: field:crm_cci.todo,category:0
+#: field:res.partner.history,category:0
+#: field:res.partner.interest,category:0
+msgid "Categorie"
+msgstr "Sous-produit"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Commercial Product associated"
+msgstr "Produit commercial associé"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Line State"
+msgstr "Etat ligne"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Appel entrant"
+msgstr "Appel entrant"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_all_interest
+msgid "All Interests (past and present)"
+msgstr "Toutes les marques d'intérêt (passées et actuelles)"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_exception,amount:0
+msgid "Amount correction"
+msgstr "Correction du montant de base"
+
+#. module: cci_salesman
+#: field:cci.contact,active:0
+#: field:cci.product,active:0
+#: field:cci.product.category,active:0
+#: field:res.partner.interest,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: cci_salesman
+#: wizard_view:cci_salesman_change_product_id,init:0
+msgid "Confirm that you want to change all lines with the same product."
+msgstr "Confirmez que vous voulez bien changer toutes les lignes avec le même nouveau produit."
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+#: wizard_field:create_interests,init,ae_subproduct:0
+#: wizard_field:create_interests,init,ccimag_subproduct:0
+#: wizard_field:create_interests,init,cnn_subproduct:0
+#: wizard_field:create_interests,init,empl_subproduct:0
+#: wizard_field:create_interests,init,event_subproduct:0
+#: wizard_field:create_interests,init,histo_subproduct:0
+#: wizard_field:create_interests,init,memb_subproduct:0
+#: wizard_field:create_interests,init,mi_subproduct:0
+#: wizard_field:create_interests,init,rep_subproduct:0
+#: wizard_field:create_interests,init,spons_subproduct:0
+#: wizard_field:create_interests,init,table_subproduct:0
+msgid "Sous-produit"
+msgstr "Sous-produit"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.crm_case_act_ocases_for_others
+#: model:ir.ui.menu,name:cci_salesman.menu_crm_case_ocases_for_others
+msgid "Open Cases created by me for others"
+msgstr "Cas CRM ouverts, créés par moi et attribués à d'autres"
+
+#. module: cci_salesman
+#: field:cci.product,name:0
+#: field:cci.product.category,cci_product:0
+#: wizard_view:create_interests,init:0
+#: wizard_field:create_interests,init,histo_product:0
+#: field:crm.case,product:0
+#: field:crm_cci.todo,product:0
+#: field:res.partner.history,product:0
+#: field:res.partner.interest,product:0
+msgid "Produit"
+msgstr "Produit"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.extract_comm_results
+#: model:ir.ui.menu,name:cci_salesman.menu_extract_comm_results
+msgid "Extract Commercial Results"
+msgstr "Extraire les chiffres de vente"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,res_id:0
+msgid "Internal Source ID"
+msgstr "ID Source interne"
+
+#. module: cci_salesman
+#: wizard_view:cci_salesman_change_product_id,init:0
+msgid "BE CAREFULL IF PRODUCT (OLD OR NEW) IS A MEMBERSHIP PRODUCT. WARN THE ADMINISTRATOR."
+msgstr "SOYEZ PRUDENTS SI LE PRODUIT (ANCIEN OU NOUVEAU) EST UN PRODUIT MEMBERSHIP !\nPREVENEZ PLUTOT L'ADMINISTRATEUR."
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+msgid "Commentaire"
+msgstr "Commentaire"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: wizard_field:create_interests,init,ae_date:0
+#: wizard_field:create_interests,init,ccimag_date:0
+#: wizard_field:create_interests,init,cnn_date:0
+#: wizard_field:create_interests,init,empl_date:0
+#: wizard_field:create_interests,init,event_date:0
+#: wizard_field:create_interests,init,memb_date:0
+#: wizard_field:create_interests,init,mi_date:0
+#: wizard_field:create_interests,init,rep_date:0
+#: wizard_field:create_interests,init,spons_date:0
+#: wizard_field:create_interests,init,table_date:0
+#: field:crm_cci.todo,date:0
+#: field:res.partner.history,date:0
+#: field:res.partner.interest,date:0
+#, python-format
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_salesman
+#: field:res.partner,tunover_hoped:0
+msgid "Total CA espere"
+msgstr "Total CA espéré"
+
+#. module: cci_salesman
+#: wizard_field:create_histo_from_mark,init,action:0
+#: wizard_field:create_interests,init,histo_action:0
+#: field:crm_cci.todo,action:0
+#: field:res.partner.history,action:0
+msgid "Action"
+msgstr "Action"
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+#: model:ir.actions.wizard,name:cci_salesman.wizard_create_interests
+#: model:ir.actions.wizard,name:cci_salesman.wizard_create_interests_from_history
+#: model:ir.actions.wizard,name:cci_salesman.wizard_create_interests_from_interest
+#: model:ir.actions.wizard,name:cci_salesman.wizard_create_interests_from_menu
+#: model:ir.actions.wizard,name:cci_salesman.wizard_create_interests_from_todo
+#: model:ir.ui.menu,name:cci_salesman.menu_create_interests
+msgid "Create Interests"
+msgstr "Créer Marques Intérêt"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Commando"
+msgstr "Commando"
+
+#. module: cci_salesman
+#: field:res.commission,realised:0
+msgid "Realised"
+msgstr "Réalisé"
+
+#. module: cci_salesman
+#: wizard_view:cci_salesman_change_product_id,init:0
+#: model:ir.actions.wizard,name:cci_salesman.change_product_id
+msgid "Change Product ID"
+msgstr "Changer le Produit"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Expected Invoice Date"
+msgstr "Date de facturation voulue"
+
+#. module: cci_salesman
+#: field:cci.product,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.wizard_show_participations_from_todo
+msgid "Club Participations"
+msgstr "Club Participations"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_my_interest
+msgid "My Interets"
+msgstr "Mes marques d'intérêt"
+
+#. module: cci_salesman
+#: wizard_field:cci_salesman_change_product_id,init,new_product_id:0
+msgid "New Product"
+msgstr "Nouveau Produit"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_interest
+msgid "All Present Interests"
+msgstr "Toutes les marques d'intérêt actuelles"
+
+#. module: cci_salesman
+#: field:cci.product,order_type:0
+msgid "Type de BDC"
+msgstr "Type de BDC"
+
+#. module: cci_salesman
+#: wizard_button:cci_salesman_change_product_id,init,end:0
+#: wizard_button:create_histo_from_mark,init,end:0
+#: wizard_button:create_interests,init,end:0
+#: wizard_button:extract_actions,init,end:0
+#: wizard_button:extract_comm_results,init,end:0
+#: wizard_button:extract_commissions,init,end:0
+#: wizard_button:extract_pipeline,init,end:0
+#: wizard_button:get_cci_product_turnover,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_salesman
+#: selection:crm_cci.todo,state:0
+#: selection:res.partner.history,state:0
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "No name"
+msgstr "Pas de nom"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Site Internet"
+msgstr "Site Internet"
+
+#. module: cci_salesman
+#: view:crm_cci.todo:0
+msgid "Create New History"
+msgstr "Créer nouvel historique"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_product_category
+msgid "cci.product.category"
+msgstr "cci.product.category"
+
+#. module: cci_salesman
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_cci_contact
+msgid "cci.contact"
+msgstr "cci.contact"
+
+#. module: cci_salesman
+#: wizard_view:archive_interest,init:0
+msgid "Archive Interest"
+msgstr "Archive des marques d'intérêts"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: wizard_field:extract_actions,init,to:0
+#: wizard_field:extract_comm_results,init,to:0
+#: wizard_field:extract_commissions,init,to:0
+#, python-format
+msgid "To"
+msgstr "à"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "RDV"
+msgstr "RDV"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#: field:cci.turnover,details:0
+#: view:crm_cci.todo:0
+#, python-format
+msgid "Details"
+msgstr "Détails"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_res_partner_history
+msgid "res.partner.history"
+msgstr "res.partner.history"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_my_history
+msgid "My History"
+msgstr "Mes Historiques"
+
+#. module: cci_salesman
+#: selection:create_histo_from_mark,init,action:0
+#: selection:create_interests,init,histo_action:0
+#: selection:crm_cci.todo,action:0
+#: selection:res.partner.history,action:0
+msgid "Mail"
+msgstr "eMail"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "The two periods must be in the same year."
+msgstr "Les deux périodes doivent figurer dans la même année."
+
+#. module: cci_salesman
+#: wizard_view:create_interests,init:0
+#: field:crm_cci.todo,contact:0
+#: field:res.partner.history,contact:0
+#: field:res.partner.interest,contact:0
+msgid "Contact client"
+msgstr "Contact client"
+
+#. module: cci_salesman
+#: model:ir.actions.act_window,name:cci_salesman.crm_case_act_cases_for_others
+#: model:ir.ui.menu,name:cci_salesman.menu_crm_case_cases_for_others
+msgid "Cases created by me for others"
+msgstr "Cas créés par moi pour les autres"
+
+#. module: cci_salesman
+#: field:cci.objectif,cci_product:0
+#: view:cci.product:0
+#: field:cci.turnover,cci_product:0
+#: model:ir.actions.act_window,name:cci_salesman.action_cci_product_form
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_product_form
+#: field:res.commission,product:0
+msgid "Product"
+msgstr "Produit"
+
+#. module: cci_salesman
+#: field:cci.turnover.details,product_name:0
+msgid "Account product"
+msgstr "Produit comptable"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#, python-format
+msgid "Description"
+msgstr "Description"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_cci_contact
+msgid "Me, myself, and I"
+msgstr "Me, myself, and I"
+
+#. module: cci_salesman
+#: wizard_view:create_histo_from_mark,init:0
+#: model:ir.actions.wizard,name:cci_salesman.create_histo_from_mark
+msgid "Create History"
+msgstr "Créer historique"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,memb:0
+msgid "MEMB"
+msgstr "MEMB"
+
+#. module: cci_salesman
+#: field:res.commission,com1:0
+msgid "Com (1.5pourcent)"
+msgstr "Com (1.5%)"
+
+#. module: cci_salesman
+#: view:cci_salesman.commission_exception:0
+#: model:ir.actions.act_window,name:cci_salesman.action_commission_exception
+#: model:ir.ui.menu,name:cci_salesman.menu_commission_exception
+msgid "Commission Exception"
+msgstr "Correctif Commission"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Product sold"
+msgstr "Produit vendu"
+
+#. module: cci_salesman
+#: field:cci.turnover.details,invoice_number:0
+msgid "Invoice Number"
+msgstr "N° facture"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.wizard_show_registrations_from_todo
+msgid "Event Registrations"
+msgstr "Inscriptions Evénements"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,next_action:0
+#: field:res.partner.history,next_action:0
+#: field:res.partner.interest,next_action:0
+msgid "Prochaine action"
+msgstr "Prochaine action"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,ae:0
+msgid "AE"
+msgstr "AE"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_exception,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_salesman
+#: field:res.commission,com2:0
+msgid "Com (2.5pourcent)"
+msgstr "Com (2.5%)"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,prof_email:0
+msgid "Prof. Email"
+msgstr "EMail prof."
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.partner_interest_order_wizard
+msgid "Marques d'interets: BDC"
+msgstr "Marques d'intérêts: BDC"
+
+#. module: cci_salesman
+#: field:cci_salesman.commission_payment,date_payment:0
+msgid "Real Date of payment"
+msgstr "Date réelle de paiement"
+
+#. module: cci_salesman
+#: view:cci.turnover.details:0
+msgid "Detail of Annual TurnOver"
+msgstr "Détail d'un C.A. annuel"
+
+#. module: cci_salesman
+#: wizard_field:cci_salesman_change_product_id,init,confirm:0
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: cci_salesman
+#: wizard_view:extract_comm_results,init:0
+#: wizard_view:extract_commissions,init:0
+#: model:ir.actions.wizard,name:cci_salesman.extract_commissions
+#: model:ir.ui.menu,name:cci_salesman.menu_extract_commissions
+msgid "Extract Commissions"
+msgstr "Extraire les Commissions"
+
+#. module: cci_salesman
+#: field:cci.turnover.details,invoice_line_desc:0
+msgid "Invoice Line Description"
+msgstr "Description sur la ligne de facture"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,cnn:0
+msgid "CNN"
+msgstr "CNN"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,model:0
+msgid "Model"
+msgstr "Origine"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: view:cci.turnover:0
+#: field:cci.turnover,total:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Sales "
+msgstr "Ventes "
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_commissions.py:0
+#: field:cci.objectif,cci_contact_id:0
+#: wizard_field:extract_commissions,init,commercial:0
+#: field:res.users,salesman:0
+#, python-format
+msgid "Salesman"
+msgstr "Commercial"
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.wizard_archive_interest
+msgid "Archive Interests by Year"
+msgstr "Archiver les marques d'intérêts d'une année"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#, python-format
+msgid "Results"
+msgstr "Résultats"
+
+#. module: cci_salesman
+#: field:res.commission,objective_id:0
+msgid "Objective_id"
+msgstr "Objectif"
+
+#. module: cci_salesman
+#: field:crm_cci.todo,partner:0
+#: field:res.partner.history,partner:0
+#: field:res.partner.interest,partner:0
+msgid "Partenaire"
+msgstr "Partenaire"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_pipeline.py:0
+#, python-format
+msgid "No interets found"
+msgstr "Aucune marque d'intérêt trouvée"
+
+#. module: cci_salesman
+#: model:ir.ui.menu,name:cci_salesman.menu_partner_creator_interest
+msgid "My Created Interets"
+msgstr "Les marques d'intérêts que j'ai créées"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/extract_comm_results.py:0
+#: wizard_field:archive_interest,init,year:0
+#: field:cci.objectif,year:0
+#: field:cci.turnover,years:0
+#: wizard_field:extract_pipeline,init,year:0
+#, python-format
+msgid "Year"
+msgstr "Année"
+
+#. module: cci_salesman
+#: model:ir.model,name:cci_salesman.model_crm_cci_todo
+msgid "crm_cci.todo"
+msgstr "crm_cci.todo"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,table:0
+msgid "Table"
+msgstr "Table"
+
+#. module: cci_salesman
+#: wizard_field:create_interests,init,empl:0
+msgid "Employeur"
+msgstr "Employeur"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/users.py:0
+#, python-format
+msgid "Error: You can define a change on amount or on final commission, not both."
+msgstr "Erreur: Vous pouvez donner un correctif de montant de base ou de commission finale, pas les deux à la fois."
+
+#. module: cci_salesman
+#: model:ir.actions.wizard,name:cci_salesman.create_histo_from_interest
+msgid "Create History From Interest"
+msgstr "Créer un nouvel Historique"
+
+#. module: cci_salesman
+#: code:addons/cci_salesman/wizard/get_cci_product_turnover.py:0
+#: view:cci.turnover:0
+#: wizard_view:get_cci_product_turnover,init:0
+#, python-format
+msgid "Annual TurnOver by CCI Product"
+msgstr "C.A. annuel par produit commercial"
+

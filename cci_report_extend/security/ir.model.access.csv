@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cci_analytic_cross_details2","cci.analytic.cross.details2","model_cci_analytic_cross_details2","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_details_user2","cci.analytic.cross.details2","model_cci_analytic_cross_details2","account.group_account_user",1,1,1,1
+"access_cci_analytic_cross2","cci.analytic.cross2","model_cci_analytic_cross2","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_user2","cci.analytic.cross2","model_cci_analytic_cross2","account.group_account_user",1,1,1,1
+"access_cci_analytic_cross_details3","cci.analytic.cross.details3","model_cci_analytic_cross_details3","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_details_user3","cci.analytic.cross.details3","model_cci_analytic_cross_details3","account.group_account_user",1,1,1,1
+"access_cci_analytic_cross3","cci.analytic.cross3","model_cci_analytic_cross3","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_user3","cci.analytic.cross3","model_cci_analytic_cross3","account.group_account_user",1,1,1,1
+

@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+    	<!-- RES.PARTNER -->
+<!--	    <record model="ir.ui.view" id="view_premium_data_partner">
+		    <field name="name">Premium Data Partner</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form"/>
+		    <field name="arch" type="xml">
+			    <data>
+			        <field name="website" position="after">
+                        <field name="international_company"/>
+                        <field name="can_check_formation"/>
+                        <field name="equal_representation"/>
+                        <field name="employee_slice"/>
+			        </field>
+			    </data>
+		    </field>
+	    </record>
+-->
+    	<!-- RES.PARTNER.ADDRESS -->
+<!--	    <record model="ir.ui.view" id="view_premium_data_address">
+		    <field name="name">Premium Data Address</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form"/>
+		    <field name="arch" type="xml">
+			    <data>
+			        <field name="is_premium"  position="before">
+			            <field name="zoning"/>
+			        </field>
+			    </data>
+		    </field>
+	    </record>
+-->
+    	<!-- RES.PARTNER.JOB -->
+	    <!-- <record model="ir.ui.view" id="view_premium_data_job">
+		    <field name="name">Premium Data Job</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form"/>
+		    <field name="arch" type="xml">
+			     <notebook position="inside">
+			        <page string="Premium's personal data">
+			            <separator string="Premium's Data" colspan="4"/>
+			            <field name="decision_level"/>
+			            <field name="executive_committee"/>
+			            <field name="personal_statut" colspan="4"/>
+			            <field name="main_direction"/>
+			            <field name="type_direction"/>
+			            <field name="type_purchase"/>
+			            <field name="year_purchase"/>
+			            <field name="from_purchase"/>
+			            <field name="shareholder_count"/>
+			            <field name="share_invest"/>
+			            <field name="share_investor"/>
+			            <field name="share_crowdfund"/>
+			            <field name="share_family"/>
+			            <field name="others_name"/>
+			        </page>
+                  </notebook>
+		    </field>
+	    </record> -->
+
+    	<!-- RES.PARTNER.CONTACT -->
+<!--	    <record model="ir.ui.view" id="view_premium_data_contact">
+		    <field name="name">Premium Data Contact</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form"/>
+		    <field name="arch" type="xml">
+		        <notebook position="inside">
+			        <page string="Premium's personal data">
+                        <group>
+                              <group>
+                                  <field name="pf_facebook"/>
+                                  <field name="pf_linkedin"/>
+                                  <field name="pf_twitter"/>
+                                  <field name="pf_zip_code"/>
+                              </group>
+                               <group>
+                                  <field name="pf_facebook_freq"/>
+                                  <field name="pf_linkedin_freq"/>
+                                  <field name="pf_twitter_freq"/>
+                                </group>
+                         </group> 
+
+						<group string="Premium's Data" colspan="4">
+							<group>
+								<field name="decision_level"/>
+								 <field name="personal_statut"/>
+								<field name="type_direction"/>
+								<field name="year_purchase"/>
+								<field name="shareholder_count"/>
+								<field name="share_investor"/>
+								<field name="share_family"/>
+							</group>
+							<group>
+								<field name="executive_committee"/>
+								<field name="main_direction"/>
+								<field name="type_purchase"/>
+								<field name="from_purchase"/>
+								<field name="share_invest"/>
+								<field name="share_crowdfund"/>
+								<field name="others_name"/>
+							</group>
+						</group>
+
+
+						<group string="Renseignements divers"  colspan="4">
+							<group>
+								<field name="pf_smartphone"/>
+								<field name="pf_smart_info"/>
+							  	<field name="pf_app_pro"/>
+				                <field name="pf_invit_mail"/>
+							 	<field name="pf_sms"/>
+				                <field name="pf_ecustomer"/>
+							 	<field name="pf_eleccar"/>
+				                <field name="pf_use_language"/>
+								<field name="pf_want_invest"/>
+							</group>
+							<group>
+								<field name="pf_tablet"/>
+				                <field name="pf_tablet_press"/>
+								<field name="pf_invit_network"/>
+				                <field name="pf_invit_post"/>
+								<field name="pf_pay_creditcard"/>
+				                <field name="pf_care_cci"/>
+								<field name="pf_nighter"/>
+				                <field name="pf_children"/>
+								<field name="pf_owner"/>
+							</group>
+			            </group>
+
+                        <group string="Business Clubs"  colspan="4">
+							<group>
+								<field name="pf_club_cw"/>
+								<field name="pf_club_cl"/>
+								<field name="pf_club_apm"/>
+								<field name="pf_club_ypowpo"/>
+								<field name="pf_club_fce"/>
+								<field name="pf_club_zoning"/>
+								<field name="pf_club_sc"/>
+								<field name="pf_club_other_names"/>
+							</group>
+							<group>
+								<field name="pf_club_cw"/>
+								<field name="pf_club_bni"/>
+								 <field name="pf_club_gceq"/>
+								<field name="pf_club_far"/>
+								<field name="pf_club_new"/>
+								<field name="pf_club_golf"/>
+								<field name="pf_club_other"/>
+							</group>
+						</group>
+                        <group>
+                            <field name="premium_login" readonly="1"/>
+                             <field name="premium_mp" readonly="1"/>
+                        </group>
+			        </page>
+			        <page string="Premium's networking data">
+			            <group colspan="4" col="8">
+                            <group>
+								<field name="pf_networker"/>
+			            		<field name="pf_freq_network"/>
+							</group>
+                            <group>
+	 							<field name="pf_network_morning"/>
+	    			            <field name="pf_network_lunch"/>
+	    			            <field name="pf_network_dinner"/>
+	    			            <field name="pf_network_night"/>
+							</group>
+                            <group>
+	 							<field name="pf_conf_8_10"/>
+				                <field name="pf_conf_9_11"/>
+				                <field name="pf_conf_10_12"/>
+				                <field name="pf_conf_12_14"/>
+				                <field name="pf_conf_14_16"/>
+				                <field name="pf_conf_18_20"/>
+							</group>
+                        </group>
+                        
+			            <group colspan="4"  col="8" string="Dispo pour activités CCI">
+							<group col="1">
+								<label string="Jour" />
+								<label string="Lundi" />
+								<label string="Mardi" />
+								<label string="Mercredi" />
+								<label string="Jeudi" />
+								<label string="Vendredi"  />
+								<label string="Samedi"  />
+								<label string="Dimanche"  />
+							</group>
+							<group col="1">
+								<label string="Matin.................."/>
+								<field name="pf_dispo_mon_morning" nolabel="1"/>
+								<field name="pf_dispo_tue_morning" nolabel="1"/>
+								<field name="pf_dispo_wed_morning" nolabel="1"/>
+								<field name="pf_dispo_thu_morning" nolabel="1"/>
+								<field name="pf_dispo_fri_morning" nolabel="1"/>
+								<field name="pf_dispo_sat_morning" nolabel="1"/>
+								<field name="pf_dispo_sun_morning" nolabel="1"/>
+							</group>
+							<group col="1">
+								 <label string="Midi..................."/>
+								<field name="pf_dispo_mon_lunch" nolabel="1"/>
+								<field name="pf_dispo_tue_lunch" nolabel="1"/>
+								<field name="pf_dispo_wed_lunch" nolabel="1"/>
+								<field name="pf_dispo_thu_lunch" nolabel="1"/>
+								<field name="pf_dispo_fri_lunch" nolabel="1"/>
+								<field name="pf_dispo_sat_lunch" nolabel="1"/>
+								<field name="pf_dispo_sun_lunch" nolabel="1"/>
+							</group>
+							<group col="1">
+								<label string="Soir..................."/>
+								<field name="pf_dispo_mon_evening" nolabel="1"/>
+								<field name="pf_dispo_tue_evening" nolabel="1"/>
+								<field name="pf_dispo_wed_evening" nolabel="1"/>
+								<field name="pf_dispo_thu_evening" nolabel="1"/>
+								<field name="pf_dispo_fri_evening" nolabel="1"/>
+								<field name="pf_dispo_sat_evening" nolabel="1"/>
+								<field name="pf_dispo_sun_evening" nolabel="1"/>
+							</group>
+						</group>
+
+						<group colspan="4">
+							<group>
+								<field name="pf_size_25"/>
+		    		            <field name="pf_size_2550"/>
+								<field name="pf_price_event"/>
+							</group>
+							<group>
+							  	<field name="pf_size_50100"/>
+	    		            	<field name="pf_size_100"/>
+							</group>
+	    		        </group>
+			        </page>
+			    </notebook>
+		    </field>
+	    </record>
+-->    </data>
+</openerp>

@@ -1,0 +1,64 @@
+<openerp>
+	<data>
+	
+		<record id="view_send_site_update_form" model="ir.ui.view">
+			<field name="name">Update Site Internet</field>
+			<field name="model">send.site.update</field>
+			<field name="arch" type="xml">
+				<form string="Update Site Internet">
+					<group>
+						<field name="connection_id" />
+					    <field name="connection2_id" />
+					    <field name="ftp_sending" />
+					    <field name="login_send" />
+					    <field name="create_new_login" />
+					    <field name="include_prospects" />
+					    <field name="include_all_others" />
+					</group>
+					<footer>
+                        <button name="extract_data" string="Extract" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		<record id="action_send_site_update" model="ir.actions.act_window">
+            <field name="name">Update Internet Site</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">send.site.update</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_send_site_update_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Update Internet Site"
+            action="action_send_site_update"
+            id="menu_send_site_update"
+            sequence="105"
+            parent="menu_cci_subscriber"/>
+		
+		
+		<record id="view_send_site_update_final_form" model="ir.ui.view">
+			<field name="name">Results</field>
+			<field name="model">send.site.update.final</field>
+			<field name="arch" type="xml">
+				<form string="Update Site Internet">
+					<group>
+						<field name="final_text" colspan="4" nolabel="1" />
+   						<field name="final_count" />
+					</group>
+					<footer>
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+				</form>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_translation_awex">
+    <div class="page">
+        <h2 class="text-center">Awex Report</h2>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Num.</th>
+	                <th>Date</th>
+	                <th>Internal Object</th>
+	                <th>Internal Reference</th>
+	                <th>Partner</th>
+	                <th>Description</th>
+        	        <th>Invoice Number</th>
+	                <th>Awex Amount</th>
+	            </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="get_objects(data['form'])" t-as="val">
+                    <td><span t-esc="val['number']"/></td>
+                    <td><span t-esc="val['date']"/></td>
+                    <td><span t-esc="val['obj_name']"/></td>
+                    <td><span t-esc="val['obj_id']"/></td>
+                    <td><span t-esc="val['partner']"/></td>
+                    <td><span t-esc="val['desc']"/></td>
+                    <td><span t-esc="val['inv_num']"/></td>
+                    <td><span t-esc="val['amt']"/></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</template>
+
+</data>
+</openerp>
+

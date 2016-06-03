@@ -1,0 +1,58 @@
+<openerp>
+	<data>
+
+		<record id="view_wizard_compare_paid2years_msg_form" model="ir.ui.view">
+            <field name="name">wizard.compare.paid2years.msg.form</field>
+            <field name="model">wizard.compare.paid2years.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+				    <group>
+                        <separator string="File has been created."  colspan="4"/>
+                        <field name="name" invisible="1"/>
+					    <field name="msg" nolabel="1"/>
+                        <field name="compare2paidmembers_xls" filename="name" nolabel="1"/>
+					</group>
+				    <footer>
+	                    <button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_compare_paid2years_form" model="ir.ui.view">
+			<field name="name">view.compare.paid2years.form</field>
+			<field name="model">compare.paid2years</field>
+			<field name="arch" type="xml">
+				<form string="Compare two Years of paid Members">
+					<group>
+					    <field name="year"/>
+                    </group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="create_excel_file" string="Get File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_compare_paid2years_form" model="ir.actions.act_window">
+            <field name="name">Compare two Years of paid Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">compare.paid2years</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_compare_paid2years_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem 
+            id="menu_compare_paid2years"
+            name="Compare two Years of paid Members"
+            action="action_compare_paid2years_form"
+            parent="base.menu_report_association"
+            sequence="80" />
+                        <!-- parent="membership.menu_reporting" -->
+	</data>
+</openerp>

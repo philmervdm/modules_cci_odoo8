@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="cci_extract_carousel_view" model="ir.ui.view">
+            <field name="name">cci.extract.carousel.form</field>
+            <field name="model">cci.extract.carousel</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                	<group>
+                		<field name="choice" />
+   						<field name="category_id" />
+                	</group>
+                    <footer>
+                        <button string="Get DBF File" name="get_file" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_extract_carousel"
+            multi="True"
+            key2="client_action_multi" 
+            name="Extract Registrations for Carousel"
+            res_model="cci.extract.carousel" 
+            src_model="event.event"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+        
+        <record id="cci_extract_carousel_msg_view" model="ir.ui.view">
+            <field name="name">cci.extract.carousel.msg.form</field>
+            <field name="model">cci.extract.carousel.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                	<group>
+					     <separator string="File has been created."/>
+					     <field name="msg" nolabel="1"/>
+					     <field name="carousel_dbf" />
+                	</group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record> 
+        
+	</data>
+</openerp>

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+	<data>
+	
+		<!--Inherited views for phone and mobile number validity-->
+		
+		<!--  main form of partner -->
+		
+	    <record model="ir.ui.view" id="view_partner_form_inherit_p1">
+	        <field name="name">res.partner.inherit.phone1</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_partner_form" />
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='phone']" position="replace">
+	                <field name="phone" on_change="on_change_phone_num(phone)"/>
+	            </xpath>
+	            <xpath expr="//field[@name='mobile']" position="replace">
+	                <field name="mobile" on_change="on_change_phone_num(mobile)"/>
+	            </xpath>
+	        </field>
+	    </record>
+	    
+	    <!--  child form of partner -->
+	    <record model="ir.ui.view" id="view_partner_contact_form_inherit_p1">
+	        <field name="name">res.partner.inherit.phone1</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_partner_form" />
+	        <field name="arch" type="xml">
+	            <xpath expr="//page[@string='Contacts']/field[@name='child_ids']/form[@string='Contact']/sheet/group/field[@name='phone']" position="replace">
+	                <field name="phone" on_change="on_change_phone_num(phone)"/>
+	            </xpath>
+	        </field>
+	    </record>
+		
+		<!-- search view res.partner extended -->
+		<record id="view_partner_contact_form_inherit_2_filter" model="ir.ui.view">
+            <field name="name">view.partner.contact.inherit2.select</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"></field>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="country_id"/>
+                    <field name="birthdate"/>
+                    <field name="fse_work_status"/>
+                    <field name="fse_studies"/>
+                    <field name="fse_work_experience"/>
+                    <field name="badge_title"/>
+                    <field name="badge_name"/>
+                    <field name="data_private"/>
+                    <field name="gender"/>
+                    <field name="self_sufficent"/>
+                </field>
+            </field>
+        </record>
+
+	
+	<!--  Move to : cci_partner module -->
+	<!-- res.partner.country.relation views -->
+<!-- 	    <record model="ir.ui.view" id="view_partner_country_relation_tree"> -->
+<!-- 	        <field name="name">res.partner.country.relation.tree</field> -->
+<!-- 	        <field name="model">res.partner.country.relation</field> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <tree string="Partner Country Relation"> -->
+<!-- 	                <field name="type"/> -->
+<!-- 	                <field name="frequency"/> -->
+<!-- 	                <field name="country_id"/> -->
+<!-- 	            </tree> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+	
+<!-- 	    <record model="ir.ui.view" id="view_partner_country_relation_form"> -->
+<!-- 	        <field name="name">res.partner.country.relation.form</field> -->
+<!-- 	        <field name="model">res.partner.country.relation</field> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <form string="Partner Country Relation"> -->
+<!-- 	            	<group> -->
+<!-- 	            		<group> -->
+<!-- 			                <field name="type"/> -->
+<!-- 			                <field name="country_id"/> -->
+<!-- 	            		</group> -->
+<!-- 	            		<group> -->
+<!-- 			                <field name="frequency"/> -->
+<!-- 	            		</group> -->
+<!-- 	            	</group> -->
+<!-- 	            </form> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+	
+	
+		<!-- res.partner.contact -->
+<!-- 	    <record model="ir.ui.view" id="view_partner_contact_tree_inherit"> -->
+<!-- 	        <field name="name">res.partner.contact.tree2</field> -->
+<!-- 	        <field name="model">res.partner.contact</field> -->
+<!-- 	        <field name="inherit_id" ref="base_contact.view_partner_contact_tree"/> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <field name="lang_id" position="replace"> -->
+<!-- 	                <field name="job_ids"/> -->
+<!-- 	            </field> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+	
+		<!-- Remove page from parent view (make it blank) because here this page take different position... -->
+<!-- 	    <record model="ir.ui.view" id="view_partner_contact_form_inherit_1"> -->
+<!-- 	        <field name="name">res.partner.contact.form</field> -->
+<!-- 	        <field name="model">res.partner.contact</field> -->
+<!-- 	        <field name="inherit_id" ref="base_contact.view_partner_contact_form"/> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <page string="Extra Information" position="replace"> -->
+<!-- 	            </page> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+	
+		<!-- Add new page in parent notebook -->
+	    <record model="ir.ui.view" id="view_partner_contact_form_inherit_2">
+	        <field name="name">res.partner.contact.form</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_partner_form"/>
+	        <field name="arch" type="xml">
+	            <notebook position="inside">
+	                <page string="Who's Who" attrs="{'invisible':[('is_company','=', True)]}">
+	                    <group string="Who's who subscription">
+	                    	<group>
+			                	<field name="who_date_last"/>
+		 	                   	<field name="who_date_publication"/>
+	                    	</group>
+	                    	<group>
+			                    <field name="who_date_accept"/>
+			                   	<field name="who_presence"/>
+	                    	</group>
+	                    </group>
+	                    <separator string="Who's who text" colspan="4"/>
+	                    <field name="who_description" colspan="4" />
+	                </page>
+	                <page string="Website" attrs="{'invisible':[('is_company','=', True)]}">
+	                	<group>
+	                		<group>
+			                    <field name="login_name"/>
+			                    <field name="token"/>
+	                		</group>
+	                		<group>
+			                    <field name="password"/>
+	                		</group>
+	                	</group>
+	                </page>
+	                <page string="Known Countries" attrs="{'invisible':[('is_company','=', True)]}">
+	                	<separator string="Expertize's Countries" colspan="4"/>
+	                    <field name="country_ids" />
+	                </page>
+	                <page string="Personal Links" attrs="{'invisible':[('is_company','=', True)]}">
+	                    <field name="link_ids" nolabel="1">
+	                        <form string="Contact Link">
+	                        	<group>
+	                        		<group>
+			                            <field name="name" />
+			                            <field name="contact_id" />
+	                        		</group>
+	                        		<group>
+			                            <field name="type_id" />
+	                        		</group>
+	                        	</group>
+	                        </form>
+	                        <tree string="Contact Link">
+	                            <field name="name"/>
+	                            <field name="type_id"/>
+	                            <field name="contact_id"/>
+	                        </tree>
+	                    </field>
+	                </page>
+	                <page string="Extra Information" attrs="{'invisible':[('is_company','=', True)]}">
+	                	<group>
+	                		<group>
+			                    <field name="country_id" />
+			                    <field name="canal_id"/>
+	                		</group>
+	                		<group>
+			                    <field name="birthdate" />
+			                    <field name="national_number"/>
+	                		</group>
+	                	</group>
+	                	<group string="FSE Personal Data">
+	                		<group>
+			                    <field name="fse_work_status" />
+			                    <field name="fse_studies"  />
+	                		</group>
+	                		<group>
+			                    <field name="fse_work_experience" />
+	                		</group>
+	                	</group>
+	                	<group string="Events">
+	                		<group>
+			                    <field name="badge_title"  />
+	                		</group>
+	                		<group>
+			                    <field name="badge_name"  />
+	                		</group>
+	                	</group>
+	                </page>
+	            </notebook>
+	        </field>
+	    </record>
+	
+	    <record model="ir.ui.view" id="view_partner_form_inherit_3">
+	        <field name="name">res.partner.contact.form</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_partner_form"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//page[@string='Contacts']/field[@name='child_ids']/form[@string='Contact']/sheet/group/field[@name='mobile']" position="after">
+	                <field name="data_private" />
+					<field name="gender" />
+<!-- 	                <field name="active"/> -->
+	                <field name="self_sufficent" />
+				</xpath>
+	        </field>
+	    </record>
+	
+<!-- 	    <record model="ir.ui.view" id="view_partner_contact_form_inherit_4"> -->
+<!-- 	        <field name="name">res.partner.contact.form</field> -->
+<!-- 	        <field name="model">res.partner.contact</field> -->
+<!-- 	        <field name="inherit_id" ref="base_contact.view_partner_contact_form"/> -->
+<!-- 	        <field name="priority">10</field> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <field name="birthdate" position="after"> -->
+<!-- 	                <field name="origin" /> -->
+<!-- 	            </field> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+	
+ 		<!-- add a menu entry for contact link types --> 
+        <record model="ir.ui.view" id="view_link_type_tree">
+            <field name="name">res.partner.contact.link.type.tree</field>
+            <field name="model">res.partner.contact.link.type</field>
+            <field name="arch" type="xml">
+                <tree string="Link Type">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+	
+        <record model="ir.ui.view" id="view_link_type_form">
+            <field name="name">res.partner.contact.link.type.form</field>
+            <field name="model">res.partner.contact.link.type</field>
+            <field name="arch" type="xml">
+                <form string="Link Type">
+                	<group>
+                    	<field name="name" />
+                	</group>
+                </form>
+            </field>
+        </record>
+	
+        <record model="ir.actions.act_window" id="action_link_type">
+            <field name="name">Link Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.contact.link.type</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_link_type_tree"/>
+        </record>
+        
+        <menuitem name="Link Type" id="menu_link" parent="base.menu_base_config"/>
+        
+        <menuitem name="Contact Link Type" action="action_link_type" id="menu_link_type" parent="menu_link"/>
+	
+		<!-- view for project form -->
+	    <record model="ir.ui.view" id="view_project_form_inherit">
+	        <field name="name">project.project.form.inherit</field>
+	        <field name="model">project.project</field>
+	        <field name="inherit_id" ref="project.edit_project"/>
+	        <field name="arch" type="xml">
+	            <field name="partner_id" position="after">
+	            	<newline/>
+	                <field name="contact_id2"/>
+	            </field>
+	        </field>
+	    </record>
+		
+ 		<!-- res.partner.job.. --> 
+<!-- 	    <record model="ir.ui.view" id="view_job_form_inherit"> -->
+<!-- 	        <field name="name">res.partner.job.form.inherit</field> -->
+<!-- 	        <field name="model">res.partner.job</field> -->
+<!-- 	        <field name="inherit_id" ref="base_contact.view_partner_job_form"/> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <field name="name" position="after"> -->
+<!-- 	                <field name="login_name"/> -->
+<!-- 	                <field name="password"/> -->
+<!-- 	                <field name="token"/> -->
+<!-- 	                <field name="forced_login"/> -->
+<!-- 	            </field> -->
+<!-- 	        </field> -->
+<!-- 	    </record> -->
+
+	</data>
+</openerp>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- ================================ CCI Objectif ================================ -->
+		<record id="view_cci_objectif_form" model="ir.ui.view">
+			<field name="name">cci.objectif.form</field>
+			<field name="model">cci.objectif</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="CCI Objectif">
+					<group  colspan="4">
+						<field name="cci_product" select="1" />
+					</group>
+				    <group>
+				        <group>
+        					<field name="year" select="1" />
+            				<field name="user" select="1"/>
+        				</group>
+    				    <group>
+							<field name="objective" />
+                            <field name="cci_contact_id"/>
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		<record id="view_cci_objectif_tree" model="ir.ui.view">
+			<field name="name">cci.objectif.tree</field>
+			<field name="model">cci.objectif</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Objectif">
+					<field name="user" />
+					<field name="year" />
+    				<field name="objective" />
+					<field name="cci_product" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci.objectif -->
+        <record id="view_cci_objectif_filter" model="ir.ui.view">
+            <field name="name">cci.objectif.select</field>
+            <field name="model">cci.objectif</field>
+            <field name="arch" type="xml">
+                <search string="Search CCI Objectif">
+                    <field name="cci_product"/>
+                    <field name="year"/>
+                    <field name="user"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_cci_objectif" model="ir.actions.act_window">
+			<field name="name">CCI Objectif</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.objectif</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="search_View_id" ref="view_cci_objectif_filter"/>
+		</record>
+		<menuitem action="action_cci_objectif" id="menu_cci_objectif"
+			parent="base.menu_base_config" />
+
+		<!-- ================================ Commission Exception ================================ -->
+		<record id="view_commission_exception_form" model="ir.ui.view">
+			<field name="name">commission_exception.form</field>
+			<field name="model">cci_salesman.commission_exception</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Commission Exception">
+				    <group>
+				        <group>
+							<group>
+								<field name="name" select="1"/>
+								<field name="period_id" select="1"/>
+								<field name="amount"/>
+							</group>
+							<group>
+								<field name="user_id" select="1"/>
+								<field name="cci_product_id" select="1"/>
+								<field name="commission"/>
+							</group>
+				        </group>
+                        <separator string="Comments" colspan="4"/>
+				        <group>
+                            <field name="comments" colspan="4" nolabel="1"/>
+				        </group>
+				    </group>
+				</form>
+			</field>
+		</record>
+		<record id="view_commission_exception_tree" model="ir.ui.view">
+			<field name="name">commission_exception.tree</field>
+			<field name="model">cci_salesman.commission_exception</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Commission Exception">
+					<field name="name" />
+					<field name="user_id" />
+					<field name="period_id" />
+					<field name="amount" />
+					<field name="commission" />
+					<field name="cci_product_id" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci_salesman.commission_exception -->
+        <record id="view_commission_exception_filter" model="ir.ui.view">
+            <field name="name">cci_salesman.commission_exception.select</field>
+            <field name="model">cci_salesman.commission_exception</field>
+            <field name="arch" type="xml">
+                <search string="Search Commission Exception">
+                    <field name="name"/>
+                    <field name="period_id"/>
+                    <field name="user_id"/>
+                    <field name="cci_product_id"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_commission_exception" model="ir.actions.act_window">
+			<field name="name">Commission Exception</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci_salesman.commission_exception</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_commission_exception_filter"/>
+		</record>
+		<menuitem action="action_commission_exception" id="menu_commission_exception"
+			parent="base.menu_base_config" />
+
+		<!-- ================================ Commission Payment ================================ -->
+		<record id="view_commission_payment_form" model="ir.ui.view">
+			<field name="name">commission_payment.form</field>
+			<field name="model">cci_salesman.commission_payment</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Commission Payment">
+	                <group>
+						<group>
+							<field name="user_id" select="1"/>
+							<field name="amount"/>
+						</group>
+						<group>
+							<field name="period_id" select="1"/>
+							<field name="date_payment" select="1"/>
+						</group>
+			        </group>
+	                <separator string="Comments" colspan="4"/>
+			        <group>
+						<field name="comments" colspan="4" nolabel="1"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record id="view_commission_payment_tree" model="ir.ui.view">
+			<field name="name">commission_payment.tree</field>
+			<field name="model">cci_salesman.commission_payment</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Commission Payment">
+					<field name="user_id" />
+					<field name="period_id" />
+					<field name="amount" />
+					<field name="date_payment" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci_salesman.commission_payment -->
+        <record id="view_commission_payment_filter" model="ir.ui.view">
+            <field name="name">cci_salesman.commission_payment.select</field>
+            <field name="model">cci_salesman.commission_payment</field>
+            <field name="arch" type="xml">
+                <search string="Search Commission Payment">
+                    <field name="user_id"/>
+                    <field name="period_id"/>
+                    <field name="date_payment"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_commission_payment" model="ir.actions.act_window">
+			<field name="name">Commission Payment</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci_salesman.commission_payment</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_commission_payment_filter"/>	
+		</record>
+		<menuitem action="action_commission_payment" id="menu_commission_payment"
+			parent="base.menu_base_config" />
+
+        <!-- Res.users addons on screen -->
+        <record id="view_res_users_inherit_cci_crm" model="ir.ui.view">
+            <field name="name">res.users.inherit.cci_crm</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <field name="tz" position="after">
+                    <separator string="CCI CRM" colspan="4"/>
+                    <field name="salesman"/>
+                    <field name="cci_crm_follower"/>
+                </field>
+            </field>
+        </record>
+
+		<!-- ================================ Commission slices ================================ -->
+		<record id="view_commission_slice_form" model="ir.ui.view">
+			<field name="name">Slice of Commission</field>
+			<field name="model">cci_salesman.commission_slice</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Slice of Commission">
+					<group>
+						<group>
+							<field name="user_id" select="1"/>
+							<field name="amount_from"/>
+						</group>
+						<group>
+							<field name="year" select="1"/>
+							<field name="rate100"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record id="view_commission_slice_tree" model="ir.ui.view">
+			<field name="name">Slice of Commission</field>
+			<field name="model">cci_salesman.commission_slice</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Slice of Commission">
+					<field name="user_id" />
+					<field name="year" />
+    				<field name="amount_from" />
+					<field name="rate100" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci_salesman.commission_slice -->
+        <record id="view_commission_slice_filter" model="ir.ui.view">
+            <field name="name">cci_salesman.commission_slice.select</field>
+            <field name="model">cci_salesman.commission_slice</field>
+            <field name="arch" type="xml">
+                <search string="Search Slice of Commission">
+                    <field name="user_id"/>
+                    <field name="year"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_commission_slice" model="ir.actions.act_window">
+			<field name="name">Slice of Commission</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci_salesman.commission_slice</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_commission_slice_filter"/>
+		</record>
+		<menuitem action="action_commission_slice" id="menu_commission_slice" parent="base.menu_base_config" />
+
+        <!-- ============ Commission Slices ion users =================-->
+        <record id="view_res_users_inherit_cci_crm" model="ir.ui.view">
+            <field name="name">res.users.inherit.cci_crm</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+		        <notebook position="inside">
+			        <page string="Commission Slices">
+                        <field name="slice_ids" nolabel="1">
+                            <tree string="Slices of Commission" editable="bottom">
+                                <field name="year"/>
+                                <field name="amount_from"/>
+                                <field name="rate100"/>
+                            </tree>
+                        </field>
+			        </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<!-- Users groups -->
+	<record model="res.groups" id="group_cci_salesman_prod">
+		<field name="name">CCI Salesman Manager Nomenclature</field>
+	</record>
+	<record model="res.groups" id="group_cci_salesman_objectif">
+		<field name="name">CCI Salesman Manager Objectif</field>
+	</record>
+	<record model="res.groups" id="group_cci_salesman_commission">
+		<field name="name">CCI Salesman Commissions</field>
+	</record>
+	
+	<!-- Set accesses to menu -->
+	<record model="ir.ui.menu" id="menu_cci_contact_all">
+	    <field name="name">CCI Contact All</field>
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_salesman_commission')])]"/>
+	</record>
+	<record model="ir.ui.menu" id="menu_cci_product_category_form">
+	    <field name="name">CCI Product Category</field>
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_salesman_prod')])]"/>
+	</record>
+	<record model="ir.ui.menu" id="menu_cci_product_form">
+	    <field name="name">CCI Product</field>
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_salesman_prod')])]"/>
+	</record>
+	<record model="ir.ui.menu" id="menu_cci_objectif">
+	    <field name="name">CCI Objectif</field>
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_salesman_objectif')])]"/>
+	</record>
+	<record model="ir.ui.menu" id="menu_commission_slice">
+	    <field name="name">Cci Commission Slice</field>
+		<field name="groups_id" eval="[(6,0, [ref('group_cci_salesman_commission')])]"/>
+	</record>
+</data>
+</openerp>
+

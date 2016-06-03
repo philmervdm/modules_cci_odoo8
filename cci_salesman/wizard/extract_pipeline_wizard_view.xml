@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_extract_pipeline_form">
+            <field name="name">extract.pipeline.form</field>
+            <field name="model">extract.pipeline</field>
+            <field name="arch" type="xml">
+                <form string="Extract Pipeline">
+                    <group>
+                        <group>
+                            <field name="year"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="get_file" type="object" string="Get Excel File "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_extract_pipeline_form_action" model="ir.actions.act_window">
+            <field name="name">Extract Pipeline</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.pipeline</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_extract_pipeline_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Extract Pipeline" id="menu_extract_pipeline"
+                action="wizard_extract_pipeline_form_action"
+                parent="menu_cci_salesman_main" 
+                sequence="80" />
+        
+        <record model="ir.ui.view" id="wizard_extract_pipeline2_form">
+            <field name="name">wizard.extract.pipeline2.form</field>
+            <field name="model">wizard.extract.pipeline2</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <group>
+                            <field name="name" invisible='1'/>
+                            <field name="msg"/>
+                            <field name="pipeline" filename="name"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Ok" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

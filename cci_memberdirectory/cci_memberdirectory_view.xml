@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <menuitem name="Members' Directory" id="menu_members_directory" parent="base.menu_base_partner" sequence="89"/>
+
+        <!-- JOB.PROXY -->
+        <record model="ir.ui.view" id="view_dir_job_proxy_form">
+            <field name="name">Jobs for Members' Directory</field>
+            <field name="model">directory.job.proxy</field>
+            <field name="arch" type="xml">
+                <form string="Jobs for Members'Directory">
+                    <group colspan="4" col="6">
+                        <field name="address_id"  readonly="1"/>
+                        <field name="job_id"  readonly="1" domain="[('address_id','=',address_id)]"/>
+                        <field name="contact_id" readonly="1"/>
+                        <field name="internal_validated" />
+                        <field name="address_proxy_id" readonly="1"/>
+                    </group>
+                    <group colspan="4" col="7">
+                        <separator string="Field" colspan="1"/>
+                        <separator string="Current" colspan="2"/>
+                        <separator string="Proposed" colspan="2"/>
+                        <separator string="Recorded" colspan="2"/>
+
+                        <label string="Last Name:" colspan="1"/>
+                        <field name="last_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_last_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_last_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="First Name:" colspan="1"/>
+                        <field name="first_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_first_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_first_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="EMail:" colspan="1"/>
+                        <field name="email" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_email" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_email" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Mobile:" colspan="1"/>
+                        <field name="mobile" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_mobile" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_mobile" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Mob Conf:" colspan="1"/>
+                        <field name="mobile_confidential" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_mobile_confidential" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_mobile_confidential" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Titre:" colspan="1"/>
+                        <field name="title" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_title" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_title" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Categs:" colspan="1"/>
+                        <field name="categs" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_categs" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        
+                        <label string="Sequence" colspan="1"/>
+                        <field name="sequence" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_sequence" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_sequence" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                    </group>
+                    <separator string="Others" colspan="4"/>
+                    <group>
+                    	<group>
+		                    <field name="final_courtesy"/>
+		                    <field name="new_record" readonly="1"/>
+                    	</group>
+                    	<group>
+		                    <field name="final_gender"/>
+		                    <field name="marked_for_deletion" readonly="1"/>
+                    	</group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_job_proxy_tree">
+            <field name="name">Jobs for Members' Directory</field>
+            <field name="model">directory.job.proxy</field>
+            <field name="arch" type="xml">
+                <tree string="Jobs for Members'Directory" colors="red:marked_for_deletion;darkgreen:new_record">
+                    <field name="address_proxy_id"/>
+                    <field name="last_name"/>
+                    <field name="first_name"/>
+                    <field name="new_last_name"/> 
+                    <field name="final_last_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_directory_job_proxy">
+        	 <field name="name">Jobs for Members' Directory</field>
+            <field name="res_model">directory.job.proxy</field>
+            <field name="view_type">form</field>
+        </record>
+        
+        <menuitem name="Jobs for Members' Directory" id="menu_directory_job_proxy" action="action_directory_job_proxy" parent="menu_members_directory" sequence="25"/>
+
+        <!-- JOD DELETED -->
+        <record model="ir.ui.view" id="view_job_deleted_form">
+            <field name="name">User deleted jobs</field>
+            <field name="model">directory.job2delete</field>
+            <field name="arch" type="xml">
+                <form string="User deleted jobs">
+					<group>
+						<group>
+							<field name="address_proxy_id"/>
+							<field name="last_name"/>
+							<field name="active"/>
+						</group>
+						<group>
+							<field name="job_id"/>
+							<field name="first_name"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_job_deleted_tree">
+            <field name="name">User deleted jobs</field>
+            <field name="model">directory.job2delete</field>
+            <field name="arch" type="xml">
+                <tree string="User deleted jobs">
+                    <field name="address_proxy_id"/>
+                    <field name="job_id"/>
+                    <field name="last_name"/>
+                    <field name="first_name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_directory_job2delete">
+        	<field name="name">User deleted jobs</field>
+            <field name="res_model">directory.job2delete</field>
+            <field name="view_type">form</field>
+        </record>
+        
+        <menuitem name="Deleted Jobs" id="menu_directory_job_deleted" action="action_directory_job2delete" parent="menu_members_directory" sequence="26"/>
+
+        <!-- SECTOR -->
+        <!--<record model="ir.ui.view" id="view_dir_sector_form">
+            <field name="name">Directory Sector</field>
+            <field name="model">directory.sector</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Directory sector">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="category_id" />
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_dir_sector_tree">
+            <field name="name">Directory Sector</field>
+            <field name="model">directory.sector</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Directory Sector">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_directory_sector">
+            <field name="res_model">directory.sector</field>
+            <field name="view_type">form</field>
+        </record>
+        <menuitem name="Sectors for Members' Directory" id="menu_directory_sector" action="action_directory_sector" parent="menu_members_directory" sequence="27"/>-->
+        
+        <!-- ADDRESS.PROXY -->
+        <record model="ir.ui.view" id="view_dir_address_proxy_form">
+            <field name="name">Partners for Members' Directory</field>
+            <field name="model">directory.address.proxy</field>
+            <field name="arch" type="xml">
+                <form string="Partners for Members'Directory">
+                    <group colspan="4" col="6">
+                        <field name="partner_id"  readonly="1"/>
+                        <field name="address_id"  readonly="1"/>
+                        <field name="link_id" readonly="1" />
+                        <field name="user_validated" />
+                        <field name="internal_validated" />
+                        <field name="full_page" />
+                    </group>
+                    <separator string="Partner" colspan="4"/>
+                    <group colspan="4" col="7">
+                        <separator string="Field" colspan="1"/>
+                        <separator string="Current" colspan="2"/>
+                        <separator string="Proposed" colspan="2"/>
+                        <separator string="Recorded" colspan="2"/>
+                        <label string="Complete Name:" colspan="1"/>
+                        <field name="complete_name" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_complete_name" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="--- to subdivise ---" colspan="2"/>
+                        
+                        <label string="Partner Name:" colspan="1"/>
+                        <field name="partner_name" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_partner_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        
+                        <label string="Address Name:" colspan="1"/>
+                        <field name="address_name" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_address_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        
+                        <label string="Dir Show:" colspan="1"/>
+                        <field name="dir_show_name" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_dir_show_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        
+                        <label string="Dir Sort:" colspan="1"/>
+                        <field name="dir_sort_name" nolabel="1" readonly="1" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_dir_sort_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        
+                        <label string="Web:" colspan="1"/>
+                        <field name="web" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_web" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_web" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="VAT:" colspan="1"/>
+                        <field name="vat_num" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_vat_num" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_vat_num" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Sector 1:" colspan="1"/>
+                        <field name="sector1" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_sector1" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_sector1" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Sector 2:" colspan="1"/>
+                        <field name="sector2" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_sector2" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_sector2" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Sector 3:" colspan="1"/>
+                        <field name="sector3" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_sector3" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_sector3" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Activity:" colspan="1"/>
+                        <field name="desc_activ" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_desc_activ" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_desc_activ" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        <label string="Address Activity:" colspan="1"/>
+                        <label string="------" colspan="2"/>
+                        <label string="------" colspan="2"/>
+                        <field name="final_addr_desc_activ" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Not in Directory:" colspan="1"/>
+                        <label string="------" colspan="2"/>
+                        <field name="not_in_directory" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_not_in_directory" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                    </group>
+                    <separator string="Address" colspan="4"/>
+                    <group colspan="4" col="7">
+                        <label string="Street:" colspan="1"/>
+                        <field name="street" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_street" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_street" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Street Number:" colspan="1"/>
+                        <field name="street_number" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_street_number" nolabel="1" readonly="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        <field name="final_street_number" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Street Box:" colspan="1"/>
+                        <field name="street_box" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_street_box" nolabel="1" readonly="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        <field name="final_street_box" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Zip code:" colspan="1"/>
+                        <field name="zip_code" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_zip_code" nolabel="1" readonly="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        <field name="final_zip_id" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="City:" colspan="1"/>
+                        <field name="city" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_city" nolabel="1" readonly="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                        <label string="------" colspan="2"/>
+
+                        <label string="EMail:" colspan="1"/>
+                        <field name="email" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_email" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_email" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Phone:" colspan="1"/>
+                        <field name="phone" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_phone" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_phone" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Fax:" colspan="1"/>
+                        <field name="fax" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_fax" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_fax" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                        <label string="Employee:" colspan="1"/>
+                        <field name="employee" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="new_employee" nolabel="1" readonly="1" colspan="2"/>
+                        <field name="final_employee" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                    </group>
+                    <field name="comments" nolabel="1" colspan="4" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                    <field name="job_ids" colspan="4" nolabel="1" string="Jobs">
+                        <tree string="Jobs" colors="red:new_record;darkgreen:new_name">
+                            <field name="sequence"/>
+                            <field name="new_sequence"/>
+                            <field name="last_name"/>
+                            <field name="first_name"/>
+                            <field name="new_last_name"/>
+                            <field name="final_last_name"/>
+                        </tree>
+                        <form string="Jobs">
+                            <group colspan="4" col="6">
+                                <field name="address_id"  readonly="1"/>
+                                <field name="job_id"  readonly="1" domain="[('address_id','=',address_id)]"/>
+                                <field name="contact_id" readonly="1"/>
+                                <field name="address_proxy_id" readonly="1"/>
+                            </group>
+                            <group colspan="4" col="7">
+                                <separator string="Field" colspan="1"/>
+                                <separator string="Current" colspan="2"/>
+                                <separator string="Proposed" colspan="2"/>
+                                <separator string="Recorded" colspan="2"/>
+
+                                <label string="Last Name:" colspan="1"/>
+                                <field name="last_name" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_last_name" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_last_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="First Name:" colspan="1"/>
+                                <field name="first_name" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_first_name" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_first_name" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="EMail:" colspan="1"/>
+                                <field name="email" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_email" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_email" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="Mobile:" colspan="1"/>
+                                <field name="mobile" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_mobile" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_mobile" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="Mob Conf:" colspan="1"/>
+                                <field name="mobile_confidential" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_mobile_confidential" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_mobile_confidential" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="Titre:" colspan="1"/>
+                                <field name="title" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="new_title" nolabel="1" readonly="1" colspan="2"/>
+                                <field name="final_title" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+
+                                <label string="Categs:" colspan="1"/>
+                                <field name="categs" nolabel="1" readonly="1" colspan="2"/>
+                                <label string="------" colspan="2"/>
+                                <field name="final_categs" nolabel="1" colspan="2" attrs="{'readonly':[('internal_validated','=',True)]}"/>
+                            </group>
+                            <separator string="Others" colspan="4"/>
+                            <field name="sequence" readonly="1"/>
+                            <field name="new_sequence" readonly="1"/>
+                            <field name="final_courtesy"/>
+                            <field name="final_gender"/>
+                            <field name="new_record" readonly="1"/>
+                            <field name="marked_for_deletion" readonly="1"/>
+                        </form>
+                    </field>
+					<group>
+						<group>
+							<field name="sending_address" />
+							<field name="sending_name"/>
+							<field name="active" />
+						</group>
+						<group>
+							<field name="sending_courtesy"/>
+							<field name="full_page_app" />
+							<field name="change_date"  invisible="1"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+        
+        <!--<button string="Apply changes" confirm="Sure to record this?" name="but_confirm_changes" type="object" icon="gtk-yes" colspan="4"/>-->
+        
+        <record model="ir.ui.view" id="view_address_proxy_tree">
+            <field name="name">Partners for Members' Directory</field>
+            <field name="model">directory.address.proxy</field>
+            <field name="arch" type="xml">
+                <tree string="Partners for Members'Directory">
+                    <field name="partner_id"/>
+                    <field name="address_id"/>
+                </tree>
+            </field>
+        </record>
+
+		<!-- Search View -->
+		<record id="view_dir_address_proxy_filter" model="ir.ui.view">
+            <field name="name">directory.address.proxy.select</field>
+            <field name="model">directory.address.proxy</field>
+            <field name="arch" type="xml">
+                <search string="Search Directory Address Proxy">
+                    <field name="partner_id"/>
+                    <field name="address_id"/>
+                    <field name="link_id"/>
+                    <field name="user_validated"/>
+                    <field name="internal_validated"/>
+                    <field name="full_page"/>
+                    <field name="sending_address"/>
+                    <field name="full_page_app"/>
+                    <field name="active"/>
+                    <field name="change_date"/>
+               </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_directory_address_proxy">
+            <field name="name">Partners for Members' Directory</field>
+            <field name="res_model">directory.address.proxy</field>
+            <field name="view_type">form</field>
+			<field name="search_view_id" ref="view_dir_address_proxy_filter"/>
+        </record>
+        
+        <menuitem name="Partners for Members' Directory" id="menu_directory_address_proxy" action="action_directory_address_proxy" parent="menu_members_directory" sequence="10"/>
+
+        <record model="ir.actions.act_window" id="action_pending_directory_address_proxy">
+            <field name="name">Pending Partners for Members' Directory</field>
+            <field name="res_model">directory.address.proxy</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user_validated','=',True),('internal_validated','=',False)]</field>
+        </record>
+        
+        <menuitem name="Pending Partners for Members' Directory" id="menu_pending_directory_address_proxy" action="action_pending_directory_address_proxy" parent="menu_directory_address_proxy"/>
+
+        <record model="ir.actions.act_window" id="action_done_directory_address_proxy">
+            <field name="name">Managed Partners for Members' Directory</field>
+            <field name="res_model">directory.address.proxy</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user_validated','=',True),('internal_validated','=',True),('active','=',False)]</field>
+        </record>
+        
+        <menuitem name="Managed Partners for Members' Directory" id="menu_done_directory_address_proxy" action="action_done_directory_address_proxy" parent="menu_directory_address_proxy"/>
+
+        <record model="ir.actions.act_window" id="action_partial_done_directory_address_proxy">
+            <field name="name">Partially Managed Partners for Members' Directory</field>
+            <field name="res_model">directory.address.proxy</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user_validated','=',True),('internal_validated','=',True),('origin_activ','!=','defpartner'),('final_desc_activ','!=','desc_activ')]</field>
+        </record>
+        
+        <menuitem name="Partially Managed Partners for Members' Directory" id="menu_partial_done_directory_address_proxy" action="action_partial_done_directory_address_proxy" parent="menu_done_directory_address_proxy"/>
+
+        <record model="ir.actions.act_window" id="action_paper_directory_address_proxy">
+            <field name="name">Adresses without email</field>
+            <field name="res_model">directory.address.proxy</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('sending_address','=',False)]</field>
+        </record>
+        
+        <menuitem name="Adresses without email" id="menu_paper_directory_address_proxy" action="action_paper_directory_address_proxy" parent="menu_directory_address_proxy"/>
+
+    </data>
+</openerp>

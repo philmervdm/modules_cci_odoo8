@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="view_res_users_inherit_cci_mail" model="ir.ui.view">
+            <field name="name">res.users.inherit.cci_mail</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <field name="tz" position="after">
+                    <field name="phone"/>
+                    <field name="fax"/>
+                    <field name="email"/>
+                    <field name="mobile"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

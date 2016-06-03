@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+	<wizard string="Capture Call"
+            model="res.partner"
+            name="escaux_wizard_capture_call"
+            id="escaux.wizard_capture_call" />
+	</data>
+</openerp>

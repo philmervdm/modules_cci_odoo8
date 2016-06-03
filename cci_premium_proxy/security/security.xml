@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+	<!-- Users Groups -->
+    <record model="res.groups" id="group_premium_form_manager">
+        <field name="name">Premium's form Manager</field>
+    </record>
+</data>
+</openerp>
+

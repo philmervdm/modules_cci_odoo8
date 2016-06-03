@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+	
+		<record id="view_cci_delete_emails_in_tables" model="ir.ui.view">
+            <field name="name">cci.delete.emails.in_tables.form</field>
+            <field name="model">cci.delete.emails.in_tables</field>
+            <field name="arch" type="xml">
+				<form string="Delete Emails">
+					<group>
+					    <field name="emails" colspan="4" width="600"/>
+    					<field name="send_warning"/>
+					</group>
+					<footer>
+						<button name="delete" string="Delete Them All" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_delete_emails_in_tables" model="ir.actions.act_window">
+             <field name="name">Delete Emails</field>
+             <field name="res_model">cci.delete.emails.in_tables</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_delete_emails_in_tables"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+       <menuitem 
+        	name="Delete Emails" 
+        	id="menu_delete_emails"
+			action="action_cci_delete_emails_in_tables" 
+			parent="cci_newsletter.menu_cci_subscriber"
+            sequence="90" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+            
+		<record id="view_cci_delete_emails_in_tables_count" model="ir.ui.view">
+            <field name="name">cci.delete.emails.in_tables.count.form</field>
+            <field name="model">cci.delete.emails.in_tables.count</field>
+            <field name="arch" type="xml">
+				<form string="Results">
+					<group>
+			    		<field name="final_count"/>
+					</group>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_membership_membership_line_partner_manager","membership.membership_line partner_manager","membership.model_membership_membership_line","group_cci_membership_user",1,1,1,1
+"access_membership_membership_line","membership.membership_line","membership.model_membership_membership_line",,1,0,0,0
+"access_membership_membership_check","cci_membership.membership_check","cci_membership.model_cci_membership_membership_check",,1,1,1,1
+

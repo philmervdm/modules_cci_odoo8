@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="view_cci_mailchimp_show_record" model="ir.ui.view">
+            <field name="name">cci.mailchimp.show.record.form</field>
+            <field name="model">cci.mailchimp.show.record</field>
+            <field name="arch" type="xml">
+				<form string="Show Record">
+					<label string="Do you want to show record?"/>
+					<footer>
+						<button name="show" string="Show" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

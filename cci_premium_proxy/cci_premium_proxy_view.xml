@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+<!--        <menuitem id="menu_premium_forms" parent="base.menu_base_partner" sequence="89" icon="terp-crm" groups="group_premium_form_manager" name="Premium's Forms"/>
+        <record id="view_premium_contact_form" model="ir.ui.view">
+            <field name="name">premium_contact.form</field>
+            <field name="model">premium_contact</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Premium Form Contact">
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="last_name" select="1"/>
+							<field name="mobile"/>
+							<field name="birthdate"/>
+						</group>
+						<group>
+							<field name="sex"/>
+							<field name="first_name" select="1"/>
+							<field name="email" select="1"/>
+							<field name="zip_code"/>
+						</group>
+					</group>
+                    
+                    
+                    <group string="Social Networks" colspan="4">
+						<group>
+							<field name="fb"/>
+							<field name="li"/>
+							<field name="tw"/>
+						</group>
+						<group>
+							<field name="freq_fb"/>
+		                    <field name="freq_li"/>
+		                    <field name="freq_tw"/>
+						</group>
+					</group>
+                    
+                    <group string="Small tags" colspan="4">
+						<group>
+							<field name="smartphone"/>
+							<field name="tablet"/>
+							<field name="app_pro"/>
+							<field name="invit_network"/>
+							<field name="sms"/>
+							<field name="pay_creditcard"/>
+							<field name="use_language"/>
+							<field name="nighter"/>
+							<field name="want_invest"/>
+						</group>
+						<group>
+							<field name="smart_info"/>
+							<field name="tablet_press"/>
+							<field name="invit_mail"/>
+							 <field name="invit_post"/>
+							<field name="ecustomer"/>
+							<field name="care_cci"/>
+							<field name="eleccar"/>
+							<field name="children"/>
+							<field name="owner"/>
+						</group>
+					</group>
+                    
+                    <group string="Business Clubs" colspan="4">
+						<group>
+							 <field name="cluber"/>
+							<field name="club_cl"/>
+							<field name="club_apm"/>
+							<field name="club_ypowpo"/>
+							<field name="club_fce"/>
+							 <field name="club_zoning"/>
+							<field name="club_sc"/>
+							<field name="club_other_names"/>
+						</group>
+						<group>
+							<field name="club_cw"/>
+							<field name="club_bni"/>
+							<field name="club_gceq"/>
+							<field name="club_far"/>
+							<field name="club_new"/>
+							<field name="club_golf"/>
+							<field name="club_other"/>
+						</group>
+					</group>
+                    
+                    <group string="Networking activities" colspan="4">
+						<group>
+							<field name="networker"/>
+						</group>
+						<group>
+							<field name="freq_network"/>
+						</group>
+					</group>
+                    
+                    <group string="Best timing for networking" colspan="4">
+						<group>
+							<field name="network_morning"/>
+							<field name="network_dinner"/>
+						</group>
+						<group>
+							<field name="network_lunch"/>
+							<field name="network_night"/>
+						</group>
+					</group>
+                    
+                    <group string="Best timing for seminaries or conferences" colspan="4">
+						<group>
+							<field name="conf_8_10"/>
+							<field name="conf_10_12"/>
+							<field name="conf_14_16"/>
+						</group>
+						<group>
+							<field name="conf_9_11"/>
+							<field name="conf_12_14"/>
+							<field name="conf_18_20"/>
+						</group>
+					</group>
+
+                    <group string="Disponibilities for CCI Activitites" colspan="4" col="8">
+						<group col="1">
+							<label string="-" colspan="1"/>
+							<label string="Lundi" colspan="1"/>
+							<label string="Mardi" colspan="1"/>
+							<label string="Mercredi" colspan="1"/>
+							<label string="Jeudi" colspan="1"/>
+							<label string="Vendredi" colspan="1"/>
+							<label string="Samedi" colspan="1"/>
+							<label string="Dimanche" colspan="1"/>
+						</group>
+
+						<group  col="1">
+							<label string="Matin"/>
+							<field name="dispo_mon_morning" nolabel="1"/>
+							<field name="dispo_tue_morning" nolabel="1"/>
+							<field name="dispo_wed_morning" nolabel="1"/>
+							<field name="dispo_thu_morning" nolabel="1"/>
+							<field name="dispo_fri_morning" nolabel="1"/>
+							<field name="dispo_sat_morning" nolabel="1"/>
+							<field name="dispo_sun_morning" nolabel="1"/>
+						</group>                        
+                        
+						<group col="1">
+							<label string="Midi"/>
+							<field name="dispo_mon_lunch" nolabel="1"/>
+							<field name="dispo_tue_lunch" nolabel="1"/>
+							<field name="dispo_wed_lunch" nolabel="1"/>
+							<field name="dispo_thu_lunch" nolabel="1"/>
+							<field name="dispo_fri_lunch" nolabel="1"/>
+							 <field name="dispo_sat_lunch" nolabel="1"/>
+							<field name="dispo_sun_lunch" nolabel="1"/>
+						</group>
+                        
+						<group col="1">
+							<label string="Soir"/>
+	                        <field name="dispo_mon_evening" nolabel="1"/>
+                        	<field name="dispo_tue_evening" nolabel="1"/>
+                        	<field name="dispo_wed_evening" nolabel="1"/>
+                        	<field name="dispo_thu_evening" nolabel="1"/>
+                        	<field name="dispo_fri_evening" nolabel="1"/>
+                        	<field name="dispo_sat_evening" nolabel="1"/>
+                        	<field name="dispo_sun_evening" nolabel="1"/>
+						</group>
+					</group>
+
+					<group>
+						<group>
+							<field name="size_25"/>
+							<field name="size_50100"/>
+							<field name="price_event"/>
+						</group>
+						<group>
+							<field name="size_2550"/>
+							<field name="size_100"/>
+						</group>
+					</group>
+						
+					<group>
+                    	<field name="interests" colspan="4"/>
+					</group>
+					
+					<group>
+						<group>
+							<field name="login"/>
+							<field name="state" readonly="1" select="2"/>
+							<field name="contact_id" readonly="1"/>
+							<field name="active" select="2"/>
+						</group>
+						<group>
+							<field name="mot_passe"/>
+                    		<field name="injection_type" readonly="1"/>
+                    		<field name="injection_datetime" readonly="1"/>
+						</group>
+					</group>
+
+					<group string="Companies" colspan="4">                    
+                    	<field name="premium_company_ids" nolabel="1" colspan="4"/>
+						<field name="problems" colspan="4"/>
+					</group>
+                    
+                </form>
+            </field>
+        </record>
+        <record id="view_premium_contact_tree" model="ir.ui.view">
+            <field name="name">premium_contact.tree</field>
+            <field name="model">premium_contact</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Premium Form Contact">
+                    <field name="last_name"/>
+                    <field name="first_name"/>
+                    <field name="email"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_contact" model="ir.actions.act_window">
+            <field name="name">Premium Contact Form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_contact</field>
+            <field name="view_type">form</field>
+        </record>
+        <menuitem action="action_premium_contact" id="menu_premium_contact" parent="menu_premium_forms" sequence="10" name="Premium's Personal Form" groups="group_premium_form_manager" />
+        <record id="action_premium_contact_2manage" model="ir.actions.act_window">
+            <field name="name">Premium Contact Form To Manage</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_contact</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('state','in',['draft','partial'])]</field>
+        </record>
+        <menuitem action="action_premium_contact_2manage" id="menu_premium_contact_2manage" parent="menu_premium_contact" sequence="10" name="Premium's Personal Form to Manage" groups="group_premium_form_manager" />
+
+        <record id="view_premium_company_form" model="ir.ui.view">
+            <field name="name">premium_company.form</field>
+            <field name="model">premium_company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Premium Form Company">
+					<group>
+						<group>
+							<field name="name" select="1"/>
+							<field name="company_name" select="1"/>
+							<field name="street"/>
+							<field name="zip_name"/>
+						</group>
+						<group>
+							<field name="company_num" select="2"/>
+							<field name="company_status"/>
+							<field name="zip_code"/>
+						</group>
+					</group>
+                    
+                    <group string="Working address" colspan="4">
+						<group>
+							<field name="street_work"/>
+							 <field name="zip_name_work"/>
+							<field name="fax"/>
+							<field name="check_formation"/>
+							<field name="zoning"/>
+						</group>
+						<group>
+							<field name="zip_code_work"/>
+							<field name="phone"/>
+							<field name="employee"/>
+							<field name="international"/>
+							<field name="equal_representation"/>
+						</group>
+					</group>
+                    
+                    <group string="Activity Sectors" colspan="4">
+						<group>
+							<field name="sector1"/>
+							<field name="sector3"/>
+						</group>
+						<group>
+							<field name="sector2"/>
+						</group>
+					</group>
+                    
+                    <group string="Job Description" colspan="4">
+						<group>
+							<field name="person_statut"/>
+							<field name="main_dir"/>
+							<field name="main_dir_arrival"/>
+							<field name="buy_from"/>
+							<field name="invest"/>
+							<field name="crowdfund"/>
+							<field name="steering"/>
+						</group>
+						<group>
+							<field name="inde_statut"/>
+							<field name="main_dir_type"/>
+							<field name="main_dir_year"/>
+							<field name="shareholder"/>
+							<field name="investor"/>
+							<field name="family"/>
+						</group>
+					</group>
+                    <group string="Function" colspan="4">
+						<field name="decision_level" colspan="4"/>
+						<group>
+							<field name="purchase"/>
+							<field name="commercial"/>
+							<field name="public_relation"/>
+							<field name="export"/>
+							<field name="it"/>
+							<field name="marketing"/>
+							<field name="production"/>
+							<field name="r_d"/>
+							<field name="secretary"/>
+							<field name="technical"/>
+							<field name="others"/>
+						</group>
+						<group>
+							<field name="administration"/>
+							<field name="communication"/>
+							<field name="energy"/>
+							<field name="finance"/>
+							<field name="logistic"/>
+							<field name="operations"/>
+							<field name="projects"/>
+							<field name="hr"/>
+							<field name="security"/>
+							<field name="web"/>
+							<field name="others_name"/>
+						</group>
+ 						<field name="title" colspan="4"/>
+						<field name="activity_description" colspan="4" nolabel="1"/>
+					</group>
+                    
+                    <group string="Administrative data" colspan="4">
+						<group>
+							<field name="importance"/>
+							<field name="address_id" readonly="1"/>
+							<field name="partner_id" readonly="1"/>
+							<field name="injection_type" readonly="1"/>
+							<field name="premium_contact_id" readonly="1"/>
+						</group>
+						<group>
+							<field name="job_id" readonly="1"/>
+							<field name="address_work_id" readonly="1"/>
+							<field name="state" select="1" readonly="1"/>
+							<field name="injection_datetime" readonly="1"/>
+							<field name="active" select="2"/>
+						</group>
+						<field name="problems" colspan="4"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_premium_company_tree" model="ir.ui.view">
+            <field name="name">premium_company.tree</field>
+            <field name="model">premium_company</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Premium Form Company">
+                    <field name="company_num"/>
+                    <field name="company_name"/>
+                    <field name="street"/>
+                    <field name="zip_code"/>
+                    <field name="zip_name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_company" model="ir.actions.act_window">
+            <field name="name">Premium Company Form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_company</field>
+            <field name="view_type">form</field>
+        </record>
+        <menuitem action="action_premium_company" id="menu_premium_company" parent="menu_premium_forms" sequence="20" name="Premium's Company Form" groups="group_premium_form_manager" />
+-->    </data>
+</openerp>

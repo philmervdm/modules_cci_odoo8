@@ -1,0 +1,73 @@
+<openerp>
+	<data>
+		<record id="view_crate_embassy_folder_form" model="ir.ui.view">
+			<field name="name">create.embassy.folder.form</field>
+			<field name="model">create.embassy.folder</field>
+			<field name="arch" type="xml">
+				<form string="Choose Site">
+					<group>
+					    <field name="site_id"/>
+					</group>
+					<footer>
+						<button name="create_embassy_folder" string="Next" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_crate_embassy_folder_form" model="ir.actions.act_window">
+            <field name="name">Create Embassy Folder</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">create.embassy.folder</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_crate_embassy_folder_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_crate_embassy_folder_values">
+            <field name="model_id" ref="model_create_embassy_folder" />
+            <field name="name">Choose Site</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_crate_embassy_folder_form'))" />
+            <field name="key">action</field>
+            <field name="model">cci_missions.certificate</field>
+        </record>
+
+	<record id="view_open_embassy_folder_form" model="ir.ui.view">
+			<field name="name">open.embassy.folder.form</field>
+			<field name="model">open.embassy.folder</field>
+			<field name="arch" type="xml">
+				<form string="Create Embassy Folder">
+					<group>
+					    <field name="folder_created"/>
+						<field name="folder_rejected"/>
+						<field name="folder_rej_reason"/>
+						<field name="folder_ids" invisible="1"/>
+					</group>
+					<footer>
+						<button name="open_folder" string="Open" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="Ok" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_open_embassy_folder_form" model="ir.actions.act_window">
+            <field name="name">Create Embassy Folder</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">open.embassy.folder</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_open_embassy_folder_form"/>
+            <field name="target">new</field>
+        </record>
+
+	
+	</data>
+</openerp>

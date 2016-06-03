@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+    	<!-- Event Registration Proxy -->
+		<record model="ir.ui.view" id="view_event_reg_proxy_form">
+			<field name="name">Registration Proxy</field>
+			<field name="model">cci_event_proxy.registration</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Registration Proxy">
+					<group>
+					<field name="event_id" />
+					<field name="site_id"/>
+                    <field name="event_name"  readonly="1"/>
+					<field name="email" widget="email" />
+					<field name="courtesy"/>
+					<field name="first_name"/>
+					<field name="last_name" />
+					<field name="company_name" />
+					<field name="vat" />
+					<field name="street"/>
+					<field name="zip_code"/>
+					<field name="zip_city"/>
+					<field name="phone"/>
+					<field name="mobile"/>
+					<field name="title"/>
+					<newline/>
+                    <field name="price_wo_vat"/>
+                    <field name="price_w_vat"/>
+					<field name="state" />
+					<newline/>
+					<field name="login"/>
+					<field name="motpasse"/>
+					<newline/>
+					<field name="partner_id"/>
+					<field name="contact_id"/>
+					<field name="comments" colspan="4"/>
+					<field name="active" />
+					<field name="registration_id" readonly="1"/>
+				</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_event_reg_proxy_tree">
+			<field name="name">Registration Proxy</field>
+			<field name="model">cci_event_proxy.registration</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Registration Proxy">
+					<field name="event_id"/>
+					<field name="event_name"/>
+					<field name="first_name"/>
+					<field name="last_name"/>
+					<field name="company_name"/>
+					<field name="vat"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci_event_proxy.registration -->
+        <record id="view_event_reg_proxy_filter" model="ir.ui.view">
+            <field name="name">cci_event_proxy.registration.select</field>
+            <field name="model">cci_event_proxy.registration</field>
+            <field name="arch" type="xml">
+                <search string="Search Registration Proxy">
+                    <field name="event_id"/>
+                    <field name="event_name"/>
+                    <field name="email"/>
+                    <field name="last_name"/>
+                    <field name="company_name"/>
+                    <field name="vat"/>
+                    <field name="state"/>
+                    <field name="active"/>
+               </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_event_reg_proxy">
+            <field name="name">Registration Proxy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci_event_proxy.registration</field>
+            <field name="view_type">form</field>
+			<field name="search_view_id" ref="view_event_reg_proxy_filter"/>
+        </record>
+		<menuitem name="Registration Proxy" id="menu_event_reg_proxy" action="action_event_reg_proxy" parent="event.event_main_menu"/>
+
+	</data>
+</openerp>

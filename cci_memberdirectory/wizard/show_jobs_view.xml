@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_show_jobs_addr_proxy" model="ir.ui.view">
+            <field name="name">show.jobs.addr.proxy.form</field>
+            <field name="model">show.jobs.addr.proxy</field>
+            <field name="arch" type="xml">
+				<form string="Complex Partners for Members' Directory">
+					<footer>
+						<button name="show_jobs" string="Show" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+        	id="action_show_jobs_addr_proxy"
+            multi="True"
+            key2="client_action_multi" 
+            name="Jox Proxy"
+            res_model="show.jobs.addr.proxy" 
+            src_model="directory.address.proxy"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+
+	</data>
+</openerp>

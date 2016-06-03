@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+        <!-- Wizard to create file with data for update of CCI members' directory -->
+		<wizard string="Create Prospection"
+			name="cci_memberdirectory_create_prospection"
+			id="cci_memberdirectory_create_prospection"
+			menu="False"/>
+		<menuitem name="Create Prospection" id="menu_create_mdir_prospection"
+			action="cci_memberdirectory_create_prospection" type="wizard"
+			parent="menu_members_directory"
+            sequence="05"/>
+
+        <!-- Wizard to internally validate waiting changes -->
+		<wizard string="Record simple user changes"
+			name="cci_memberdirectory_internal_validate"
+			id="cci_memberdirectory_internal_validate"
+			menu="False"/>
+		<menuitem name="Record simple user changes" id="menu_internal_validate"
+			action="cci_memberdirectory_internal_validate" type="wizard"
+			parent="menu_members_directory"
+            sequence="06"/>
+
+        <!-- Wizard to send email asking for update -->
+		<wizard string="Send Email for Members' Directory"
+			name="cci_memberdirectory_send_email"
+			id="cci_memberdirectory_send_email"
+			menu="False"/>
+		<menuitem name="Send Email for Members' Directory" id="menu_create_mdir_sendemail"
+			action="cci_memberdirectory_send_email" type="wizard"
+			parent="menu_members_directory"
+            sequence="50"/>
+
+        <!-- Wizard to show only simple address -->
+		<wizard string="Simple Partners for Members' Directory"
+			name="wizard_show_all_simple"
+			id="wizard_show_all_simple"
+			menu="False"/>
+		<menuitem name="Simple Partners for Members' Directory" id="menu_show_all_simple"
+			action="wizard_show_all_simple" type="wizard"
+			parent="menu_directory_address_proxy"
+            sequence="40"/>
+
+        <!-- Wizard to show only complex address -->
+		<wizard string="Complex Partners for Members' Directory"
+			name="wizard_show_all_complex"
+			id="wizard_show_all_complex"
+			menu="False"/>
+		<menuitem name="Complex Partners for Members' Directory" id="menu_show_all_complex"
+			action="wizard_show_all_complex" type="wizard"
+			parent="menu_directory_address_proxy"
+            sequence="42"/>
+
+        <!-- Wizard to show only simple address -->
+		<wizard string="Simple Validated Partners for Members' Directory"
+			name="wizard_show_validated_simple"
+			id="wizard_show_validated_simple"
+			menu="False"/>
+		<menuitem name="Simple Validated Partners for Members' Directory" id="menu_show_validated_simple"
+			action="wizard_show_validated_simple" type="wizard"
+			parent="menu_pending_directory_address_proxy"
+            sequence="40"/>
+
+        <!-- Wizard to show only complex address -->
+		<wizard string="Complex Validated Partners for Members' Directory"
+			name="wizard_show_validated_complex"
+			id="wizard_show_validated_complex"
+			menu="False"/>
+		<menuitem name="Complex Validated Partners for Members' Directory" id="menu_show_validated_complex"
+			action="wizard_show_validated_complex" type="wizard"
+			parent="menu_pending_directory_address_proxy"
+            sequence="42"/>
+
+        <!-- Wizard to extract excel file for paper sending -->
+		<wizard string="Excel File for Paper"
+		    model="directory.address.proxy"
+			name="cci_memberdirectory_extract_paper"
+			id="cci_memberdirectory_extract_paper"
+			menu="True"/>
+
+        <!--- wizard to show the linked jobs from a directory.address.proxy -->
+	    <wizard string="Jox Proxy"
+			model="directory.address.proxy"
+			menu="True"
+			name="wizard_show_jobs_addr_proxy"
+			id="wizard_show_jobs_addr_proxy" />
+
+        <!--- wizard to re-activate internaly validted records -->
+	    <wizard string="Get Back Save"
+			model="directory.address.proxy"
+			menu="True"
+			name="wizard_recup_internal"
+			id="wizard_recup_internal" />
+
+        <!-- Wizard to manually confirm -->
+		<wizard string="Manual Confirmation"
+		    model="directory.address.proxy"
+			name="cci_memberdirectory_manual_confirm"
+			id="cci_memberdirectory_manual_confirm"
+			menu="True"/>
+	</data>
+</openerp>

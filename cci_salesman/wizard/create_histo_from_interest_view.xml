@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="create_history_from_interest">
+            <field name="name">create.histo.from.interest.form</field>
+            <field name="model">create.histo.from.interest</field>
+            <field name="arch" type="xml">
+                <form string="Create History From Interest">
+                    <footer>
+                        <button name="copy_todo_to_histo" type="object" string="OK"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="create_history_from_interest_action" model="ir.actions.act_window">
+            <field name="name">Create History From Interest</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">create.histo.from.interest</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="create_history_from_interest"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <!-- <record model="ir.values" id="wizard_wizard_res_partner_history_values">
+            <field name="model_id" ref="cci_product_report.model_create_histo_from_interest"/>
+            <field name="name">Create History From Interest</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_res_partner_history_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner.interest</field>
+        </record> -->
+	</data>
+</openerp>

@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+    
+		<menuitem name="CCI Newsletter" id="menu_cci_newsletter" groups="group_cci_newsletter_manager,group_cci_newsletter_user,group_cci_newsletter_extuser_wapi,group_cci_newsletter_extuser_bw,group_cci_newsletter_extuser_ccih"/>
+	
+		<menuitem name="Subscriber" id="menu_cci_subscriber" parent="menu_cci_newsletter" sequence="5"/>
+
+	    <!-- CCI Newsletter Subscribers -->
+		<record id="view_cci_newsletter_subscriber_form" model="ir.ui.view">
+			<field name="name">CCI Newsletter Subscriber</field>
+			<field name="model">cci_newsletter.subscriber</field>
+			<field name="arch" type="xml">
+				<form string="CCI Newsletter Subscriber">
+					<group>
+						<group>
+							<field name="internal_id" readonly="1" />
+		                    <field name="name" />
+		                    <field name="email" />
+		                    <field name="login_name" readonly="1"/>
+		                    <field name="token" readonly="1"/>
+		                    <newline/>
+		                    <field name="source_id" />
+		                    <field name="expire" />
+						</group>
+						<group>
+		                    <field name="first_name" />
+		                    <field name="company_name" />
+		                    <field name="password" password="True" readonly="1"/>
+		                    <field name="forced_area" />
+		                    <field name="active" />
+						</group>
+					</group>
+                    <separator string="Comments"/>
+                    <field name="comments" nolabel="1" colspan="4" select="2"/>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cci_newsletter_subscriber_tree" model="ir.ui.view">
+			<field name="name">CCI Newsletter Subscriber</field>
+			<field name="model">cci_newsletter.subscriber</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Newsletter Subscriber">
+                    <field name="name"/>
+                    <field name="first_name"/>
+                    <field name="email"/>
+                    <field name="company_name"/>
+                    <field name="login_name"/>
+                    <field name="token"/>
+                    <field name="expire"/>
+                    <field name="source_id"/>
+                    <field name="forced_area"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_cci_newsletter_subscriber" model="ir.actions.act_window">
+			<field name="name">CCI Newsletter Subscriber</field>
+			<field name="res_model">cci_newsletter.subscriber</field>
+			<field name="view_type">form</field>
+		</record>
+		
+		<menuitem name="Subscribers" id="menu_newsletter_subscriber" action="action_cci_newsletter_subscriber"
+                  parent="menu_cci_subscriber" sequence="20" groups="group_cci_newsletter_user,group_cci_newsletter_manager"/>
+
+		<record id="action_cci_newsletter_subscriber_wapi" model="ir.actions.act_window">
+		    <field name="name">Subscribers WAPI</field>
+			<field name="res_model">cci_newsletter.subscriber</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('source_id','=',1)]</field>
+		</record>
+		
+		<menuitem name="Subscribers WAPI" id="menu_newsletter_subscriber_wapi" action="action_cci_newsletter_subscriber_wapi"
+                  parent="menu_cci_subscriber" sequence="50" groups="group_cci_newsletter_extuser_wapi"/>
+
+		<record id="action_cci_newsletter_subscriber_bw" model="ir.actions.act_window">
+		    <field name="name">Subscribers CCI BW</field>
+			<field name="res_model">cci_newsletter.subscriber</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('source_id','=',2)]</field>
+		</record>
+		
+		<menuitem name="Subscribers CCI BW" id="menu_newsletter_subscriber_bw" action="action_cci_newsletter_subscriber_bw"
+                  parent="menu_cci_subscriber" sequence="51" groups="group_cci_newsletter_extuser_bw"/>
+
+		<record id="action_cci_newsletter_subscriber_ccih" model="ir.actions.act_window">
+		    <field name="name">Subscribers CCIH</field>
+			<field name="res_model">cci_newsletter.subscriber</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('source_id','=',3)]</field>
+		</record>
+		
+		<menuitem name="Subscribers CCIH" id="menu_newsletter_subscriber_ccih" action="action_cci_newsletter_subscriber_ccih"
+                  parent="menu_cci_subscriber" sequence="52" groups="group_cci_newsletter_extuser_ccih"/>
+
+	    <!-- CCI Newsletter Subscriber Sources -->
+		<record id="view_cci_newsletter_source_form" model="ir.ui.view">
+			<field name="name">CCI Newsletter Source</field>
+			<field name="model">cci_newsletter.source</field>
+			<field name="arch" type="xml">
+				<form string="CCI Newsletter Source">
+					<group>
+	                    <field name="name" />
+					</group>
+					<group>
+						<group>
+		                    <field name="default_area" />
+		                    <field name="next_id"/>
+						</group>
+						<group>
+		                    <field name="flanders"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cci_newsletter_source_tree" model="ir.ui.view">
+			<field name="name">CCI Newsletter Source</field>
+			<field name="model">cci_newsletter.source</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Newsletter Source">
+                    <field name="name"/>
+                    <field name="default_area"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_cci_newsletter_source" model="ir.actions.act_window">
+			<field name="name">cci_newsletter.source</field>
+			<field name="res_model">cci_newsletter.source</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem name="Configuration" id="menu_cci_newsletter_configure" parent="menu_cci_newsletter" sequence="10"/>
+
+		<menuitem name="Source" id="menu_cci_newsletter_source" action="action_cci_newsletter_source"
+                  parent="menu_cci_newsletter_configure" sequence="10" groups="group_cci_newsletter_manager"/>
+
+	    <!-- CCI Newsletter Queue New -->
+		<record id="view_cci_newsletter_queue_new_form" model="ir.ui.view">
+			<field name="name">CCI Newsletter Queue New</field>
+			<field name="model">cci_newsletter.queue_new</field>
+			<field name="arch" type="xml">
+				<form string="CCI Newsletter Queue New">
+					<group>
+						<group>
+		                    <field name="date" />
+		                    <field name="mail" />
+		                    <field name="first_name"/>
+		                    <field name="password" password="True"/>
+		                    <field name="courtesy"/>
+		                    <field name="company" />
+		                    <field name="contact_id"/>
+						</group>
+						<group>
+		                    <field name="send_date"/>
+		                    <field name="name" />
+		                    <field name="login"/>
+		                    <field name="token"/>
+		                    <field name="function"/>
+		                    <field name="user_id"/>
+		                    <field name="active" />
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cci_newsletter_queue_new_tree" model="ir.ui.view">
+			<field name="name">CCI Newsletter Queue New</field>
+			<field name="model">cci_newsletter.queue_new</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Newsletter Queue New">
+                    <field name="date"/>
+                    <field name="mail"/>
+                    <field name="name"/>
+                    <field name="first_name"/>
+                    <field name="login"/>
+                    <field name="company"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_cci_newsletter_queue_new">
+			<field name="name">cci_newsletter.queue_new</field>
+			<field name="res_model">cci_newsletter.queue_new</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem name="Queue New" id="menu_cci_newsletter_queue_new" action="action_cci_newsletter_queue_new"
+                  parent="menu_cci_newsletter_configure" sequence="20" groups="group_cci_newsletter_manager"/>
+
+	    <!-- CCI Newsletter Logs -->
+		<record id="view_cci_newsletter_log_form" model="ir.ui.view">
+			<field name="name">CCI Newsletter Log</field>
+			<field name="model">cci_newsletter.log</field>
+			<field name="arch" type="xml">
+				<form string="CCI Newsletter Log">
+					<group>
+						<group>
+		                    <field name="datetime" />
+						</group>
+						<group>
+		                    <field name="count"/>
+						</group>
+					</group>
+                    <notebook colspan="4">
+                        <page string="In short">
+                            <field name="short" colspan="4" nolabel="1"/>
+                        </page>
+                        <page string="Full Log">
+                            <field name="full" colspan="4" nolabel="1"/>
+                        </page>
+                    </notebook>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_cci_newsletter_log_tree" model="ir.ui.view">
+			<field name="name">CCI Newsletter Log</field>
+			<field name="model">cci_newsletter.log</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Newsletter Log">
+                    <field name="count"/>
+                    <field name="datetime"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_cci_newsletter_log" model="ir.actions.act_window">
+			<field name="name">cci_newsletter.log</field>
+			<field name="res_model">cci_newsletter.log</field>
+			<field name="view_type">form</field>
+		</record>
+
+		<menuitem name="Log" id="menu_cci_newsletter_log" action="action_cci_newsletter_log"
+                  parent="menu_cci_newsletter_configure" sequence="20" groups="group_cci_newsletter_manager"/>
+    </data>
+</openerp>

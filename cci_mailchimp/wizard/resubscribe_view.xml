@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_mailchimp_resubscribe" model="ir.ui.view">
+            <field name="name">cci.mailchimp.resubscribe.form</field>
+            <field name="model">cci.mailchimp.resubscribe</field>
+            <field name="arch" type="xml">
+				<form string="Subscribe Again Unsubscribed usersEmails">
+					<group>
+						<field name="confirm" />
+					</group>
+					<footer>
+						<button name="resubscribe" string="ReSubscribe" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+			id="action_cci_correct_emails_in_tables"
+            multi="True"
+            key2="client_action_multi" 
+            name="Correct Emails"
+            res_model="cci.mailchimp.resubscribe" 
+            src_model="mail_bounce"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+		
+	</data>
+</openerp>

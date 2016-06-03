@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="view_cci_mailchimp_search_emails" model="ir.ui.view">
+            <field name="name">cci.mailchimp.search.emails.form</field>
+            <field name="model">cci.mailchimp.search.emails</field>
+            <field name="arch" type="xml">
+				<form string="Search Emails">
+					<group>
+					    <field name="email" colspan="4" width="600"/>
+					</group>
+					<footer>
+						<button name="search" string="Search" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_mailchimp_search_emails" model="ir.actions.act_window">
+             <field name="name">Search Emails</field>
+             <field name="res_model">cci.mailchimp.search.emails</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_mailchimp_search_emails"/>
+             <field name="target">new</field>
+       </record>
+		
+		<menuitem 
+			name="Search Emails" 
+			id="menu_search_emails"
+			action="action_cci_mailchimp_search_emails" 
+			parent="cci_newsletter.menu_cci_subscriber"
+            sequence="80" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+	
+	</data>
+</openerp>

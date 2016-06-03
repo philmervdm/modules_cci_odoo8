@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_event_registration_proxy_user","cci_event_proxy.registration User","cci_event_proxy.model_cci_event_proxy_registration","cci_event.group_cci_event_user",1,1,1,0
+"access_event_registration_proxy_manager","cci_event_proxy.registration Manager","cci_event_proxy.model_cci_event_proxy_registration","cci_event.group_cci_event_manager",1,1,1,0
+"access_event_registration_proxy_supervisor","cci_event_proxy.registration Supervisor","cci_event_proxy.model_cci_event_proxy_registration","cci_event.group_cci_event_supervisor",1,0,0,0
+

@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cci_magazine_subscription_source_manager","CCI Magazine Subscription Source Manager","model_cci_magazine_subscription_source","group_cci_magazine_manager",1,1,1,1
+"access_cci_magazine_subscription_source_user","CCI Magazine Subscription Source User","model_cci_magazine_subscription_source",,1,0,0,0
+"access_cci_magazine_subscription_user","CCI Magazine Subscription User","model_cci_mag_subscription","group_cci_magazine_user",1,1,1,1
+"access_cci_magazine_past_job_check_user","CCI Magazine Past Job Check User","model_cci_magazine_past_job_check",,1,1,1,0
+

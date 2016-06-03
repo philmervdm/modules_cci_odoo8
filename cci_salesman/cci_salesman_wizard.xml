@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+<!-- New Custom menu to place all menus of this module -->
+ 
+		<menuitem id="menu_cci_salesman_main" name="CCI Salesman" parent="base.menu_base_partner" sequence="1"/>
+
+         <!-- Wizard to extract todo list for current user -->
+        <!-- wizard to use when using button on todo list to complete an history from an interest-->
+		<!-- <wizard id="create_histo_from_interest"
+            menu="False" name="create_histo_from_interest"
+            string="Create History From Interest" /> -->
+        <!--- wizard to extract and show annual turnover by cci_product for a partner -->
+	    <!-- <wizard string="TurnOver by CCI Product"
+			model="res.partner"
+			menu="True"
+			name="get_cci_product_turnover"
+			id="wizard_get_cci_product_turnover" /> -->
+        <!-- Wizard to create an history from res.partner.interest view -->
+        <!-- <wizard string="Create History"
+			    name="create_histo_from_mark"
+			    id="cci_salesman.create_histo_from_mark"
+                model="res.partner.interest"
+			    menu="True"/> -->
+        <!-- Wizard to extract commissions -->
+        <!-- <wizard string="Extract Commissions"
+			    name="extract_commissions"
+			    id="cci_salesman.extract_commissions"
+			    menu="False"/> --> 
+
+        <!-- Wizard to extract pipeline -->
+        <!-- <wizard string="Extract Pipeline"
+			    name="extract_pipeline"
+			    id="cci_salesman.extract_pipeline"
+			    menu="False"/>
+
+	    <menuitem name="Extract Pipeline" id="menu_extract_pipeline"
+			    action="extract_pipeline" type="wizard"
+			    parent="crm.menu_crm" 
+                sequence="70" /> -->
+
+        <!-- Wizard to extract commercials results year aside another year -->
+        <!-- <wizard string="Extract Commercial Results"
+			    name="extract_comm_results"
+			    id="cci_salesman.extract_comm_results"
+			    menu="False"/>
+
+	    <menuitem name="Extract Commercial Results" id="menu_extract_comm_results"
+			    action="extract_comm_results" type="wizard"
+			    parent="crm.menu_crm" 
+                sequence="80" /> -->
+
+        <!-- Wizard to create several interests -->
+        <!-- <wizard string="Create Interests"
+			    name="create_interests"
+			    id="wizard_create_interests_from_menu"
+			    menu="False"/>
+
+	    <menuitem name="Create Interests" id="menu_create_interests"
+			    action="wizard_create_interests_from_menu" type="wizard"
+			    parent="crm.menu_crm" 
+                sequence="99" /> -->
+
+        <!--- wizard to create interests from res.partner -->
+	    <!-- <wizard string="Create Interests"
+			model="res.partner"
+			menu="True"
+			name="create_interests"
+			id="wizard_create_interests" /> -->
+        <!--<wizard to create interests from res.partner.history -->
+	    <!-- <wizard string="Create Interests"
+			model="res.partner.history"
+			menu="True"
+			name="create_interests"
+			id="wizard_create_interests_from_history" /> -->
+        <!--<wizard to create interests from res.partner.interests -->
+	    <!-- <wizard string="Create Interests"
+			model="res.partner.interest"
+			menu="True"
+			name="create_interests"
+			id="wizard_create_interests_from_interest" /> -->
+
+        <!-- wizard to create interests from res.partner.interests -->
+	    <!-- <wizard string="Create Interests"
+			model="crm_cci.todo"
+			menu="True"
+			name="create_interests"
+			id="wizard_create_interests_from_todo" /> -->
+        <!--- wizard to create interests from res.partner.interests -->
+	    <!-- <wizard string="Club Participations"
+			model="crm_cci.todo"
+			menu="True"
+			name="wizard_show_participations_from_todo"
+			id="wizard_show_participations_from_todo" /> -->
+        <!--- wizard to create interests from res.partner.interests -->
+	    <!-- <wizard string="Event Registrations"
+			model="crm_cci.todo"
+			menu="True"
+			name="wizard_show_registrations_from_todo"
+			id="wizard_show_registrations_from_todo" /> -->
+
+        <!-- Wizard to see account.move.lines without product_id on sales journals -->
+        <!-- <wizard string="Lines on sales journals without product"
+			    name="extract_amlines_wo_products"
+			    id="cci_salesman.extract_amlines_wo_products"
+			    menu="False"/> -->
+	    <!-- <menuitem name="Lines on sales journals without product" id="menu_extract_amlines_wo_products"
+			    action="extract_amlines_wo_products" type="wizard"
+			    parent="account.next_id_29" 
+                sequence="80" /> -->
+        <!-- Wizard to change the product_id on selected account.move.lines list -->
+        <!-- <wizard string="Change Product ID"
+            model="account.move.line"
+            name="cci_salesman_change_product_id"
+            id="cci_salesman.change_product_id" /> -->
+	</data>
+</openerp>

@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+    	<!-- EVENTS  -->
+	    <record model="ir.ui.view" id="event_event_form_extend1">
+		    <field name="name">event.event.form.extend1</field>
+		    <field name="model">event.event</field>	
+		    <field name="inherit_id" ref="event.view_event_form"/>
+		    <field name="arch" type="xml">
+			    <field name="signet_type" position="after">
+                    <field name="site_id" readonly="1" />
+			    </field>
+		    </field>
+	    </record>
+
+        <!-- Event.Types -->
+        <record model="ir.ui.view" id="view_event_type_form_extend1">
+          	<field name="name">Event type</field>
+          	<field name="model">event.type</field>
+          	<field name="inherit_id" ref="cci_event.view_event_type_form_inherit"/>
+          	<field name="arch" type="xml">
+				<field name="check_type" position="after">
+	                <field name="product_id"/>
+	                <field name="user_id"/>
+	                <field name="name_template"/>
+	                <field name="product_name_template"/>
+	                <field name="name_on_site"/>
+	                <field name="active" select="2"/>
+	                <field name="default_auto_register" colspan="4"/>
+	                <field name="default_msg_register" colspan="4" nolabel="1"/>
+	                <field name="default_auto_confirm" colspan="4"/>
+	                <field name="default_msg_confirm" colspan="4" nolabel="1"/>
+	            </field>
+        	</field>
+        </record>
+
+		<!-- Show linked event.registration on res.partner -->
+        <act_window domain="[('partner_id','=',active_id)]"
+                    id="act_res_partner_2_event_registration"
+                    name="Event Registrations"
+                    res_model="event.registration"
+                    src_model="res.partner"/>
+
+		<!-- Show linked event.registration on res.partner.contact -->
+<!--         <act_window domain="[('contact_id','=',active_id)]" -->
+<!--                     id="act_res_contact_2_event_registration" -->
+<!--                     name="Event Registrations" -->
+<!--                     res_model="event.registration" -->
+<!--                     src_model="res.partner.contact"/> -->
+
+<!--         <record model="ir.ui.view" id="registration_form_inherit_premium1"> --> <!--  Already removed -->
+<!-- 	        <field name="name">event.registration.form</field> -->
+<!-- 	        <field name="model">event.registration</field> -->
+<!-- 	        <field name="inherit_id" ref="event.event_registration_form"/> -->
+<!-- 	        <field name="arch" type="xml"> -->
+<!-- 	            <data> -->
+<!-- 	                <xpath expr="//page[@string='General']/field[@name='contact_id']" position="replace"/> -->
+<!-- 	            </data> -->
+<!-- 	        </field> -->
+<!--         </record> -->
+
+        <record model="ir.ui.view" id="registration_form_inherit_premium2">
+        	<field name="name">event.registration.form</field>
+          	<field name="model">event.registration</field>
+          	<field name="inherit_id" ref="event.view_event_registration_form"/>
+	          	<field name="arch" type="xml">
+<!-- 	                	<field name="unit_price" position="before"> -->
+<!-- 							<field name="contact_id" select="2" on_change="onchange_contact_id2(contact_id, event_id, partner_id, partner_invoice_id)"/> -->
+<!-- 	                  	</field> -->
+<!-- 	                  	<field name="attendance" position="replace"/> -->
+<!-- 	                  	<field name="ask_attest" position="replace"/> -->
+<!-- 	                  	<field name="cavalier" position="replace"/> -->
+<!-- 	                  	<field name="date" position="after"> -->
+<!-- 	                    	<field name="attendance"/> -->
+<!-- 	                    	<field name="ask_attest"/> -->
+<!-- 	                  	</field> -->
+<!-- 	                    <field name="event_id" select="1" on_change="onchange_event(event_id, partner_invoice_id)" domain="[('state','in',('draft','confirm'))]" position="replace"> -->
+<!-- 							<field name="event_id" select="1" on_change="onchange_event2(event_id, partner_id, partner_invoice_id, contact_id)"/> -->
+<!-- 	 					</field> -->
+						<field name="partner_id" required="1" select="1" on_change="onchange_partner_id(partner_id,event_id)" position="replace">
+							<field name="partner_id" required="1" select="1" on_change="onchange_partner_id2(partner_id,event_id,partner_invoice_id,contact_id)"/>
+						</field>
+<!-- 	                  	<field name="partner_invoice_id"  on_change="onchange_partner_invoice_id(event_id, partner_invoice_id)" position="replace"> -->
+<!-- 							<field name="partner_invoice_id" on_change="onchange_partner_invoice_id2(partner_invoice_id, event_id, partner_id, contact_id)"/> -->
+<!-- 	                  	</field> -->
+	          	</field>
+        </record>
+        
+<!--        <record model="ir.ui.view" id="registration_form_inherit_premium3">
+                <field name="name">event.registration.form</field>
+                <field name="type">form</field>
+                <field name="model">event.registration</field>
+                <field name="inherit_id" ref="event.event_registration_form"/>
+                <field name="arch" type="xml">
+                    <data>
+                    </data>
+                </field>
+        </record>
+        <record model="ir.ui.view" id="registration_form_inherit_premium4">
+                <field name="name">event.registration.form</field>
+                <field name="type">form</field>
+                <field name="model">event.registration</field>
+                <field name="inherit_id" ref="event.event_registration_form"/>
+                <field name="arch" type="xml">
+                    <data>
+                    </data>
+                </field>
+        </record>-->
+	<!-- EVENTS/REGISTRATIONS/EVENTS  -->
+
+		<!-- REINVENT EVENT.REGISTRATION FROM SCRATCH -->
+		<record model="ir.ui.view" id="event_reg_tree_final">
+			<field name="name">event.reg.tree.final</field>
+			<field name="model">event.registration</field>
+            <field name="priority">3</field>
+			<field name="arch" type="xml">
+				<tree string="Registration">
+					<field name="event_id"/>
+<!-- 					<field name="date"/> -->
+					<field name="partner_id"/>
+<!-- 					<field name="contact_id"/> -->
+<!-- 					<field name="unit_price"/> -->
+					<field name="nb_register"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="event_reg_form_final">
+			<field name="name">event.reg.form.final</field>
+			<field name="model">event.registration</field>
+            <field name="priority">3</field>
+			<field name="arch" type="xml">
+				<form string="Registration">
+					<header>
+						<button name="cci_event_reg_draft" states="done,cancel" string="Reset to Draft" type="object"/>
+						<button name="cci_event_reg_done" string="Close" states="open" type="object"/>
+						<button name="cci_event_reg_open" string="Open" states="draft" type="object"/>
+						<button name="cci_event_reg_cancel" string="Cancel" states="draft,open" type="object"/>
+						<field name="state" widget="statusbar"/>
+					</header>
+					<group col="6" colspan="4">
+   						<field name="event_id" select="1" on_change="onchange_event2(event_id, partner_id)"/>
+						<field name="nb_register"/>
+<!-- 						<field name="user_id" select="1"/> -->
+    					<field name="partner_id" required="1" select="1" on_change="onchange_partner_id2(partner_id,event_id)"/>
+<!--    						<field name="partner_invoice_id" on_change="onchange_partner_invoice_id2(partner_invoice_id, event_id, partner_id, contact_id)"/> -->
+<!--     					<field name="contact_id" select="1" on_change="onchange_contact_id2(contact_id, event_id, partner_id, partner_invoice_id)"/> -->
+<!-- 						<field name="unit_price" select="1"/> -->
+					</group>
+					<notebook colspan="4">
+					    <page string="General">
+<!-- 						    <field name="email_from" select="2"/> -->
+<!--                              <field name="date" select="1"/> --> 
+<!--                             <field name="attendance"/> -->
+<!--                             <field name="ask_attest"/> -->
+<!-- 						    <separator string="Badge" colspan="4"/> -->
+<!-- 						    <field name="badge_title" select="2"/> -->
+<!-- 						    <field name="badge_name" select="2" on_change="onchange_badge_name(badge_name)"/> -->
+<!-- 						    <field name="badge_partner" select="2"/> -->
+<!--                             <field name="grp_id"/> -->
+<!--                             <field name="comments" colspan="4"/> -->
+<!-- 						    <newline/> -->
+<!--             				<field name="state" select="1"/> -->
+<!--                             <group col="4" colspan="2"> -->
+<!--         	                    <button name="cci_event_reg_draft" states="done,cancel" string="Reset to Draft" type="object"/> -->
+<!--                                 <button name="cci_event_reg_done" string="Close" states="open" type="object"/> -->
+<!--                                 <button name="cci_event_reg_open" string="Open" states="draft" type="object"/> -->
+<!--                                 <button name="cci_event_reg_cancel" string="Cancel" states="draft,open" type="object"/> -->
+<!-- 					        </group> -->
+					    </page>
+					    <page string="Extra Info">
+						    <field name="name" select="1" colspan="4"/>
+						    <field name="id"/>
+<!-- 						    <field name="active" select="2"/> -->
+<!-- 						    <field name="email_cc" colspan="4"/> -->
+<!-- 						    <field name="categ_id" on_change="onchange_categ_id(categ_id)"/> -->
+						    <separator colspan="4" string="Dates"/>
+						    <field name="create_date"/>
+<!-- 						    <field name="date_closed"/> -->
+<!-- 						    <field name="date_action_last"/> -->
+<!-- 						    <field name="date_action_next"/> -->
+						    <separator colspan="4" string="References"/>
+<!-- 						    <field name="ref" colspan="4"/> -->
+<!-- 						    <field name="ref2" colspan="4"/> -->
+					    </page>
+					    <page string="History">
+<!-- 						    <field name="history_line" colspan="4" nolabel="1" mode="tree,form">						<form string="Communication history"> -->
+<!-- 								    <field name="date"/> -->
+<!-- 								    <field name="som"/> -->
+<!-- 								    <newline/> -->
+<!-- 								    <field name="canal_id"/> -->
+<!-- 								    <field name="email"/> -->
+<!-- 								    <newline/> -->
+<!-- 								    <field name="description" colspan="4"/> -->
+<!-- 							    </form> -->
+<!-- 							    <tree string="Communication history"> -->
+<!-- 								    <field name="date"/> -->
+<!-- 								    <field name="description"/> -->
+<!-- 								    <field name="som"/> -->
+<!-- 								    <field name="user_id"/> -->
+<!-- 								    <field name="canal_id"/> -->
+<!-- 							    </tree> -->
+<!-- 						    </field> -->
+<!-- 						    <field name="log_ids" nolabel="1" colspan="4" mode="tree,form" readonly="1"> -->
+<!-- 							    <tree string="Actions"> -->
+<!-- 								    <separator string="Action Information" colspan="4"/> -->
+<!-- 								    <field name="name"/> -->
+<!-- 								    <field name="date"/> -->
+<!-- 								    <field name="user_id"/> -->
+<!-- 							    </tree> -->
+<!-- 							    <form string="Actions"> -->
+<!-- 								    <separator string="Action Information" colspan="4"/> -->
+<!-- 								    <field name="name" colspan="4"/> -->
+<!-- 								    <field name="date" select="2"/> -->
+<!-- 								    <field name="user_id" select="2"/> -->
+<!-- 							    </form> -->
+<!-- 						    </field> -->
+					    </page>
+					    <page string="Payments">
+<!-- 						    <field name="invoice_label" select="1"/> -->
+<!-- 						    <field name="tobe_invoiced" select="1"/> -->
+<!-- 						    <field name="invoice_id"/> -->
+<!--                             <field name="payment_mode"/> -->
+<!--                             <field name="payment_linked"/> -->
+<!--                             <newline/> -->
+<!--                             <field name="training_authorization"/> -->
+<!--                             <newline/> -->
+<!--                             <field name="check_mode"/> -->
+<!--                             <field name="check_amount" select="2"/> -->
+<!--                             <newline/> -->
+<!--                             <field name="check_ids" colspan="4" mode="tree, form" select="2"> -->
+<!--                                 <tree string="Event Check"> -->
+<!--                                     <field name="name"/> -->
+<!--                                     <field name="code"/> -->
+<!--                                     <field name="unit_nbr"/> -->
+<!--                                 </tree> -->
+<!--                                 <form string="Event Check"> -->
+<!--                                     <field name="name" select="1"/> -->
+<!--                                     <field name="code" select="1"/> -->
+<!--                                     <field name="unit_nbr" select="1"/> -->
+<!--                                     <field name="type_id" select="1"/> -->
+<!--                                     <newline/> -->
+<!--                                     <field name="date_reception" select="2"/> -->
+<!--                                     <field name="date_limit" select="2"/> -->
+<!--                                     <field name="date_submission" select="2"/> -->
+<!--                                 </form> -->
+<!--                             </field> -->
+<!--                             <field name="payment_ids" colspan="4" select="2"/> -->
+					    </page>
+                        <page string="Communication">
+<!-- 					        <group col="2" colspan="2" expand="1"> -->
+<!--                                 <field name="canal_id"/> -->
+<!--                                 <field name="som" select="2"/> -->
+<!--                                 <separator string="description" colspan="4"/> -->
+<!--                                 <field name="description" colspan="2" select="2" nolabel="1"/> -->
+<!--                             </group> -->
+                        </page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+        
+	</data>
+</openerp>

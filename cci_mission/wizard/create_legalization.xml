@@ -1,0 +1,62 @@
+<openerp>
+	<data>
+		<record id="view_create_legalization_form" model="ir.ui.view">
+			<field name="name">create.legalization.form</field>
+			<field name="model">wizard.create.legalization</field>
+			<field name="arch" type="xml">
+				<form string="Summary of Created Legalization">
+					<group>
+					    <field name="leg_type_id"/>
+					</group>
+					<footer>
+						<button name="create_legalization" string="Next" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_create_legalization_form" model="ir.actions.act_window">
+            <field name="name">Create Legalization</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.legalization</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_create_legalization_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_create_legalization_value">
+            <field name="model_id" ref="model_wizard_create_legalization" />
+            <field name="name">Create Legalization</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_create_legalization_form'))" />
+            <field name="key">action</field>
+            <field name="model">cci_missions.certificate</field>
+        </record>
+
+		<record id="view_create_legalization_next_form" model="ir.ui.view">
+			<field name="name">create.legalization.next.form</field>
+			<field name="model">wizard.create.legalization.next</field>
+			<field name="arch" type="xml">
+				<form string="Summary of Created Legalization">
+					<group>
+					    <field name="leg_created"/>
+						<field name="leg_rejected"/>
+						<field name="leg_rej_reason"/>
+					</group>
+					<footer>
+						<button name="open_leg" string="Open" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+
+	
+	</data>
+</openerp>

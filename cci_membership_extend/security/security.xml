@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+	<!-- Set accesses to menu -->
+	<record id="menu_cci_membership_range" model="ir.ui.menu">
+		<field name="groups_id" eval="[(6,0,[ref('cci_membership.group_cci_membership_user')])]"/>
+	</record>
+	<record id="menu_membership_yearly" model="ir.ui.menu">
+		<field name="groups_id" eval="[(6,0,[ref('cci_membership.group_cci_membership_user')])]"/>
+	</record>
+</data>
+</openerp>
+

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cci_analytic_cross_details","cci.analytic.cross.details","model_cci_analytic_cross_details","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_details_user","cci.analytic.cross.details","model_cci_analytic_cross_details","account.group_account_user",1,1,1,1
+"access_cci_analytic_cross","cci.analytic.cross","model_cci_analytic_cross","account.group_account_manager",1,1,1,1
+"access_cci_analytic_cross_user","cci.analytic.cross","model_cci_analytic_cross","account.group_account_user",1,1,1,1

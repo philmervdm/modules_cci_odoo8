@@ -1,0 +1,967 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_memberdirectory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-02-04 10:49:14+0000\n"
+"PO-Revision-Date: 2015-02-04 10:49:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_web:0
+#: field:directory.address.proxy,new_web:0
+#: field:directory.address.proxy,web:0
+msgid "Web"
+msgstr "Web"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_last_name:0
+msgid "Final Name"
+msgstr "Nom final"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_send_email,init,title:0
+#: field:directory.job.proxy,title:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_pending_directory_address_proxy
+msgid "Pending Partners for Members' Directory"
+msgstr "Partenaires à traiter pour Répertoire des membres"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Recorded"
+msgstr "Enregistré"
+
+#. module: cci_memberdirectory
+#: code:addons/cci_memberdirectory/cci_memberdirectory.py:0
+#, python-format
+msgid "This record has already been updated."
+msgstr "Cette fiche a déjà été enregistrée dans la base de données."
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,comments:0
+msgid "User Comments"
+msgstr "Commentaires de l'utilisateur"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,dir_sort_name:0
+#: field:directory.address.proxy,final_dir_sort_name:0
+msgid "Dir Sort Name"
+msgstr "Nom Tri Répertoire"
+
+#. module: cci_memberdirectory
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Not in Directory:"
+msgstr "Pas dans le répertoire:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_not_in_directory:0
+msgid "Final Not in directory"
+msgstr "Final 'Pas dans répertoire'"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,fax:0
+#: field:directory.address.proxy,final_fax:0
+#: field:directory.address.proxy,new_fax:0
+msgid "Fax"
+msgstr "Fax"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: field:directory.address.proxy,job_ids:0
+msgid "Jobs"
+msgstr "Fonctions"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_show_jobs_addr_proxy
+msgid "Jox Proxy"
+msgstr "Fonction Proxy"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_zip_id:0
+#: field:directory.address.proxy,new_zip_code:0
+#: field:directory.address.proxy,zip_code:0
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,job_id:0
+msgid "Job"
+msgstr "Fonction"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,full_page:0
+msgid "Full Page for this edition"
+msgstr "Page pleine pour cette édition"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_extract_paper,init,addresses.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_members_directory
+msgid "Members' Directory"
+msgstr "Répertoire des Membres"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.cci_memberdirectory_internal_validate
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_internal_validate
+msgid "Record simple user changes"
+msgstr "Enregistre les changements simples"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_directory_address_proxy
+msgid "Partners for Members' Directory"
+msgstr "Partenaires pour le Répertoire des Membres"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Partners for Members'Directory"
+msgstr "Partenaires pour le répertoire des membres"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_send_email,init,from:0
+msgid "Email From"
+msgstr "Courriel envoyé par"
+
+#. module: cci_memberdirectory
+#: wizard_button:cci_memberdirectory_extract_paper,init,end:0
+#: wizard_button:cci_memberdirectory_internal_validate,init,end:0
+#: wizard_button:cci_memberdirectory_manual_confirm,init,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_memberdirectory
+#: selection:cci_memberdirectory_send_email,init,type:0
+msgid "Initial Sending"
+msgstr "Envoi initial"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_manual_confirm,init:0
+msgid "Résultats"
+msgstr "Résultats"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,mobile:0
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,sending_courtesy:0
+msgid "Sending Courtesy"
+msgstr "Civilité pour l'envoi"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Web:"
+msgstr "Web:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,send_first_followup:0
+msgid "Send Followup Mail"
+msgstr "Envoyer le courriel de suivi"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Mobile:"
+msgstr "Mobile:"
+
+#. module: cci_memberdirectory
+#: view:directory.job.proxy:0
+msgid "Jobs for Members'Directory"
+msgstr "Fonctions pour le Répertoire des Membres"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_create_prospection,init:0
+#: model:ir.actions.wizard,name:cci_memberdirectory.cci_memberdirectory_create_prospection
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_create_mdir_prospection
+msgid "Create Prospection"
+msgstr "Créer le fichier de Prospection"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,email:0
+#: field:directory.address.proxy,final_email:0
+#: field:directory.address.proxy,new_email:0
+msgid "eMail"
+msgstr "eMail"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_vat_num:0
+#: field:directory.address.proxy,new_vat_num:0
+#: field:directory.address.proxy,vat_num:0
+msgid "VAT"
+msgstr "TVA"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,not_in_directory:0
+msgid "Not in directory"
+msgstr "Pas dans le répertoire"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.cci_memberdirectory_extract_paper
+msgid "Excel File for Paper"
+msgstr "Fichier Excel pour publipostage"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "VAT:"
+msgstr "TVA:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,sending_name:0
+msgid "Sending Name"
+msgstr "Nom pour l'envoi"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.cci_memberdirectory_send_email
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_create_mdir_sendemail
+msgid "Send Email for Members' Directory"
+msgstr "Envoyer les emails pour le Répertoire des Membres"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,change_date:0
+#: field:directory.job.proxy,change_date:0
+msgid "Change Date"
+msgstr "Date changement"
+
+#. module: cci_memberdirectory
+#: help:directory.address.proxy,write_uid:0
+msgid "The last person who has modified this contact"
+msgstr "La dernière personne a avoir modifié ce contact"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,internal_validated:0
+msgid "Validated by CCI"
+msgstr "Validé par la CCI"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,dir_show_name:0
+#: field:directory.address.proxy,final_dir_show_name:0
+msgid "Dir Show Name"
+msgstr "Nom imprimé dans le répertoire"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_mobile_confidential:0
+msgid "Final Mobile confidential"
+msgstr "GSM final confidentiel"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,new_street_number:0
+msgid "New Street Number"
+msgstr "Nouveau numéro dans la rue"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Sector 3:"
+msgstr "Secteur 3:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,write_uid:0
+msgid "Last Modifier"
+msgstr "Dernier modificateur"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_show_all_simple
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_show_all_simple
+msgid "Simple Partners for Members' Directory"
+msgstr "Partenaires Simples"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,address_proxy_id:0
+#: field:directory.job2delete,address_proxy_id:0
+msgid "Partner Proxy"
+msgstr "Partenaire Proxy"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,marked_for_deletion:0
+msgid "Marked For Deletion"
+msgstr "Marqué pour effacement"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,link_id:0
+msgid "Link ID"
+msgstr "ID Lien"
+
+#. module: cci_memberdirectory
+#: wizard_button:cci_memberdirectory_create_prospection,init,create:0
+msgid "Create"
+msgstr "Créer"
+
+#. module: cci_memberdirectory
+#: wizard_button:cci_memberdirectory_send_email,init,send:0
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Activity:"
+msgstr "Activité:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,street_number:0
+msgid "Street Number"
+msgstr "Numéro dans la rue"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,employee:0
+#: field:directory.address.proxy,final_employee:0
+#: field:directory.address.proxy,new_employee:0
+msgid "Employee"
+msgstr "Employés"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,categs:0
+msgid "Categs"
+msgstr "Catégs"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,internal_validated:0
+msgid "Internal Validated"
+msgstr "Validé en interne"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_send_email,init,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_first_name:0
+msgid "New First Name"
+msgstr "Nouveau Nom"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Phone:"
+msgstr "Tél:"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_done_directory_address_proxy
+msgid "Managed Partners for Members' Directory"
+msgstr "Partenaires validés en interne pour le Répertoire des Membres"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Complete Name:"
+msgstr "Nom complet:"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Address Name:"
+msgstr "Nom du Siège:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,write_date:0
+msgid "Last Modification"
+msgstr "Dernière modification"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_extract_paper,init:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_memberdirectory
+#: field:directory.job2delete,job_id:0
+msgid "Job ID"
+msgstr "ID Fonction"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_desc_activ:0
+msgid "Final Desc Activ"
+msgstr "Desc activ finale"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_addr_desc_activ:0
+msgid "Final Addr Desc Activ"
+msgstr "Desc Activ Siège finale"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_sequence:0
+msgid "New Sequence"
+msgstr "Nouvelle séquence"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,complete_name:0
+#: field:directory.address.proxy,new_complete_name:0
+msgid "Complete Name"
+msgstr "Nom complet"
+
+#. module: cci_memberdirectory
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_send_email,init:0
+msgid "Send Emails for Directory's Update"
+msgstr "Envoyer les Emails pour la miuse à jour du Répertoire"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_create_prospection,init,raz_exclude:0
+msgid "set all dir_exclude to false"
+msgstr "Remettre les 'exclusion répertoire' à zéro"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,contact_id:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "EMail:"
+msgstr "eMail:"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: field:directory.address.proxy,partner_id:0
+#: field:directory.complex,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Partner Name:"
+msgstr "Nom du partenaire:"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Street Box:"
+msgstr "Boite:"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_recup_internal
+msgid "Get Back Save"
+msgstr "Revenir en Arrière Enregistrement"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_paper_directory_address_proxy
+msgid "Adresses without email"
+msgstr "Adresses sans emails"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Sector 1:"
+msgstr "Secteur 1:"
+
+#. module: cci_memberdirectory
+#: field:directory.job2delete,last_name:0
+msgid "Last Name"
+msgstr "Prénom"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,origin_activ:0
+msgid "Origin Activ"
+msgstr "Activ originelle"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Last Name:"
+msgstr "Prénom:"
+
+#. module: cci_memberdirectory
+#: model:ir.model,name:cci_memberdirectory.model_directory_address_proxy
+msgid "proxy partner and address 4 yearly members'directory"
+msgstr "Proxy Partenaire et adresse pour le répertoire des membres"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_partial_done_directory_address_proxy
+msgid "Partially Managed Partners for Members' Directory"
+msgstr "Partenaires partiellement gérés pour le répertoire des membres"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,full_page_app:0
+msgid "Full Page on App Directory"
+msgstr "Page pleine dans le Répertoire électronique"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_partner_name:0
+#: field:directory.address.proxy,partner_name:0
+msgid "Partner Name"
+msgstr "Nom Partenaire"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_extract_paper,init:0
+#: wizard_view:cci_memberdirectory_internal_validate,init:0
+#: wizard_view:cci_memberdirectory_manual_confirm,init:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_mobile:0
+msgid "New Mobile"
+msgstr "Nouveau GSM"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Mob Conf:"
+msgstr "GSM conf:"
+
+#. module: cci_memberdirectory
+#: model:ir.module.module,description:cci_memberdirectory.module_meta_information
+msgid "\n"
+"        Add proxy tables to manage data for the update of records by CCI Members from a website\n"
+"    "
+msgstr "\n"
+"        Add proxy tables to manage data for the update of records by CCI Members from a website\n"
+"    "
+
+#. module: cci_memberdirectory
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Street Number:"
+msgstr "Numéro dans Rue:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,send_initial_mail:0
+msgid "Send Initial Mail"
+msgstr "Envoi du mail initial"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_extract_paper,init,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_memberdirectory
+#: view:directory.job2delete:0
+msgid "User deleted jobs"
+msgstr "Fonctions effacées volontairement par l'utilisateur"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Street:"
+msgstr "Rue:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_street_number:0
+msgid "Final Street Number"
+msgstr "Numéro final dans Rue"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_sector3:0
+#: field:directory.address.proxy,new_sector3:0
+#: field:directory.address.proxy,sector3:0
+msgid "Sector3"
+msgstr "Secteur3"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_phone:0
+#: field:directory.address.proxy,new_phone:0
+#: field:directory.address.proxy,phone:0
+msgid "Phone"
+msgstr "Tél"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_sector2:0
+#: field:directory.address.proxy,new_sector2:0
+#: field:directory.address.proxy,sector2:0
+msgid "Sector2"
+msgstr "Secteur2"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_courtesy:0
+#: field:directory.job.proxy,final_title:0
+msgid "Final Title"
+msgstr "Titre final"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,active:0
+#: field:directory.job.proxy,active:0
+#: field:directory.job2delete,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: cci_memberdirectory
+#: selection:directory.job.proxy,final_gender:0
+msgid "Women"
+msgstr "Femme"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_directory_job_proxy
+msgid "Jobs for Members' Directory"
+msgstr "Fonctions pour le Répertoire des membres"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_first_name:0
+msgid "Final First Name"
+msgstr "Nom final"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Others"
+msgstr "Autres"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Dir Sort:"
+msgstr "Tri Répert.:"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Field"
+msgstr "Champ"
+
+#. module: cci_memberdirectory
+#: model:ir.model,name:cci_memberdirectory.model_directory_complex
+msgid "Partner ID of complex cases to isolate them from simple ones"
+msgstr "ID des partenaires des cas comples à isoler"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Proposed"
+msgstr "Proposé"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,first_name:0
+#: field:directory.job2delete,first_name:0
+msgid "First Name"
+msgstr "Nom"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_internal_validate,init:0
+msgid "Simple Changes Recorded."
+msgstr "Changements simples enregistrés."
+
+#. module: cci_memberdirectory
+#: model:ir.module.module,shortdesc:cci_memberdirectory.module_meta_information
+msgid "CCI Member's Directory"
+msgstr "Répertoire des Membres de la CCI"
+
+#. module: cci_memberdirectory
+#: model:ir.model,name:cci_memberdirectory.model_directory_sector
+msgid "sectors for directory"
+msgstr "secteurs pour le Répertoire"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_show_all_complex
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_show_all_complex
+msgid "Complex Partners for Members' Directory"
+msgstr "Partenaires complexes"
+
+#. module: cci_memberdirectory
+#: wizard_button:cci_memberdirectory_create_prospection,init,end:0
+#: wizard_button:cci_memberdirectory_send_email,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_memberdirectory
+#: wizard_button:cci_memberdirectory_create_prospection,create,end:0
+#: wizard_button:cci_memberdirectory_send_email,send,end:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Sector 2:"
+msgstr "Secteur 2:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,address_name:0
+#: field:directory.address.proxy,final_address_name:0
+msgid "Address Name"
+msgstr "Nom du Siège"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Zip code:"
+msgstr "Code postal:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,city:0
+#: field:directory.address.proxy,new_city:0
+msgid "City"
+msgstr "Localité"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Employee:"
+msgstr "Employés:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_sector1:0
+#: field:directory.address.proxy,new_sector1:0
+#: field:directory.address.proxy,sector1:0
+msgid "Sector1"
+msgstr "Secteur1"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_street_box:0
+msgid "Final Street Box"
+msgstr "Boite finale"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "--- to subdivise ---"
+msgstr "--- à subdiviser ---"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_gender:0
+msgid "Final Gender"
+msgstr "Sexe final"
+
+#. module: cci_memberdirectory
+#: selection:cci_memberdirectory_send_email,init,type:0
+msgid "First Follow-Up"
+msgstr "Premier suivi"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Current"
+msgstr "Actuel"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "------"
+msgstr "------"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_internal_validate,init,msg:0
+#: wizard_field:cci_memberdirectory_manual_confirm,init,msg:0
+msgid "Details"
+msgstr "Détails"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_create_prospection,init,new:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_email:0
+msgid "New EMail"
+msgstr "Nouvel EMail"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Dir Show:"
+msgstr "Nom imprimé Répert:"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Categs:"
+msgstr "Catégs:"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_mobile_confidential:0
+msgid "New Mobile confidential"
+msgstr "Nouveau GSM conf"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.cci_memberdirectory_manual_confirm
+msgid "Manual Confirmation"
+msgstr "Confirmation manuelle"
+
+#. module: cci_memberdirectory
+#: model:ir.model,name:cci_memberdirectory.model_directory_job2delete
+msgid "initial jobs marked for deletion"
+msgstr "Fonctions antérieures marquées pour effacement"
+
+#. module: cci_memberdirectory
+#: model:ir.model,name:cci_memberdirectory.model_directory_job_proxy
+msgid "proxy job 4 yearly directory"
+msgstr "Proxy Fonction pour le répertoire des membres"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_categs:0
+msgid "Final Categs"
+msgstr "Catégs finales"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_title:0
+msgid "New Title"
+msgstr "Nouveau titre"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,sending_address:0
+msgid "Sending Address"
+msgstr "Adresse d'envoi"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: field:directory.address.proxy,address_id:0
+#: field:directory.job.proxy,address_id:0
+msgid "Address"
+msgstr "Adresse"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_show_validated_complex
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_show_validated_complex
+msgid "Complex Validated Partners for Members' Directory"
+msgstr "Partenaires complexes à traiter"
+
+#. module: cci_memberdirectory
+#: selection:directory.job.proxy,final_gender:0
+msgid "Man"
+msgstr "Homme"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "First Name:"
+msgstr "Nom:"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,street_box:0
+msgid "Street Box"
+msgstr "Boite"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,last_name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "Address Activity:"
+msgstr "Activité du siège:"
+
+#. module: cci_memberdirectory
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_directory_job_deleted
+msgid "Deleted Jobs"
+msgstr "Fonctions effacées"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_last_name:0
+msgid "New Name"
+msgstr "Nouveau Nom"
+
+#. module: cci_memberdirectory
+#: code:addons/cci_memberdirectory/cci_memberdirectory.py:0
+#, python-format
+msgid "You MUST define some Parameters."
+msgstr "Vous DEVEZ définir certains paramètres."
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,desc_activ:0
+#: field:directory.address.proxy,new_desc_activ:0
+msgid "Activity"
+msgstr "Activité"
+
+#. module: cci_memberdirectory
+#: code:addons/cci_memberdirectory/cci_memberdirectory.py:0
+#, python-format
+msgid "Error !"
+msgstr "Erreur !"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_mobile:0
+msgid "Final Mobile"
+msgstr "GSM final"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,mobile_confidential:0
+msgid "Mobile confidential"
+msgstr "GSM confidentiel"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,new_record:0
+msgid "New Contact"
+msgstr "Nouveau Contact"
+
+#. module: cci_memberdirectory
+#: model:ir.actions.wizard,name:cci_memberdirectory.wizard_show_validated_simple
+#: model:ir.ui.menu,name:cci_memberdirectory.menu_show_validated_simple
+msgid "Simple Validated Partners for Members' Directory"
+msgstr "Partenaires simples à traiter"
+
+#. module: cci_memberdirectory
+#: view:directory.job.proxy:0
+#: field:directory.job.proxy,sequence:0
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+#: view:directory.job.proxy:0
+msgid "Titre:"
+msgstr "Titre:"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_sequence:0
+msgid "Final Sequence"
+msgstr "Séquence finale"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,final_email:0
+msgid "Final EMail"
+msgstr "EMail final"
+
+#. module: cci_memberdirectory
+#: wizard_view:cci_memberdirectory_create_prospection,create:0
+#: wizard_field:cci_memberdirectory_create_prospection,create,results:0
+#: wizard_view:cci_memberdirectory_send_email,send:0
+#: wizard_field:cci_memberdirectory_send_email,send,results:0
+msgid "Results"
+msgstr "Résultats"
+
+#. module: cci_memberdirectory
+#: field:directory.job.proxy,email:0
+msgid "EMail"
+msgstr "EMail"
+
+#. module: cci_memberdirectory
+#: view:directory.address.proxy:0
+msgid "City:"
+msgstr "Localité:"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_create_prospection,create,no_email:0
+msgid "Partners w/o email"
+msgstr "Partenaires sans emails"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,final_street:0
+#: field:directory.address.proxy,new_street:0
+#: field:directory.address.proxy,street:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,user_validated:0
+msgid "Validated by User"
+msgstr "Validé par l'utilisateur"
+
+#. module: cci_memberdirectory
+#: wizard_field:cci_memberdirectory_send_email,init,year:0
+msgid "Year"
+msgstr "Année"
+
+#. module: cci_memberdirectory
+#: field:directory.address.proxy,new_street_box:0
+msgid "New Street Box"
+msgstr "Nouvelle boite"
+

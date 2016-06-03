@@ -1,0 +1,128 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.12\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-10-10 08:35:09+0000\n"
+"PO-Revision-Date: 2011-10-10 08:35:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_sales
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_sales
+#: view:sale.order:0
+#: field:sale.order,case_ids:0
+msgid "Related Cases"
+msgstr "Cas liés"
+
+#. module: cci_sales
+#: wizard_button:cci_sales.extract_proofs,getfile,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_sales
+#: selection:cci_sales.extract_proofs,init,choice:0
+msgid "Devis et bons de commande"
+msgstr "Devis et bons de commande"
+
+#. module: cci_sales
+#: wizard_button:cci_sales.extract_proofs,init,getfile:0
+msgid "Get Excel File"
+msgstr "Obtenir le fichier Excel"
+
+#. module: cci_sales
+#: wizard_view:cci_sales.extract_proofs,getfile:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_sales
+#: model:ir.actions.wizard,name:cci_sales.wizard_extract_proofs
+msgid "Extract Proofs of Parution"
+msgstr "Extraire les preuves de parution"
+
+#. module: cci_sales
+#: wizard_view:cci_sales.extract_proofs,getfile:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_sales
+#: field:sale.order,parent_so:0
+msgid "Parent Sales Order"
+msgstr "Bon de Commande parent"
+
+#. module: cci_sales
+#: model:ir.module.module,shortdesc:cci_sales.module_meta_information
+msgid "CCI Sales"
+msgstr "CCI Sales"
+
+#. module: cci_sales
+#: view:sale.order:0
+msgid "Riders"
+msgstr "Avenants"
+
+#. module: cci_sales
+#: selection:cci_sales.extract_proofs,init,choice:0
+msgid "Seulement les bons de commande confirmés"
+msgstr "Seulement les bons de commande confirmés"
+
+#. module: cci_sales
+#: model:ir.module.module,description:cci_sales.module_meta_information
+msgid "\n"
+"        A Specific Module for CCI which will make the use of Sale module..\n"
+"    "
+msgstr "\n"
+"        A Specific Module for CCI which will make the use of Sale module..\n"
+"    "
+
+#. module: cci_sales
+#: wizard_field:cci_sales.extract_proofs,init,choice:0
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: cci_sales
+#: field:sale.order,deadline:0
+msgid "Deadline"
+msgstr "Date limite"
+
+#. module: cci_sales
+#: wizard_field:cci_sales.extract_proofs,getfile,proofs:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_sales
+#: wizard_button:cci_sales.extract_proofs,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_sales
+#: view:sale.order:0
+#: field:sale.order,internal_notes:0
+msgid "Internal Note"
+msgstr "Note interne"
+
+#. module: cci_sales
+#: wizard_view:cci_sales.extract_proofs,init:0
+msgid "Options"
+msgstr "Options"
+
+#. module: cci_sales
+#: wizard_field:cci_sales.extract_proofs,getfile,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_sales
+#: field:sale.order,child_so:0
+msgid "Child Sales Order"
+msgstr "Bons de commande enfant"
+

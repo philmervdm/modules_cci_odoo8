@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<openerp>
+      <data>
+        <record id="view_cci_account_analytic_line_report_search" model="ir.ui.view">
+            <field name="name">cci.analytic.cross.details.search</field>
+            <field name="model">cci.analytic.cross.details</field>
+            <field name="arch" type="xml">
+                <search string="Analytic Account  Analysis">
+                    <field name="name" string="Date"/>
+                    <field name="product_id"/>
+                    <field name="gl_account_id"/>
+                    <field name="move_id"/>
+                    <field name="partner_id"/>
+                    <field name="period_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Moves" context="{'group_by':'move_id'}"/>
+                        <filter string="Users" context="{'group_by':'partner_id'}"/>
+                        <filter string="Periods" context="{'group_by':'period_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="view_cci_account_analytic_line_report_form" model="ir.ui.view">
+            <field name="name">cci accross</field>
+             <field name="model">cci.analytic.cross.details</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Analytic Account  Analysis">
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="product_id"/>
+                        <field name="account1_id"/>
+                        <field name="amount1" />
+                    </group>
+                    <group>
+                        <field name="account2_id"/>
+                        <field name="amount2" />
+                        <field name="account3_id"/>
+                        <field name="amount3" />
+                    </group>
+                </group>
+             </form>
+            </field>
+        </record>
+        <record id="view_cci_account_analytic_line_report_tree" model="ir.ui.view">
+            <field name="name">cci.account.analytic.details</field>
+             <field name="model">cci.analytic.cross.details</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <tree string="Analytic Account  Analysis">
+                <field name="name" />
+                <field name="product_id"/>
+                <field name="account1_id"/>
+                <field name="gl_account_id" select="1"/>
+                <field name="amount1" sum="Sum Departements-Produits"/>
+                <field name="account2_id"/>
+                <field name="amount2" sum="Sum Subventions"/>
+                <field name="account3_id" select="1"/>
+                <field name="amount3" sum="Sum Provinces"/>
+                <field name="move_id" select="2"/>
+                <field name="period_id" select="2"/>
+                <field name="partner_id" select="2"/>
+             </tree>
+            </field>
+        </record>
+
+
+     <record id="analytic_cross" model="ir.ui.view">
+                 <field name="name">cci.analytic.cross.form</field>
+                 <field name="model">cci.analytic.cross</field>
+                 <field name="type">form</field>
+                 <field name="arch" type="xml">
+                     <form string="Analytic Cross">
+                       <separator string="Dates Interval" colspan="4"/>
+                       <group col="2" colspan="4">
+                             <field name="date_from" colspan="2"/>
+                             <field name="date_to" colspan="2"/>
+                         </group>
+                       <!--group col="2" colspan="4">
+                            <separator string="Products to search" colspan="2"/>
+                            <field name="product_null" colspan="2"/>
+                            <field name="product_ids" colspan="4" nolabel="1"/>
+                        </group-->
+                        <footer>
+                        <button icon="gtk-ok" name="action_create" string="Consult" type="object"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+
+                     </form>
+                 </field>
+             </record>
+
+
+       <record id="action_account_analytic_across_form" model="ir.actions.act_window">
+            <field name="name">Crossed Analytic Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.analytic.cross</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+   
+      <menuitem action="action_account_analytic_across_form" id="menu_cci_account_analytic_line_report_tree" parent="account.next_id_40"/>
+</data>
+</openerp>

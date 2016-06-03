@@ -1,0 +1,52 @@
+<openerp>
+	<data>
+		<record id="view_detect_old_but_not_yet_billed_form" model="ir.ui.view">
+			<field name="name">extract.asked.less.billed.form</field>
+			<field name="model">detect.old.but.not.yet.billed</field>
+			<field name="arch" type="xml">
+				<form string="Detect old billed members, not yet re-billed">
+					<group>
+                        <label colspan='2' string="This wizard detect partners billed for membership on past years (from->to) but not yet billed this year (current)"/>
+
+                        <field name="current_year" />
+                    </group>
+                        <separator string="Search on past year(s)" />
+                    <group>
+                        <group>
+                        <field name="from_year"/>
+                        <field name="ignore_if_creditnote" />
+                        <field name="ignore_if_not_in_activity" />
+                        <field name="ignore_if_refuse" />
+                        <field name="ignore_if_free_or_associated" />
+                        </group>
+                        <group>
+                        <field name="to_year"/>
+                        </group>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="search_partners" string="Search" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_detect_old_but_not_yet_billed_form" model="ir.actions.act_window">
+            <field name="name">Detect old billed members, not yet re-billed</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">detect.old.but.not.yet.billed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_detect_old_but_not_yet_billed_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem 
+            id="menu_detect_old_but_not_yet_billed"
+            name="Detect old billed members, not yet re-billed"
+            action="action_detect_old_but_not_yet_billed_form"
+            parent="menu_membership_control" 
+            sequence="90" />
+	</data>
+</openerp>

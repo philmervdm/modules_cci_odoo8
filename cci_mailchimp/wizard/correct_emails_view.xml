@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_correct_emails_in_tables" model="ir.ui.view">
+            <field name="name">cci.correct.email.is_tables.form</field>
+            <field name="model">cci.correct.email.is_tables</field>
+            <field name="arch" type="xml">
+				<form string="Correct Emails">
+				    <field name="from_correct" colspan="4" width="600"/>
+				    <field name="to_correct" colspan="4" width="600"/>
+					<footer>
+						<button name="correct_data" string="Correct" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+			id="action_cci_correct_emails_in_tables"
+            multi="True"
+            key2="client_action_multi" 
+            name="Correct Emails"
+            res_model="cci.correct.email.is_tables" 
+            src_model="mail_usage"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+		
+		<record id="view_cci_correct_emails_in_tables_count" model="ir.ui.view">
+            <field name="name">cci.correct.email.is_tables.count.form</field>
+            <field name="model">cci.correct.email.is_tables.count</field>
+            <field name="arch" type="xml">
+				<form string="Results">
+					<group>
+			    		<field name="final_count" />
+					</group>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

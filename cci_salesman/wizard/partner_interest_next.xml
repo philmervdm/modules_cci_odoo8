@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="partner_interest_next_wizard_form">
+            <field name="name">partner.interest.next.form</field>
+            <field name="model">partner.interest.next</field>
+            <field name="arch" type="xml">
+                <form string="Marques d'interets: Aller a l'an prochain">
+                    <footer>
+                        <button name="do_next" type="object" string="OK"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_partner_interest_next_action" model="ir.actions.act_window">
+            <field name="name">Marques d'interets: Aller a l'an prochain</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partner.interest.next</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="partner_interest_next_wizard_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="partner_interest_next_wizard_values">
+            <field name="model_id" ref="cci_salesman.model_partner_interest_next"/>
+            <field name="name">Marques d'interets: Aller a l'an prochain</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_partner_interest_next_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+    </data>
+</openerp>

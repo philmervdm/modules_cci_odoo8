@@ -1,0 +1,91 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_partner_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2013-03-11 15:25:47+0000\n"
+"PO-Revision-Date: 2013-03-11 15:25:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_partner_extend
+#: model:ir.module.module,shortdesc:cci_partner_extend.module_meta_information
+msgid "cci_partner_extend"
+msgstr "cci_partner_extend"
+
+#. module: cci_partner_extend
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_partner_extend
+#: model:ir.actions.act_window,name:cci_partner_extend.action_help_partner_function_form
+#: model:ir.ui.menu,name:cci_partner_extend.menu_partner_function_help_list
+msgid "Help - Partner Functions List"
+msgstr "Aide - Liste des codes Fonctions des Contacts"
+
+#. module: cci_partner_extend
+#: model:ir.actions.act_window,name:cci_partner_extend.action_cci_account_banks
+#: model:ir.ui.menu,name:cci_partner_extend.menu_cci_account_banks
+#: view:res.partner.bank:0
+msgid "Search Partner on Bank Numbers"
+msgstr "Chercher un partenaire sur base des numéros de compte"
+
+#. module: cci_partner_extend
+#: model:ir.ui.menu,name:cci_partner_extend.menu_cci_red_list
+msgid "Red List"
+msgstr "Liste Rouge"
+
+#. module: cci_partner_extend
+#: field:res.partner.zip,longitude:0
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: cci_partner_extend
+#: code:addons/cci_partner_extend/cci_partner_extend.py:0
+#, python-format
+msgid "New Alerts put on Inactive Partners"
+msgstr "Nouvelles alertes ajoutées sur des Partenaires Inactifs"
+
+#. module: cci_partner_extend
+#: field:res.partner,date_lastcheck:0
+msgid "Last Check"
+msgstr "Dernière MAJ"
+
+#. module: cci_partner_extend
+#: help:res.partner,date_lastcheck:0
+msgid "Date of the last check of full data"
+msgstr "Date de la dernière mise à jour complète des données"
+
+#. module: cci_partner_extend
+#: model:ir.actions.act_window,name:cci_partner_extend.action_cci_red_list
+msgid "Partners on CCI Red List"
+msgstr "Partenaires sur la liste Rouge de la CCI"
+
+#. module: cci_partner_extend
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_partner_extend
+#: view:res.partner:0
+msgid "Fiche Partenaire active"
+msgstr "Fiche Partenaire active"
+
+#. module: cci_partner_extend
+#: field:res.partner.zip,latitude:0
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: cci_partner_extend
+#: field:res.partner.zip,other_names:0
+msgid "Other Names"
+msgstr "Autres noms"
+

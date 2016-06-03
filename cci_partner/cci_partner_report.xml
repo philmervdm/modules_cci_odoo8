@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>			
+		<report 
+            string="Count invoices"
+            id="cci_invoices"
+            model="res.partner"
+            name="cci_partner.cci_count_invoice"
+            file="cci_partner.cci_count_invoice" 
+            report_type="qweb-pdf"
+        />
+        
+        <template id="external_layout_custom">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <t t-call="report.external_layout_header"/>
+            <t t-raw="0" />
+            <t t-call="cci_partner.external_layout_footer_custom" />
+        </template>
+        
+        <template id="external_layout_footer_custom">
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <div t-if="not company.custom_footer" class="list-inline">
+                        Web: http://tiny.be - Tel: (+32).81.81.37.00 - Bank: CPH 126-2013269-07<br/>
+                        IBAN: BE74 1262 0132 6907 - SWIFT: GKCCBEBB - VAT: BE0477.472.701
+                    </div>
+                    <t t-if="company.custom_footer">
+                        <span t-raw="company.rml_footer"/>
+                    </t>
+                    <div class="list-inline">
+                        Contact : Administrator - Page: <span class="page"/>
+                    </div>
+                </div>
+            </div>      
+        </template>
+	</data>
+</openerp>

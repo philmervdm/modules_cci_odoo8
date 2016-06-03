@@ -1,0 +1,487 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_newsletter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2014-11-21 10:35:27+0000\n"
+"PO-Revision-Date: 2014-11-21 10:35:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.source,default_area:0
+msgid "Default Area"
+msgstr "Zone par défaut"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.subscriber:0
+#: field:cci_newsletter.subscriber,comments:0
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,date:0
+msgid "Date of creation"
+msgstr "Date de création"
+
+#. module: cci_newsletter
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_newsletter
+#: view:cci_newsletter.queue_new:0
+msgid "CCI Newsletter Queue New"
+msgstr "File d'attente Mails Inscription revue de Presse"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.source,next_id:0
+msgid "Next ID"
+msgstr "Prochain ID"
+
+#. module: cci_newsletter
+#: help:cci_newsletter.extract_subscribers,init,source_id:0
+msgid "Let this field empty to extract ALL sources"
+msgstr "Laissez ce champ vide si vous désirez extraire les inscrits de TOUTES les sources"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Liège"
+msgstr "Liège"
+
+#. module: cci_newsletter
+#: wizard_field:import_rdp_wapi,import,msg:0
+msgid "File imported"
+msgstr "Fichier importé"
+
+#. module: cci_newsletter
+#: wizard_button:import_rdp_wapi,init,import:0
+msgid "Import File"
+msgstr "Importer Fichier"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,contact_id:0
+msgid "Linked Contact"
+msgstr "Contact lié"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,company:0
+#: field:cci_newsletter.subscriber,company_name:0
+msgid "Company"
+msgstr "Partenaire"
+
+#. module: cci_newsletter
+#: wizard_field:cci_newsletter.extract_subscribers,getfile,subscribers.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_newsletter
+#: wizard_view:cci_newsletter.extract_subscribers,getfile:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_newsletter
+#: model:ir.module.module,shortdesc:cci_newsletter.module_meta_information
+#: model:ir.ui.menu,name:cci_newsletter.menu_cci_newsletter
+msgid "CCI Newsletter"
+msgstr "CCI Newletter"
+
+#. module: cci_newsletter
+#: wizard_button:cci_newsletter.extract_subscribers,getfile,end:0
+#: wizard_button:import_rdp_wapi,import,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.log:0
+msgid "Full Log"
+msgstr "Historique complet"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,token:0
+#: field:cci_newsletter.subscriber,token:0
+msgid "Token"
+msgstr "Token"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Hainaut occidental"
+msgstr "Hainaut occidental"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,first_name:0
+#: field:cci_newsletter.subscriber,first_name:0
+msgid "First name of contact"
+msgstr "Prénom du contact"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,create_new_login:0
+msgid "Create New Login"
+msgstr "Créer Nouveau Login"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,login_send:0
+msgid "Sending waitiong new login"
+msgstr "Envoi des mails Login-pw en attente"
+
+#. module: cci_newsletter
+#: selection:import_rdp_wapi,init,treatment:0
+msgid "Overwrite"
+msgstr "Remplacer"
+
+#. module: cci_newsletter
+#: wizard_view:send_site_update,init:0
+msgid "Update Site Internet"
+msgstr "Mettre le site Internet à jour"
+
+#. module: cci_newsletter
+#: model:ir.actions.wizard,name:cci_newsletter.cci_newsletter_send_site_update
+#: model:ir.ui.menu,name:cci_newsletter.menu_send_site_update
+msgid "Update Internet Site"
+msgstr "Mettre le site Internet à jour"
+
+#. module: cci_newsletter
+#: wizard_field:cci_newsletter.extract_subscribers,init,source_id:0
+#: field:cci_newsletter.subscriber,source_id:0
+#: wizard_field:import_rdp_wapi,init,source_id:0
+#: model:ir.ui.menu,name:cci_newsletter.menu_cci_newsletter_source
+msgid "Source"
+msgstr "Source"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,mail:0
+msgid "Email"
+msgstr "EMail"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.log:0
+msgid "CCI Newsletter Log"
+msgstr "Historique Revue de Presse"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,password:0
+msgid "Created password"
+msgstr "Mot de passe créé"
+
+#. module: cci_newsletter
+#: wizard_field:import_rdp_wapi,init,input:0
+msgid "WAPI CSV file"
+msgstr "Fichier CSV WAPI"
+
+#. module: cci_newsletter
+#: field:res.partner.contact,date_passwordsend:0
+msgid "Date Sending Password"
+msgstr "Date envoi mot de passe"
+
+#. module: cci_newsletter
+#: wizard_view:cci_newsletter.extract_subscribers,getfile:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_newsletter
+#: field:cci_newsletter.source,flanders:0
+msgid "List for flanders"
+msgstr "Liste pour la Flandre"
+
+#. module: cci_newsletter
+#: help:res.partner.contact,date_passwordsend:0
+msgid "Date of sending of login-password by mail"
+msgstr "Date d'envoi du login-password par courriel"
+
+#. module: cci_newsletter
+#: model:ir.ui.menu,name:cci_newsletter.menu_cci_newsletter_configure
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,forced_area:0
+msgid "Forced Area"
+msgstr "Zone forcée"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,expire:0
+msgid "Expiration Date"
+msgstr "Date d'expiration"
+
+#. module: cci_newsletter
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,login:0
+msgid "Created login"
+msgstr "Login créé"
+
+#. module: cci_newsletter
+#: model:ir.model,name:cci_newsletter.model_cci_newsletter_queue_new
+msgid "New subscriber waiting one day before sending new login-pasword"
+msgstr "Nouveaux inscrits attendant un jour pour recevoir leur login-password"
+
+#. module: cci_newsletter
+#: code:addons/cci_newsletter/wizard/extract_subscribers.py:0
+#, python-format
+msgid "Save the File with '\".xls\"' extension."
+msgstr "Enregistrez le fichier avec l'extension '\".xls\"'."
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,extract,final_text:0
+msgid "Changes"
+msgstr "Changements"
+
+#. module: cci_newsletter
+#: wizard_view:cci_newsletter.extract_subscribers,init:0
+#: wizard_view:import_rdp_wapi,init:0
+msgid "Options"
+msgstr "Options"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,connection_id:0
+msgid "Main FTP Connection"
+msgstr "Connection FTP principale"
+
+#. module: cci_newsletter
+#: model:ir.actions.wizard,name:cci_newsletter.extract_subscribers
+msgid "Extract Subscribers"
+msgstr "Extraire les inscrits"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,ftp_sending:0
+msgid "Sending via FTP"
+msgstr "Envoi via FTP"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,user_id:0
+msgid "Salesman"
+msgstr "Commercial"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,email:0
+msgid "EMail"
+msgstr "EMail"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,connection2_id:0
+msgid "Alter Ego Connection"
+msgstr "Alter Ego Connection"
+
+#. module: cci_newsletter
+#: model:ir.ui.menu,name:cci_newsletter.menu_cci_newsletter_log
+msgid "Log"
+msgstr "Historique"
+
+#. module: cci_newsletter
+#: wizard_button:cci_newsletter.extract_subscribers,init,getfile:0
+msgid "Get Excel File"
+msgstr "Obtenir Fichier Excel"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Brabant wallon"
+msgstr "Brabant wallon"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.source:0
+msgid "CCI Newsletter Source"
+msgstr "Source pour la Revue de Presse"
+
+#. module: cci_newsletter
+#: wizard_field:import_rdp_wapi,init,treatment:0
+msgid "Method"
+msgstr "Méthode"
+
+#. module: cci_newsletter
+#: wizard_field:cci_newsletter.extract_subscribers,getfile,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_newsletter
+#: wizard_field:import_rdp_wapi,init,explanation:0
+msgid "Explanation"
+msgstr "Explication"
+
+#. module: cci_newsletter
+#: model:ir.actions.wizard,name:cci_newsletter.import_rdp_wapi
+#: model:ir.ui.menu,name:cci_newsletter.menu_import_wapi_file
+msgid "Import WAPI file"
+msgstr "Importer fichier WAPI"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,courtesy:0
+msgid "Courtesy"
+msgstr "Civilité"
+
+#. module: cci_newsletter
+#: model:ir.ui.menu,name:cci_newsletter.menu_newsletter_subscriber
+msgid "Subscribers"
+msgstr "Inscrits Revue de Presse"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.log,datetime:0
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,send_date:0
+msgid "Date of sending"
+msgstr "Date d'envoi"
+
+#. module: cci_newsletter
+#: model:ir.model,name:cci_newsletter.model_cci_newsletter_source
+msgid "Source of manual subscriber for the CCI Newsletter"
+msgstr "Source pour les inscrits manuels à la Revue de Presse"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,include_all_others:0
+msgid "Include all Others eMails"
+msgstr "Inclure tous les autres emails"
+
+#. module: cci_newsletter
+#: model:ir.model,name:cci_newsletter.model_cci_newsletter_subscriber
+msgid "Manual subscriber to the CCI newsletter"
+msgstr "Inscrit manuel à la Revue de Presse"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,active:0
+#: field:cci_newsletter.subscriber,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,internal_id:0
+msgid "ID interne Computerland"
+msgstr "ID interne Computerland"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.log:0
+#: field:cci_newsletter.log,short:0
+msgid "In short"
+msgstr "En bref"
+
+#. module: cci_newsletter
+#: model:ir.ui.menu,name:cci_newsletter.menu_cci_newsletter_queue_new
+msgid "Queue New"
+msgstr "File d'attente Mails"
+
+#. module: cci_newsletter
+#: wizard_button:cci_newsletter.extract_subscribers,init,end:0
+#: wizard_button:import_rdp_wapi,init,end:0
+#: wizard_button:send_site_update,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_newsletter
+#: wizard_button:send_site_update,extract,end:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: cci_newsletter
+#: wizard_button:send_site_update,init,extract:0
+msgid "Extract"
+msgstr "Extraire"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.log,count:0
+#: wizard_field:send_site_update,extract,final_count:0
+msgid "Count"
+msgstr "Comptage"
+
+#. module: cci_newsletter
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_newsletter
+#: model:ir.model,name:cci_newsletter.model_cci_newsletter_log
+msgid "Log of synchronisation of sending to website"
+msgstr "Historique des envois avecle site Web"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Flandres"
+msgstr "Flandres"
+
+#. module: cci_newsletter
+#: help:cci_newsletter.source,next_id:0
+msgid "Next ID used for new subscriber in this source"
+msgstr "Prochain ID pour les nouveaux inscrits"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.log,full:0
+msgid "Details"
+msgstr "Détails"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,name:0
+#: field:cci_newsletter.subscriber,name:0
+msgid "Name of contact"
+msgstr "Nom du contact"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.queue_new,function:0
+msgid "Function"
+msgstr "Fonction"
+
+#. module: cci_newsletter
+#: model:ir.module.module,description:cci_newsletter.module_meta_information
+msgid "\n"
+"        Module to help the CCI to manage their newsletter (Revue de Presse)\n"
+"    "
+msgstr "\n"
+"        Module to help the CCI to manage their newsletter (Revue de Presse)\n"
+"    "
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,password:0
+msgid "Password"
+msgstr "Mot de passe"
+
+#. module: cci_newsletter
+#: wizard_field:send_site_update,init,include_prospects:0
+msgid "Include Prospects"
+msgstr "Inclure Prospects"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Namur"
+msgstr "Namur"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.source,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_newsletter
+#: selection:cci_newsletter.source,default_area:0
+#: selection:cci_newsletter.subscriber,forced_area:0
+msgid "Hainaut"
+msgstr "Hainaut"
+
+#. module: cci_newsletter
+#: field:cci_newsletter.subscriber,login_name:0
+msgid "Login"
+msgstr "Login"
+
+#. module: cci_newsletter
+#: view:cci_newsletter.subscriber:0
+msgid "CCI Newsletter Subscriber"
+msgstr "Inscrits Revue de Presse"
+
+#. module: cci_newsletter
+#: wizard_view:import_rdp_wapi,import:0
+#: wizard_view:send_site_update,extract:0
+msgid "Results"
+msgstr "Résultats"
+

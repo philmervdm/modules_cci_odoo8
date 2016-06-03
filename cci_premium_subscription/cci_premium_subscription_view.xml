@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <!-- SUBSCRIPTION TYPE -->
+        <!--<record model="ir.ui.view" id="view_premium_sub_type_form">
+            <field name="name">premium_sub_type_form</field>
+            <field name="model">premium_subscription.type</field>
+            <field name="arch" type="xml">
+                <form>
+					<group>
+						<group>
+                    		<field name="name" select="1"/>
+						</group>
+						<group>
+                    		<field name="code" select="1"/>
+						</group>
+					</group>
+					<separator string="Products" colspan="4"/>
+                    <field name="product_ids" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_premium_sub_type_tree">
+            <field name="name">premium_sub_type_tree</field>
+            <field name="model">premium_subscription.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_sub_type" model="ir.actions.act_window">
+            <field name="name">Premium Subscription Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_subscription.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_premium_sub_type" id="menu_premium_sub_type" parent="base.menu_base_config" name="Premium Subscription Type" groups="group_cci_premium_subscription_manager" />
+-->
+        <!-- SUBSCRIPTION -->
+<!--        <record model="ir.ui.view" id="view_premium_subscription_form">
+            <field name="name">premium_subscription_form</field>
+            <field name="model">premium_subscription</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+                        <button name="button_current" string="Current" states="draft" type="object"/>
+                        <button name="button_close" string="Close" states="current" type="object"/>
+                        <button name="button_cancel" string="Cancel" states="draft,current" type="object"/>
+                        <button name="button_draft" string="Draft" states="current,closed,cancel" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,current,cancel,close"/>
+                	</header>
+				<sheet>
+					<group>
+						<group>
+							<field name="contact_id" select="1" domain="[('is_premium','=','OUI')]"/>
+							<field name="begin"/>
+							<field name="invoice_id"/>
+							<field name="type_id" select="1"/>
+							<field name="name"/>
+							<field name="source" select="2"/>
+						</group>
+						<group>
+							<field name="date" select="1"/>
+							<field name="end"/>
+							<field name="partner_id" select="1"/>
+							<field name="product_id" domain="[('premium_subscription_type_id','!=',False)]"/>
+							<field name="price"/>
+							<field name="refuse_renew"/>
+						</group>
+					</group>
+
+                    <group string="For Magazine" colspan="4">
+	                    <group>
+	                        <field name="specific_name"/>
+	                        <field name="specific_street"/>
+	                        <field name="specific_street2"/>
+	                        <field name="specific_zip_id"/>
+	                        <field name="specific_country_id"/>
+	                    </group>
+	                    <group>
+	                        <field name="usages"/>
+	                        <field name="left_usages"/>
+	                    </group>
+					</group>
+
+                    <field name="usage_ids" colspan="4" nolabel="1" readonly="1"/>
+                    <newline/>
+                    <group string="For Revue de Presse" colspan="4">
+                    	<field name="specific_email"/>
+					</group>
+                    <separator string="State Management" colspan="4"/>
+                    <group col="6" colspan="4">
+                        <field name="close_date" readonly="1"/>
+                        <field name="close_user_id" readonly="1"/>
+                        <field name="close_source" readonly="1"/>
+                    </group>
+                    <group>
+						<field name="active" select="2"/>
+					</group>
+				</sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_premium_subscription_tree">
+            <field name="name">premium_subcription_tree</field>
+            <field name="model">premium_subscription</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="contact_id"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="invoice_id"/>
+                    <field name="product_id"/>
+                    <field name="source"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_subscription" model="ir.actions.act_window">
+            <field name="name">Premium Subscription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_subscription</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_premium_subscription" id="menu_premium_subscription" parent="base.menu_sales" name="Premium Subscription"
+            groups="group_cci_premium_subscription_manager,group_cci_premium_subscription_user,group_cci_premium_subscription_reader"/>
+-->        
+        <!-- res.contact new tab -->
+<!--        <record model="ir.ui.view" id="cci_view_partner_contact_form3">
+            <field name="name">res_partner_contact_form_premium3</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook position="inside">
+                        <page string="Subscriptions" groups="cci_premium_subscription.group_cci_premium_subscription_reader,cci_premium_subscription.group_cci_premium_subscription_user,cci_premium_subscription.group_cci_premium_subscription_manager">
+                            <field name="subscription_ids" colspan="4" nolabel="1" string="Subscriptions"/>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+-->
+        <!-- product.product new field -->
+<!--	    <record model="ir.ui.view" id="product_normal_form_view_prem_sub">
+			    <field name="name">product.product.form.prem.sub</field>
+			    <field name="model">product.product</field>
+			    <field name="inherit_id" ref="product.product_normal_form_view"/>
+			    <field name="arch" type="xml">
+				    <field name="product_manager" position="after" >
+					    <field name="premium_subscription_type_id" select="2"/>
+				    </field>
+			    </field>
+	    </record>
+-->	    
+	    <!-- SUBSCRIPTION USAGE -->
+<!--        <record model="ir.ui.view" id="view_premium_sub_usage_form">
+            <field name="name">premium_sub_usage_form</field>
+            <field name="model">premium_subscription.usage</field>
+            <field name="arch" type="xml">
+                <form>
+					<group>
+						<group>
+							<field name="name" select="1" readonly="1"/>
+							<field name="issue_id" readonly="1"/>
+							<field name="active" select="2"/>
+						</group>
+						<group>
+							<field name="date" select="1" readonly="1"/>
+							<field name="subscription_id" readonly="1"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_premium_sub_usage_tree">
+            <field name="name">premium_sub_usage_tree</field>
+            <field name="model">premium_subscription.usage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_sub_usage" model="ir.actions.act_window">
+            <field name="name">Premium Subscription Usage</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_subscription.usage</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_premium_sub_usage" id="menu_premium_sub_usage" parent="base.menu_base_config" name="Premium Subscription Usage" groups="group_cci_premium_subscription_manager" />
+-->
+	    <!-- SUBSCRIPTION RENEW -->
+<!--        <record model="ir.ui.view" id="view_premium_sub_renew_form">
+            <field name="name">premium_sub_renew_form</field>
+            <field name="model">premium_subscription.renew</field>
+            <field name="arch" type="xml">
+                <form>
+					<group>
+						<group>
+							<field name="name" select="1" readonly="1"/>
+							<field name="date" select="1" readonly="1"/>
+							<field name="email" select="1" colspan="4" readonly="1"/>
+						</group>
+						<group>
+							<field name="subscription_id" readonly="1"/>
+							<field name="type" select="1" readonly="1"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_premium_sub_renew_tree">
+            <field name="name">premium_sub_renew_tree</field>
+            <field name="model">premium_subscription.renew</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="type"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_premium_sub_renew" model="ir.actions.act_window">
+            <field name="name">Premium Subscription Renew</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">premium_subscription.renew</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_premium_sub_renew" id="menu_premium_sub_renew" parent="base.menu_base_config" name="Premium Subscription Renew" groups="group_cci_premium_subscription_manager" />
+-->    </data>
+</openerp>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+	    <!-- CCI Magazine Subscriptions -->
+		<record model="ir.ui.view" id="view_subscription_form">
+			<field name="name">CCI Mag Subscription</field>
+			<field name="model">cci_mag_subscription</field>
+			<field name="arch" type="xml">
+				<form string="CCI Mag Subscription">
+					<field name="source"  readonly="1"/>
+					<field name="type"  readonly="1"/>
+					<field name="model"  readonly="1"/>
+                    <newline/>
+					<field name="partner_name"  readonly="1"/>
+					<field name="membership_state"  readonly="1"/>
+					<field name="street"  readonly="1"/>
+					<field name="street2"  readonly="1"/>
+					<field name="city"  readonly="1"/>
+                    <newline/>
+					<field name="contact_name"  readonly="1"/>
+					<field name="first_name"  readonly="1"/>
+                    <separator string="Access to data to correct them" colspan="4"/>
+                    <field name="partner_id"/>
+                    <field name="address_id"/>
+                    <field name="job_id"/>
+                    <field name="contact_id"/>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_subscription_tree">
+			<field name="name">CCI Mag Subscription</field>
+			<field name="model">cci_mag_subscription</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Mag Subcription">
+					<field name="source"/>
+					<field name="type"/>
+					<field name="model"/>
+					<field name="partner_name"/>
+					<field name="membership_state"/>
+					<field name="street"/>
+					<field name="street2"/>
+					<field name="contact_name"/>
+					<field name="first_name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_subscription_filter" model="ir.ui.view">
+            <field name="name">cci_mag_subscription.select</field>
+            <field name="model">cci_mag_subscription</field>
+            <field name="arch" type="xml">
+                <search string="Search Mag Subscription">
+                    <field name="source"/>
+                    <field name="type"/>
+                    <field name="model"/>
+                    <field name="partner_name" />
+                    <field name="membership_state" />
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="city"/>
+                    <field name="contact_name"/>
+               </search>
+            </field>
+        </record>
+
+		<record model="ir.actions.act_window" id="action_subscription">
+			<field name="name">CCI Mag Subscription</field>
+			<field name="res_model">cci_mag_subscription</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="view_subscription_filter"/>
+		</record>
+		<!--<menuitem name="CCI Mag Subscriptions" id="menu_subscription" action="action_subscription"
+                  parent="l10n_be_postal_subscriber.postal_subscriber_root" groups="group_cci_magazine_user"/>-->
+
+        <!-- CCI Magazine Subscription Source -->
+        <record id="view_sub_source_form" model="ir.ui.view">
+            <field name="name">Subscription Source</field>
+            <field name="model">cci_magazine.subscription_source</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Subscription Source">
+                    <group>
+						<field name="name"/>
+                    	<field name="code"/>
+					</group>
+                </form>
+            </field>
+        </record>
+        <record id="view_sub_source_tree" model="ir.ui.view">
+            <field name="name">Subscription Source</field>
+            <field name="model">cci_magazine.subscription_source</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Subscription Source">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+		<record id="view_sub_source_filter" model="ir.ui.view">
+            <field name="name">ci_magazine.subscription_sourc.select</field>
+            <field name="model">cci_magazine.subscription_source</field>
+            <field name="arch" type="xml">
+                <search string="Search Subscription Source">
+                    <field name="name" />
+                    <field name="code" />
+               </search>
+            </field>
+        </record>
+        <record id="action_sub_source_form" model="ir.actions.act_window">
+            <field name="name">Subscription Source</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci_magazine.subscription_source</field>
+            <field name="view_type">form</field>
+			<field name="search_view_id" ref="view_sub_source_filter" />
+        </record>
+        <menuitem action="action_sub_source_form" id="menu_sub_source_form" parent="base.menu_base_config"/>
+        <!-- groups="group_cci_magazine_manager"-->
+
+    </data>
+</openerp>

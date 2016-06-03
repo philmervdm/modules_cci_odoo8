@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="view_cci_mailchimp_results_adv" model="ir.ui.view">
+            <field name="name">cci.mailchimp.results.adv.form</field>
+            <field name="model">cci.mailchimp.results.adv</field>
+            <field name="arch" type="xml">
+				<form string="Extract Advertising Results">
+					<group>
+					    <field name="url" colspan="4" width="600"/>
+					    <field name="from_date"/>
+					    <field name="to_date"/>
+					</group>
+					<footer>
+						<button name="extract" string="Extract" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_mailchimp_results_adv" model="ir.actions.act_window">
+             <field name="name">Extract Advertising Results</field>
+             <field name="res_model">cci.mailchimp.results.adv</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_mailchimp_results_adv"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+       <menuitem 
+        	name="Extract Advertising Results" 
+        	id="cci_mailchimp_results_adv"
+			action="action_cci_mailchimp_results_adv" 
+			parent="cci_newsletter.menu_cci_subscriber"
+            sequence="95" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+            
+		<record id="view_cci_mailchimp_results_adv_msg" model="ir.ui.view">
+            <field name="name">cci.mailchimp.results.adv.msg.form</field>
+            <field name="model">cci.mailchimp.results.adv.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+			   		<separator string="File has been created."/>
+			   		<group>
+				     	<field name="msg" nolabel="1"/>
+				     	<field name="res_advert_xls"/>
+			   		</group>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

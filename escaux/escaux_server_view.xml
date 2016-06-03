@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Escaux module for OpenERP
+  Copyright (C) 2011 Philmer - CCI Connect <philmer@cciconnect.be>
+  Based on module : 
+    Asterisk Click2dial module for OpenERP
+    Copyright (C) 2010 Alexis de Lattre <alexis@via.ecp.fr>
+  The licence is in the file __terp__.py
+-->
+
+<openerp>
+<data>
+
+<!-- Inherit res.company to add tab for Escaux servers -->
+<record id="view_escaux_server_company_form" model="ir.ui.view">
+    <field name="name">escaux.server.company</field>
+    <field name="model">res.company</field>
+    <field name="inherit_id" ref="base.view_company_form" />
+    <field name="arch" type="xml">
+        <notebook>
+            <page position="inside" string="IPBX">
+                <group colspan="4" string="Escaux servers" >
+                <field nolabel="1" name="escaux_server_ids" />
+				</group>
+            </page>
+        </notebook>
+    </field>
+</record>
+
+<!-- Form view for escaux.server inside Company view -->
+<record id="view_escaux_server_form" model="ir.ui.view">
+    <field name="name">escaux.server.form</field>
+    <field name="model">escaux.server</field>
+    <field name="arch" type="xml">
+        <form string="Escaux servers">
+           <group>
+				<group>
+					<field name="name" select="1" />
+					<field name="ip_address" select="1" />
+					<field name="wait_time" />
+					<field name="prefix_outcoming"/>
+				</group>
+				<group>
+					<field name="active" select="2" />
+					<field name="port" select="2" />
+					<field name="prefix_incoming"/>
+				</group>
+			</group>
+        </form>
+    </field>
+</record>
+
+<!-- Tree view for escaux.server inside company view -->
+<record id="view_escaux_server_tree" model="ir.ui.view">
+    <field name="name">escaux.server.tree</field>
+    <field name="model">escaux.server</field>
+    <field name="arch" type="xml">
+        <tree string="Escaux servers">
+            <field name="name" />
+            <field name="ip_address" />
+            <field name="port" />
+        </tree>
+    </field>
+</record>
+
+<!-- Action for escaux.server inside company view -->
+<record id="action_escaux_server" model="ir.actions.act_window">
+    <field name="name">Escaux servers</field>
+    <field name="res_model">escaux.server</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- Form view for escaux.server - standalone -->
+<record id="view_escaux_server_standalone_form" model="ir.ui.view">
+    <field name="name">escaux.server.standalone.form</field>
+    <field name="model">escaux.server</field>
+    <field name="arch" type="xml">
+        <form string="Escaux servers">
+			<group>
+				<field name="company_id" select="1" />
+				<group>
+					<field name="name" select="1" />
+					<field name="ip_address" select="1" />
+					<field name="wait_time" />
+					 <field name="prefix_outcoming"/>
+				</group>
+				<group>
+					<field name="active" select="2" />
+					<field name="port" select="2" />
+					<field name="prefix_incoming"/>
+				</group>
+			</group>
+        </form>
+    </field>
+</record>
+
+<!-- Tree view for escaux.server - standalone -->
+<record id="view_escaux_server_standalone_tree" model="ir.ui.view">
+    <field name="name">escaux.server.standalone.tree</field>
+    <field name="model">escaux.server</field>
+    <field name="arch" type="xml">
+        <tree string="Escaux servers">
+            <field name="company_id" />
+            <field name="name" />
+            <field name="ip_address" />
+            <field name="port" />
+        </tree>
+    </field>
+</record>
+
+<!-- Action for escaux.server - standalone -->
+<record id="action_escaux_server_standalone" model="ir.actions.act_window">
+    <field name="name">Escaux servers</field>
+    <field name="res_model">escaux.server</field>
+    <field name="view_type">form</field>
+</record>
+
+<!-- Action view "tree" for escaux.server - standalone -->
+<record id="action_escaux_server_standalone_tree" model="ir.actions.act_window.view">
+    <field eval="10" name="sequence"/> <!-- open tree view first -->
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="view_escaux_server_standalone_tree" />
+    <field name="act_window_id" ref="action_escaux_server_standalone" />
+</record>
+
+<!-- Action view "form" for escaux.server - standalone -->
+<record id="action_escaux_server_standalone_form" model="ir.actions.act_window.view">
+    <field eval="20" name="sequence"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_escaux_server_standalone_form" />
+    <field name="act_window_id" ref="action_escaux_server_standalone" />
+</record>
+
+<!-- Menu entry under Administration > Configuration -->
+<menuitem action="action_escaux_server_standalone" id="act_menu_ast_server" parent="base.menu_config" />
+
+</data>
+</openerp>

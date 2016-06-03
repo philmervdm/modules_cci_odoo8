@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_compare_photos_form">
+            <field name="name">wizard.compare.photos.form</field>
+            <field name="model">wizard.compare.photos</field>
+            <field name="arch" type="xml">
+                <form string="Result of the comparison">
+                    <group>
+                        <group>
+                            <field name="txtHeader"/>
+                        </group>
+                    </group>
+                    <footer>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

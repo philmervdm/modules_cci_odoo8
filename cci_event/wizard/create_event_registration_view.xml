@@ -1,0 +1,33 @@
+<openerp>
+	<data>
+		
+		<record id="event_create_registrations_view" model="ir.ui.view">
+            <field name="name">event.create_registrations.form</field>
+            <field name="model">event.create_registrations</field>
+            <field name="arch" type="xml">
+                <form string="Create registrations for this event">
+                	<group>
+                		<field name="event_id" />
+                	</group>
+                    <footer>
+                        <button string="Create" name="create_reg_event" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	id="action_event_create_registrations"
+            multi="True"
+            key2="client_action_multi" 
+            name="Create Registrations for Event" 
+            res_model="event.create_registrations" 
+            src_model="event.registration"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+	
+	</data>
+</openerp>

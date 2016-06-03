@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="carnet_after_validity">
+            <t t-call="report.html_container">
+                <t t-foreach="carnet_after()" t-as="ata_carnet">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <div class="text-right" t-esc="ata_carnet['partner_name']"/>
+                                <div class="text-right" t-esc="ata_carnet['partner_address']"/>
+                                <div class="mt32 text-right">Liège, le  <span t-esc="time.strftime('%Y-%m-%d')"/></div>
+                                <div class="mt16">Madame/Monsieur,</div>
+                                <div class="mt16">
+                                    <strong>Concerne: votre carnet A.T.A. n° <span t-esc="ata_carnet['name']"/> <small> <span t-esc="ata_carnet['type']"/></small></strong>
+                                </div>
+                                <div class="mt16 col-xs-offset-1">
+                                    <strong>Date d’émission : <span t-esc="ata_carnet['creation_date']"/></strong>
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Le délai de validité du carnet de passages en douane pour l’admission temporaire (A.T.A.) dont référence sous rubrique expirait le <strong> <span t-esc="ata_carnet['validity_date']"/></strong>
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Ce document ne nous ayant pas été renvoyé dans les délais prescrits, nous vous invitons à nous le faire parvenir <strong>PAR RETOUR DE COURRIER.</strong>
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Nous attirons votre attention sur la convention douanière réglant l’utilisation du carnet A.T.A. qui, outre l’application des dispositions normales, prévoit en son article 16, le droit, dans certains cas, de poursuites contre les utilisations abusives.
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Il est de votre intérêt de nous renvoyer le carnet périmé et de répondre sans retard, aux justifications éventuelles qui pourraient vous être réclamées par les autorités douanières via notre Chambre de Commerce.
+                                </div>
+                                <div class="mt16 text-justify">
+                                    Nous restons à votre entière disposition pour résoudre au mieux de vos intérêts les problèmes qui pourraient se poser dans votre entreprise.
+                                </div>
+                                <div class="mt16">
+                                    Nous vous présentons, Madame, Monsieur, nos meilleures salutations.
+                                </div>
+                                <div class="col-xs-offset-7 mt64">
+                                    Chantale Cool,<br/>
+                                    Service « Légalisations »<br/>
+                                    Tél. : 04/341.91.91<br/>
+                                    Courriel : cc@cciconnect.be<br/>
+                                </div>
+                            </div>
+                            <div class="col-xs-1"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

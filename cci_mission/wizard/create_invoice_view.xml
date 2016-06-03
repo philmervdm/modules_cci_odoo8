@@ -1,0 +1,44 @@
+<openerp>
+	<data>
+		<record id="view_mission_create_invoice_form" model="ir.ui.view">
+			<field name="name">mission.create.invoice.form</field>
+			<field name="model">create.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Create invoices">
+					<group>
+					    <field name="inv_created"/>
+					    <field name="inv_rejected"/>
+					    <field name="inv_rej_reason" />
+						<field name="invoice_ids" invisible="1"/>
+					</group>
+					<footer>
+						<button name="open_invoice" string="Open Invoice" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_mission_create_invoice" model="ir.actions.act_window">
+            <field name="name">Make Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">create.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_mission_create_invoice_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_mission_create_invoice_values">
+            <field name="model_id" ref="model_create_invoice" />
+            <field name="name">Make Invoice</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_mission_create_invoice'))" />
+            <field name="key">action</field>
+            <field name="model">cci_missions.certificate</field>
+        </record>
+	
+	</data>
+</openerp>

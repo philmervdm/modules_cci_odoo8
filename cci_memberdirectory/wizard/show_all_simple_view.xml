@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_show_all_simple" model="ir.ui.view">
+            <field name="name">cci.show.all.simple.form</field>
+            <field name="model">cci.show.all.simple</field>
+            <field name="arch" type="xml">
+				<form string="Simple Partners for Members' Directory">
+					<footer>
+						<button name="show_all_simple" string="Show" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_show_all_simple" model="ir.actions.act_window">
+             <field name="name">Simple Partners for Members' Directory</field>
+             <field name="res_model">cci.show.all.simple</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_show_all_simple"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Simple Partners for Members' Directory"
+            action="action_cci_show_all_complex"
+            id="menu_show_all_simple"
+            parent="menu_directory_address_proxy"/>
+	
+	</data>
+</openerp>

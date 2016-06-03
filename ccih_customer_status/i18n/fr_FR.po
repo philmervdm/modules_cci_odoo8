@@ -1,0 +1,67 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* ccih_customer_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-04-15 13:45:27+0000\n"
+"PO-Revision-Date: 2015-04-15 13:45:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ccih_customer_status
+#: selection:ccih_customer_status,init,type:0
+msgid "Supplier - Purchases"
+msgstr "Fournisseurs - Achats"
+
+#. module: ccih_customer_status
+#: model:ir.module.module,description:ccih_customer_status.module_meta_information
+msgid "\n"
+"        specific module for the CCIH to output the customer status\n"
+"    "
+msgstr "\n"
+"        specific module for the CCIH to output the customer status\n"
+"    "
+
+#. module: ccih_customer_status
+#: wizard_field:ccih_customer_status,init,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: ccih_customer_status
+#: model:ir.module.module,shortdesc:ccih_customer_status.module_meta_information
+msgid "CCIH Customer Status"
+msgstr "Statut Client CCIH"
+
+#. module: ccih_customer_status
+#: wizard_view:ccih_customer_status,init:0
+#: model:ir.actions.wizard,name:ccih_customer_status.ccih_customer_status
+msgid "Customer/Supplier Account Status"
+msgstr "Etat de Compte Client/Fournisseur"
+
+#. module: ccih_customer_status
+#: wizard_button:ccih_customer_status,init,print:0
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: ccih_customer_status
+#: selection:ccih_customer_status,init,type:0
+msgid "Customer - Sales"
+msgstr "Clients - Ventes"
+
+#. module: ccih_customer_status
+#: wizard_button:ccih_customer_status,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ccih_customer_status
+#: wizard_field:ccih_customer_status,init,only_open:0
+msgid "Only Open Lines"
+msgstr "Seulement les mouvements ouverts"
+

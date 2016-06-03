@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+  <data>
+	        <record model="ir.ui.view" id="wizard_archive_interest_form">
+            <field name="name">interest.archive.form</field>
+            <field name="model">interest.archive</field>
+            <field name="arch" type="xml">
+                <form string="Archive Interests by Year">
+                    <group>
+                        <group>
+                            <field name="year"/>
+                            <field name= "product_ids"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="do_next" type="object" string="OK"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_archive_interest_action" model="ir.actions.act_window">
+            <field name="name">Archive Interests by Year</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">interest.archive</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_archive_interest_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+	<menuitem name="Archive Interest by Year" id="menu_archive_interest"
+	          action="wizard_archive_interest_action" 
+			  parent="base.menu_base_config" 
+              sequence="80" />
+  </data>
+</openerp>

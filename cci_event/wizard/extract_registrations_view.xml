@@ -1,0 +1,53 @@
+<openerp>
+	<data>
+	
+		<record id="event_extract_registrations_view_form" model="ir.ui.view">
+            <field name="name">event.extract.registrations.form</field>
+            <field name="model">event.extract.registrations</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Registration">
+                	<group>
+                		<field name="choice"/>
+                	</group>
+                    <footer>
+                        <button string="Get Excel File" name="get_file" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window 
+        	id="action_event_extract_registrations"
+            multi="True"
+            key2="client_action_multi" 
+            name="Extract Registrations"
+            res_model="event.extract.registrations" 
+            src_model="event.event"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+        
+        <record id="event_extract_registrations_msg_view_form" model="ir.ui.view">
+            <field name="name">event.extract.registrations.msg.form</field>
+            <field name="model">event.extract.registrations.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                	<group>
+                		<separator string="File has been created." colspan="4"/>
+                		<field name="name" invisible="1"/>
+					    <field name="msg" colspan="4" nolabel="1"/>
+					    <field name="inscriptions" colspan="4" filename="name"/>
+                	</group>
+                    <footer>
+                        <button string="Get Excel File" name="get_file" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+	
+	</data>
+</openerp>

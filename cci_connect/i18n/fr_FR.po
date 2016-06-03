@@ -1,0 +1,441 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_connect
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.12\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-08-30 06:48:03+0000\n"
+"PO-Revision-Date: 2011-08-30 06:48:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_partner_title:0
+msgid "Current Partner Title"
+msgstr "Titre actuel partenaire"
+
+#. module: cci_connect
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "The Object name must start with x_ and not contain any special character !"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,phone:0
+msgid "Site Phone"
+msgstr "Tél Site"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,zip_id:0
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_partner_title:0
+#: field:cci_connect.delayed_partner,partner_title:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_street2:0
+msgid "Final Street2"
+msgstr "Rue finale2"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_activity:0
+msgid "Current Activity"
+msgstr "Etat activ. actuel"
+
+#. module: cci_connect
+#: view:res.partner.contact:0
+msgid "Mobile:"
+msgstr "GSM:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Recorded"
+msgstr "Enregistré"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+#: model:ir.ui.menu,name:cci_connect.menu_delayed_partner
+msgid "Delayed Changes"
+msgstr "Demandes de changement mises en attente"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Current"
+msgstr "Actuel"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Field"
+msgstr "Champ"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,state:0
+msgid "State"
+msgstr "Etat"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_searching:0
+msgid "Final Searching"
+msgstr "'Je cherche' final"
+
+#. module: cci_connect
+#: selection:cci_connect.delayed_partner,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_fax:0
+msgid "Current Site Fax"
+msgstr "Fax actuel du site"
+
+#. module: cci_connect
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_activity:0
+msgid "Final activity"
+msgstr "Etat activ. final"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_country_id:0
+msgid "Final Country"
+msgstr "Pays final"
+
+#. module: cci_connect
+#: model:ir.module.module,description:cci_connect.module_meta_information
+msgid "\n"
+"        Specific modules for the CCI Connect\n"
+"    "
+msgstr "\n"
+"        Specific modules for the CCI Connect\n"
+"    "
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: cci_connect
+#: view:res.partner:0
+msgid "Téléphone:"
+msgstr "Téléphone:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Phone:"
+msgstr "Téléphone:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_phone:0
+msgid "Final Site Phone"
+msgstr "Tél final du site"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_website:0
+msgid "Final Website"
+msgstr "Site Web final"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,selling:0
+msgid "Selling"
+msgstr "'Je vends'"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_zip_id:0
+msgid "Current Address Zip Code"
+msgstr "Code postal actuel"
+
+#. module: cci_connect
+#: view:res.partner.address:0
+msgid "Tél.professionnel:"
+msgstr "Tél.professionnel:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_street:0
+msgid "Final Street"
+msgstr "Rue finale"
+
+#. module: cci_connect
+#: model:ir.model,name:cci_connect.model_cci_connect_delayed_partner
+msgid "store asked changes for partner and address from internet site"
+msgstr "Stocke les demandes de changements faites depuis le site internet pour les partenaires et les adresses."
+
+#. module: cci_connect
+#: model:ir.module.module,shortdesc:cci_connect.module_meta_information
+msgid "CCI Connect"
+msgstr "CCI Connect"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,street2:0
+msgid "Street2"
+msgstr "Rue2"
+
+#. module: cci_connect
+#: view:res.partner.job:0
+msgid "Tél. professionel:"
+msgstr "Tél. professionel:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "VAT:"
+msgstr "TVA:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_email:0
+msgid "Final Site E-Mail"
+msgstr "EMail final du site"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_address_name:0
+#: field:cci_connect.delayed_partner,current_street:0
+#: field:cci_connect.delayed_partner,current_street2:0
+#: field:cci_connect.delayed_partner,current_vat:0
+msgid "Current Partner VAT"
+msgstr "TVA actuelle du partenaire"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_partner_name:0
+msgid "Final Partner Name"
+msgstr "Nom final du partenaire"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Cancel changes"
+msgstr "Annule les changements"
+
+#. module: cci_connect
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Title:"
+msgstr "Titre:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_vat:0
+msgid "Final VAT"
+msgstr "TVA finale"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Old Functions:"
+msgstr "Anciennes fonctions:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,website:0
+msgid "Website"
+msgstr "Site Web"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_partner_name:0
+msgid "Current Partner Name"
+msgstr "Nom actuel du partenaire"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_address_name:0
+msgid "Final Address Name"
+msgstr "Nom final de l'adresse"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,partner_name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,country_id:0
+msgid "Country"
+msgstr "Pays"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_phone:0
+msgid "Current Site Phone"
+msgstr "Tél actuel du site"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+#: field:cci_connect.delayed_partner,address_id:0
+msgid "Address"
+msgstr "Adresse"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Street:"
+msgstr "Rue:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,email:0
+msgid "Site E-Mail"
+msgstr "EMail du site"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,state_changed:0
+msgid "Status Changed"
+msgstr "Status changé"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,old_functions:0
+msgid "Old functions"
+msgstr "Anciennes fonctions"
+
+#. module: cci_connect
+#: view:res.partner:0
+#: view:res.partner.address:0
+#: view:res.partner.contact:0
+#: view:res.partner.job:0
+msgid "Dial"
+msgstr "Appel"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "EMail:"
+msgstr "EMail:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,activity:0
+msgid "Activity"
+msgstr "Activité"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Country:"
+msgstr "Pays:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Partner Name:"
+msgstr "Nom partenaire:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,fax:0
+msgid "Site Fax"
+msgstr "Fax du site"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Site Name:"
+msgstr "Nom du site:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,vat:0
+msgid "VAT"
+msgstr "TVA"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_website:0
+msgid "Current Partner WebSite"
+msgstr "Site Web actuel du partenaire"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Apply changes"
+msgstr "Appliquer les changements"
+
+#. module: cci_connect
+#: view:res.partner.address:0
+msgid "Tél.:"
+msgstr "Tél.:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Proposed"
+msgstr "Proposé"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_selling:0
+msgid "Final Selling"
+msgstr "'Je vends' final"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,asker_id:0
+msgid "Asker for Change"
+msgstr "Demandeur du changement"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "WebSite:"
+msgstr "Site Web:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,searching:0
+msgid "Searching"
+msgstr "'Je cherche'"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Activity:"
+msgstr "Activité:"
+
+#. module: cci_connect
+#: selection:cci_connect.delayed_partner,state:0
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_fax:0
+msgid "Final Site Fax"
+msgstr "Fax final du site"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,street:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_connect
+#: selection:cci_connect.delayed_partner,state:0
+msgid "Done"
+msgstr "Appliqué"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Street2:"
+msgstr "Rue2:"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+#: field:cci_connect.delayed_partner,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,final_zip_id:0
+msgid "Final Zip"
+msgstr "Code postal final"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_country_id:0
+msgid "Current Address Country"
+msgstr "Pays actuel"
+
+#. module: cci_connect
+#: view:cci_connect.delayed_partner:0
+msgid "Zip code:"
+msgstr "Code postal:"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,address_name:0
+msgid "Address Name"
+msgstr "Nom de l'adresse"
+
+#. module: cci_connect
+#: field:cci_connect.delayed_partner,current_email:0
+msgid "Current Site EMail"
+msgstr "EMail actuel du site"
+
+#. module: cci_connect
+#: model:ir.ui.menu,name:cci_connect.menu_pending_delayed_partner
+msgid "Pending Delayed Changes"
+msgstr "Demandes de changements en attente de traitement"
+

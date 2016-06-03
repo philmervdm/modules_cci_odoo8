@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_view_companies_form">
+            <field name="name">wizard.view.companies.form</field>
+            <field name="model">view.companies</field>
+            <field name="arch" type="xml">
+                <form string="View Companies">
+                    <footer>
+                        <button name="show_companies" type="object" string="View Companies"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_view_companies_action" model="ir.actions.act_window">
+            <field name="name">View Companies</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">view.companies</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_view_companies_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_view_companies_action_values">
+            <field name="model_id" ref="model_inject_premium_contact"/>
+            <field name="name">View Companies</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_view_companies_action'))" />
+            <field name="key">action</field>
+            <field name="model">premium_contact</field>
+        </record>
+
+    </data>
+</openerp>

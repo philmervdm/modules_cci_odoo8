@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+        <!-- Wizard to extract the files nedded for the yearbook of the CCI Mag -->
+		<!-- wizard string="Prepare CCI Mag Yearbook"
+			model="res.partner"
+			name="cci_yearbook.extract_chapters"
+			id="cci_yearbook_extract_chapters"
+			menu="False"/> -->
+
+		<record model="ir.ui.view" id="wizard_cci_yearbook_extract_form">
+            <field name="name">wizard.cci.yearbook.extract.chapters.form</field>
+            <field name="model">cci.yearbook.extract.chapters</field>
+            <field name="arch" type="xml">
+                <form string="Extract CCI Mag yearbook Chapters">
+                    <group>
+						<group>
+						<field name="chapter1"/>
+						<field name="chapter3"/>
+						<field name="chapter5"/>
+						<field name="chapter7"/>
+						<field name="chapter9"/>
+						<field name="chapter11"/>
+						<field name="chapter13"/>
+						<field name="chapter15"/>
+						<field name="chapter17"/>
+						<field name="chapter19"/>
+						</group>
+						<group>
+						<field name="chapter2"/>
+						<field name="chapter4"/>
+						<field name="chapter6"/>
+						<field name="chapter8"/>
+						<field name="chapter10"/>
+						<field name="chapter12"/>
+						<field name="chapter14"/>
+						<field name="chapter16"/>
+						<field name="chapter18"/>
+						<field name="chapter20"/>
+						</group>
+                    </group>
+                    <footer>
+                        <button name="extract_chapters" type="object" string="Extract"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_cci_yearbook_extract_action" model="ir.actions.act_window">
+            <field name="name">Extract CCI Mag yearbook Chapters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.yearbook.extract.chapters</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_cci_yearbook_extract_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+		
+		<menuitem name="Prepare CCI Mag Yearbook" id="main_menu_yearbook_ccimag"
+			action="wizard_cci_yearbook_extract_action" 
+			parent="base.postal_subscriber_root"
+            sequence="90"/>
+		
+		<menuitem name="Prepare CCI Mag Yearbook" id="menu_yearbook_ccimag"
+			action="wizard_cci_yearbook_extract_action" 
+			parent="main_menu_yearbook_ccimag"
+           />
+
+
+        <record model="ir.ui.view" id="wizard_cci_yearbook_msg_form">
+            <field name="name">wizard.cci.yearbook.extract.msg.form</field>
+            <field name="model">cci.yearbook.msg</field>
+            <field name="arch" type="xml">
+                <form string="File prepared">
+                    <group>
+						<separator string="File has been created."  colspan="4"/>
+						<field name="msg" colspan="4" nolabel="1"/>
+						<group>
+						<field name="annu_ccilvn"/>
+						<field name="annu_relint"/>
+						<field name="annu_executifs"/>
+						<field name="annu_mediateurs"/>
+						<field name="annu_provinces"/>
+						<field name="annu_communes_nam"/>
+						<field name="annu_enseignement_nam"/>
+						<field name="annu_organismes_eco_lg"/>
+						<field name="annu_presse"/>
+						<field name="annu_presse_lg"/>
+						</group>
+						<group>
+						<field name="annu_cci"/>
+						<field name="annu_awex"/>
+						<field name="annu_centre_recherche"/>
+						<field name="annu_justice"/>
+						<field name="annu_communes_lg"/>
+						<field name="annu_enseignement_lg"/>
+						<field name="annu_organismes_eco_wallon"/>
+						<field name="annu_organismes_eco_nam"/>
+						<field name="annu_presse_nam"/>
+						<field name="annu_federal_lg"/>
+						</group>
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+	</data>
+</openerp>

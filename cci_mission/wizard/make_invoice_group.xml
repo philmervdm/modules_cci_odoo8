@@ -1,0 +1,59 @@
+<openerp>
+	<data>
+		<record id="view_make_invoice_group_form" model="ir.ui.view">
+			<field name="name">make.invoice.group.form</field>
+			<field name="model">make.invoice.group</field>
+			<field name="arch" type="xml">
+				<form string="Invoice Grouped">
+					<group>
+					    <field name="invoice_title"/>
+						<field name="date_invoice"/>
+						<field name="period_id"/>
+						<field name="registration"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="group_invoice" string="Group Invoice" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="missions_invoice_common" model="ir.actions.act_window">
+            <field name="name">Invoice grouped</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">make.invoice.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_make_invoice_group_form"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem
+			name="Group Draft Invoices for Missions and Events"
+			action="missions_invoice_common"
+			parent="account.menu_finance_periodical_processing"
+			id="cci_missions_invoice_common"/>
+	
+		<record id="view_mission_group_invoice_form" model="ir.ui.view">
+			<field name="name">mission.group.invoice.form</field>
+			<field name="model">mission.group.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Invoice Grouped">
+					<group>
+						<separator string="Invoices Grouped for Following Partners." colspan="4"/>
+					    <field name="message"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="list_invoice" string="Open Invoice" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_extract_actions_form">
+            <field name="name">extract.actions.form</field>
+            <field name="model">extract.actions</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="to"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="get_file" type="object" string="Get Excel File "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_extract_actions_form_action" model="ir.actions.act_window">
+            <field name="name">Extract Actions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.actions</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_extract_actions_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Extract Actions" id="menu_extract_actions"
+                action="wizard_extract_actions_form_action" 
+                parent="menu_cci_salesman_main" 
+                sequence="60" />
+        
+        <record model="ir.ui.view" id="wizard_extract_actions2_form">
+            <field name="name">extract.actions2.form</field>
+            <field name="model">wizard.extract.actions2</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <group>
+                            <field name="name" invisible='1'/>
+                            <field name="msg"/>
+                            <field name="actions" filename="name"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Ok"  special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

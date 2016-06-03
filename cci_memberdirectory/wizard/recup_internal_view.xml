@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_recup_internal" model="ir.ui.view">
+            <field name="name">cci.recup.internal.form</field>
+            <field name="model">cci.recup.internal</field>
+            <field name="arch" type="xml">
+				<form string="Get Back Save">
+					<footer>
+						<button name="get_back" string="Get Back" type="object" class="oe_highlight"/>
+	                        or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+			id="action_cci_recup_internal"
+            multi="True"
+            key2="client_action_multi" 
+            name="Get Back Save"
+            res_model="cci.recup.internal" 
+            src_model="directory.address.proxy"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+            
+	</data>
+</openerp>

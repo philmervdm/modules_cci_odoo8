@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+<!-- View for res.partner object inherited from base module................ -->
+		<record model="ir.ui.view" id="view_partner_form">
+			<field name="name">res.partner.form.member</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="membership.view_partner_form"/>
+			<field name="arch" type="xml">
+				<field name="member_lines" position="before">
+					<group>
+						<field name="membership_vcs"/> <!-- used by Philmer to test the fields.function -->
+						<field name="refuse_membership" select="2"/>
+					</group>
+				</field>
+			</field>
+		</record>
+
+<!-- end-->
+
+<!-- added by philmer to permit the correction of partner on membership_line -->
+        <record model="ir.ui.view" id="membership_line_tree">
+            <field name="name">Membership Lines</field>
+            <field name="model">membership.membership_line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Membership lines">
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="date_cancel"/>
+                    <field name="date_invoice"/>
+                    <field name="partner"/>
+                    <field name="invoice_id"/>
+                    <field name="state"/>
+                    <field name="number"/>
+                    <field name="subtotal"/>
+                    <field name="account_invoice_line"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="membership_line_form">
+            <field name="name">Membership lines</field>
+            <field name="model">membership.membership_line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Membership lines">
+					<group>
+						<group>
+							<field name="date_from" select="1"/>
+							<field name="date_cancel"/>
+							<field name="partner" select="1"/>
+							<field name="state" select="1"/>
+							<field name="subtotal"/>
+						</group>
+						<group>
+							<field name="date_to" select="1"/>
+							<field name="date_invoice" select="1"/>
+							<field name="invoice_id"/>
+							<field name="number"/>
+							<field name="account_invoice_line"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_membership_membership_lines">
+            <field name="name">Membership Lines</field>
+            <field name="res_model">membership.membership_line</field>
+        </record>
+        <menuitem name="Membership lines" parent="base.menu_marketing_config_association"
+            id="menu_membership_membership_lines"
+            action="action_membership_membership_lines"/>
+
+<!-- end addition philmer -->
+
+        <record id="view_membership_line_invoice" model="ir.ui.view">
+            <field name="name">res.partner.form.invoice.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="priority">99</field>
+            <field name="inherit_id" ref="membership.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='member_lines']/tree/field[@name='account_invoice_id']" position="after">
+                   	<field name="date_invoice"/>
+                	<field name="number"/>
+                	<field name="subtotal"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_check_tree">
+            <field name="name">Membership Check</field>
+            <field name="model">cci_membership.membership_check</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Membership Check">
+                    <field name="name"/>
+                    <field name="count"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_check_form">
+            <field name="name">Membership Check</field>
+            <field name="model">cci_membership.membership_check</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Membership Check">
+					<group>
+                    <field name="name"/>
+                    <field name="count"/>
+                    <separator string="Result" colspan="4"/>
+                    <field name="status" nolabel="1" colspan="4"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_cci_membership_check">
+			<field name="name">cci_membership_check</field>
+            <field name="view_type">form</field>
+            <field name="res_model">cci_membership.membership_check</field>
+        </record>
+
+        <menuitem name="Membership Check" parent="base.menu_marketing_config_association" id="menu_cci_membership_check" action="action_cci_membership_check"/>
+
+        <!-- products screens -->
+        <record model="ir.ui.view" id="membership_products_tree">
+            <field name="name">Membership products</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="membership.membership_products_tree"/>
+            <field name="arch" type="xml">
+                <field name="membership_date_to" position="after">
+                    <field name="membership_year"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="membership_products_form">
+            <field name="name">Membership products</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="membership.membership_products_form"/>
+            <field name="arch" type="xml">
+                <field name="list_price" position="before">
+                    <field name="membership_year"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_normal_form_view">
+            <field name="name">Membership product</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="membership.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="membership_date_to" position="after">
+                    <field name="membership_year" readonly="0" attrs="{'required':[('membership','=',True)]}" />
+                </field>
+            </field>
+        </record>
+	</data>
+</openerp>

@@ -1,0 +1,67 @@
+<openerp>
+	<data>
+		<record id="view_fedration_send_form" model="ir.ui.view">
+			<field name="name">wizard.fed.send.form</field>
+			<field name="model">wizard.fed.send</field>
+			<field name="arch" type="xml">
+				<form string="Select Options">
+					<group>
+					    <field name="month"/>
+					    <field name="year"/>
+					</group>
+					<footer>
+						<button name="get_files" string="Get File" type="object" class="oe_highlight"/>
+	                     or
+	                   <button string="End" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_fedration_sending_form" model="ir.actions.act_window">
+            <field name="name">Federation Sending (ATA Carnet)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.fed.send</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_fedration_send_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<record id="view_fedration_send_msg_form" model="ir.ui.view">
+			<field name="name">wizard.fed.send.msg.form</field>
+			<field name="model">wizard.fed.send.msg</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+					<group>
+					    <field name="msg"/>
+						<field name="name" invisible="1"/>
+						<field name="name2" invisible="1"/>
+					    <field name="new_atas" filename="name"/>
+						<field name="finished_atas" filename="name2"/>
+					</group>
+					<footer>
+	                   <button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_fedration_send_msg_form" model="ir.actions.act_window">
+            <field name="name">Notification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.fed.send.msg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_fedration_send_msg_form"/>
+            <field name="target">new</field>
+        </record>
+	
+	<menuitem name="Federation Sending (ATA Carnet)" id="menu_wizard_fed_send"
+			action="action_fedration_sending_form" 
+			parent="menu_mission_configure" />
+
+	</data>
+</openerp>

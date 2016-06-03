@@ -1,0 +1,44 @@
+<openerp>
+	<data>
+	
+		<record id="view_translation_awex_report_form" model="ir.ui.view">
+			<field name="name">translation.awex.report.form</field>
+			<field name="model">translation.awex.report</field>
+			<field name="arch" type="xml">
+				<form string="Awex Report">
+					<group>
+						<group>
+						    <field name="date_from"/>
+						</group>
+						<group>
+						    <field name="date_to"/>
+						</group>
+					</group>	
+					<footer>
+						<button name="open" string="Open Report" type="object" class="oe_highlight"/>
+	                      or
+	                    <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_translation_awex_report" model="ir.actions.act_window">
+            <field name="name">Export Partners for SUMO</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">translation.awex.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_translation_awex_report_form"/>
+            <field name="target">new</field>
+        </record>
+		
+		<menuitem 
+			name="Awex Report" 
+			id="menu_trans_awex_report"
+			action="action_translation_awex_report" 
+			parent="cci_translation.menu_translation_sub_root"
+		/>
+	
+	</data>
+</openerp>

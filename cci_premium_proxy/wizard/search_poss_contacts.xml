@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_search_poss_contacts_form">
+            <field name="name">wizard.search.poss.contacts.form</field>
+            <field name="model">search.poss.contacts</field>
+            <field name="arch" type="xml">
+                <form string="Search on name,mobile,email">
+                    <footer>
+                        <button name="search_poss_contacts" type="object" string="Search"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_search_poss_contacts_action" model="ir.actions.act_window">
+            <field name="name">Search on name,mobile,email</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">search.poss.contacts</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_search_poss_contacts_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_search_poss_contacts_values">
+            <field name="model_id" ref="model_inject_premium_contact"/>
+            <field name="name">Search on name,mobile,email</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_search_poss_contacts_action'))" />
+            <field name="key">action</field>
+            <field name="model">premium_contact</field>
+        </record>
+
+    </data>
+</openerp>

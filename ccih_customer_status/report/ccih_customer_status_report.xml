@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>			
+		<report 
+            string="Customer/Supplier Account Status"
+            id="ccih_customer_stat"
+            model="res.partner"
+            name="ccih_customer_status.ccih_customer"
+            file="ccih_customer_status.ccih_customer" 
+            report_type="qweb-pdf"
+            menu="False"
+        />
+        
+        <template id="external_layout_customer">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <t t-call="ccih_customer_status.external_layout_header_customer"/>
+            <t t-raw="0" />
+            <t t-call="ccih_customer_status.external_layout_footer_customer" />
+        </template>
+        
+        <template id="external_layout_header_customer">
+            <div class="header" style="font-size:17px;">
+                <div class="col-xs-7" style="border-bottom: 2px solid black; padding-left:0px">
+                    <div>CCI HAINAUT</div>
+                    <div>AVE GENERAL MICHEL, 1C</div>
+                    <div>6000 Charleroi - Belgique</div>
+                    <div>Contact : Viviane Descamps - Resp. Comptabilité</div>
+                    <div>Ligne directe : 071/53.28.70</div>
+                    <div>Courriel : viviane.descamps@ccih.be</div>
+                </div>
+            </div>      
+        </template>
+        <template id="external_layout_footer_customer">
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <div class="list-inline">
+                        <h4 class="mt32"> Page: <span class="page"/></h4>
+                    </div>
+                </div>
+            </div>      
+        </template>
+	</data>
+</openerp>

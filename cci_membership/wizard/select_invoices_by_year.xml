@@ -1,0 +1,36 @@
+<openerp>
+	<data>
+		<record id="view_select_invoice_year_form" model="ir.ui.view">
+			<field name="name">select.invoices.by.year.form</field>
+			<field name="model">select.invoices.by.year</field>
+			<field name="arch" type="xml">
+				<form string="Selecting Invoices">
+					<group>
+					    <field name="year"/>
+						<field name="select"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+						or
+						<button string="Go" name="open_window_selected_invoices" class="oe_highlight" type="object" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_select_invoice_year_form" model="ir.actions.act_window">
+            <field name="name">Select Invoices by Year</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">select.invoices.by.year</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_select_invoice_year_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem name="Select Invoices by Year" id="menu_select_invoices_by_year"
+			action="action_select_invoice_year_form" 
+			parent="membership.menu_membership" />
+	</data>
+</openerp>

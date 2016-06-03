@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record forcecreate="True" id="ir_cron_scheduler_recalc_customer_categ" model="ir.cron">
+            <field name="name">Recalculate Customer Category and Turnover</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/><!-- for NOT to relaunch this calculation after a relaunch of the server, because it's very slow in dev environnement and unusefull in prod environnement-->
+            <field eval="'res.partner'" name="model"/>
+            <field eval="'calculate_type_customer'" name="function"/>
+            <field eval="'([311,],[218,],[25,9],[5000,1000,0])'" name="args"/>
+            <field eval="time.strftime('%Y-%m-%d 22:45:00')" name="nextcall"/>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_scheduler_export_simple_members" model="ir.cron">
+            <field name="name">Export Simple Members Excel File</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/><!-- for NOT to relaunch this calculation after a relaunch of the server, because it's very slow in dev environnement and unusefull in prod environnement-->
+            <field eval="'res.partner'" name="model"/>
+            <field eval="'export_members_excel'" name="function"/>
+            <field eval="'(173,True)'" name="args"/>
+            <field eval="time.strftime('%Y-%m-%d 22:00:00')" name="nextcall"/>
+        </record>
+    </data>
+</openerp>

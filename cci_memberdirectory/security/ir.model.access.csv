@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_directory_address_proxy_manager","Directory Address Proxy Manager","cci_memberdirectory.model_directory_address_proxy","group_cci_memberdirectory_manager",1,1,1,1
+"access_directory_job_proxy_manager","Directory Job Proxy Manager","cci_memberdirectory.model_directory_job_proxy","group_cci_memberdirectory_manager",1,1,1,1
+"access_directory_job2delete","Directory Job2Delete Manager","cci_memberdirectory.model_directory_job2delete","group_cci_memberdirectory_manager",1,1,1,1
+"access_directory_complex","Directory Complex Manager","cci_memberdirectory.model_directory_complex","group_cci_memberdirectory_manager",1,1,1,1
+

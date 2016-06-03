@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_memberdirectory_manual_confirm" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.manual.confirm.form</field>
+            <field name="model">cci.memberdirectory.manual.confirm</field>
+            <field name="arch" type="xml">
+				<form string="Résultats">
+					<footer>
+						<button name="manual_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<act_window 
+			id="cci_memberdirectory_manual_confirm"
+            multi="True"
+            key2="client_action_multi" 
+            name="Manual Confirmation"
+            res_model="cci.memberdirectory.manual.confirm" 
+            src_model="directory.address.proxy"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+		
+		<record id="view_cci_memberdirectory_manual_confirm_msg" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.manual.confirm.msg.form</field>
+            <field name="model">cci.memberdirectory.manual.confirm.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+				     <separator string="Résultats" colspan="4"/>
+				     <field name="msg" colspan="4" nolabel="1" width="600"/>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

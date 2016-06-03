@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_membership_range","cci_membership.membership_range","cci_membership_extend.model_cci_membership_membership_range","cci_membership.group_cci_membership_supervisor",1,1,1,1
+"access_membership_used","cci_membership.membership_askedused","cci_membership_extend.model_cci_membership_membership_askedused","cci_membership.group_cci_membership_supervisor",1,1,1,1
+"access_membership_call","cci_membership.membership_call","cci_membership_extend.model_cci_membership_membership_call","cci_membership.group_cci_membership_supervisor",1,1,1,1
+"access_membership_by_partner","cci_membership.membership_by_partner","cci_membership_extend.model_cci_membership_membership_by_partner","cci_membership.group_cci_membership_supervisor",1,1,1,1
+

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <report 
+            string="Control List 1"
+            id="cci_product_control1"
+            model="product.product"
+            name="cci_product_report.cci_product_report_control1"
+            file="cci_product_report.cci_product_report_control1" 
+            report_type="qweb-pdf"
+        />
+
+        <record id="paperformat_cci_product" model="report.paperformat">
+            <field name="name">A4 - Control List</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">18</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">25</field>
+            <field name="dpi">80</field>
+        </record>
+        
+        <record id="cci_product_control1" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="cci_product_report.paperformat_cci_product"/>
+        </record>
+            
+        <template id="external_layout_custom">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <t t-raw="0" />
+            <t t-call="cci_product_report.external_layout_footer_custom" />
+        </template>
+
+        <template id="external_layout_footer_custom">
+            <div class="footer">
+                <div class="row mt4">
+                    <div class="col-xs-6">
+                        <span t-esc="time.strftime('%m/%d/%Y %H:%M:%S')"/>
+                    </div>
+                   
+                    <div class="col-xs-offset-5 col-xs-1">
+                        Page: <span class="page"/>
+                    </div>
+                </div>
+            </div>      
+        </template>
+    </data>
+</openerp>
+

@@ -1,0 +1,156 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* ccih_newsletter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2015-06-19 11:18:18+0000\n"
+"PO-Revision-Date: 2015-06-19 11:18:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ccih_newsletter
+#: wizard_view:ccih_newsletter.extract_emails,getfile:0
+msgid "Fichie créé."
+msgstr "Fichie créé."
+
+#. module: ccih_newsletter
+#: wizard_button:ccih_newsletter.extract_emails,init,getfile:0
+msgid "Get Excel File"
+msgstr "Obtenir le fichier Excel"
+
+#. module: ccih_newsletter
+#: wizard_view:ccih_newsletter.extract_emails,getfile:0
+#: wizard_view:ccih_newsletter.unsubscribe_emails_csv,manage_file:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: ccih_newsletter
+#: wizard_button:ccih_newsletter.unsubscribe_emails_csv,init,manage_file:0
+msgid "Import and Read File"
+msgstr "Importer et traiter le fichier"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,init,explanation:0
+#: wizard_field:ccih_newsletter.unsubscribe_emails_csv,init,explanation:0
+msgid "Source"
+msgstr "Source"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,init,addresses:0
+msgid "Site email"
+msgstr "Email des sièges"
+
+#. module: ccih_newsletter
+#: model:ir.actions.wizard,name:ccih_newsletter.extract_emails
+#: model:ir.ui.menu,name:ccih_newsletter.menu_ccih_newsletter_extract_emails
+msgid "Extract Emails"
+msgstr "Extraires les Mails Newsletter CCIH"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.unsubscribe_emails_csv,manage_file,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,getfile,msg:0
+msgid "Fichier créé"
+msgstr "Fichier créé"
+
+#. module: ccih_newsletter
+#: model:ir.module.module,description:ccih_newsletter.module_meta_information
+msgid "\n"
+"        Module to help the CCIH to manage their newsletter\n"
+"    "
+msgstr "\n"
+"        Module to help the CCIH to manage their newsletter\n"
+"    "
+
+#. module: ccih_newsletter
+#: wizard_view:ccih_newsletter.unsubscribe_emails_csv,manage_file:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.unsubscribe_emails_csv,init,field:0
+msgid "Field to correct"
+msgstr "Champ à corriger"
+
+#. module: ccih_newsletter
+#: selection:ccih_newsletter.unsubscribe_emails_csv,init,field:0
+msgid "Abonnement Alter Ego"
+msgstr "Abonnement Alter Ego"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,getfile,newsletter.xls:0
+msgid "Fichier préparé"
+msgstr "Fichier préparé"
+
+#. module: ccih_newsletter
+#: wizard_button:ccih_newsletter.extract_emails,getfile,end:0
+#: wizard_button:ccih_newsletter.unsubscribe_emails_csv,manage_file,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.unsubscribe_emails_csv,manage_file,unsubscribed.xls:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: ccih_newsletter
+#: selection:ccih_newsletter.unsubscribe_emails_csv,init,field:0
+msgid "Abonnement Revue de Presse"
+msgstr "Abonnement Revue de Presse"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,init,contacts:0
+msgid "Personal email"
+msgstr "Emails personnels"
+
+#. module: ccih_newsletter
+#: wizard_view:ccih_newsletter.extract_emails,init:0
+msgid "Explanations"
+msgstr "Explications"
+
+#. module: ccih_newsletter
+#: wizard_view:ccih_newsletter.unsubscribe_emails_csv,init:0
+msgid "Options"
+msgstr "Options"
+
+#. module: ccih_newsletter
+#: selection:ccih_newsletter.unsubscribe_emails_csv,init,field:0
+msgid "Abonnement Agenda"
+msgstr "Abonnement Agenda"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.extract_emails,init,jobs:0
+msgid "Functional email"
+msgstr "Emails fonctionnels"
+
+#. module: ccih_newsletter
+#: model:ir.module.module,shortdesc:ccih_newsletter.module_meta_information
+msgid "CCIH Newsletter"
+msgstr "CCIH Newsletter"
+
+#. module: ccih_newsletter
+#: wizard_field:ccih_newsletter.unsubscribe_emails_csv,init,input:0
+msgid "Email to exclude file"
+msgstr "Fichier des emails à exclure"
+
+#. module: ccih_newsletter
+#: wizard_button:ccih_newsletter.extract_emails,init,end:0
+#: wizard_button:ccih_newsletter.unsubscribe_emails_csv,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ccih_newsletter
+#: model:ir.actions.wizard,name:ccih_newsletter.unsubscribe_emails_csv
+msgid "Unsubscribe Emails from CSV"
+msgstr "Désinscrire des emails depuis un fichier CSV"
+

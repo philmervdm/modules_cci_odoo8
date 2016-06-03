@@ -1,0 +1,61 @@
+<openerp>
+	<data>
+
+		<record id="view_wizard_compare_paid_multiple_years_msg_form" model="ir.ui.view">
+            <field name="name">wizard.compare.paid2years.msg.form</field>
+            <field name="model">wizard.compare.paid.multiple.years.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+				    <group>
+                        <separator string="File has been created."  colspan="4"/>
+                        <field name="name" invisible="1"/>
+					    <field name="msg" nolabel="1"/>
+                        <field name="compare_paidmembers_xls" filename="name" nolabel="1"/>
+					</group>
+				    <footer>
+	                    <button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_compare_paid_multiple_years_form" model="ir.ui.view">
+			<field name="name">view.compare.paid.multiple.years.form</field>
+			<field name="model">compare.paid.multiple.years</field>
+			<field name="arch" type="xml">
+				<form string="Compare multiple Years of paid Members">
+					<group>
+                        <group>
+                            <field name="first_year"/>
+                        </group>
+                        <group><field name="last_year"/></group>
+                    </group>
+                    <footer>
+                        <button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="create_excel_file" string="Get File" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_compare_paid_multiple_years" model="ir.actions.act_window">
+            <field name="name">Compare multiple Years of paid Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">compare.paid.multiple.years</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_compare_paid_multiple_years_form"/>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem
+            id="menu_compare_paid_multiple_years"
+            name="Compare Multiple Years of paid Members"
+            action="action_compare_paid_multiple_years"
+            parent="base.menu_report_association"
+            sequence="81" />
+                        <!-- parent="membership.menu_reporting" -->
+	</data>
+</openerp>

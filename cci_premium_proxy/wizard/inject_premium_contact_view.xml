@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_inject_premium_contact_form">
+            <field name="name">wizard.inject.premium.contact.form</field>
+            <field name="model">inject.premium.contact</field>
+            <field name="arch" type="xml">
+                <form string="Inject Contact">
+                    <group>
+						<field name="contact_id"/>
+						<label string="If you give a contact, the values will be injected in that contact record" colspan="4"/>\
+						<label string="If you let this field empty, you confirm we MUST create a new contact if we found no correspondance !" colspan="4"/>
+                    </group>
+                    <footer>
+                        <button name="inject_contact" type="object" string="Inject"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_inject_premium_contact_action" model="ir.actions.act_window">
+            <field name="name">Inject in Contacts / Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inject.premium.contact</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_inject_premium_contact_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_inject_premium_contact_action_values">
+            <field name="model_id" ref="model_inject_premium_contact"/>
+            <field name="name">Inject Contact</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_inject_premium_contact_action'))" />
+            <field name="key">action</field>
+            <field name="model">premium_contact</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_inject_premium_contact_msg_form">
+            <field name="name">wizard.inject.premium.contact.msg.form</field>
+            <field name="model">inject.premium.contact.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+						<separator string="Injection results" colspan="4"/>
+						<field name="msg"/>
+                    </group>
+                    <footer>
+                        <button string="Ok" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+	
+    </data>
+</openerp>

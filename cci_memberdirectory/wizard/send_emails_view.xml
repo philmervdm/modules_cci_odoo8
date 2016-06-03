@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_memberdirectory_send_email" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.send.email.form</field>
+            <field name="model">cci.memberdirectory.send.email</field>
+            <field name="arch" type="xml">
+				<form string="Send Emails for Directory's Update">
+					<group>
+					    <field name="year"/>
+					    <field name="from"/>
+					    <field name="title"/>
+					    <field name="type"/>
+					</group>
+					<footer>
+						<button name="send_emails" string="Send" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_memberdirectory_send_email" model="ir.actions.act_window">
+             <field name="name">Send Emails for Directory's Update</field>
+             <field name="res_model">cci.memberdirectory.send.email</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_cci_memberdirectory_send_email"/>
+             <field name="context">{}</field>
+             <field name="target">new</field>
+       </record>
+
+       <menuitem
+            icon="STOCK_EXECUTE"
+            name="Send Emails for Directory's Update"
+            action="action_cci_memberdirectory_create_prospection"
+            id="menu_create_mdir_prospection"
+            parent="menu_members_directory"/>
+        
+        
+       <record id="view_cci_memberdirectory_send_email_msg" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.send.email.msg.form</field>
+            <field name="model">cci.memberdirectory.send.email.msg</field>
+            <field name="arch" type="xml">
+				<form string="Results">
+					<group>
+					    <field name="results" />
+					</group>
+					<footer>
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+	<template id="ccih_customer">
+		<t t-call="report.html_container">
+			<t t-call="ccih_customer_status.external_layout_customer">
+				<div class="page">
+					<div class="oe_structure"/>
+					<style>
+						.table_border{width:100%; padding: 5px; border: 1px solid black;border-collapse: collapse;}
+						.table_border tr td{border:1px solid black; padding:5px;}
+						pre.pre_body{background-color:inherit;border:none; font-size:15px;} 
+					</style>
+					<div class="row">
+						<div class="col-xs-offset-7 col-xs-5">
+							<pre class="pre_body"><p t-esc="get_customer_coordinates(data['form'])"/></pre>
+						</div>
+					</div>
+					<div>Date: <span t-esc="time.strftime('%d/%m/%Y')"/></div>
+					<pre class="pre_body text-center">
+						<h1><strong><p t-esc="get_title(data['form'])"/></strong></h1>
+					</pre>
+					<div>Chère Madame, Cher Monsieur,</div>
+					<div class="mt16">Sauf erreur de notre part, il semble que les factures suivantes demeurent impayées. Nous vous prions de prendre les mesures nécessaires afin de procéder au règlement sous huitaine.</div>
+					<div class="mt16">Would your payment have been carried out after this mail was sent, please consider the present one as void. Do not hesitate to contact our accounting department.</div>
+					<div class="mt16">Nous vous prions d'agréer, Madame, Monsieur, l'expression de nos sentiments distingués.</div>
+					<table class="table_border mt32">
+						<tr>
+							<td>Mouvement</td>
+							<td>Journal</td>
+							<td>Date</td>
+							<td>Période</td>
+							<td class="text-right">Débit</td>
+							<td class="text-right">Crédit</td>
+							<td>Lettrage</td>
+						</tr>
+
+						<tr t-foreach="get_lines(data['form'])" t-as="line">
+							<td><span t-esc="line['move_name']"/></td>
+							<td><span t-esc="line['journal']"/></td>
+							<td><span t-esc="line['date']"/></td>
+							<td><span t-esc="line['period']"/></td>
+							<td class="text-right"><span t-esc="line['debit']"/></td>
+							<td class="text-right"><span t-esc="line['credit']"/></td>
+							<td><span t-esc="line['reconcile']"/></td>
+						</tr>
+						<tr>
+							<td colspan="4">Totaux</td>
+							<td class="text-right"><span t-esc="sum_debit(data['form'])"/></td>
+							<td class="text-right"><span t-esc="sum_credit(data['form'])"/></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="4">Solde</td>
+							<td class="text-right"><span t-esc="balance(data['form'])"/></td>
+							<td class="text-right"></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</t>
+		</t>
+	</template>
+</data>
+</openerp>

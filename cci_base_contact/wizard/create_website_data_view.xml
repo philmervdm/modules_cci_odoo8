@@ -1,0 +1,58 @@
+<openerp>
+	<data>
+			
+		<record id="view_create_website_data_form" model="ir.ui.view">
+            <field name="name">create.website.data.form</field>
+            <field name="model">create.website.data</field>
+            <field name="arch" type="xml">
+				<form string="Create Website Data">
+					<group>
+					    <field name="send_email" />
+					    <field name="from_email" />
+					    <field name="perso_message" />
+					</group>
+					<footer>
+						<button name="create_data" string="Create Invoices" type="object" class="oe_highlight"/>
+	                    or
+	                    <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_create_website_data" model="ir.actions.act_window">
+            <field name="name">Create Login-PW-Token</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">create.website.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_create_website_data_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_create_website_data_values">
+            <field name="model_id" ref="model_res_partner" />
+            <field name="name">Create Login-PW-Token</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_create_website_data'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+		
+		<record id="view_create_website_message_form" model="ir.ui.view">
+            <field name="name">create.website.message.form</field>
+            <field name="model">create.website.message</field>
+            <field name="arch" type="xml">
+				<form string="Result">
+					<group>
+					    <field name="message" nolabel="1"/>
+					</group>
+				    <footer>
+	                    <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+			
+	</data>
+</openerp>

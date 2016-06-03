@@ -1,0 +1,38 @@
+<openerp>
+	<data>
+		<record id="view_extract_nonstandard_amounts_form" model="ir.ui.view">
+			<field name="name">extract.nonstandard.amounts.form</field>
+			<field name="model">extract.nonstandard.amounts</field>
+			<field name="arch" type="xml">
+				<form string="Extract Non-Standard Amounts">
+					<group>
+					<field name="year"/>
+                           <field name="only_members"/>
+                           <label string="Extraction of partners with an asked membership different of the amount given by ranges." colspan="2" width="300"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_extract_nonstandard_amounts_form" model="ir.actions.act_window">
+            <field name="name">Extract Non-Standard Amounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.nonstandard.amounts</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_nonstandard_amounts_form"/>
+            <field name="target">new</field>
+        </record>
+
+	    <menuitem name="Extract Non-Standard Membership" id="menu_nonstandard_amounts"
+			action="action_extract_nonstandard_amounts_form" 
+			parent="menu_membership_control" 
+            sequence="15" />
+	</data>
+</openerp>

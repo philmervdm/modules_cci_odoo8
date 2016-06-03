@@ -1,0 +1,59 @@
+<openerp>
+	<data>
+		
+		<record id="part_email_form" model="ir.ui.view">
+			<field name="name">part.email.form</field>
+			<field name="model">part.email</field>
+			<field name="arch" type="xml">
+				<form string="Mass Mailing">
+					<group>
+				        <field name="email_from" />
+				        <field name="subject" />
+				        <field name="text" />
+				        <field name="event" />
+					</group>
+					<footer>
+						<button name="mass_mail_send" string="Send Email" type="object" class="oe_highlight"/>
+                      	or
+                     	<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_part_email" model="ir.actions.act_window">
+            <field name="name">Mass Mailing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">part.email</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="part_email_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_cci_event_history_values">
+            <field name="model_id" ref="model_res_partner" />
+            <field name="name">Mass Mailing</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_part_email'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+        
+        <record id="part_email_nbr_form" model="ir.ui.view">
+			<field name="name">part.email.nbr.form</field>
+			<field name="model">part.email.nbr</field>
+			<field name="arch" type="xml">
+				<form string="Mass Mailing">
+					<group>
+				        <field name="nbr"/>
+					</group>
+					<footer>
+                     	<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

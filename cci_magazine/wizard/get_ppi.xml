@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_get_ppi_form">
+            <field name="name">wizard.get.ppi.form</field>
+            <field name="model">wizard.get.ppi</field>
+            <field name="arch" type="xml">
+                <form string="Get PPI (Personalised Sendings File)">
+					<group>
+						<field name="method"/>
+						<field name="prospect_limit"/>
+						<label string="-1 = no prospect; 0 = same prospects as last month; number = max size of the final file"/>
+					</group>
+
+                    <footer>
+                        <button string="End" class="oe_link" special="cancel"/>
+                        or
+                        <button name="extract_file" type="object" string="Extract"  class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_get_ppi_action" model="ir.actions.act_window">
+            <field name="name">Get PPI</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.get.ppi</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_get_ppi_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+    
+	<menuitem name="Get Personalised sendings file" id="menu_main_get_ppi"
+			parent="base.postal_subscriber_root"
+            sequence="10"
+            groups="group_cci_magazine_user"/>
+
+	<menuitem name="Get Personalised sendings file" id="menu_get_ppi"
+			action="wizard_get_ppi_action" 
+			parent="menu_main_get_ppi"
+            sequence="10"
+            groups="group_cci_magazine_user"/>
+
+	<record model="ir.ui.view" id="wizard_get_ppi_msg_form">
+            <field name="name">wizard.get.ppi.msg.form</field>
+            <field name="model">wizard.get.ppi.msg</field>
+            <field name="arch" type="xml">
+                <form string="File prepared">
+                    <group>
+						<field name="name" invisible="1"/>
+						<field name="msg"/>
+						<field name="ppi" fielname="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+</data>
+</openerp>

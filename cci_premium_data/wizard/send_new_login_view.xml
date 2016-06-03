@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_send_new_login_form">
+            <field name="name">wizard.send.new.login.form</field>
+            <field name="model">send.new.login</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+						<field name="template"/>
+						<field name="forced"/>
+						<field name="email_from"/>
+                    </group>
+                    <footer>
+                        <button name="send_mails" type="object" string="Send Mails"  class="oe_highlight"/>
+                        or
+                        <button string="End" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_send_new_login_action" model="ir.actions.act_window">
+            <field name="name">Send Premium New Login</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">send.new.login</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_premium_data.wizard_send_new_login_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_send_new_login_form_action_values">
+            <field name="model_id" ref="cci_premium_data.model_send_new_login"/>
+            <field name="name">Send Premium New Login</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('cci_premium_data.wizard_send_new_login_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_send_new_login_msg_form">
+            <field name="name">wizard.send.new.login.msg.form</field>
+            <field name="model">send.new.login.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+						<field name="msg"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

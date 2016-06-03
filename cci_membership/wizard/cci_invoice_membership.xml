@@ -1,0 +1,40 @@
+<openerp>
+	<data>
+		<record id="view_cci_invoice_membership_form" model="ir.ui.view">
+			<field name="name">wizard.invoice.membership.form</field>
+			<field name="model">wizard.invoice.membership</field>
+			<field name="arch" type="xml">
+				<form string="Choose invoice Detail">
+					<group>
+					    <field name="product"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="invoice_membership" string="Confirm" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_cci_invoice_membership_form" model="ir.actions.act_window">
+            <field name="name">Invoice Membership</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.invoice.membership</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cci_invoice_membership_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_cci_invoice_membership_values">
+            <field name="model_id" ref="model_wizard_invoice_membership"/>
+            <field name="name">Invoice Membership</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_cci_invoice_membership_form'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>	
+	</data>
+</openerp>

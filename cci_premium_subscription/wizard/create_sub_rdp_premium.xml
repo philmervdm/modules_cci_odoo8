@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_create_subscription_rdp_from_premium_form">
+            <field name="name">wizard.create.subscription.rdp.premium</field>
+            <field name="model">wizard.create.subscription.rdp.from.premium</field>
+            <field name="arch" type="xml">
+                <form string="Create Revue de Presse Subscription">
+                    <group>
+						<field name="contact_id" domain="[('is_premium','=','OUI')]"/>
+						<field name="product_id" domain="[('premium_subscription_type_id','!=',False)]"/>
+						<field name="duration"/>
+                    </group>
+                    <footer>
+                        <button name="second_form" type="object" string="Continue"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+		 <record id="wizard_create_subscription_rdp_premium_action" model="ir.actions.act_window">
+	            <field name="name">Create Revue de Presse Subscription</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">wizard.create.subscription.rdp.from.premium</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_id" ref="wizard_create_subscription_rdp_from_premium_form"/>
+	            <field name="context">{}</field>
+	            <field name="target">new</field>
+	        </record>
+        
+        <record model="ir.values" id="wizard_create_subscription_rdp_premium_action_values">
+            <field name="model_id" ref="model_wizard_create_subscription_rdp_from_premium"/>
+            <field name="name">Create Revue de Presse Subscription</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_subscription_rdp_premium_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_create_subscription_rdp2_from_premium_form">
+            <field name="name">wizard.create.subscription.rdp2.premium</field>
+            <field name="model">wizard.create.subscription.rdp2.from.premium</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+						<group>
+							<field name="begin_date"/>
+							<field name="partner_id"/>
+						</group>
+						<group>
+							<field name="email"/>
+							<field name="auto_invoice"/>
+						</group>
+                    </group>
+                    <footer>
+                        <button name="create_data" type="object" string="Subscribe"  class="oe_highlight"/>
+                        or
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 	<record id="wizard_create_subscription_rdp2_premium_action" model="ir.actions.act_window">
+            <field name="name">Options</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.subscription.rdp2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_create_subscription_rdp2_from_premium_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_create_subscription_premium_msg_form">
+            <field name="name">wizard.create.subscription.premium.msg.form</field>
+            <field name="model">wizard.create.subscription.premium.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+						<group string="Created Record(s)">
+							<field name="msg" nolabel="1"/>
+						</group>
+                    <footer>
+                        <button name="open_window_subscription" type="object" string="Show Subscription"  class="oe_highlight"/>
+						<button name="open_window_invoice"  type="object" string="Show Invoice" invisible="not context.get('auto_inv',False)"  class="oe_highlight"/>
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 	<record id="wizard_create_subscription_msg_premium_action" model="ir.actions.act_window">
+            <field name="name">Notification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.subscription.premium.msg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_create_subscription_premium_msg_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

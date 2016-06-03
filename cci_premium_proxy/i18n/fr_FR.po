@@ -1,0 +1,1388 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_premium_proxy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2014-04-02 14:35:36+0000\n"
+"PO-Revision-Date: 2014-04-02 14:35:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,injection_type:0
+#: selection:premium_contact,injection_type:0
+msgid "Forced"
+msgstr "Forcée"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,nighter:0
+msgid "Sorteur en soirée"
+msgstr "Sorteur en soirée"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_thu_evening:0
+msgid "Dispo activ. jeudi soir"
+msgstr "Dispo activ. jeudi soir"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_mon_evening:0
+msgid "Dispo activ. lundi soir"
+msgstr "Dispo activ. lundi soir"
+
+#. module: cci_premium_proxy
+#: field:premium_company,inde_statut:0
+msgid "Independent Statut"
+msgstr "Independent Statut"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_arrival:0
+msgid "Repris une entreprise"
+msgstr "Repris une entreprise"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sun_evening:0
+msgid "Dispo activ. dimanche soir"
+msgstr "Dispo activ. dimanche soir"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,tablet_press:0
+msgid "Lit infos sur tablette"
+msgstr "Lit infos sur tablette"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_zoning:0
+msgid "Zoning"
+msgstr "Zoning"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,injection_type:0
+#: selection:premium_contact,injection_type:0
+msgid "Updated"
+msgstr "Mise à jour"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,mot_passe:0
+msgid "Mot de passe"
+msgstr "Mot de passe"
+
+#. module: cci_premium_proxy
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Dimanche"
+msgstr "Dimanche"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_type:0
+msgid "Patron propriétaire"
+msgstr "Patron propriétaire"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,pay_creditcard:0
+msgid "Utilise carte de crédit"
+msgstr "Utilise carte de crédit"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sat_evening:0
+msgid "Dispo activ. samedi soir"
+msgstr "Dispo activ. samedi soir"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,last_name:0
+msgid "Nom"
+msgstr "Nom"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,decision_level:0
+msgid "Direction"
+msgstr "Direction"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_thu_lunch:0
+msgid "Dispo activ. jeudi midi"
+msgstr "Dispo activ. jeudi midi"
+
+#. module: cci_premium_proxy
+#: field:premium_company,crowdfund:0
+msgid "Crowdfunding"
+msgstr "Crowdfunding"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_type:0
+msgid "Patron associé"
+msgstr "Patron associé"
+
+#. module: cci_premium_proxy
+#: field:premium_company,invest:0
+msgid "Présence Invest"
+msgstr "Présence Invest"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Activity Sectors"
+msgstr "Secteurs activité"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_18_20:0
+msgid "Dispo Conférence 18h-20h"
+msgstr "Dispo Conférence 18h-20h"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_company,inject:0
+#: wizard_view:wizard_inject_premium_contact,inject:0
+msgid "Notification"
+msgstr "Notification"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Premium Form Company"
+msgstr "Données Entreprise Premium"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Small tags"
+msgstr "Petites infos"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,price_event:0
+msgid "Type prix pour events"
+msgstr "Type prix pour events"
+
+#. module: cci_premium_proxy
+#: field:premium_company,web:0
+msgid "Dépt. Web"
+msgstr "Dépt. Web"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,eleccar:0
+msgid "Voiture écolo"
+msgstr "Voiture écolo"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,shareholder:0
+msgid "4"
+msgstr "4"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,email:0
+msgid "Email personnel"
+msgstr "Email personnel"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,inde_statut:0
+msgid "Société de management"
+msgstr "Société de management"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_fb:0
+#: selection:premium_contact,freq_li:0
+#: selection:premium_contact,freq_tw:0
+msgid "1x/jour"
+msgstr "1x/jour"
+
+#. module: cci_premium_proxy
+#: field:premium_company,company_name:0
+msgid "Company Name"
+msgstr "Company Name"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "250-499"
+msgstr "250-499"
+
+#. module: cci_premium_proxy
+#: wizard_button:wizard_inject_premium_company,inject,end:0
+#: wizard_button:wizard_inject_premium_contact,inject,end:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: cci_premium_proxy
+#: field:premium_company,administration:0
+msgid "Dépt. Administration"
+msgstr "Dépt. Administration"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "20-49"
+msgstr "20-49"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,mobile:0
+msgid "Mobile"
+msgstr "GSM"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.act_window,name:cci_premium_proxy.action_premium_contact_2manage
+msgid "Premium Contact Form To Manage"
+msgstr "Données Contact Premium à traiter"
+
+#. module: cci_premium_proxy
+#: field:premium_company,title:0
+msgid "Full Title"
+msgstr "Titre complet"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_fri_evening:0
+msgid "Dispo activ. vendredi soir"
+msgstr "Dispo activ. vendredi soir"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sun_morning:0
+msgid "Dispo activ. dimanche matin"
+msgstr "Dispo activ. dimanche matin"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_network:0
+msgid "2 à 3 x/an"
+msgstr "2 à 3 x/an"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_bni:0
+msgid "BNI"
+msgstr "BNI"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.act_window,name:cci_premium_proxy.action_premium_company
+msgid "Premium Company Form"
+msgstr "Données Entreprise Premium"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Soir----------------------------------------"
+msgstr "Soir----------------------------------------"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,freq_li:0
+msgid "Fréquence LinkedIN"
+msgstr "Fréquence LinkedIN"
+
+#. module: cci_premium_proxy
+#: field:premium_company,company_status:0
+msgid "Forme juridique"
+msgstr "Forme juridique"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,interests:0
+msgid "Interests/Hobbies"
+msgstr "Intérêts/Hobbies"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.wizard,name:cci_premium_proxy.wizard_search_poss_contacts
+msgid "Search on name, mobile or email"
+msgstr "Recherche sur nom, GSM ou email"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,size_100:0
+msgid "+100 personnes"
+msgstr "+100 personnes"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,price_event:0
+msgid "A la carte"
+msgstr "A la carte"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Networking activities"
+msgstr "Activités de Networking"
+
+#. module: cci_premium_proxy
+#: field:premium_company,others_name:0
+msgid "Autre département"
+msgstr "Autre département"
+
+#. module: cci_premium_proxy
+#: field:premium_company,technical:0
+msgid "Dépt. Technique"
+msgstr "Dépt. Technique"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_sc:0
+msgid "Service Club"
+msgstr "Service Club"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,invit_network:0
+msgid "Invit seulement par R.S"
+msgstr "Invit seulement par R.S"
+
+#. module: cci_premium_proxy
+#: field:premium_company,communication:0
+msgid "Dépt. Communication"
+msgstr "Dépt. Communication"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_other:0
+msgid "Autre"
+msgstr "Autre club"
+
+#. module: cci_premium_proxy
+#: field:premium_company,r_d:0
+msgid "Dépt. R&D"
+msgstr "Dépt. R&D"
+
+#. module: cci_premium_proxy
+#: model:ir.ui.menu,name:cci_premium_proxy.menu_premium_forms
+msgid "Premium's Forms"
+msgstr "Données Formulaire Premium"
+
+#. module: cci_premium_proxy
+#: model:ir.ui.menu,name:cci_premium_proxy.menu_premium_company
+msgid "Premium's Company Form"
+msgstr "Données Entreprise Premium"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_apm:0
+msgid "APM"
+msgstr "APM"
+
+#. module: cci_premium_proxy
+#: field:premium_company,partner_id:0
+#: wizard_field:wizard_inject_premium_company,init,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,smart_info:0
+msgid "Lit infos sur SamrtPhone"
+msgstr "Lit infos sur SmartPhone"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,invit_post:0
+msgid "Invitation postale"
+msgstr "Invitation postale"
+
+#. module: cci_premium_proxy
+#: wizard_button:wizard_inject_premium_company,init,inject:0
+#: wizard_button:wizard_inject_premium_contact,init,inject:0
+msgid "Inject"
+msgstr "Injecter"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,network_dinner:0
+msgid "Dispo networking diner"
+msgstr "Dispo networking diner"
+
+#. module: cci_premium_proxy
+#: field:premium_company,invest_formation:0
+msgid "Invest in formation"
+msgstr "Investit dans la formation"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,networker:0
+msgid "Networking"
+msgstr "Networking"
+
+#. module: cci_premium_proxy
+#: field:premium_company,hr:0
+msgid "Dépt. RH"
+msgstr "Dépt. RH"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,inde_statut:0
+msgid "Personne Physique"
+msgstr "Personne Physique"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,buy_from:0
+msgid "Tiers"
+msgstr "Tiers"
+
+#. module: cci_premium_proxy
+#: field:premium_company,person_statut:0
+msgid "Personal Status"
+msgstr "Status Personel"
+
+#. module: cci_premium_proxy
+#: model:ir.model,name:cci_premium_proxy.model_premium_company
+msgid "Données sur les sociétés liées à un contact premium"
+msgstr "Données sur les sociétés liées à un Contact Premium"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_other_names:0
+msgid "Autres - Noms"
+msgstr "Autres clubs - Noms"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_company,init:0
+msgid "If you give an partner and an address, the premium data will be injected to theses records"
+msgstr "Si vous donnez un partenaire et une adresse, les données du formulaire Premium seront injectées dans ces fiches existantes."
+
+#. module: cci_premium_proxy
+#: field:premium_company,purchase:0
+msgid "Dépt. Achats"
+msgstr "Dépt. Achats"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,freq_fb:0
+msgid "Fréquence Facebook"
+msgstr "Fréquence Facebook"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Job Description"
+msgstr "Description Fonction"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,children:0
+msgid "Enfants à la maison"
+msgstr "Enfants à la maison"
+
+#. module: cci_premium_proxy
+#: field:premium_company,steering:0
+msgid "Membre du comité de direction"
+msgstr "Membre du comité de direction"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,network_morning:0
+msgid "Dispo networking matin"
+msgstr "Dispo networking matin"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_new:0
+msgid "NEW"
+msgstr "NEW"
+
+#. module: cci_premium_proxy
+#: field:premium_company,employee:0
+#: selection:premium_company,person_statut:0
+msgid "Employee"
+msgstr "Employés"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,first_name:0
+msgid "Prénom"
+msgstr "Prénom"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,person_statut:0
+msgid "En Recherche d'emploi"
+msgstr "En Recherche d'emploi"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,sex:0
+msgid "Monsieur"
+msgstr "Monsieur"
+
+#. module: cci_premium_proxy
+#: field:premium_company,zoning:0
+msgid "In Zoning"
+msgstr "Dans un Zoning"
+
+#. module: cci_premium_proxy
+#: field:premium_company,commercial:0
+msgid "Dépt. Commercial"
+msgstr "Dépt. Commercial"
+
+#. module: cci_premium_proxy
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer avec x_ et ne pas contenir de charactères spéciaux !"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_tue_evening:0
+msgid "Dispo activ. mardi soir"
+msgstr "Dispo activ. mardi soir"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Working address"
+msgstr "Adresse de travail"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_10_12:0
+msgid "Dispo Conférence 10h-12h"
+msgstr "Dispo Conférence 10h-12h"
+
+#. module: cci_premium_proxy
+#: field:premium_company,security:0
+msgid "Dépt. Sécurité"
+msgstr "Dépt. Sécurité"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_network:0
+msgid "1 ou 2 x/trim"
+msgstr "1 ou 2 x/trim"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,shareholder:0
+msgid "3"
+msgstr "3"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,fb:0
+msgid "Facebook"
+msgstr "Facebook"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,invit_mail:0
+msgid "Invit seulement par courriel"
+msgstr "Invit seulement par email"
+
+#. module: cci_premium_proxy
+#: field:premium_company,check_formation:0
+msgid "Can Use Checks Formation"
+msgstr "Peut utiliser des chèques formations"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,buy_from:0
+msgid "Membre de la famille"
+msgstr "Membre de la famille"
+
+#. module: cci_premium_proxy
+#: field:premium_company,prio_formation:0
+msgid "Priority to formation"
+msgstr "Priorité à la formation"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,buy_from:0
+msgid "Ancien patron"
+msgstr "Ancien patron"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Lundi"
+msgstr "Lundi"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,price_event:0
+msgid "All-In"
+msgstr "All-In"
+
+#. module: cci_premium_proxy
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour l'architecture de la vue"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Function"
+msgstr "Fonction"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_wed_evening:0
+msgid "Dispo activ. mercredi soir"
+msgstr "Dispo activ. mercredi soir"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,injection_type:0
+#: selection:premium_contact,injection_type:0
+msgid "Created"
+msgstr "Créé"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_network:0
+msgid "1 x/sem"
+msgstr "1 x/sem"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "50-99"
+msgstr "50-99"
+
+#. module: cci_premium_proxy
+#: field:premium_company,shareholder:0
+msgid "Nbre actionnaires"
+msgstr "Nbre actionnaires"
+
+#. module: cci_premium_proxy
+#: model:ir.model,name:cci_premium_proxy.model_premium_contact
+msgid "Données personnelles de formulaires premium"
+msgstr "Données personnelles de formulaires premium"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_tue_lunch:0
+msgid "Dispo activ. mardi midi"
+msgstr "Dispo activ. mardi midi"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,decision_level:0
+msgid "Cadre"
+msgstr "Cadre"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,contact_id:0
+#: wizard_field:wizard_inject_premium_contact,init,contact_id:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: cci_premium_proxy
+#: field:premium_company,energy:0
+msgid "Dépt. Energie et Environ"
+msgstr "Dépt. Energie et Environ"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "6-9"
+msgstr "6-9"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "500+"
+msgstr "500+"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_mon_morning:0
+msgid "Dispo activ. lundi matin"
+msgstr "Dispo activ. lundi matin"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,name:0
+msgid "Full Name"
+msgstr "Nom complet"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_14_16:0
+msgid "Dispo Conférence 14h-16h"
+msgstr "Dispo Conférence 14h-16h"
+
+#. module: cci_premium_proxy
+#: field:premium_company,injection_type:0
+#: field:premium_contact,injection_type:0
+msgid "Injection Type"
+msgstr "Type d'injection"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Mardi"
+msgstr "Mardi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_wed_lunch:0
+msgid "Dispo activ. mercredi midi"
+msgstr "Dispo activ. mercredi midi"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,state:0
+msgid "Partial"
+msgstr "Partiel"
+
+#. module: cci_premium_proxy
+#: field:premium_company,export:0
+msgid "Dépt. Export"
+msgstr "Dépt. Export"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Midi----------------------------------------"
+msgstr "Midi----------------------------------------"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,inde_statut:0
+msgid "Profession libérale"
+msgstr "Profession libérale"
+
+#. module: cci_premium_proxy
+#: field:premium_company,zip_name:0
+#: field:premium_company,zip_name_work:0
+msgid "Zip Name"
+msgstr "Localité"
+
+#. module: cci_premium_proxy
+#: field:premium_company,production:0
+msgid "Dépt. Production"
+msgstr "Dépt. Production"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.wizard,name:cci_premium_proxy.wizard_view_companies
+msgid "View Companies"
+msgstr "Voir les Entreprises"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,smartphone:0
+msgid "Possède Smartphone"
+msgstr "Possède Smartphone"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_type:0
+msgid "Patron majoritaire"
+msgstr "Patron majoritaire"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,person_statut:0
+msgid "Etudiant"
+msgstr "Etudiant"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,size_50100:0
+msgid "entre 50 et 100 personnes"
+msgstr "entre 50 et 100 personnes"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_9_11:0
+msgid "Dispo Conférence 9h-11h"
+msgstr "Dispo Conférence 9h-11h"
+
+#. module: cci_premium_proxy
+#: field:premium_company,finance:0
+msgid "Dépt. Finances"
+msgstr "Dépt. Finances"
+
+#. module: cci_premium_proxy
+#: field:premium_company,decision_level:0
+msgid "Niveau de décision"
+msgstr "Niveau de décision"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Samedi"
+msgstr "Samedi"
+
+#. module: cci_premium_proxy
+#: field:premium_company,zip_city:0
+msgid "Zip City"
+msgstr "Code postal"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,use_language:0
+msgid "Utilise des langues étrangères"
+msgstr "Utilise des langues étrangères"
+
+#. module: cci_premium_proxy
+#: field:premium_company,projects:0
+msgid "Dépt. Projets"
+msgstr "Dépt. Projets"
+
+#. module: cci_premium_proxy
+#: model:ir.ui.menu,name:cci_premium_proxy.menu_premium_contact_2manage
+msgid "Premium's Personal Form to Manage"
+msgstr "Données des Contacts Premium à traiter"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_ypowpo:0
+msgid "YPO/WPO"
+msgstr "YPO/WPO"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,owner:0
+msgid "Actionnaire ou propriétaire autres sociétés"
+msgstr "Actionnaire ou propriétaire autres sociétés"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,state:0
+#: selection:premium_contact,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,inde_statut:0
+msgid "Dirigeant d'entreprise"
+msgstr "Dirigeant d'entreprise"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_12_14:0
+msgid "Dispo Conférence 12h-14h"
+msgstr "Dispo Conférence 12h-14h"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,size_2550:0
+msgid "entre 25 et 50 personnes"
+msgstr "entre 25 et 50 personnes"
+
+#. module: cci_premium_proxy
+#: model:ir.module.module,shortdesc:cci_premium_proxy.module_meta_information
+msgid "CCI Premium Proxy"
+msgstr "CCI Premium Proxy"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_fri_lunch:0
+msgid "Dispo activ. vendredi midi"
+msgstr "Dispo activ. vendredi midi"
+
+#. module: cci_premium_proxy
+#: field:premium_company,premium_contact_id:0
+msgid "Premium Contact"
+msgstr "Contact Premium"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,check_formation:0
+msgid "OUI"
+msgstr "OUI"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,sex:0
+msgid "Sexe"
+msgstr "Sexe"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,network_night:0
+msgid "Dispo networking soirée"
+msgstr "Dispo networking soirée"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,birthdate:0
+msgid "Date Naissance"
+msgstr "Date Naissance"
+
+#. module: cci_premium_proxy
+#: field:premium_company,international:0
+msgid "Work Internationaly"
+msgstr "Travaille internationalement"
+
+#. module: cci_premium_proxy
+#: field:premium_company,phone:0
+msgid "Phone"
+msgstr "Tél."
+
+#. module: cci_premium_proxy
+#: selection:premium_company,shareholder:0
+msgid "2"
+msgstr "2"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_fce:0
+msgid "FCE"
+msgstr "FCE"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Best timing for seminaries or conferences"
+msgstr "Meilluer timing pour séminaires et conférences"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_contact,init:0
+msgid "If you let this field empty, you confirm we MUST create a new contact if we found no correspondance !"
+msgstr "Si vous laissez vide ce champ, vous confirmez qu'il FAUT créer un nouveau contact si aucune correspondance de nom n'est trouvée !"
+
+#. module: cci_premium_proxy
+#: field:premium_company,sector1:0
+msgid "Sector1"
+msgstr "Secteur 1"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Premium Form Contact"
+msgstr "Données Contact Premium"
+
+#. module: cci_premium_proxy
+#: field:premium_company,main_dir_type:0
+msgid "Direction générale"
+msgstr "Direction générale"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Social Networks"
+msgstr "Réseaux sociaux"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,freq_tw:0
+msgid "Fréquence Twitter"
+msgstr "Fréquence Twitter"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.wizard,name:cci_premium_proxy.wizard_inject_premium_company
+msgid "Inject in Partners"
+msgstr "Injecter dans Partenaires"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,size_25:0
+msgid "-25 personnes"
+msgstr "-25 personnes"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "2-5"
+msgstr "2-5"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Business Clubs"
+msgstr "Business Clubs"
+
+#. module: cci_premium_proxy
+#: field:premium_company,job_id:0
+msgid "Fonction"
+msgstr "Fonction"
+
+#. module: cci_premium_proxy
+#: field:premium_company,investor:0
+msgid "Présence investisseur ou Business Angel"
+msgstr "Présence investisseur ou Business Angel"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,premium_company_ids:0
+msgid "Companies"
+msgstr "Companies"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,sex:0
+msgid "Madame"
+msgstr "Madame"
+
+#. module: cci_premium_proxy
+#: field:premium_company,active:0
+#: field:premium_contact,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: cci_premium_proxy
+#: field:premium_company,buy_from:0
+msgid "Acquise auprès de"
+msgstr "Acquise auprès de"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_company,inject:0
+#: wizard_view:wizard_inject_premium_contact,inject:0
+msgid "Injection results"
+msgstr "Résultats de l'injection"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Jeudi"
+msgstr "Jeudi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,want_invest:0
+msgid "Investisseur déjà ou désireux"
+msgstr "Investisseur déjà ou désireux"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_tue_morning:0
+msgid "Dispo activ. mardi matin"
+msgstr "Dispo activ. mardi matin"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,network_lunch:0
+msgid "Dispo networking midi"
+msgstr "Dispo networking midi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,tablet:0
+msgid "Tablette"
+msgstr "Tablette"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_fri_morning:0
+msgid "Dispo activ. vendredi matin"
+msgstr "Dispo activ. vendredi matin"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Disponibilities for CCI Activitites"
+msgstr "Disponibilités pour des Activitités CCI"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.wizard,name:cci_premium_proxy.wizard_inject_premium_contact
+msgid "Inject in Contacts/Partners"
+msgstr "Injecter dans Contacts/Partenaires"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_golf:0
+msgid "Golf"
+msgstr "Golf"
+
+#. module: cci_premium_proxy
+#: field:premium_company,main_dir_year:0
+msgid "Année arrivée"
+msgstr "Année arrivée"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_type:0
+msgid "Numéro 1"
+msgstr "Numéro 1"
+
+#. module: cci_premium_proxy
+#: field:premium_company,company_num:0
+msgid "Company Num"
+msgstr "Numéro entreprise"
+
+#. module: cci_premium_proxy
+#: field:premium_company,importance:0
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,conf_8_10:0
+msgid "Dispo Conférence 8h-10h"
+msgstr "Dispo Conférence 8h-10h"
+
+#. module: cci_premium_proxy
+#: field:premium_company,state:0
+#: field:premium_contact,state:0
+msgid "State"
+msgstr "Etat"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sat_lunch:0
+msgid "Dispo activ. samedi midi"
+msgstr "Dispo activ. samedi midi"
+
+#. module: cci_premium_proxy
+#: field:premium_company,problems:0
+#: field:premium_contact,problems:0
+msgid "Problems Injection"
+msgstr "Problèmes à l'injection"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_fb:0
+#: selection:premium_contact,freq_li:0
+#: selection:premium_contact,freq_tw:0
+msgid "- 1x/sem"
+msgstr "- 1x/sem"
+
+#. module: cci_premium_proxy
+#: field:premium_company,public_relation:0
+msgid "Dépt. Relations publiques"
+msgstr "Dépt. Relations publiques"
+
+#. module: cci_premium_proxy
+#: field:premium_company,marketing:0
+msgid "Dépt. Marketing"
+msgstr "Dépt. Marketing"
+
+#. module: cci_premium_proxy
+#: wizard_button:wizard_inject_premium_company,init,end:0
+#: wizard_button:wizard_inject_premium_contact,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,sms:0
+msgid "Pas de SMS"
+msgstr "Pas de SMS"
+
+#. module: cci_premium_proxy
+#: field:premium_company,injection_datetime:0
+#: field:premium_contact,injection_datetime:0
+msgid "Injection Date"
+msgstr "Date d'injection"
+
+#. module: cci_premium_proxy
+#: model:ir.ui.menu,name:cci_premium_proxy.menu_premium_contact
+msgid "Premium's Personal Form"
+msgstr "Données Contact Premium"
+
+#. module: cci_premium_proxy
+#: field:premium_company,sector3:0
+msgid "Sector3"
+msgstr "Secteur 3"
+
+#. module: cci_premium_proxy
+#: field:premium_company,sector2:0
+msgid "Sector2"
+msgstr "Secteur 2"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_network:0
+msgid "Plusieurs x/sem"
+msgstr "Plusieurs x/sem"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "10-19"
+msgstr "10-19"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,shareholder:0
+msgid "Société cotée en Bourse"
+msgstr "Société cotée en Bourse"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_arrival:0
+msgid "Créé son entreprise"
+msgstr "Créé son entreprise"
+
+#. module: cci_premium_proxy
+#: field:premium_company,secretary:0
+msgid "Dépt. Secrétariat"
+msgstr "Dépt. Secrétariat"
+
+#. module: cci_premium_proxy
+#: view:premium_company:0
+msgid "Administrative data"
+msgstr "Données administratives"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_company,init:0
+msgid "Inject Company"
+msgstr "Injecter Société"
+
+#. module: cci_premium_proxy
+#: field:premium_company,main_dir_arrival:0
+msgid "Patron qui a"
+msgstr "Patron qui a"
+
+#. module: cci_premium_proxy
+#: field:premium_company,equal_representation:0
+msgid "Equal Representation"
+msgstr "Commission paritaire"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,app_pro:0
+msgid "App professionnelles"
+msgstr "App professionnelles"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_mon_lunch:0
+msgid "Dispo activ. lundi midi"
+msgstr "Dispo activ. lundi midi"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,person_statut:0
+msgid "Independent"
+msgstr "Indépendant"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "100-249"
+msgstr "100-249"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Vendredi"
+msgstr "Vendredi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_far:0
+msgid "FAR"
+msgstr "FAR"
+
+#. module: cci_premium_proxy
+#: field:premium_company,others:0
+msgid "Dépt. Autres"
+msgstr "Dépt. Autres"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "-"
+msgstr "-"
+
+#. module: cci_premium_proxy
+#: field:premium_company,activity_description:0
+msgid "Activity Description"
+msgstr "Description d'activité"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,li:0
+msgid "LinkedIN"
+msgstr "LinkedIN"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Best timing for networking"
+msgstr "Meilleur timing pour le networking"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,employee:0
+msgid "1"
+msgstr "1"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,cluber:0
+msgid "Participe à des Business Clubs"
+msgstr "Participe à des Business Clubs"
+
+#. module: cci_premium_proxy
+#: field:premium_company,street:0
+#: field:premium_company,street_work:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_cl:0
+msgid "Cercle du Lac"
+msgstr "Cercle du Lac"
+
+#. module: cci_premium_proxy
+#: field:premium_company,family:0
+msgid "Membres de la famille"
+msgstr "Membres de la famille"
+
+#. module: cci_premium_proxy
+#: field:premium_company,address_id:0
+#: wizard_field:wizard_inject_premium_company,init,address_id:0
+msgid "Address"
+msgstr "Address"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,state:0
+#: selection:premium_contact,state:0
+msgid "Injected"
+msgstr "Injecté"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_gceq:0
+msgid "Gr. C.E. du Québec"
+msgstr "Gr. C.E. du Québec"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,ecustomer:0
+msgid "eClient"
+msgstr "eClient"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,care_cci:0
+msgid "Demande prise en charge par la CCI"
+msgstr "Demande prise en charge par la CCI"
+
+#. module: cci_premium_proxy
+#: wizard_field:wizard_inject_premium_company,inject,msg:0
+#: wizard_field:wizard_inject_premium_contact,inject,msg:0
+msgid "Injection Results"
+msgstr "Résultats de l'injection"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_fb:0
+#: selection:premium_contact,freq_li:0
+#: selection:premium_contact,freq_tw:0
+msgid "1x/sem"
+msgstr "1x/sem"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,check_formation:0
+msgid "Non"
+msgstr "Non"
+
+#. module: cci_premium_proxy
+#: field:premium_company,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_premium_proxy
+#: field:premium_company,main_dir:0
+msgid "Poste au sein de la direction générale"
+msgstr "Poste au sein de la direction générale"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_fb:0
+#: selection:premium_contact,freq_li:0
+#: selection:premium_contact,freq_tw:0
+msgid "2 ou 3x/sem"
+msgstr "2 ou 3x/sem"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Matin---------------------------------------"
+msgstr "Matin---------------------------------------"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,tw:0
+msgid "Twitter"
+msgstr "Twitter"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,shareholder:0
+msgid "5 et +"
+msgstr "5 et +"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,decision_level:0
+msgid "Employé"
+msgstr "Employé"
+
+#. module: cci_premium_proxy
+#: view:premium_contact:0
+msgid "Mercredi"
+msgstr "Mercredi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,login:0
+msgid "Login"
+msgstr "Login"
+
+#. module: cci_premium_proxy
+#: model:ir.actions.act_window,name:cci_premium_proxy.action_premium_contact
+msgid "Premium Contact Form"
+msgstr "Données Contact Premium"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sun_lunch:0
+msgid "Dispo activ. dimanche midi"
+msgstr "Dispo activ. dimanche midi"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_sat_morning:0
+msgid "Dispo activ. samedi matin"
+msgstr "Dispo activ. samedi matin"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,check_formation:0
+msgid "Ne sais pas"
+msgstr "Ne sais pas"
+
+#. module: cci_premium_proxy
+#: field:premium_company,operations:0
+msgid "Dépt. Opérations"
+msgstr "Dépt. Opérations"
+
+#. module: cci_premium_proxy
+#: selection:premium_company,main_dir_arrival:0
+msgid "Acquis des patrs en cours de route"
+msgstr "Acquis des parts en cours de route"
+
+#. module: cci_premium_proxy
+#: field:premium_company,zip_code:0
+#: field:premium_company,zip_code_work:0
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: cci_premium_proxy
+#: selection:premium_contact,freq_network:0
+msgid "1 ou 2 x/mois"
+msgstr "1 ou 2 x/mois"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_contact,init:0
+msgid "Inject Contact"
+msgstr "Injecter le Contact"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_company,init:0
+msgid "If you let one of the two fields empty, we'll create a new partner and/or a new address"
+msgstr "Si vous laissez un des deux champs vides, il créera un nouveau partenaire et/ou un nouvelle adresse"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,freq_network:0
+msgid "Fréquence Networking"
+msgstr "Fréquence Networking"
+
+#. module: cci_premium_proxy
+#: wizard_view:wizard_inject_premium_contact,init:0
+msgid "If you give a contact, the values will be injected in that contact record"
+msgstr "Si vous indiquez un contact existant, les données seront injectées dans cette fiche existante."
+
+#. module: cci_premium_proxy
+#: field:premium_contact,zip_code:0
+msgid "Code Postal lieu résidence"
+msgstr "Code Postal lieu résidence"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_thu_morning:0
+msgid "Dispo activ. jeudi matin"
+msgstr "Dispo activ. jeudi matin"
+
+#. module: cci_premium_proxy
+#: field:premium_company,fax:0
+msgid "Fax"
+msgstr "Fax"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,dispo_wed_morning:0
+msgid "Dispo activ. mercredi matin"
+msgstr "Dispo activ. mercredi matin"
+
+#. module: cci_premium_proxy
+#: field:premium_company,it:0
+msgid "Dépt. IT"
+msgstr "Dépt. IT"
+
+#. module: cci_premium_proxy
+#: field:premium_contact,club_cw:0
+msgid "Cercle Wallonie"
+msgstr "Cercle Wallonie"
+
+#. module: cci_premium_proxy
+#: field:premium_company,logistic:0
+msgid "Dépt. Logistic"
+msgstr "Dépt. Logistic"
+

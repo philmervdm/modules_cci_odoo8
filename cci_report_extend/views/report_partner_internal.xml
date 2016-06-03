@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_partner_internal_document">
+    <div class="page">
+        <style>
+            .cust_table{
+                border:1px solid black;
+                border-collapse:collapse;
+                width:100%;
+            }
+            .cust_table tr td{
+                border:1px solid black;
+            }
+            .cust_table tr th{
+                border:1px solid black;
+            }
+        </style>
+        <h4 class="text-center">Date : <span t-esc="time.strftime('%d-%m-%Y')"/></h4>
+        <table class="mt16" width="100%">
+            <tr>
+                <td>
+                    <strong><font style="font-size:20px;"><span t-field="o.name"/></font> (id: <span t-field="o.id"/>)</strong>
+                </td>
+                <td>Forme : <span t-field="o.title"/></td>
+            </tr>
+            <tr>
+                <td>
+                    N° Entreprise : <span t-esc="o.vat or 'inconnu'"/>
+                    <span t-esc="o.vat_subjected and 'Assujetti à la TVA' or 'Non-assujetti'"/>
+                </td>
+                <td>
+                    Pers. occupées :<span t-field="o.employee_nbr"/> (global <span t-field="o.employee_nbr_total"/>)
+                </td>
+            </tr>
+            <tr t-if="o.activity_description">
+                <td>
+                    Activité : <span t-field="o.activity_description"/>
+                </td>
+            </tr>
+        </table>
+        
+        <table style="border:1px solid black;width:100%">
+            <tr t-foreach="o.child_ids" t-as="addr">
+                <td style="padding-top:8px;padding-left:8px;">
+                    <t t-if="o.name">Nom du site : <span t-field="addr.name"/><br/></t>
+                    <span t-field="addr.street"/> <t t-if="addr.street2"> - <span t-field="addr.street2"/></t><br/>
+                    <span t-field="addr.zip_id.name"/> <span t-field="addr.zip_id.city"/> <span t-field="addr.country_id.name"/> <br/>
+                    Tél : <span t-field="addr.phone"/> - Fax : <span t-field="o.fax"/> - Courriel site/entreprise : <span t-field="addr.email"/>
+                    <br/>
+                    <u>Contacts du site :</u>
+                    <table class="cust_table mt16">
+                        <tr>
+                            <td><u>Civilité</u></td>
+                            <td><u>Nom</u></td>
+                            <td><u>Prénom</u></td>
+                            <td><u>Fonction</u></td>
+                            <td><u>Courriel</u></td>
+                        </tr>
+                        <tr>
+                            <td><span t-field="addr.function"/></td>
+                            <td><span t-field="addr.name"/></td>
+                            <td>
+<!--                                <span t-esc="addr.job_ids"/>-->
+<!--                                <para style="P13">[[ job.contact_id.first_name or '']]</para>-->
+                            </td>
+                            <td>
+                                [[ job.function_label ]] (<span t-esc="addr.function_code_label or '-aucun-'"/>)
+                            </td>
+                            <td><span t-field="addr.email"/></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p class="mt16"><u>Détention produits :</u></p>
+        <table width="100%">
+            <tr>
+                <th><u>Produit</u></th>
+                <th><u>Année en cours</u></th>
+                <th><u>Année passée</u></th>
+                <th><u>Année -2</u></th>
+            </tr>
+            <tr t-foreach="get_products(o.id)" t-as="prod">
+                <td><span t-esc="prod['name']"/></td>
+                <td><span t-esc="prod['current']"/></td>
+                <td><span t-esc="prod['past1']"/></td>
+                <td><span t-esc="prod['past2']"/></td>
+            </tr>
+        </table>
+        <p class="mt16"><u>Bons de Commande en cours de traitement :</u></p>
+        <table width="100%">
+            <tr>
+                <td><u>N° BC</u></td>
+                <td><u>Date fact. Prévue</u></td>
+                <td><u>Valeur</u></td>
+                <td><u>Produit</u></td>
+            </tr>
+            <tr t-foreach="get_orders(o.id)" t-as="lbc">
+                <td><span t-esc="lbc['num']"/></td>
+                <td><span t-esc="lbc['datefact']"/></td>
+                <td><span t-esc="lbc['value']"/></td>
+                <td><span t-esc="lbc['product']"/></td>
+            </tr>
+        </table>
+        <p class="mt16"><u>Synthèses du pipe et/ou actions à entreprendre :</u><br/><br/></p>
+        <u>Marques d'intérêt :</u>
+        <table width="100%">
+            <tr>
+                <td><u>Date</u></td>
+                <td><u>Contact CCI</u></td>
+                <td><u>Produit/Catégorie</u></td>
+                <td><u>C.A. espéré</u></td>
+                <td><u>Description</u></td>
+            </tr>
+            <tr t-foreach="get_interest(o.id)" t-as="ma">
+                <td><span t-esc="ma['date']"/></td>
+                <td><span t-esc="ma['contact']"/></td>
+                <td><span t-esc="ma['product']"/></td>
+                <td><span t-esc="ma['turnover']"/></td>
+                <td><span t-esc="ma['desc']"/></td>
+            </tr>
+        </table>
+        
+        <p class="mt16"><u>Historique :</u></p>
+        <table Width="100%">
+            <tr>
+                <td><u>Date</u></td>
+                <td><u>Contact CCI</u></td>
+                <td><u>Produit/Catégorie</u></td>
+                <td><u>Description</u></td>
+            </tr>
+            <tr t-foreach="get_histo(o.id)" t-as="histo">
+                <td><span t-esc="histo['date']"/></td>
+                <td><span t-esc="histo['contact']"/></td>
+                <td><span t-esc="histo['product']"/></td>
+                <td><span t-esc="histo['desc']"/></td>
+            </tr>
+        </table>
+        
+        <p class="mt16"><u>Participations des deux dernières années :</u></p>
+        <table Width="100%">
+            <tr>
+                <th><u>Event/Club</u></th>
+                <th><u>Date(s)</u></th>
+                <th><u>Participant</u></th>
+            </tr>
+            <tr t-foreach="get_part(o.id)" t-as="part">
+                <td><span t-esc="part['name']"/></td>
+                <td><span t-esc="part['dates']"/></td>
+                <td><span t-esc="part['who']"/></td>
+            </tr>
+        </table>
+    </div>
+</template>
+
+<template id="report_partner_internal">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'cci_report_extend.report_partner_internal_document')"/>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>
+

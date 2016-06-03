@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+        <!-- Wizard to search emails on different PSQL tables -->
+		<wizard string="Search Emails"
+			name="cci_mailchimp_search_emails"
+			id="cci_mailchimp_search_emails"
+			menu="False"/>
+		<menuitem name="Search Emails" id="menu_search_emails"
+			action="cci_mailchimp_search_emails" type="wizard"
+			parent="cci_newsletter.menu_cci_newsletter"
+            sequence="80" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+        <!-- Wizard to delete emails on different PSQL tables -->
+		<wizard string="Delete Emails"
+			name="cci_mailchimp_delete_emails"
+			id="cci_mailchimp_delete_emails"
+			menu="False"/>
+		<menuitem name="Delete Emails" id="menu_delete_emails"
+			action="cci_mailchimp_delete_emails" type="wizard"
+			parent="cci_newsletter.menu_cci_newsletter"
+            sequence="90" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+        <!-- Wizard to unsubscribe emails on different PSQL tables -->
+		<wizard string="Unsubscribe Emails"
+			name="cci_mailchimp_unsubscribe_emails"
+			id="cci_mailchimp_unsubscribe_emails"
+			menu="False"/>
+		<menuitem name="Unsubscribe Emails" id="menu_unsubscribe_emails"
+			action="cci_mailchimp_unsubscribe_emails" type="wizard"
+			parent="cci_newsletter.menu_cci_newsletter"
+            sequence="89" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+        <!-- Wizard to correct a serie of emails addresses -->
+	    <wizard string="Correct Emails"
+			model="mail_usage"
+			menu="True"
+			name="cci_mailchimp_correct_emails"
+			id="cci_mailchimp_correct_emails" />
+
+        <!-- Wizard to view the associated record -->
+	    <wizard string="View Record"
+			model="mail_usage"
+			menu="True"
+			name="cci_mailchimp_show_record"
+			id="cci_mailchimp_show_record" />
+
+        <!-- Wizard to re-subscribe a unsubscribe user on mailchimp -->
+	    <wizard string="Delete Unsubscribe on MailChimp"
+			model="mail_bounce"
+			menu="True"
+			name="cci_mailchimp_resubscribe"
+			id="cci_mailchimp_resubscribe" 
+			groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+        <!-- Wizard to extract results from an advertising campaign in revue de presse -->
+		<wizard string="Extract Advertising Results"
+			name="cci_mailchimp_results_adv"
+			id="cci_mailchimp_results_adv"
+			menu="False"/>
+		<menuitem name="Extract Advertising Results" id="menu_maichimp_results_adv"
+			action="cci_mailchimp_results_adv" type="wizard"
+			parent="cci_newsletter.menu_cci_newsletter"
+            sequence="95" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+        <!-- Wizard to extract results of 'revue de presse' -->
+		<wizard string="Extract RDP Results"
+			name="cci_mailchimp_results_rdp"
+			id="cci_mailchimp_results_rdp"
+			menu="False"/>
+		<menuitem name="Extract RDP Results" id="menu_mailchimp_results_rdp"
+			action="cci_mailchimp_results_rdp" type="wizard"
+			parent="cci_newsletter.menu_cci_newsletter"
+            sequence="96" 
+            groups="cci_newsletter.group_cci_newsletter_manager"/>
+
+
+	</data>
+</openerp>

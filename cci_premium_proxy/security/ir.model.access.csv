@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_premium_contact_manager","Premium's forms Manager for Contacts","cci_premium_proxy.model_premium_contact","group_premium_form_manager",1,1,1,0
+"access_premium_company_manager","Premium's forms Manager for Companies","cci_premium_proxy.model_premium_company","group_premium_form_manager",1,1,1,0
+

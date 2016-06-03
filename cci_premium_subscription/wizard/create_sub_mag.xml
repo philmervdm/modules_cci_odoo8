@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_create_subscription_mag_form">
+            <field name="name">wizard.create.subscription.mag.form</field>
+            <field name="model">wizard.create.subscription.mag</field>
+            <field name="arch" type="xml">
+                <form string="Create Yearly CCI Mag Subscription">
+                    <group>
+						<field name="contact_id" domain="[('is_premium','=','OUI')]"/>
+						<field name="product_id" domain="[('premium_subscription_type_id','!=',False)]"/>
+						<field name="duration"/>
+                    </group>
+                    <footer>
+                        <button name="second_form" type="object" string="Continue"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+		 <record id="wizard_create_subscription_mag_action" model="ir.actions.act_window">
+	            <field name="name">Create Yearly CCI Mag Subscription</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">wizard.create.subscription.mag</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_id" ref="wizard_create_subscription_mag_form"/>
+	            <field name="context">{}</field>
+	            <field name="target">new</field>
+	        </record>
+        
+        <record model="ir.values" id="wizard_create_subscription_mag_action_values">
+            <field name="model_id" ref="model_wizard_create_subscription_mag"/>
+            <field name="name">Create Yearly CCI Mag Subscription</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_subscription_mag_action'))" />
+            <field name="key">action</field>
+            <field name="model">premium_subscription</field>
+        </record>
+
+		<record model="ir.values" id="wizard_create_subscription_mag_premium_action_values">
+            <field name="model_id" ref="model_wizard_create_subscription_mag"/>
+            <field name="name">Create Yearly CCI Mag Subscription</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_subscription_mag_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_create_subscription_mag2_form">
+            <field name="name">wizard.create.subscription.mag2.form</field>
+            <field name="model">wizard.create.subscription.mag2</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+						<group>
+							<field name="begin_date"/>
+							<field name="first_issue_id"/>
+						</group>
+						<group>
+							<field name="partner_id"/>
+							<field name="auto_invoice"/>
+						</group>
+                    </group>
+                    <footer>
+                        <button name="create_data" type="object" string="Subscribe"  class="oe_highlight"/>
+                        or
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 	<record id="wizard_create_subscription_mag2_action" model="ir.actions.act_window">
+            <field name="name">Options</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.subscription.mag2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_create_subscription_mag2_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+
+		<record model="ir.ui.view" id="wizard_create_subscription_mag_msg_form">
+            <field name="name">wizard.create.subscription.mag.msg.form</field>
+            <field name="model">wizard.create.subscription.mag.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+						<group string="Created Record(s)">
+							<field name="msg" nolabel="1"/>
+						</group>
+                    <footer>
+                        <button name="open_window_subscription" type="object" string="Show Subscription"  class="oe_highlight"/>
+						<button name="open_window_invoice"  type="object" string="Show Invoice" invisible="not context.get('auto_inv',False)"  class="oe_highlight"/>
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 	<record id="wizard_create_subscription_mag_msg_action" model="ir.actions.act_window">
+            <field name="name">Notification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.subscription.mag.msg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_create_subscription_mag_msg_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

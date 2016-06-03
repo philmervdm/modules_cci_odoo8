@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+			<record id="cci_event_history_form" model="ir.ui.view">
+				<field name="name">cci.event.history.form</field>
+				<field name="model">cci.event.history</field>
+				<field name="arch" type="xml">
+					<form string="Partner Event">
+						<group string="General Description">
+							<group>
+						        <field name="name" />
+						      <!--  <field name="som" />-->
+						        <field name="canal_id" /> 
+						        <field name="user_id" />
+						        <field name="planned_revenue"/>
+							</group>
+							<group>
+						        <field name="partner_type" />
+						        <field name="date" />
+						        <field name="type" />
+						        <field name="probability"/>
+						        <field name="planned_cost"/>
+							</group>
+						</group>
+						<group>
+					        <separator string="Description"/>
+					        <field name="description" colspan="4" nolabel="1"/>
+					        <separator string="Document Link" colspan="4"/>
+					        <field name="document" />
+						</group>
+						<footer>
+							<button name="create_event" string="Create Event" type="object" class="oe_highlight"/>
+	                      	or
+	                     	<button string="Cancel" class="oe_link" special="cancel" />
+						</footer>
+					</form>
+				</field>
+			</record>
+			
+			<record id="action_cci_event_history" model="ir.actions.act_window">
+	            <field name="name">Event History</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">cci.event.history</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_id" ref="cci_event_history_form"/>
+	            <field name="target">new</field>
+	        </record>
+	
+	        <record model="ir.values" id="action_cci_event_history_values1">
+	            <field name="model_id" ref="model_cci_event_history" />
+	            <field name="name">Event History</field>
+	            <field name="key2">client_action_multi</field>
+	            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_cci_event_history'))" />
+	            <field name="key">action</field>
+	            <field name="model">res.partner</field>
+	        </record>
+		
+	</data>
+</openerp>

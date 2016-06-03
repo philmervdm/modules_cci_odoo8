@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="wizard_export_members_ccih_form">
+            <field name="name">wizard.export.members.ccih.form</field>
+            <field name="model">wizard.export.members.ccih</field>
+            <field name="arch" type="xml">
+                <form string="Export of a simplified Members Excel File">
+                    <group>
+                        <group>
+                            <field name="category_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="create_data" type="object" string="Export"  class="oe_highlight"/>
+                        <!--or-->
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="export_members_ccih_action" model="ir.actions.act_window">
+            <field name="name">Export Members for CCIH</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.export.members.ccih</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_export_members_ccih_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        <!-- Philmer addition to export a members file dedicated to the CCI Hainaut -->
+	    <!--<menuitem name="Export Members for CCIH" id="menu_export_members_ccih"
+    		action="export_members_ccih_action" 
+    		parent="base.menu_base_config" 
+            sequence="58" />
+
+        <record model="ir.ui.view" id="wizard_export_members_ccih2_form">
+            <field name="name">wizard.export.members.ccih2.form</field>
+            <field name="model">wizard.export.members.ccih2</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <group>
+                            <field name="name" invisible="1"/>
+                            <field name="msg"/>
+                            <field name="membres_ccih" filename="name"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Close"  special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>-->
+	</data>
+</openerp>

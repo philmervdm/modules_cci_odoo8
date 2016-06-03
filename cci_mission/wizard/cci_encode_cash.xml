@@ -1,0 +1,76 @@
+<openerp>
+	<data>
+		<record id="view_cci_encode_cash_form" model="ir.ui.view">
+			<field name="name">wizard.receive.encode.cash.form</field>
+			<field name="model">receive.encode.cash</field>
+			<field name="arch" type="xml">
+				<form string="Select Journal">
+					<group>
+					       <field name="journal"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="next" string="Next" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_cci_encode_cash_form" model="ir.actions.act_window">
+            <field name="name">Receive &amp; Encode Cash</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">receive.encode.cash</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cci_encode_cash_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_cci_encode_cash_values">
+            <field name="model_id" ref="model_receive_encode_cash"/>
+            <field name="name">Receive &amp; Encode Cash</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_cci_encode_cash_form'))" />
+            <field name="key">action</field>
+            <field name="model">cci_missions.certificate</field>
+        </record>
+	
+		<record id="view_cci_encode_cash_next_form" model="ir.ui.view">
+			<field name="name">wizard.receive.encode.cash.next.form</field>
+			<field name="model">receive.encode.cash.next</field>
+			<field name="arch" type="xml">
+				<form string="Amount and Reference">
+					<group>
+					       <field name="amt"/>
+							<field name="ref"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="rec_enc_cash" string="Encode" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+
+		<record id="view_receive_encode_cash_notify_form" model="ir.ui.view">
+			<field name="name">wizard.receive.encode.cash.notify.form</field>
+			<field name="model">receive.encode.cash.notify</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+					<group>
+					       <field name="message"/>
+					</group>
+					<footer>
+						<button string="Ok" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+
+	</data>
+</openerp>

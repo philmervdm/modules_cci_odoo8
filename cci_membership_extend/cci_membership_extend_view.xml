@@ -1,0 +1,387 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+        <!-- View for res.partner form inherited from cci_last_module -->
+		<record model="ir.ui.view" id="view_partner_form">
+			<field name="name">res.partner.form.member_extend</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="membership.view_partner_form"/>
+			<field name="arch" type="xml">
+			    <data>
+				    <field name="associate_member" position="after">
+					    <group col="5" colspan="2">
+                            <field name="site_membership"/>
+                            <field name="desc_add_site" colspan="3" nolabel="1"/>
+                        </group>
+                        <field name="next_membership_bill_forced"/>
+				    </field>
+                    <field name="membership_start" position="replace">
+                        <field name="cci_date_start_membership"/>
+                    </field>
+                    <field name="membership_stop" position="replace">
+                        <field name="cci_date_stop_membership"/>
+						<field name="read_before_next_membership_bill"/>
+                        <field name="membership_explanation" colspan="4" nolabel="1"/>
+                    </field>
+                    <!-- <field name="membership_explanation" colspan="4" nolabel="1" position="replace">
+                        <field name="read_before_next_membership_bill"/>
+                        <field name="membership_explanation" colspan="4" nolabel="1"/>
+                    </field> -->
+				</data>
+			</field>
+		</record>
+
+
+        <!-- views for range of membership amount -->
+        <record model="ir.ui.view" id="cci_membership_range_form">
+            <field name="name">cci_membership.membership_range_form</field>
+            <field name="model">cci_membership.membership_range</field>
+            <field name="arch" type="xml">
+                <form string="Membership Range">
+					<group>
+                    	<field name="year"/>
+					</group>
+					<group>
+						<group>
+							<field name="from_range"/>
+						</group>
+						<group>
+							<field name="to_range"/>
+						</group>
+					</group>
+					<group>
+                    	<field name="amount"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_range_tree">
+            <field name="name">cci_membership.membership_range_tree</field>
+            <field name="model">cci_membership.membership_range</field>
+            <field name="arch" type="xml">
+                <tree string="Membership Range">
+                    <field name="year"/>
+                    <field name="from_range"/>
+                    <field name="to_range"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_cci_membership_range">
+            <field name="name">Membership Range</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci_membership.membership_range</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem parent="base.menu_marketing_config_association" name="Membership Range" action="action_cci_membership_range" id="menu_cci_membership_range"/>
+
+        <!-- forms definition for membership by partner -->
+        <record model="ir.ui.view" id="cci_membership_by_partner_form">
+            <field name="name">cci_membership.membership_by_partner_form</field>
+            <field name="model">cci_membership.membership_by_partner</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Membership By Partner">
+					<group>
+						<group>
+							<field name="partner_id"/>
+							<field name="year" />
+							<field name="paid" />
+							<field name="open" />
+						</group>
+						<group>
+							<field name="user_id" />
+							<field name="invoiced" />
+							<field name="canceled" />
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_by_partner_tree">
+            <field name="name">cci_membership.membership_by_partner_tree</field>
+            <field name="model">cci_membership.membership_by_partner</field>
+            <field name="arch" type="xml">
+                <tree string="Membership By Partner">
+                    <field name="partner_id"/>
+                    <field name="invoiced" sum="Invoiced"/>
+                    <field name="paid" sum="Paid"/>
+                    <field name="canceled" sum="Canceled"/>
+                    <field name="open" sum="Open"/>
+                    <field name="year"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--<record model="ir.ui.view" id="cci_membership_by_partner_graph">
+            <field name="name">cci_membership.membership_by_partner_graph</field>
+            <field name="model">cci_membership.membership_by_partner</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Membership By Partner" type="bar">
+                    <field name="invoiced"/>
+                    <field name="open"/>
+                </graph>
+            </field>
+        </record>-->
+
+        <!-- forms definition for membership_askedused -->
+        <record model="ir.ui.view" id="cci_membership_askedused">
+            <field name="name">cci_membership.membership_askedused_form</field>
+            <field name="model">cci_membership.membership_askedused</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Membership Asked Usage">
+					<group>
+						<group>
+							<field name="amount"/>
+							<field name="total_value"/>
+						</group>
+						<group>
+							<field name="count"/>
+						</group>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_askedused_tree">
+            <field name="name">cci_membership.membership_askedused_tree</field>
+            <field name="model">cci_membership.membership_askedused</field>
+            <field name="arch" type="xml">
+                <tree string="Membership Asked Usage">
+                    <field name="amount"/>
+                    <field name="count"/>
+                    <field name="total_value" sum="Total Value"/>
+                </tree>
+            </field>
+        </record>
+
+      <!--  <record model="ir.ui.view" id="cci_membership_askedused_graph">
+            <field name="name">cci_membership.membership_askedused_tree</field>
+            <field name="model">cci_membership.membership_askedused</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Membership Asked Usage" type="bar">
+                    <field name="amount"/>
+                    <field name="total_value"/>
+                </graph>
+            </field>
+        </record>
+-->
+        <!-- views for membership calls -->
+        <record model="ir.ui.view" id="cci_membership_call_form">
+            <field name="name">cci_membership.membership_call</field>
+            <field name="model">cci_membership.membership_call</field>
+            <field name="arch" type="xml">
+                <form string="Membership Call">
+                    <group colspan="2" col="2">
+                        <separator string="Sending Address" colspan="2"/>
+                        <field name="partner_name" readonly="1" />
+                        <field name="street" readonly="1"/>
+                        <field name="street2" readonly="1"/>
+                        <field name="zip_code" readonly="1" />
+                        <field name="city" readonly="1"/>
+                        <field name="email_addr" readonly="1"/>
+                        <field name="phone_addr" readonly="1"/>
+                        <field name="fax_addr" readonly="1"/>
+                        <separator string="Contact" colspan="2"/>
+                        <field name="name" readonly="1"/>
+                        <field name="first_name" readonly="1"/>
+                        <field name="courtesy" readonly="1"/>
+                        <field name="title" readonly="1"/>
+                        <field name="title_categs" readonly="1"/>
+                        <field name="email_contact" readonly="1"/>
+                    </group>
+                    <group colspan="2" col="2">
+                        <separator string="On the Call for Membership" colspan="2"/>
+                        <field name="base_amount" readonly="1" />
+                        <field name="count_add_sites" readonly="1" />
+                        <field name="unit_price_site" readonly="1"/>
+                        <field name="desc_add_site" readonly="1"/>
+                        <field name="wovat_amount" readonly="1" />
+                        <field name="wvat_amount" readonly="1"/>
+                        <field name="salesman" readonly="1" />
+                        <field name="salesman_phone" readonly="1"/>
+                        <field name="salesman_fax" readonly="1"/>
+                        <field name="salesman_mobile" readonly="1"/>
+                        <field name="salesman_email" readonly="1"/>
+                        <field name="vcs" readonly="1"/>
+                        <separator string="To view the full data" colspan="2"/>
+                        <field name="partner_id" readonly="1"/>
+                        <field name="address_id" readonly="1"/>
+                        <field name="job_id" readonly="1"/>
+                        <field name="contact_id" readonly="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cci_membership_call_tree">
+            <field name="name">cci_membership.membership_call_tree</field>
+            <field name="model">cci_membership.membership_call</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Membership Call">
+                    <field name="partner_name"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="zip_code"/>
+                    <field name="city"/>
+                    <field name="email_addr"/>
+                    <field name="phone_addr"/>
+                    <field name="fax_addr"/>
+                    <field name="name"/>
+                    <field name="first_name"/>
+                    <field name="courtesy"/>
+                    <field name="title"/>
+                    <field name="title_categs"/>
+                    <field name="email_contact"/>
+                    <field name="base_amount"/>
+                    <field name="count_add_sites" />
+                    <field name="unit_price_site"/>
+                    <field name="desc_add_site"/>
+                    <field name="wovat_amount"/>
+                    <field name="wvat_amount"/>
+                    <field name="salesman"/>
+                    <field name="salesman_phone" />
+                    <field name="salesman_fax"/>
+                    <field name="salesman_mobile"/>
+                    <field name="salesman_email"/>
+                    <field name="vcs"/>
+                    <field name="partner_id"/>
+                    <field name="address_id" />
+                    <field name="job_id"/>
+                    <field name="contact_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- new shortcut on partners : sponsorised partners -->
+        <act_window domain="[('associate_member', '=', active_id)]" id="act_sponsorised_partners" name="Sponsorised Partners" res_model="res.partner" src_model="res.partner"/>
+
+        <!-- menus for controls -->
+        <menuitem name="Controls" parent="membership.menu_membership" id="menu_membership_control"/>
+        <!--1. controls the partners with additional sites -->
+        <record model="ir.actions.act_window" id="action_membership_control_addsite">
+            <field name="name">Partners with additional sites to invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('site_membership','>',0)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Partners with additional sites to invoice" action="action_membership_control_addsite" id="menu_membership_control_addsite" sequence="40"/>
+        <!--2. controls the members with multiple address but no additional sites -->
+        <!--   done by wizard -->
+        <!--3. refuse membership -->
+        <record model="ir.actions.act_window" id="action_membership_control_refuse">
+            <field name="name">Partners who refuse membership</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('refuse_membership','=',True),('state_id','=',1)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Partners who refuse membership" action="action_membership_control_refuse" id="menu_membership_control_refuse" sequence="9"/>
+        <!--3b. asked membership = 0 -->
+        <record model="ir.actions.act_window" id="action_membership_control_asked0">
+            <field name="name">Partners with no asked membership amount</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('membership_amount','=',0.0),('state_id','=',1)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Partners with no asked membership amount" action="action_membership_control_asked0" id="menu_membership_control_asked0" sequence="10"/>
+        <!--4. associate members -->
+        <record model="ir.actions.act_window" id="action_membership_control_associated">
+            <field name="name">Sponsorised Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('associate_member','!=',False)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Sponsorised Partners" action="action_membership_control_associated" id="menu_membership_control_associated" sequence="11"/>
+        <!--5. sponsors -->
+        <!--   done by wizard -->
+        <!--6. Free members -->
+        <record model="ir.actions.act_window" id="action_membership_control_free">
+            <field name="name">Free Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('free_member','=',True)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Free Members" action="action_membership_control_free" id="menu_membership_control_free" sequence="13"/>
+        <!--7. Asked amount less than last billed membership amount -->
+        <!--   done by wizard-->
+        <!--8. Amount different than standard amount -->
+        <!--   done by wizard -->
+        <!--9. Canceled members -->
+        <record model="ir.actions.act_window" id="action_membership_control_canceled">
+            <field name="name">Canceled Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('membership_state','=','canceled'),('state_id','=',1)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Canceled Members" action="action_membership_control_canceled" id="menu_membership_control_canceled" sequence="16"/>
+        <!--10. Old members -->
+        <record model="ir.actions.act_window" id="action_membership_control_old">
+            <field name="name">Old Members</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('membership_state','=','old'),('state_id','=',1)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Old Members" action="action_membership_control_old" id="menu_membership_control_old" sequence="17"/>
+        <!--10. Documented Partners -->
+        <record model="ir.actions.act_window" id="action_membership_control_explanation">
+            <field name="name">Members with a membership explanation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('membership_explanation','!=',False)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Members with a membership explanation" action="action_membership_control_explanation" id="menu_membership_control_explanation" sequence="18"/>
+        <!--10.B Documented Partners to Re-Read -->
+        <record model="ir.actions.act_window" id="action_membership_control_explanation_again">
+            <field name="name">Members with a membership explanation to re-read</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('membership_explanation','!=',False),('read_before_next_membership_bill','=',True)]</field>
+        </record>
+        <menuitem parent="menu_membership_control_explanation" name="Members with a membership explanation to re-read" action="action_membership_control_explanation_again" id="menu_membership_control_explanation_again" sequence="18"/>
+        <!--10. List of used membership_amount -->
+        <!--    done by wizard-->
+        <!--11. Partners Forced for next automatic bill -->
+        <record model="ir.actions.act_window" id="action_membership_control_forced_bill">
+            <field name="name">Partners forced for automatic bill/call</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('next_membership_bill_forced','=',True)]</field>
+        </record>
+        <menuitem parent="menu_membership_control" name="Partners forced for automatic bill/call" action="action_membership_control_forced_bill" id="menu_membership_control_forced_bill" sequence="28"/>
+
+        <!-- menus for yearly operations -->
+        <menuitem name="Yearly Operations" parent="membership.menu_membership" id="menu_membership_yearly"/>
+
+	</data>
+</openerp>

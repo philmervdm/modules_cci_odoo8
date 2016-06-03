@@ -1,0 +1,31 @@
+<openerp>
+    <data>
+        <record id="view_wizard_extend_invoice_membership_form" model="ir.ui.view">
+            <field name="name">wizard.extend.invoice.membership.form</field>
+            <field name="model">wizard.extend.invoice.membership</field>
+            <field name="arch" type="xml">
+                <form string="Choose invoice details">
+                    <group>
+                        <field name="product"/>
+                        <field name="site_product_id" />
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                        or
+                        <button name="invoice_membership" string="Confirm" type="object" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="act_invoice_membership_menu"
+                    key2="client_action_multi"
+                    name="Invoice Membership Menu"
+                    res_model="wizard.extend.invoice.membership"
+                    src_model="res.partner"
+                    view_mode="form" 
+                    target="new" 
+                    view_type="form"
+                    />
+	</data>
+</openerp>

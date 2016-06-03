@@ -1,0 +1,37 @@
+<openerp>
+	<data>
+		<record id="view_extract_prospect_addsite_form" model="ir.ui.view">
+			<field name="name">extract.prospect.addsite.form</field>
+			<field name="model">extract.prospect.addsite</field>
+			<field name="arch" type="xml">
+				<form string="Extract Prospects Additional Sites">
+					<group>
+					    <label string="Extraction of partners with multiple addresses but no additional sites invoiced with membership."/>
+					</group>
+                    <footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+                        <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+                    </footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_extract_prospect_addsite_form" model="ir.actions.act_window">
+            <field name="name">Extract Prospects Additional Sites</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.prospect.addsite</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_extract_prospect_addsite_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem 
+            id="menu_prospect_addsite"
+            name="Members with multiple addresses but no additional site"
+			action="action_extract_prospect_addsite_form"
+			parent="menu_membership_control"
+            sequence="41" />
+	</data>
+</openerp>

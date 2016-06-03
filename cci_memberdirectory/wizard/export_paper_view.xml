@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_cci_memberdirectory_extract_paper" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.extract.paper.form</field>
+            <field name="model">cci.memberdirectory.extract.paper</field>
+            <field name="arch" type="xml">
+				<form string="Excel File for Paper">
+					<footer>
+						<button name="get_file" string="Get File" type="object" class="oe_highlight"/>
+	                     or
+	                    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_cci_memberdirectory_extract_paper" model="ir.actions.act_window">
+            <field name="name">Excel File for Paper</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.memberdirectory.extract.paper</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cci_memberdirectory_extract_paper"/>
+            <field name="target">new</field>
+            <field name="multi">True</field>
+        </record>
+
+        <record model="ir.values" id="cci_memberdirectory_extract_paper_value">
+            <field name="model_id" ref="cci_memberdirectory.model_directory_address_proxy" />
+            <field name="name">Excel File for Paper</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_cci_memberdirectory_extract_paper'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+		
+		<record id="view_cci_memberdirectory_extract_paper_msg" model="ir.ui.view">
+            <field name="name">cci.memberdirectory.extract.paper.msg.form</field>
+            <field name="model">cci.memberdirectory.extract.paper.msg</field>
+            <field name="arch" type="xml">
+				<form string="Notification">
+				    <separator string="File has been created."  colspan="4"/>
+				    <field name="msg" colspan="4" nolabel="1"/>
+				    <field name="addresses_xls" colspan="4" />
+				</form>
+			</field>
+		</record>
+	
+	</data>
+</openerp>

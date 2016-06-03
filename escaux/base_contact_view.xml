@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Escaux module for OpenERP
+  Copyright (C) 2011 Philmer - CCI Connect <philmer@cciconnect.be>
+  Based on module : 
+    Asterisk Click2dial module for OpenERP
+    Copyright (C) 2010 Alexis de Lattre <alexis@via.ecp.fr>
+  The licence is in the file __terp__.py
+
+  Inherit base_contact.partner views to add 'Dial' button next to 'phone'
+  and 'mobile' fields
+-->
+<openerp>
+<data>
+
+<record id="view_res_partner_address_inherit_form" model="ir.ui.view">
+    <field name="name">res.partner.address.inherit.form</field>
+    <field name="model">res.partner.address</field>
+    <field name="type">form</field>
+    <field name="inherit_id" ref="base.view_partner_address_form1"/>
+    <field name="arch" type="xml">
+      <data>
+        <field name="phone" position="replace">
+            <label string="Phone : " align="1.0" />
+            <group colspan="1" col="5">
+                <field name="phone" nolabel="1" colspan="4" select="2" on_change="on_change_phone_num(phone)"/>
+                <button name="action_dial_phone" string="Dial" type="object"/>
+            </group>
+        </field>
+      </data>
+    </field>
+</record>
+
+<record id="view_res_partner_job_inherit_form" model="ir.ui.view">
+    <field name="name">res.partner.job.inherit.form</field>
+    <field name="model">res.partner.job</field>
+    <field name="type">form</field>
+    <field name="inherit_id" ref="base_contact.view_partner_job_form"/>
+    <field name="arch" type="xml">
+      <data>
+        <field name="phone" position="replace">
+            <label string="Phone : " align="1.0" />
+            <group colspan="1" col="5">
+                <field name="phone" nolabel="1" colspan="4" select="2" on_change="on_change_phone_num(phone)"/>
+                <button name="action_dial_phone" string="Dial" type="object"/>
+            </group>
+        </field>
+      </data>
+    </field>
+</record>
+
+<record id="view_res_partner_contact_inherit_form" model="ir.ui.view">
+    <field name="name">res.partner.contact.inherit.form</field>
+    <field name="model">res.partner.contact</field>
+    <field name="type">form</field>
+    <field name="inherit_id" ref="base_contact.view_partner_contact_form"/>
+    <field name="arch" type="xml">
+      <data>
+        <field name="mobile" position="replace">
+            <label string="Mobile : " align="1.0" />
+            <group colspan="1" col="5">
+                <field name="mobile" nolabel="1" colspan="4" select="2" on_change="on_change_phone_num(mobile)"/>
+                <button name="action_dial_mobile" string="Dial" type="object"/>
+            </group>
+        </field>
+      </data>
+    </field>
+</record>
+
+</data>
+</openerp>

@@ -1,0 +1,58 @@
+<openerp>
+	<data>
+	
+		<record id="wizard_export_simple_members_form" model="ir.ui.view">
+			<field name="name">wizard.export.simple.members.form</field>
+			<field name="model">wizard.export.simple.members</field>
+			<field name="arch" type="xml">
+				<form string="Export of a simplified Members Excel File">
+					<group>
+						<field name="ftp"/>
+						<field name="category_id" width="600" />
+					</group>
+					<footer>
+						 <button name="create_and_send" string="Export" type="object" class="oe_highlight"/>
+	                      or
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_wizard_export_simple_members" model="ir.actions.act_window">
+            <field name="name">Export of a simplified Members Excel File</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.export.simple.members</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_export_simple_members_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Export of a simplified Members Excel File"
+            action="action_wizard_export_simple_members"
+            id="menu_wizard_export_simple_members"
+            parent="base.menu_base_config"/>
+        
+        
+        <record id="wizard_export_simple_members_msg_form" model="ir.ui.view">
+			<field name="name">wizard.export.simple.members.msg.form</field>
+			<field name="model">wizard.export.simple.members.msg</field>
+			<field name="arch" type="xml">
+				<form string="Notification">
+					<group string="File has been created.">
+						<field name="name" invisible="1" />
+					    <field name="msg" nolabel="1" col="2" colspan="2"/>
+					    <field name="repertoire_des_membres_excel" filename="name"/>
+					</group>
+					<footer>
+	                     <button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record> 
+	
+	</data>
+</openerp>

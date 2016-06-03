@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_send_memberdirectory_access_form">
+            <field name="name">wizard.send.memberdirectory.access.form</field>
+            <field name="model">wizard.send.memberdirectory.access</field>
+            <field name="arch" type="xml">
+                <form string="(Re)Send access to directory">
+                    <group>
+						<field name="forced_address"/>
+						<field name="template_id"/>
+                    </group>
+                    <footer>
+                        <button name="send_mails" type="object" string="Send"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+		 <record id="wizard_send_memberdirectory_access_action" model="ir.actions.act_window">
+	            <field name="name">(Re)Send access to directory</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">wizard.send.memberdirectory.access</field>
+	            <field name="view_type">form</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_id" ref="wizard_send_memberdirectory_access_form"/>
+	            <field name="context">{}</field>
+	            <field name="target">new</field>
+	        </record>
+        
+        <record model="ir.values" id="wizard_send_memberdirectory_access_action_value">
+            <field name="model_id" ref="model_wizard_send_memberdirectory_access"/>
+            <field name="name">(Re)Send access to directory</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_send_memberdirectory_access_action'))" />
+            <field name="key">action</field>
+            <field name="model">premium_subscription</field>
+        </record>
+
+		
+		<record model="ir.ui.view" id="wizard_send_memberdirectory_access_msg_form">
+            <field name="name">wizard.send.memberdirectory.access.msg.form</field>
+            <field name="model">wizard.send.memberdirectory.access.msg</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+						<group string="Created Record(s)">
+							<field name="msg" nolabel="1"/>
+						</group>
+                    <footer>
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 	<record id="wizard_send_memberdirectory_access_msg_action" model="ir.actions.act_window">
+            <field name="name">Notification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.send.memberdirectory.access.msg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_send_memberdirectory_access_msg_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

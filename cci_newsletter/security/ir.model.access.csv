@@ -1,0 +1,15 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cci_newsletter_source_manager","CCI Newsletter Source Manager","model_cci_newsletter_source","group_cci_newsletter_manager",1,1,1,1
+"access_cci_newsletter_source_user","CCI Newsletter Source User","model_cci_newsletter_source","group_cci_newsletter_user",1,0,0,0
+"access_cci_newsletter_queue_new_manager","CCI Newsletter Queue New Manager","model_cci_newsletter_queue_new","group_cci_newsletter_manager",1,1,1,1
+"access_cci_newsletter_log_manager","CCI Newsletter Log Manager","model_cci_newsletter_log","group_cci_newsletter_manager",1,1,1,1
+"access_cci_newsletter_log_user","CCI Newsletter Log User","model_cci_newsletter_log","group_cci_newsletter_user",1,0,1,0
+"access_cci_newsletter_subscriber_user","CCI Newsletter Subscriber User","model_cci_newsletter_subscriber","group_cci_newsletter_user",1,1,1,1
+"access_cci_newsletter_subscriber_manager","CCI Newsletter Subscriber Manager","model_cci_newsletter_subscriber","group_cci_newsletter_manager",1,1,1,1
+"access_cci_newsletter_subscriber_extuser_wapi","CCI Newsletter Subscriber External User WAPI","model_cci_newsletter_subscriber","group_cci_newsletter_extuser_wapi",1,1,1,0
+"access_cci_newsletter_subscriber_extuser_bw","CCI Newsletter Subscriber External User Brabant wallon","model_cci_newsletter_subscriber","group_cci_newsletter_extuser_bw",1,1,1,0
+"access_cci_newsletter_subscriber_extuser_ccih","CCI Newsletter Subscriber External User CCIH","model_cci_newsletter_subscriber","group_cci_newsletter_extuser_ccih",1,1,1,0
+"access_cci_newsletter_source_extuser_wapi","CCI Newsletter Source User WAPI","model_cci_newsletter_source","group_cci_newsletter_extuser_wapi",1,0,0,0
+"access_cci_newsletter_source_extuser_bw","CCI Newsletter Source User Brabant wallon","model_cci_newsletter_source","group_cci_newsletter_extuser_bw",1,0,0,0
+"access_cci_newsletter_source_extuser_ccih","CCI Newsletter Source User CCIH","model_cci_newsletter_source","group_cci_newsletter_extuser_ccih",1,0,0,0
+

@@ -1,0 +1,360 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* cci_magazine
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.16\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2012-07-24 07:59:05+0000\n"
+"PO-Revision-Date: 2012-07-24 07:59:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cci_magazine
+#: model:ir.actions.wizard,name:cci_magazine.cci_magazine_get_ppi
+msgid "Get personalised sendings file"
+msgstr "Extraire fichier des envois personalisés"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,city:0
+msgid "City"
+msgstr "Localité"
+
+#. module: cci_magazine
+#: wizard_field:inactivate_old_jobs,init,msg:0
+msgid "The test has been done"
+msgstr "Le test a été effectué"
+
+#. module: cci_magazine
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "The Object name must start with x_ and not contain any special character !"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,partner_id:0
+msgid "Partner data"
+msgstr "Données sur le partenaire"
+
+#. module: cci_magazine
+#: model:ir.actions.wizard,name:cci_magazine.inactivate_old_jobs
+#: model:ir.ui.menu,name:cci_magazine.menu_inactivate_old_jobs
+msgid "Inactivate old Jobs"
+msgstr "Désactiver les fonctions échues"
+
+#. module: cci_magazine
+#: wizard_view:inactivate_old_jobs,init:0
+msgid "Inactivation finished"
+msgstr "Désactivation terminée"
+
+#. module: cci_magazine
+#: view:cci_mag_subscription:0
+msgid "Access to data to correct them"
+msgstr "Accès aux données pour les corriger"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,source:0
+msgid "Source"
+msgstr "Source"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,extract,postal.xml:0
+msgid "File for SUMO"
+msgstr "Fichier pour SUMO"
+
+#. module: cci_magazine
+#: selection:cci_magazine.get_postal,init,method:0
+#: selection:cci_magazine.get_ppi,init,method:0
+msgid "CCIH standard"
+msgstr "CCIH standard"
+
+#. module: cci_magazine
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Invalid model name in the action definition."
+
+#. module: cci_magazine
+#: field:cci_magazine.past_job_check,count:0
+msgid "Changes count"
+msgstr "Comptage des changements"
+
+#. module: cci_magazine
+#: wizard_view:cci_magazine.get_ppi,init:0
+msgid "-1 = no prospect; 0 = same prospects as last month; number = max size of the final file"
+msgstr "-1 = aucun prospect; 0 = les mêmes prospects que le mois précédent; nombre = taille max du fichier final"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,init,method:0
+#: wizard_field:cci_magazine.get_ppi,init,method:0
+msgid "Method"
+msgstr "Méthode"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,extract,msg:0
+#: wizard_field:cci_magazine.get_ppi,extract,msg:0
+msgid "File created"
+msgstr "Fichier créé"
+
+#. module: cci_magazine
+#: model:ir.ui.menu,name:cci_magazine.menu_get_ppi
+msgid "Get Personalised sendings file"
+msgstr "Extraire fichier des envois personalisés"
+
+#. module: cci_magazine
+#: model:ir.ui.menu,name:cci_magazine.menu_extract_subscriptions
+msgid "CCI Mag Subscriptions"
+msgstr "Abonnements au CCI Mag"
+
+#. module: cci_magazine
+#: model:ir.module.module,description:cci_magazine.module_meta_information
+msgid "\n"
+"        Module that add some wizards and lists of controls to help\n"
+"        the Chamber of Commerce to manage their magazine\n"
+"    "
+msgstr "\n"
+"        Module that add some wizards and lists of controls to help\n"
+"        the Chamber of Commerce to manage their magazine\n"
+"    "
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,address_id:0
+msgid "Address data"
+msgstr "Données de l'adresse"
+
+#. module: cci_magazine
+#: view:cci_mag_subscription:0
+msgid "CCI Mag Subcription"
+msgstr "Abonnement CCI Mag"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,street2:0
+msgid "Street2"
+msgstr "Rue 2"
+
+#. module: cci_magazine
+#: wizard_view:cci_magazine.get_postal,extract:0
+#: wizard_view:cci_magazine.get_ppi,extract:0
+msgid "File has been created."
+msgstr "Le fichier a été créé."
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,first_name:0
+msgid "First name"
+msgstr "Prénom"
+
+#. module: cci_magazine
+#: wizard_view:inactivate_old_jobs,init:0
+msgid "The test has been done."
+msgstr "Le test a été effectué."
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_ppi,extract,ppi.csv:0
+msgid "Prepared file"
+msgstr "Fichier préparé"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,init,end_date:0
+msgid "Valid until"
+msgstr "Valide jusqu'à"
+
+#. module: cci_magazine
+#: field:cci_magazine.past_job_check,name:0
+msgid "Date"
+msgstr "Date"
+
+#. module: cci_magazine
+#: code:addons/cci_magazine/wizard/extract_subscriptions.py:0
+#: view:cci_mag_subscription:0
+#: model:ir.actions.wizard,name:cci_magazine.extract_subscriptions
+#, python-format
+msgid "CCI Mag Subscription"
+msgstr "Abonnement CCI Mag"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,job_id:0
+msgid "Function data"
+msgstr "Données sur la fonction"
+
+#. module: cci_magazine
+#: model:ir.model,name:cci_magazine.model_cci_magazine_subscription_source
+msgid "Source of Subscription for the CCI Mag"
+msgstr "Source de l'abonnement au CCI Mag"
+
+#. module: cci_magazine
+#: constraint:ir.cron:0
+msgid "Invalid arguments"
+msgstr "Arguments incorrects"
+
+#. module: cci_magazine
+#: field:cci_magazine.past_job_check,status:0
+msgid "Status"
+msgstr "Statut"
+
+#. module: cci_magazine
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Invalid XML for View Architecture!"
+
+#. module: cci_magazine
+#: field:cci_magazine.subscription_source,name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,extract,postal.csv:0
+msgid "CSV-Excel File"
+msgstr "Fichier CSV-Excel"
+
+#. module: cci_magazine
+#: view:cci_magazine.subscription_source:0
+#: model:ir.actions.act_window,name:cci_magazine.action_sub_source_form
+#: model:ir.ui.menu,name:cci_magazine.menu_sub_source_form
+msgid "Subscription Source"
+msgstr "Source de l'abonnement"
+
+#. module: cci_magazine
+#: field:res.partner.address,magazine_lastprospection:0
+#: field:res.partner.job,magazine_lastprospection:0
+msgid "Magazine last Sending as Prospection"
+msgstr "Date dernier envoi en tant que prospect"
+
+#. module: cci_magazine
+#: selection:cci_magazine.get_postal,init,method:0
+#: selection:cci_magazine.get_ppi,init,method:0
+msgid "CCI Connect standard"
+msgstr "CCI Connect standard"
+
+#. module: cci_magazine
+#: model:ir.model,name:cci_magazine.model_cci_magazine_pas_job_check
+#: model:ir.model,name:cci_magazine.model_cci_magazine_past_job_check
+msgid "Recording of a check of past done job"
+msgstr "Enregistrement du test des fonctions antérieures"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,partner_name:0
+msgid "Partner name"
+msgstr "Nom du partenaire"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_ppi,init,prospect_limit:0
+msgid "Limit"
+msgstr "Limite"
+
+#. module: cci_magazine
+#: wizard_view:cci_magazine.get_postal,init:0
+msgid "Get postal sending file (SUMO)"
+msgstr "Obtenir le fichier des envois postaux (SUMO)"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,contact_id:0
+msgid "Contact data"
+msgstr "Données sur le contact"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,model:0
+msgid "Model"
+msgstr "Modèle"
+
+#. module: cci_magazine
+#: wizard_view:cci_magazine.get_ppi,init:0
+msgid "Get PPI (Personalised Sendings File)"
+msgstr "Extraire le fichier des envois personalisés"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,membership_state:0
+msgid "Membership state"
+msgstr "Etat membre"
+
+#. module: cci_magazine
+#: field:cci_magazine.subscription_source,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,init,edition_code:0
+msgid "Edition Code"
+msgstr "Code édition"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,contact_name:0
+msgid "Contact name"
+msgstr "Nom du contact"
+
+#. module: cci_magazine
+#: code:addons/cci_magazine/wizard/get_postal.py:0
+#, python-format
+msgid "File NOT created.\n0 lines, 0 prospect...\n\nError :\n%s"
+msgstr "Le fichier n'a pas été créé.\n0 lignes, 0 prospect...\n\nErreur :\n%s"
+
+#. module: cci_magazine
+#: wizard_field:cci_magazine.get_postal,init,editor_code:0
+msgid "Editor Code"
+msgstr "Code éditeur"
+
+#. module: cci_magazine
+#: wizard_view:cci_magazine.get_postal,extract:0
+#: wizard_view:cci_magazine.get_ppi,extract:0
+msgid "File prepared"
+msgstr "Fichier préparé"
+
+#. module: cci_magazine
+#: field:cci_mag_subscription,street:0
+msgid "Street"
+msgstr "Rue"
+
+#. module: cci_magazine
+#: code:addons/cci_magazine/wizard/get_postal.py:0
+#, python-format
+msgid "Save the File with '\".xml\"' extension.\nThe file has %s lines including %s new subscribers, after dropping %s subscribers."
+msgstr "Enregistrer le fichier avec l'extension '\".xml\"'.\nLe fichier comporte %s lignes incluant %s nouveaux inscrits, après avoir désabonnés %s adresses."
+
+#. module: cci_magazine
+#: wizard_button:cci_magazine.get_postal,init,end:0
+#: wizard_button:cci_magazine.get_ppi,init,end:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cci_magazine
+#: wizard_button:cci_magazine.get_postal,extract,end:0
+#: wizard_button:cci_magazine.get_ppi,extract,end:0
+#: wizard_button:inactivate_old_jobs,init,end:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: cci_magazine
+#: code:addons/cci_magazine/cci_magazine.py:0
+#, python-format
+msgid " (copy)"
+msgstr " (copie)"
+
+#. module: cci_magazine
+#: wizard_button:cci_magazine.get_postal,init,extract:0
+#: wizard_button:cci_magazine.get_ppi,init,extract:0
+msgid "Extract"
+msgstr "Extraire"
+
+#. module: cci_magazine
+#: model:ir.actions.wizard,name:cci_magazine.cci_magazine_get_postal
+#: model:ir.ui.menu,name:cci_magazine.menu_get_postal
+msgid "Get postal sendings file"
+msgstr "Extraire le fichier des envois postaux"
+
+#. module: cci_magazine
+#: model:ir.model,name:cci_magazine.model_cci_mag_subscription
+msgid "Subscription to the CCI Mag"
+msgstr "Abonnement au CCI Mag"
+
+#. module: cci_magazine
+#: model:ir.module.module,shortdesc:cci_magazine.module_meta_information
+msgid "CCI Magazine"
+msgstr "Magazine CCI"
+

@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!--<menuitem id="menu_partner_interest" name="Marques d'intérêts"
+			parent="crm.menu_crm" />
+		<menuitem id="menu_partner_history" name="Historique des contacts"
+			parent="crm.menu_crm" />-->
+
+	    <!-- ================================ Crm Case inherit =============================== -->
+	   <record model="ir.ui.view" id="crm_lead_inherit">
+	       <field name="name">crm.lead.tree.inherit</field>
+	       <field name="model">crm.lead</field>
+	       <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+	       <field name="arch" type="xml">
+	               <field name="partner_id" position="before">
+	                   <field name="product"/>
+	                   <field name="product_category"/>
+	                   <field name="partner_contact_id"/>
+	               </field>
+	       </field>
+	   </record>
+	   <record model="ir.ui.view" id="crm_case_form_inherit">
+	       <field name="name">crm.lead.form.inherit</field>
+	       <field name="model">crm.lead</field>
+	       <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+	       <field name="arch" type="xml">
+	           <xpath expr="//page[@string='Extra Info']" postion='inside'>
+	               <group>
+                       <group>
+                            <field name="product"/>
+                            <field name="product_category" />
+							<field name="partner_contact_id" />
+                       </group>
+                   </group>
+               </xpath>
+	       </field>
+	   </record>
+	    <!-- ================================ Crm Case new menus =============================== -->
+        <record id="crm_case_act_cases_for_others" model="ir.actions.act_window">
+            <field name="name">Cases created by me for others</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('create_uid','=',uid),('user_id','!=',uid)]</field>
+        </record>
+        <!--<record id="crm_case_act_ocases_for_others" model="ir.actions.act_window">
+            <field name="name">Open Cases created by me for others</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('create_uid','=',uid),('user_id','!=',uid)]</field>
+        </record> -->
+        <menuitem id="next_id_52" name="All Cases" parent="base.menu_base_partner" sequence="1"/>
+        <menuitem action="crm_case_act_cases_for_others" id="menu_crm_case_cases_for_others" parent="next_id_52"/>
+       <!-- <menuitem action="crm_case_act_ocases_for_others" id="menu_crm_case_ocases_for_others" parent="menu_crm_case_cases_for_others"/> -->
+	
+		<!-- ================================ Partner inherit ================================ -->
+		<record model="ir.ui.view" id="res_partner_form_inherit">
+			<field name="name">res.partner.form.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<page string="Sales &amp; Purchases" position="after">
+					<page string="Marques d'interet">
+      					<field name="interest_year"  colspan="4" nolabel="1" string="Marques d'interet">
+							<tree string="Marque d'interet">
+								<field name="date" />
+								<field name="product" />
+								<field name="cci_contact" />
+								<field name="contact" />
+								<field name="category" />
+								<field name="turnover_hoped" />
+								<!--<field name="orders" />-->
+								<field name="next_action" />
+								<field name="cci_contact_follow"/>
+								<field name="description" />
+								<button string="BDC" name="%(wizard_partner_interest_order_action)d" type="action"/>
+							</tree>
+				            <form string="Marque d'interet">
+				                <group>
+				                    <group>
+        					            <field name="date" required="1" select="1"/>
+        					            <field name="next_action" required="1" select="1"/>
+        					            <field name="cci_contact" required="1" select="1"/> <!--widget="selection"-->
+        					            <field name="contact" domain="[('name','=',parent.id)]" select="1"/>
+    					                <field name="turnover_hoped" required="1" select="1"/>
+					               </group>
+                                   <group>
+        					            <field name="cci_contact_follow" domain="[('cci_crm_follower','=',True)]" required="1" select="1"/>
+        					            <field name="product" required="1" select="1"/> <!--widget="selection"-->
+        					            <field name="category" domain="[('cci_product', '=', product)]" select="1"/>
+        					            <field name="description"  required="1" select="1"/>
+                                        <field name="year" required="1" select="1"/>
+                                        <field name="active"/>
+                                        <!--<field name="case_id" readonly="1"/>-->
+                                    </group>
+                                </group>
+				            </form>
+						</field>
+						<field name="tunover_hoped"/>
+                        <!--<field name="orders"/>-->
+					</page>
+					<page string="Historique">
+						<field name="history"  colspan="4" nolabel="1" string="Historique">
+							<tree string="Historique">
+								<field name="date" />
+								<field name="cci_contact" />
+								<field name="contact" />
+								<field name="action" />
+								<field name="product" />
+								<field name="category" />
+								<field name="description" />
+                                <field name="next_action" />
+                                <field name="state"/>
+							</tree>
+				            <form string="Historique">
+				                <group>
+				                    <group>
+        					            <field name="date" required="1" select="1"/>
+        					            <field name="action" required="1" select="1"/>
+        					            <field name="cci_contact" required="1" select="1"/> <!--widget="selection" -->
+        					            <field name="contact" domain="[('name','=',parent.id)]" select="1"/>
+        					            <field name="product" required="1" select="1"/> <!--widget="selection" -->
+    					            </group>
+					                <group>
+        					            <field name="category" domain="[('cci_product', '=', product)]" select="1"/>
+        					            <field name="description"  required="1" select="1"/>
+                                        <field name="next_action" select="1"/>
+                                        <field name="cci_contact_follow" domain="[('cci_crm_follower','=',True)]" select="1"/>
+                                        <!--<field name="case_id" readonly="1"/>-->
+                                        <field name="state" select="1"/>
+                                    </group>
+                                </group>
+				            </form>
+						</field>
+					</page>
+					<!--<page string="Chiffre d'affaires">
+						<field name="years" colspan="4" on_change="year_changed(years)" />
+						<field name="cci_turnovers" nolabel="1" colspan="4">
+							<tree string="Turnover">
+								<field name="sum_price" />
+								<field name="cci_product" />
+							</tree>
+							<form string="Turnover Details">
+								<field name="details" nolabel="1" colspan="4" readonly="1">
+									<tree string="Details">
+										<field name="invoice_number" />
+										<field name="price"/>
+										<field name="product_name" />
+									</tree>
+								</field>
+								<field name="total" colspan="2" readonly="1" />
+							</form>
+						</field>
+						<field name="total" colspan="2" readonly="1" />
+					</page>-->
+				</page>
+			</field>
+		</record>
+
+		<!-- ================================ Partner Interest ================================ -->
+		<record model="ir.ui.view" id="res_partner_interest_form">
+			<field name="name">res.partner.interest.form</field>
+			<field name="model">res.partner.interest</field>
+            <field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Marque d'interet">
+				    <group>
+				        <group>
+                            <field name="partner" required="1" select="1"/>
+        					<field name="date" required="1" select="1"/>
+        					<field name="next_action" required="1" select="1"/>
+        					<field name="cci_contact" required="1" select="1"/>  <!--widget="selection" -->
+        					<field name="contact" domain="[('name','=',partner)]" select="1"/>
+        					<field name="turnover_hoped" required="1" select="1"/>
+        					<field name="cci_contact_follow" domain="[('cci_crm_follower','=',True)]" required="1" select="1"/>
+    					</group>
+    					<group>
+        					<field name="product" required="1" select="1"/> <!--widget="selection" -->
+        					<field name="category" domain="[('cci_product', '=', product)]" select="1"/>
+        					<field name="description"  required="1" select="1"/>
+                            <field name="year" required="1" select="1"/>
+                            <field name="positive" select="1"/>
+                            <field name="active" select="2"/>
+                        </group>
+                    </group>
+                    <!--<field name="case_id" readonly="1"/>-->
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="res_partner_interest_tree">
+			<field name="name">res.partner.interest.tree</field>
+			<field name="model">res.partner.interest</field>
+            <field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Marque d'interet">
+                    <field name="partner"/>
+					<field name="date" />
+					<field name="product" />
+					<field name="cci_contact" />
+					<field name="contact" />
+					<field name="category" />
+					<field name="turnover_hoped" />
+					<!--<field name="orders" />-->
+					<field name="next_action" />
+					<field name="cci_contact_follow" />
+					<field name="description" />
+                    <field name="year"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for res.partner.interest -->
+        <record id="res_partner_interest_filter" model="ir.ui.view">
+            <field name="name">res.partner.interest.select</field>
+            <field name="model">res.partner.interest</field>
+            <field name="arch" type="xml">
+                <search string="Search Marque d'interet">
+                    <field name="partner"/>
+                    <field name="date"/>
+                    <field name="next_action"/>
+                    <field name="cci_contact"/>
+                    <field name="contact"/>
+                    <field name="turnover_hoped"/>
+                    <field name="cci_contact_follow"/>
+                    <field name="product"/>
+                    <field name="category"/>
+                    <field name="description"/>
+                    <field name="year"/>
+                    <field name="positive"/>
+                    <field name="active"/>
+               </search>
+            </field>
+        </record>
+
+		<record model="ir.actions.act_window" id="action_partner_all_interest">
+		    <field name="name">All Interests (past and present)</field>
+			<field name="res_model">res.partner.interest</field>
+			<field name="view_type">form</field>
+            <field name="domain">['|',('active','=',True),('active','=',False)]</field>
+			<field name="search_view_id" ref="res_partner_interest_filter"/>
+		</record>
+		<menuitem action="action_partner_all_interest" id="menu_partner_all_interest"
+			parent="menu_cci_salesman_main" name="All Interests (past and present)"/>
+		<record model="ir.actions.act_window" id="action_partner_interest">
+		    <field name="name">All Present Interests</field>
+			<field name="res_model">res.partner.interest</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="res_partner_interest_filter"/>
+		</record>
+		<menuitem action="action_partner_interest" id="menu_partner_interest"
+			parent="menu_partner_all_interest" name="All Present Interests"/>
+			<record model="ir.actions.act_window" id="action_partner_my_interest">
+		    <field name="name">My Interets</field>
+			<field name="res_model">res.partner.interest</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('cci_contact_follow','=',uid)]</field>
+			<field name="search_view_id" ref="res_partner_interest_filter"/>
+		</record>
+		<menuitem action="action_partner_my_interest" id="menu_partner_my_interest"
+			parent="menu_partner_interest" name="My Interets"/>
+			<record model="ir.actions.act_window" id="action_partner_creator_interest">
+		    <field name="name">My Created Interets</field>
+			<field name="res_model">res.partner.interest</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('cci_contact.user','=',uid)]</field>
+			<field name="search_view_id" ref="res_partner_interest_filter"/>
+		</record>
+		<menuitem action="action_partner_creator_interest" id="menu_partner_creator_interest"
+			parent="menu_partner_interest" name="My Created Interets"/>
+
+		<!-- ================================ Partner History ================================ -->
+		<record model="ir.ui.view" id="res_partner_history_form">
+			<field name="name">res.partner.history.form</field>
+			<field name="model">res.partner.history</field>
+            <field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Historique">
+                    <group>
+                        <group>
+                            <field name="partner" required="1" select="1"/>
+        					<field name="date" required="1" select="1"/>
+        					<field name="action" required="1" select="1"/>
+        					<field name="cci_contact" required="1" select="1"/> <!--widget="selection" -->
+        					<field name="contact" domain="[('name','=',partner)]" select="1"/>
+        					<field name="product" required="1" select="1"/> <!-- widget="selection" -->
+    					</group>
+    					<group>
+        					<field name="category" domain="[('cci_product', '=', product)]" select="1"/>
+        					<field name="description"  required="1" select="1"/>
+                            <field name="next_action" select="1"/>
+                            <field name="cci_contact_follow" domain="[('cci_crm_follower','=',True)]" select="1"/>
+                            <!--<field name="case_id" readonly="1"/>-->
+                            <field name="state" select="1"/>
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="res_partner_history_tree">
+			<field name="name">res.partner.history.tree</field>
+			<field name="model">res.partner.history</field>
+            <field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Historique">
+                    <field name="partner"/>
+					<field name="date" />
+					<field name="cci_contact" />
+					<field name="contact" />
+					<field name="action" />
+					<field name="product" />
+					<field name="category" />
+					<field name="description" />
+                    <field name="next_action" />
+                    <field name="state"/>
+                    <field name="description"/>
+                    <field name="cci_contact_follow"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!-- search view for res.partner.history -->
+		<record id="res_partner_history_filter" model="ir.ui.view">
+            <field name="name">res.partner.history.select</field>
+            <field name="model">res.partner.history</field>
+            <field name="arch" type="xml">
+                <search string="Search Historique">
+                    <field name="partner"/>
+                    <field name="date"/>
+                    <field name="action"/>
+                    <field name="cci_contact"/>
+                    <field name="contact"/>
+                    <field name="product"/>
+                    <field name="category"/>
+                    <field name="description"/>
+                    <field name="cci_contact_follow"/>
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+		<record model="ir.actions.act_window" id="action_partner_history">
+		    <field name="name">All history</field>
+			<field name="res_model">res.partner.history</field>
+			<field name="view_type">form</field>
+			<field name="saerch_view_id" ref="res_partner_history_filter"/>
+		</record>
+		<menuitem action="action_partner_history" id="menu_partner_history"
+			parent="menu_cci_salesman_main" name="All history"/>
+		<record model="ir.actions.act_window" id="action_partner_my_history">
+		    <field name="name">My History</field>
+			<field name="res_model">res.partner.history</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('cci_contact_follow','=',uid)]</field>
+			<field name="saerch_view_id" ref="res_partner_history_filter"/>
+		</record>
+		<menuitem action="action_partner_my_history" id="menu_partner_my_history"
+			parent="menu_partner_history" name="My History"/>
+		<record model="ir.actions.act_window" id="action_partner_current_history">
+		    <field name="name">My Current History</field>
+			<field name="res_model">res.partner.history</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('cci_contact_follow','=',uid),('state','=','open')]</field>
+			<field name="saerch_view_id" ref="res_partner_history_filter"/>
+		</record>
+		<menuitem action="action_partner_current_history" id="menu_partner_current_history"
+			parent="menu_partner_my_history" name="My Current History"/>
+
+		<!-- ================================ CCI Contact ================================ -->
+		<record id="view_cci_contact_form" model="ir.ui.view">
+			<field name="name">cci.contact.form</field>
+			<field name="type">form</field>
+			<field name="model">cci.contact</field>
+			<field name="arch" type="xml">
+				<form string="CCI Salesman">
+				    <group>
+				        <group>
+    				        <field name="name" select="1"/>
+                            <field name="commissioned" select="2"/>
+                        </group>
+                        <group>
+							<field name="user"/>
+                    		<field name="active" select="2"/>
+                        </group>
+                    </group>
+                    
+					<notebook>
+                        <page string="Commissions">
+                            <group colspan="4" col="8">
+                                <field name="years"/>
+                                <!--<field name="salesman" invisible="1"/>-->
+                            </group>
+							<separator sting="Commission" colspan="4"/>
+                            <field name="commission" colspan="4" nolabel="1">
+                                <tree string="Commissions" editable="top" >
+                                    <field name="realised" />
+                                    <field name="objectif" />
+                                    <field name="com1" />
+                                    <field name="com2" />
+                                    <field name="product" />
+                                </tree>
+                            </field>
+                            <separator string="Totaux:" />
+                            <group colspan="4" col="8">
+                                <field name="realised_total" />
+                                <field name="objective_total" />
+                                <field name="com1_total" />
+                                <field name="com2_total" />
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+   		</record>
+		<record model="ir.ui.view" id="view_cci_contact_tree">
+			<field name="name">cci.contact.tree</field>
+			<field name="type">tree</field>
+			<field name="model">cci.contact</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Salesman">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for cci.contact -->
+        <record id="view_cci_contact_filter" model="ir.ui.view">
+            <field name="name">cci.contact.select</field>
+            <field name="model">cci.contact</field>
+            <field name="arch" type="xml">
+                <search string="Search CCI Salesman">
+                    <field name="name"/>
+                    <field name="commissioned"/>
+                    <field name="active"/>
+               </search>
+            </field>
+        </record>
+		
+		<record model="ir.actions.act_window" id="action_cci_contact">
+			<field name="name">CCI Salesman</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.contact</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_cci_contact_tree"/>
+			<field name="search_view_id" ref="view_cci_contact_filter"/>
+		</record>
+		<record model="ir.actions.act_window" id="action_cci_contact_justme">
+			<field name="name">CCI Salesman</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.contact</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_cci_contact_tree"/>
+            <field name="domain">[('user','=',uid)]</field>
+			<field name="search_view_id" ref="view_cci_contact_filter"/>
+		</record>
+		<menuitem action="action_cci_contact_justme" id="menu_cci_contact"
+			parent="menu_cci_salesman_main" name="Me, myself, and I"/>
+		<menuitem action="action_cci_contact" id="menu_cci_contact_all"
+			parent="menu_cci_salesman_main" name="All CCI Commercials"/>
+
+		<!-- ================================ CCI Product Category ================================ -->
+		<record id="view_cci_product_category_form" model="ir.ui.view">
+			<field name="name">cci.product.category.form</field>
+			<field name="model">cci.product.category</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="CCI Product Category">
+				    <group>
+				        <group>
+                            <field name="name" select="1"/>
+                            <field name="cci_product" select="1"/>
+                            <field name="active" select="2"/>
+				        </group>
+				    </group>
+				</form>
+			</field>
+		</record>
+		<record id="view_cci_product_category_tree" model="ir.ui.view">
+			<field name="name">cci.product.category.tree</field>
+			<field name="model">cci.product.category</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="CCI Product Category">
+					<field name="name" />
+					<field name="cci_product" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- search view for cci.product.category -->
+        <record id="view_cci_product_category_filter" model="ir.ui.view">
+            <field name="name">cci.product.category.select</field>
+            <field name="model">cci.product.category</field>
+            <field name="arch" type="xml">
+                <search string="Search CCI Product Category">
+                    <field name="name"/>
+                    <field name="cci_product"/>
+                    <field name="active"/>
+               </search>
+            </field>
+        </record>
+
+		<record id="action_cci_product_category_form" model="ir.actions.act_window">
+			<field name="name">CCI Product Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.product.category</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="view_cci_product_category_filter"/>
+		</record>
+		<menuitem action="action_cci_product_category_form" id="menu_cci_product_category_form"
+			parent="base.menu_base_config" />
+
+        <!-- ================================ cci.turnover =============================== -->
+		<record id="view_cci_turnover_form" model="ir.ui.view">
+			<field name="name">cci.turnover.form</field>
+			<field name="model">cci.turnover</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Annual TurnOver by CCI Product">
+				    <group>
+                        <group>
+                            <field name="sum_price"/>
+                            <field name="cci_product" select="1"/>
+                            <field name="years" select="1"/>
+                        </group>
+                        <group>
+                            <field name="partner"/>
+                            <field name="details" colspan="4"/>
+                        </group>
+                    </group>
+				</form>
+			</field>
+		</record>
+		<record id="view_cci_turnover_tree" model="ir.ui.view">
+			<field name="name">cci.turnover.tree</field>
+			<field name="model">cci.turnover</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Annual TurnOver by CCI Product">
+                    <field name="years" select="1"/>
+                    <field name="sum_price" sum="Total"/>
+                    <field name="cci_product" select="1"/>
+                    <field name="partner"/>
+				</tree>
+			</field>
+		</record>
+
+        <!-- ================================ cci.turnover.details============================ -->
+		<record id="view_cci_turnover_details_form" model="ir.ui.view">
+			<field name="name">cci.turnover.details.form</field>
+			<field name="model">cci.turnover.details</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Detail of Annual TurnOver">
+				    <group>
+    				    <group>
+    				        <field name="invoice_number"/>
+                            <field name="price"/>
+    				    </group>
+    				    <group>
+        				    <field name="product_name"/>
+                            <field name="invoice_line_desc"/>
+    				    </group>
+				    </group>
+				</form>
+			</field>
+		</record>
+		<record id="view_cci_turnover_details_tree" model="ir.ui.view">
+			<field name="name">cci.turnover.details.tree</field>
+			<field name="model">cci.turnover.details</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Detail of Annual TurnOver">
+                    <field name="price"/>
+                    <field name="invoice_number"/>
+                    <field name="invoice_line_desc"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- ================================ CCI Product ================================ -->
+		<record id="view_cci_product_form" model="ir.ui.view">
+			<field name="name">cci.product.form</field>
+			<field name="model">cci.product</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Product">
+				    <group>
+				        <group>
+        					<field name="name"  select="1"/>
+        					<field name="order_type"/>
+        					<field name="commissioned" />
+    					</group>
+    					<group>
+    					    <field name="code" select="1"/>
+                            <field name="active"/>
+    					</group>
+					</group>
+					<separator colspan="4" string="Categories"/>
+					<field name="categories"  nolabel="1">
+						<tree string="Categories">
+							<field name="name" />
+						</tree>
+						<form string="Categories">
+							<field name="name" />
+						</form>
+					</field>
+					<separator colspan="4" string="Products"/>
+					<field name="product_ids" colspan="4" nolabel="1" />
+				</form>
+			</field>
+		</record>
+		<record id="view_cci_product_tree" model="ir.ui.view">
+			<field name="name">cci.product.tree</field>
+			<field name="model">cci.product</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Product">
+					<field name="name"/>
+					<field name="code"/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_cci_product_form" model="ir.actions.act_window">
+			<field name="name">Product</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.product</field>
+			<field name="view_type">form</field>
+		</record>
+		<menuitem action="action_cci_product_form" id="menu_cci_product_form"
+			parent="base.menu_base_config" />
+
+		<!-- ================================ cci_crm Todo ================================ -->
+		<record model="ir.ui.view" id="crm_cci_todo_form">
+			<field name="name">crm_cci.todo.form</field>
+			<field name="model">crm_cci.todo</field>
+            <field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="ToDo">
+				    <group>
+						<field name="model" select="1" readonly="1"/>
+					</group>
+					<group>
+    				    <group>
+                            <field name="date" required="1" select="1" readonly="1"/>
+    				    </group>
+    				    <group>
+    				        <field name="next_action" required="1" select="1"/>
+    				    </group>
+					</group>
+					<group string="Partner" colspan="4">
+						<group>
+							<group>
+								<field name="company_phone"/>
+								<field name="prof_phone"/>
+								<field name="mobile"/>
+							</group>
+							<group col="1">
+								<button name="action_dial_company_phone" string="Dial" type="object" colspan="1"/>
+								<button name="action_dial_prof_phone" string="Dial" type="object" colspan="1"/>
+								<button name="action_dial_mobile" string="Dial" type="object" colspan="1"/>
+							</group>
+						</group>
+						<group>
+							<field name="partner" required="1" select="1" readonly="1"/>
+							<field name="contact" domain="[('parent_id','=',partner)]" select="1" on_change="onchange_contact(contact)"/>
+							<field name="company_email" widget="email"/>
+							<field name="prof_email" widget="email"/>
+						</group>
+					</group>
+                    <group string="Details" colspan="4">
+						<group>
+							<field name="cci_contact" required="1" select="1"/> <!--widget="selection" -->
+							<field name="description"  required="1" select="1"/>
+							<field name="product" required="1" select="1"/> <!--widget="selection" -->
+							<field name="year" required="1" select="1"/>
+							<field name="action" />
+							<field name="positive"/>
+						</group>
+						<group>
+	    					<field name="cci_contact_follow" domain="[('cci_crm_follower','=',True)]" required="1" select="1"/>
+	    					<field name="category" domain="[('cci_product', '=', product)]" select="1"/>
+	    					<field name="turnover_hoped" required="1" select="1"/>
+	                        <button string="Create New History" name="%(create_history_from_interest_action)d" type="action" colspan="2"/>
+	                        <field name="state" select="2"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="crm_ccim_todo_tree">
+			<field name="name">crm_cci.todo.tree</field>
+			<field name="model">crm_cci.todo</field>
+            <field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="ToDo">
+                    <field name="partner"/>
+					<field name="date" />
+					<field name="product" />
+					<field name="cci_contact" />
+					<field name="contact"/>
+					<field name="category" />
+					<field name="turnover_hoped" />
+					<field name="next_action" />
+					<field name="cci_contact_follow" />
+					<field name="description" />
+                    <field name="year"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- search view for crm_cci.todo -->
+        <record id="crm_cci_todo_filter" model="ir.ui.view">
+            <field name="name">crm_cci.todo.select</field>
+            <field name="model">crm_cci.todo</field>
+            <field name="arch" type="xml">
+                <search string="Search ToDo">
+                    <field name="model"/>
+                    <field name="date"/>
+                    <field name="next_action"/>
+                    <field name="contact"/>
+                    <field name="cci_contact"/>
+                    <field name="description"/>
+                    <field name="product"/>
+                    <field name="year"/>
+                    <field name="cci_contact_follow"/>
+                    <field name="category"/>
+                    <field name="turnover_hoped"/>
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+
+		<record model="ir.actions.act_window" id="action_crm_cci_todo">
+			<field name="res_model">crm_cci.todo</field>
+			<field name="name">wizard_show_registrations_from_todo</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="crm_cci_todo_filter"/>
+		</record>
+		<menuitem action="action_crm_cci_todo" id="menu_crm_cci_todo"
+			parent="menu_cci_salesman_main" name="ToDos list of olds not recomputed"/>
+
+        <!-- Shortcuts from 'cci_crm.todo' to linked records to use it as center of work -->
+        <!--<act_window 
+            domain="[('id', '=', partner)]"
+            id="act_todo_show_partner"
+            name="Show Partner"
+            res_model="res.partner"
+            src_model="crm_cci.todo"
+            view_type="form"
+            view_mode="form" />
+        <act_window 
+            domain="[('id', '=', contact)]"
+            id="act_todo_show_job"
+            name="Show Function Contact"
+            res_model="res.partner.job"
+            src_model="crm_cci.todo"
+            view_type="form"
+            view_mode="form" />
+        <act_window 
+            domain="[('id', '=', contact.contact_id)]"
+            id="act_todo_show_contact"
+            name="Show Contact"
+            res_model="res.partner.contact"
+            src_model="crm_cci.todo"
+            view_type="form"
+            view_mode="form" />-->
+        <act_window 
+            domain="[('id', '=', partner)]"
+            id="act_todo_show_partner"
+            name="Show Partner"
+            res_model="res.partner"
+            src_model="crm_cci.todo" />
+        <act_window 
+            domain="[('id', '=', contact)]"
+            id="act_todo_show_job"
+            name="Show Function Contact"
+            res_model="res.partner"
+            src_model="crm_cci.todo" />
+        <act_window 
+            domain="[('partner_id', '=', partner)]"
+            id="act_todo_show_invoices"
+            name="Show Invoices"
+            res_model="account.invoice"
+            src_model="crm_cci.todo" />
+        <!-- <act_window 
+            domain="[('partner_order_id', '=', partner)]"
+            id="act_todo_show_saleorders"
+            name="Show Sales Orders"
+            res_model="sale.order"
+            src_model="crm_cci.todo"/> -->
+        <act_window 
+            domain="[('partner', '=', partner)]"
+            id="act_todo_show_interests"
+            name="Show All Interest"
+            res_model="res.partner.interest"
+            src_model="crm_cci.todo" />
+        <act_window 
+            domain="[('partner', '=', partner)]"
+            id="act_todo_show_history"
+            name="Show All History"
+            res_model="res.partner.history"
+            src_model="crm_cci.todo" />
+        <!-- View for product.product object inherit -->
+	    <record model="ir.ui.view" id="product_normal_form_view_inherit2">
+			    <field name="name">product.product.form.inherit2</field>
+			    <field name="type">form</field>
+			    <field name="model">product.product</field>
+			    <field name="inherit_id" ref="product.product_normal_form_view"/>
+			    <field name="arch" type="xml">
+				    <field name="product_manager" position="after" >
+					    <field name="cci_product_id" select="2"/>
+				    </field>
+			    </field>
+	    </record>
+
+	    <!--- View to adapt account_account form -->
+	    <record model="ir.ui.view" id="view_account_form_commission">
+		    <field name="name">account.account.commission.form</field>
+		    <field name="type">form</field>
+		    <field name="model">account.account</field>
+		    <field name="inherit_id" ref="account.view_account_form"/>
+		    <field name="arch" type="xml">
+                <field name="type" select="1" position="after">
+				    <field name="cci_commission"/>
+			    </field>
+		    </field>
+	    </record>
+	</data>
+</openerp>

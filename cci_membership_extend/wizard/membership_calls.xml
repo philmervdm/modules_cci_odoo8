@@ -1,0 +1,49 @@
+<openerp>
+	<data>
+		<record id="view_membership_calls_form" model="ir.ui.view">
+			<field name="name">membership.calls.form</field>
+			<field name="model">membership.calls</field>
+			<field name="arch" type="xml">
+				<form string="Calls for Membership">
+					<group  colspan="2">
+					    <field name="year"/>
+                        <field name="address_type"/>
+					</group>
+					<group>
+						<group>
+							<field name="also_invoiced"/>
+							<field name="job_categs" />
+						</group>
+						<group>
+							<field name="also_forced"/>
+							<label col="1" string="If you want to choose the address of the Membership Contact, you MUST give his letter as first category"/>
+						</group>
+					</group>
+					<group>
+                        <field name="price_site" />
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                    <button name="open_window_results" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_membership_calls_form" model="ir.actions.act_window">
+            <field name="name">Calls for Membership</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">membership.calls</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_membership_calls_form"/>
+            <field name="target">new</field>
+        </record>
+	<menuitem name="Calls for membership" id="menu_membership_call"
+			action="action_membership_calls_form"
+			parent="menu_membership_yearly" 
+            sequence="10" />
+	</data>
+</openerp>

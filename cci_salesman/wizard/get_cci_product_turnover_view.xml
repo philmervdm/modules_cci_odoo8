@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_get_cci_product_turnover_form">
+            <field name="name">get.cci.product.turnover.form</field>
+            <field name="model">get.cci.product.turnover</field>
+            <field name="arch" type="xml">
+                <form string="Annual TurnOver by CCI Product">
+                    <group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="to"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="calculate_turnover" type="object" string="Get Turnover "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_get_cci_product_turnover_action" model="ir.actions.act_window">
+            <field name="name">TurnOver by CCI Product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">get.cci.product.turnover</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_get_cci_product_turnover_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.values" id="wizard_get_cci_product_turnover_values">
+            <field name="model_id" ref="cci_salesman.model_get_cci_product_turnover"/>
+            <field name="name">TurnOver by CCI Product</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_get_cci_product_turnover_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+        
+    </data>
+</openerp>

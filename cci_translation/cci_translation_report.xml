@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+		
+		<report string="Awex Report"
+		    model="translation.folder"
+			name="cci_translation.report_translation_awex" 
+			id="invoice_transfolder_report"
+			report_type="qweb-pdf"
+			auto="False"
+			file="cci_translation.report_translation_awex"
+			header="False"
+		/>
+	</data>
+</openerp>

@@ -1,0 +1,114 @@
+<openerp>
+	<data>
+	
+        <!-- Forms for the countries and areas -->
+		<record model="ir.ui.view" id="cci_country.cci_country_form">
+			<field name="name">cci_country.form</field>
+			<field name="model">cci.country</field>
+			<field name="arch" type="xml">
+				<form string="Countries and Areas">
+					<group>
+						<group>
+							<field name="code" string="Code"/>
+						</group>
+						<group>
+							<field name="name" string="Nom"/>
+						</group>
+					</group>
+					<group>
+						<field name="official_name"/>
+					</group>
+					<group>
+						<group>
+							<field name="postalabbrev" string="Postal Abbreviation" />
+		                    <field name="iscountry" string="IsCountry"/>
+							<field name="description" string="Description"/>
+						</group>
+						<group>
+							<field name="phoneprefix" string="Phone prefix"/>
+		                    <field name="active" string="Active" />
+						</group>
+					</group>
+					<group string="Valid for use in these modules">
+						<group>
+							<field name="valid4certificate" string="Certificates of Origin" />
+							<field name="valid4embassy" string="Embassy folders" />
+						</group>
+						<group>
+							<field name="valid4ata" string="ATA Carnet" />
+						</group>
+					</group>
+					<separator string="Contains / Part of" colspan="4"/>
+                    <field name="cci_country_ids" />
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="cci_country.cci_country_tree">
+			<field name="name">cci_country.tree</field>
+			<field name="model">cci.country</field>
+			<field name="arch" type="xml">
+				<tree string="Countries and Areas">
+					<field name="code" string="Code"/>
+					<field name="name" string="Nom"/>
+                    <field name="iscountry" string="Active"  />
+				</tree>
+			</field>
+		</record>
+
+		<record id="cci_country.cci_country_filter" model="ir.ui.view">
+            <field name="name">cci.country.select</field>
+            <field name="model">cci.country</field>
+            <field name="arch" type="xml">
+                <search string="Search CCI Country">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="official_name"/>
+                    <field name="iscountry" />
+                    <field name="iscountry" />
+               </search>
+            </field>
+        </record>
+
+		<!-- view for res.partner.state2
+		<record model="ir.actions.act_window" id="action_partner_state">
+			<field name="name">Activity State</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner.state</field>
+			<field name="view_type">form</field>
+		</record>
+		<menuitem name="States" groups="base.group_admin" id="menu_partner_state_main" parent="base.menu_base_config"/>
+		<menuitem  parent="menu_partner_state_main" groups="base.group_admin" action="action_partner_state" id="menu_partner_state"/>
+
+		<record model="ir.ui.view" id="view_partner_state2_form">
+			<field name="name">res.partner.state2.form</field>
+			<field name="model">res.partner.state2</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Customer State">
+					<field name="name" />
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_partner_state2">
+			<field name="name">Customer State</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner.state2</field>
+			<field name="view_type">form</field>
+		</record>
+		<menuitem parent="menu_partner_state_main" groups="base.group_admin" action="action_partner_state2" id="menu_partner_state2"/>
+-->
+
+	    <!-- menu entries for these forms -->
+		<record model="ir.actions.act_window" id="action_cci_country">
+			<field name="name">Country and Area</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">cci.country</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="cci_country.cci_country_filter"/>
+		</record>
+		
+		<menuitem parent="base.menu_localisation" groups="base.group_system" action="action_cci_country" id="menu_cci_country" />
+		
+	</data>
+</openerp>

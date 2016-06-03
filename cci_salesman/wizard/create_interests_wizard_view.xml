@@ -1,0 +1,137 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wizard_create_interests_form">
+            <field name="name">create.interests.form</field>
+            <field name="model">create.interests</field>
+            <field name="arch" type="xml">
+                <form string="Create Interests">
+					<group> <field name="partner_id"/> </group>
+                    <group colspan="4" col="5">
+                        <group col="2">
+                            <label string="Produit" colspan="4"/>
+							<field name="ae"/>
+							<field name="ccimag"/>
+							<field name="cnn"/>
+							<field name="empl"/>
+							<field name="event"/>
+							<field name="memb"/>
+							<field name="mi"/>
+							<field name="rep"/>
+							<field name="spons"/>
+							<field name="table"/>
+						</group>
+						<group col="1">
+							<label string="Sous-produit"/>
+							<field name="ae_subproduct" nolabel="1" attrs="{'readonly':[('ae','=',False)]}"/>
+							<field name="ccimag_subproduct" nolabel="1" attrs="{'readonly':[('ccimag','=',False)]}"/>
+							<field name="cnn_subproduct" nolabel="1" attrs="{'readonly':[('cnn','=',False)]}"/>
+							<field name="empl_subproduct" nolabel="1" attrs="{'readonly':[('empl','=',False)]}"/>
+							<field name="event_subproduct" nolabel="1" attrs="{'readonly':[('event','=',False)]}"/>
+							<field name="memb_subproduct" nolabel="1" attrs="{'readonly':[('memb','=',False)]}"/>
+							<field name="mi_subproduct" nolabel="1" attrs="{'readonly':[('mi','=',False)]}"/>
+							<field name="rep_subproduct" nolabel="1" attrs="{'readonly':[('rep','=',False)]}"/>
+							<field name="spons_subproduct" nolabel="1" attrs="{'readonly':[('spons','=',False)]}"/>
+							<field name="table_subproduct" nolabel="1" attrs="{'readonly':[('table','=',False)]}"/>
+						</group>
+
+						<group col="1">
+							<label string="Date Suivi"/>
+							<field name="ae_date" nolabel="1" attrs="{'readonly':[('ae','=',False)]}"/>
+							<field name="ccimag_date" nolabel="1" attrs="{'readonly':[('ccimag','=',False)]}"/>
+							<field name="cnn_date" nolabel="1" attrs="{'readonly':[('cnn','=',False)]}"/>
+							<field name="empl_date" nolabel="1" attrs="{'readonly':[('empl','=',False)]}"/>
+							<field name="event_date" nolabel="1" attrs="{'readonly':[('event','=',False)]}"/>
+							<field name="memb_date" nolabel="1" attrs="{'readonly':[('memb','=',False)]}"/>
+							<field name="mi_date" nolabel="1" attrs="{'readonly':[('mi','=',False)]}"/>
+							<field name="rep_date" nolabel="1" attrs="{'readonly':[('rep','=',False)]}"/>
+							<field name="spons_date" nolabel="1" attrs="{'readonly':[('spons','=',False)]}"/>
+							<field name="table_date" nolabel="1" attrs="{'readonly':[('table','=',False)]}"/>
+						</group>
+
+						<group col="1">
+							<label string="Commentaire"/>
+							<field name="ae_comment" nolabel="1" attrs="{'readonly':[('ae','=',False)]}"/>
+							<field name="ccimag_comment" nolabel="1" attrs="{'readonly':[('ccimag','=',False)]}"/>
+							<field name="cnn_comment" nolabel="1" attrs="{'readonly':[('cnn','=',False)]}"/>
+							<field name="empl_comment" nolabel="1" attrs="{'readonly':[('empl','=',False)]}"/>
+							<field name="event_comment" nolabel="1" attrs="{'readonly':[('event','=',False)]}"/>
+							<field name="memb_comment" nolabel="1" attrs="{'readonly':[('memb','=',False)]}"/>
+							<field name="mi_comment" nolabel="1" attrs="{'readonly':[('mi','=',False)]}"/>
+							<field name="rep_comment" nolabel="1" attrs="{'readonly':[('rep','=',False)]}"/>
+							<field name="spons_comment" nolabel="1" attrs="{'readonly':[('spons','=',False)]}"/>
+							<field name="table_comment" nolabel="1" attrs="{'readonly':[('table','=',False)]}"/>
+						</group>
+
+						<group col="1">
+							<label string="Contact client"/>
+							<field name="ae_job_id" nolabel="1" attrs="{'readonly':[('ae','=',False)]}"/>
+							<field name="ccimag_job_id" nolabel="1" attrs="{'readonly':[('ccimag','=',False)]}"/>
+							<field name="cnn_job_id" nolabel="1" attrs="{'readonly':[('cnn','=',False)]}"/>
+							<field name="empl_job_id" nolabel="1" attrs="{'readonly':[('empl','=',False)]}"/>
+							 <field name="event_job_id" nolabel="1" attrs="{'readonly':[('event','=',False)]}"/>
+							 <field name="memb_job_id" nolabel="1" attrs="{'readonly':[('memb','=',False)]}"/>
+							<field name="mi_job_id" nolabel="1" attrs="{'readonly':[('mi','=',False)]}"/>
+							<field name="rep_job_id" nolabel="1" attrs="{'readonly':[('rep','=',False)]}"/>
+							<field name="spons_job_id" nolabel="1" attrs="{'readonly':[('spons','=',False)]}"/>
+							<field name="table_job_id" nolabel="1" attrs="{'readonly':[('table','=',False)]}"/>
+						</group>
+					</group>
+                    <group string="Historique" colspan="4" col="7">
+						<field name="histo"/>
+                        <field name="histo_action" nolabel="1" attrs="{'readonly':[('histo','=',False)]}"/>
+                        <field name="histo_product" nolabel="1" attrs="{'readonly':[('histo','=',False)]}"/>
+                        <field name="histo_subproduct" nolabel="1" attrs="{'readonly':[('histo','=',False)]}"/>
+                        <field name="histo_comment" nolabel="1" attrs="{'readonly':[('histo','=',False)]}"/>
+                        <field name="histo_job_id" nolabel="1" attrs="{'readonly':[('histo','=',False)]}"/>
+                    </group>
+                    <footer>
+                        <button name="create_interestmarks" type="object" string="Get Excel File "  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wizard_create_interests_form_action" model="ir.actions.act_window">
+            <field name="name">Create Interests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">create.interests</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_create_interests_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Create Interests" id="menu_create_interests"
+                action="wizard_create_interests_form_action"
+                parent="menu_cci_salesman_main" 
+                sequence="80" />
+
+        <record model="ir.values" id="wizard_create_interests_values">
+            <field name="model_id" ref="cci_salesman.model_create_interests"/>
+            <field name="name">Create Interest</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_interests_form_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+        <record model="ir.values" id="wizard_create_interests_history_values">
+            <field name="model_id" ref="cci_salesman.model_create_interests"/>
+            <field name="name">Create Interest</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_interests_form_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner.history</field>
+        </record>
+        <record model="ir.values" id="wizard_create_interests_crm_todo_values">
+            <field name="model_id" ref="cci_salesman.model_create_interests"/>
+            <field name="name">Create Interest</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('wizard_create_interests_form_action'))" />
+            <field name="key">action</field>
+            <field name="model">crm_cci.todo</field>
+        </record>
+    </data>
+</openerp>

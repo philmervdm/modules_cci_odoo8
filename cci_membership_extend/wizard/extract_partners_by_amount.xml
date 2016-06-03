@@ -1,0 +1,31 @@
+<openerp>
+	<data>
+		<record id="view_extract_partners_by_amount_form" model="ir.ui.view">
+			<field name="name">view.extract.partners.by.amount.form</field>
+			<field name="model">extract.partners.by.amount</field>
+			<field name="arch" type="xml">
+				<form string="Extract Partners with lower membership than last invoiced">
+					<group>
+					       <field name="only_members"/>
+                           <label string="Extraction of used membership amount." colspan="2" width="400"/>
+					</group>
+					<footer>
+						<button string="End" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="open_window_selected_partners" string="Go" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+        <act_window id="action_extract_partners_by_amount"
+            key2="client_action_multi"
+            name="List of Partners"
+            res_model="extract.partners.by.amount"
+            src_model="res.partner"
+            view_mode="form" 
+            target="new" 
+            view_type="form" />
+
+	</data>
+</openerp>

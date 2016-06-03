@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_inactive_old_job_form">
+            <field name="name">wizard.inactive.old.job.form</field>
+            <field name="model">inactive.old.jobs</field>
+            <field name="arch" type="xml">
+                <form string="Inactive old JObs">
+                    <footer>
+                        <button name="launch_method" type="object" string="Inactive Old Jobs"  class="oe_highlight"/>
+                        or
+                        <button string="End" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="inactive_old_job_action" model="ir.actions.act_window">
+            <field name="name">Inactive old JObs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inactive.old.jobs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_inactive_old_job_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Inactivate old Jobs" id="main_menu_inactivate_old_jobs"
+			    parent="base.postal_subscriber_root"
+                sequence="99"
+                groups="group_cci_magazine_user"/>
+
+	<menuitem name="Inactivate old Jobs" id="menu_inactivate_old_jobs"
+			    action="inactive_old_job_action" 
+			    parent="main_menu_inactivate_old_jobs"
+                groups="group_cci_magazine_user"/>
+
+	<record model="ir.ui.view" id="wizard_inactive_old_job_msg_form">
+            <field name="name">wizard.inactive.old.job.msg.form</field>
+            <field name="model">inactive.old.jobs.msg</field>
+            <field name="arch" type="xml">
+                <form string="Inactivation finished">
+                    <group>
+						<field name="msg"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+</data>
+</openerp>

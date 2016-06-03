@@ -1,0 +1,34 @@
+<openerp>
+	<data>
+		<record id="view_carnet_after_validity_form" model="ir.ui.view">
+			<field name="name">ata.carnet.after.validity.form</field>
+			<field name="model">ata.carnet.after.validity</field>
+			<field name="arch" type="xml">
+				<form string="Carnet After Validity">
+					<group>
+					    <label string="(Print report for carnet After validity date)"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+	                     or
+	                   <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="wizard_carnet_after_validity" model="ir.actions.act_window">
+            <field name="name">Carnet After Validity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ata.carnet.after.validity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_carnet_after_validity_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem action="wizard_carnet_after_validity" id="menu_wizard_carnet_after_validity" parent="menu_mission_reporting"/>
+	
+	</data>
+</openerp>

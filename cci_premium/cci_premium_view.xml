@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="cci_view_partner_contact_tree">
+            <field name="name">res_partner_contact_tree_premium</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="email" position="after">
+                        <field name="is_premium"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cci_view_partner_contact_form">
+            <field name="name">res_partner_contact_form_premium</field><!--cci.view.partner.contact - Contacts CCI-->
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="mobile"  position="after">
+                        <field name="is_premium"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cci_view_partner_contact_form2">
+            <field name="name">res_partner_contact_form_premium2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook colspan="4" position="inside">
+                        <page string="Premium" groups="cci_premium.group_cci_premium_user,cci_premium.group_cci_premium_manager">
+                            <separator string="Administrative" colspan="4"/>
+                            <group>
+							    <field name="premium_begin" select="2"/>
+                                <field name="premium_end" select="2"/>
+                            </group>
+                        </page>
+                        <page string="Premium Protected" groups="cci_premium.group_cci_premium_manager">
+                            <group>
+                                <field name="premium_special"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+
+    	<!-- RES.PARTNER
+	    <record model="ir.ui.view" id="view_premium_data_partner">
+		    <field name="name">Premium Data Partner</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="cci_last_module.view_partner_form_new"/>
+		    <field name="arch" type="xml">
+                <field name="vat_subjected" position="after">
+                    <field name="count_premium" readonly="1"/>
+		        </field>
+		    </field>
+	    </record>-->
+    </data>
+</openerp>

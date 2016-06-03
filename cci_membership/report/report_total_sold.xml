@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_total_sold">
+    <div class="page">
+        <h2 class="text-center">List of Partners with Total Sold Products</h2>
+        <h4>Printing Date: <span t-esc="time.strftime('%Y-%m-%d')"/></h4>
+        
+        <table class="table table-condensed mt32">
+            <thead>
+                <tr>
+                    <th>Partner</th>
+                    <th>Membership State</th>
+                    <th>Total sold for Non-Member</th>
+                    <th>Total sold for Member</th>
+                    <th>difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="parnters(data['form']['ids'])" t-as="o">
+                    <td><span t-field="o.name"/></td>
+                    <td><span t-field="o.membership_state"/></td>
+                    <td><span t-esc="check_total(data['form'],o)['unmember']"/></td>
+                    <td><span t-esc="check_total(data['form'],o)['member']"/></td>
+                    <td><span t-esc="check_total(data['form'],o)['diff']"/></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</template>
+
+</data>
+</openerp>
+

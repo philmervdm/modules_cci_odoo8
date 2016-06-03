@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+	<!-- Set accesses to menu -->
+	
+	<!-- Redefinition of the accesses to the menu defined in the event module -->
+	<record id="cci_event_proxy.menu_event_reg_proxy" model="ir.ui.menu">
+		<field name="groups_id" eval="[(6,0,[ref('cci_event.group_cci_event_user'),ref('cci_event.group_cci_event_supervisor'),ref('cci_event.group_cci_event_manager')])]"/>
+	</record>
+
+
+</data>
+</openerp>
+

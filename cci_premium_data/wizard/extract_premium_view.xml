@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="wizard_extract_premium_data_form">
+            <field name="name">wizard.extract.premium.data.form</field>
+            <field name="model">extract.premium.data</field>
+            <field name="arch" type="xml">
+                <form string="Options">
+                    <group>
+						<field name="choice"/>
+                    </group>
+                    <footer>
+                        <button name="getfile" type="object" string="Get Excel File"  class="oe_highlight"/>
+                        or
+                        <button string="End" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+       
+	 <record id="wizard_extract_premium_data_action" model="ir.actions.act_window">
+            <field name="name">Extract Premium Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">extract.premium.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_premium_data.wizard_extract_premium_data_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record model="ir.values" id="wizard_extract_premium_data_action_values">
+            <field name="model_id" ref="cci_premium_data.model_extract_premium_data"/>
+            <field name="name">Extract Premium Data</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' +str(ref('cci_premium_data.wizard_extract_premium_data_action'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+    
+	<record model="ir.ui.view" id="wizard_extract_msg_data_form">
+            <field name="name">wizard.extract.msg.data.form</field>
+            <field name="model">extract.msg.data</field>
+            <field name="arch" type="xml">
+                <form string="Notification">
+                    <group>
+                        <field name="name" invisible="1"/>
+						<field name="msg"/>
+                        <field name="premium" filename="name"/>
+                    </group>
+                    <footer>
+                        <button string="OK" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

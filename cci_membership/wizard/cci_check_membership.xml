@@ -1,0 +1,40 @@
+<openerp>
+	<data>
+		<record id="view_cci_check_membership_form" model="ir.ui.view">
+			<field name="name">wizard.check.membership.form</field>
+			<field name="model">wizard.check.membership</field>
+			<field name="arch" type="xml">
+				<form string="Changes">
+					<group>
+						<separator string="Result of the re-calculation of the membership state" colspan="4"/>
+					    <field name="final_text"/>
+						<field name="final_count"/>
+					</group>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+				
+			</field>
+		</record>
+		
+		<record id="action_cci_check_membership_form" model="ir.actions.act_window">
+            <field name="name">Check Membership</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.check.membership</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cci_check_membership_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="action_cci_check_membership_values">
+            <field name="model_id" ref="model_wizard_check_membership"/>
+            <field name="name">Invoice Membership</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_cci_check_membership_form'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>	
+	</data>
+</openerp>

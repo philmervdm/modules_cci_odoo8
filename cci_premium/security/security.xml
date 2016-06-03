@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+	<!-- Users Groups -->
+    <record model="res.groups" id="group_cci_premium_user">
+        <field name="name">CCI Premium User</field>
+    </record>
+    
+    <record model="res.groups" id="group_cci_premium_manager">
+        <field name="name">CCI Premium Manager</field>
+    </record>
+    
+</data>
+</openerp>
+
