@@ -1,0 +1,13 @@
+.oe_partner_simple_cci_member {
+    color: green;
+    font-weight: bold !important;
+}
+.oe_partner_kanban_cci_member {
+    color: green;
+    font-weight: bold !important;
+    font-size: 150%;
+}
+.oe_partner_cci_oldmember{
+    color: red;
+    font-weight: bold !important;
+}

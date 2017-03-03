@@ -32,8 +32,8 @@ class res_partner_contact(models.Model):
     agenda_subscribe = fields.Selection([('default', 'Default'), ('always', 'Always'), ('never', 'Never'), ('unsubscribed', 'Unsubscribed by MailChimp')], 'Sending of Agenda', default='default')
     alterego_subscribe = fields.Selection([('default', 'Default'), ('always', 'Always'), ('never', 'Never'), ('unsubscribed', 'Unsubscribed by MailChimp')], 'Sending of Alter Ego newsletter', default='default')
     rdp_forced_area = fields.Selection([('default', 'Default'), ('brabant_wallon', 'Brabant Wallon'), ('vlanderen', 'Flandres'), ('hainaut', 'Hainaut'), ('liege', 'Liege'), ('namur', 'Namur'), ('wapi', 'WAPI')], 'Forced Area for Revue de Presse', default='default')
-    leid = fields.Char('MailChimp leid', size=8)
-    euid = fields.Char('MailChimp euid', size=10)
+    #leid = fields.Char('MailChimp leid', size=8)
+    #euid = fields.Char('MailChimp euid', size=10)
 
 class cci_newsletter_source(models.Model):
     _inherit = 'cci_newsletter.source'
@@ -195,7 +195,7 @@ class mailchimp_proxy(models.Model):
     courtesy_full1 = fields.Char('Courtesy Full 1', size=120)
     courtesy_full2 = fields.Char('Courtesy Full 2', size=120)
     member = fields.Boolean('Member of source CCI')
-    job_id = fields.Many2one('res.partner.job', 'Linked Job')
+    #job_id = fields.Many2one('res.partner.job', 'Linked Job')
     contact_id = fields.Many2one('res.partner', 'Linked Contact')
     subscriber_id = fields.Many2one('cci_newsletter.subscriber', 'Linked Subscriber')
     source = fields.Char('Source of Data', size=30)

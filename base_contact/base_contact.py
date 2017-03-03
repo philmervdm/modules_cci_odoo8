@@ -37,7 +37,7 @@ class res_partner(osv.osv):
         return result
 
     _columns = {
-        'first_name': fields.char('First Name', size=64),
+        'first_name': fields.char('First Name', size=64), ## to be removed after migration because redefined as firstname and lastname in cci_partner
         'contact_type': fields.function(_get_contact_type, type='selection', selection=_contact_type,
                                         string='Contact Type', required=True, select=1, store=True),
         'contact_id': fields.many2one('res.partner', 'Main Contact',

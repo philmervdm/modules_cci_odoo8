@@ -35,7 +35,7 @@
               'cci_membership_report.xml',
               'security/security.xml',
               'security/ir.model.access.csv', 
-              'cci_membership_data.xml',
+              #'cci_membership_data.xml',
               'wizard/member_total_sold.xml',
               'wizard/show_partners.xml',
               'wizard/cci_invoice_membership.xml',

@@ -3,20 +3,20 @@
 	<data>
 
 <!-- View for res.partner object inherited from base module................ -->
-		<record model="ir.ui.view" id="view_partner_form">
+<!--		<record model="ir.ui.view" id="view_partner_form">
 			<field name="name">res.partner.form.member</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="membership.view_partner_form"/>
 			<field name="arch" type="xml">
 				<field name="member_lines" position="before">
 					<group>
-						<field name="membership_vcs"/> <!-- used by Philmer to test the fields.function -->
-						<field name="refuse_membership" select="2"/>
+						<field name="membership_vcs"/> --> <!-- used by Philmer to test the fields.function -->
+<!--						<field name="refuse_membership" select="2"/>
 					</group>
 				</field>
 			</field>
 		</record>
-
+-->
 <!-- end-->
 
 <!-- added by philmer to permit the correction of partner on membership_line -->
@@ -75,7 +75,7 @@
 
 <!-- end addition philmer -->
 
-        <record id="view_membership_line_invoice" model="ir.ui.view">
+<!--        <record id="view_membership_line_invoice" model="ir.ui.view">
             <field name="name">res.partner.form.invoice.inherit</field>
             <field name="model">res.partner</field>
             <field name="priority">99</field>
@@ -88,7 +88,7 @@
                 	<field name="subtotal"/>
                 </xpath>
             </field>
-        </record>
+        </record>-->
 
         <record model="ir.ui.view" id="cci_membership_check_tree">
             <field name="name">Membership Check</field>

@@ -3,7 +3,7 @@
 	<data>
 
         <!-- View for res.partner form inherited from cci_last_module -->
-		<record model="ir.ui.view" id="view_partner_form">
+		<!--<record model="ir.ui.view" id="view_partner_form">
 			<field name="name">res.partner.form.member_extend</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="membership.view_partner_form"/>
@@ -23,14 +23,14 @@
                         <field name="cci_date_stop_membership"/>
 						<field name="read_before_next_membership_bill"/>
                         <field name="membership_explanation" colspan="4" nolabel="1"/>
-                    </field>
+                    </field>-->
                     <!-- <field name="membership_explanation" colspan="4" nolabel="1" position="replace">
                         <field name="read_before_next_membership_bill"/>
                         <field name="membership_explanation" colspan="4" nolabel="1"/>
                     </field> -->
-				</data>
+				<!--</data>
 			</field>
-		</record>
+		</record>-->
 
 
         <!-- views for range of membership amount -->

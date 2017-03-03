@@ -566,7 +566,7 @@ def _update_job_fields(premium_contact,premium_company,vals):
                     vals['personal_statut'] = 'ind_professional'
         else:
             vals['personal_statut'] = 'employee'
-    vals['main_direction'] = premium_company.main_dir
+    #vals['main_direction'] = premium_company.main_dir
     if premium_company.main_dir:
         categs = 'G'
     else:

@@ -257,7 +257,7 @@
 		
 		<menuitem name="Groups" id="menu_group" parent="base.menu_marketing_config_root" />
 		
-		<menuitem parent="menu_group" action="action_event_group" id="menu_event_group" />
+		<menuitem parent="menu_group" action="action_event_group" id="menu_event_group" name="Groups"/>
 
 		<!-- view for event.check -->
 		<record model="ir.ui.view" id="view_event_check_form">

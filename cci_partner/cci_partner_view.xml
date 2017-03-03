@@ -200,7 +200,7 @@ TODO: revoir la vue tree aussi
 		<menuitem name="Reasons" id="menu_partner_reason_main" action="action_partner_reason" parent="base.menu_base_config" />
 
 		<!-- view for res.partner.state2 -->
-		<record model="ir.ui.view" id="view_partner_state2_form">
+		<!--<record model="ir.ui.view" id="view_partner_state2_form">
 			<field name="name">res.partner.state2.form</field>
 			<field name="model">res.partner.state2</field>
 			<field name="arch" type="xml">
@@ -210,16 +210,16 @@ TODO: revoir la vue tree aussi
 					</group>
 				</form>
 			</field>
-		</record>
+		</record>-->
 
-		<record model="ir.actions.act_window" id="action_partner_state2">
+		<!--<record model="ir.actions.act_window" id="action_partner_state2">
 			<field name="name">Customer State</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">res.partner.state2</field>
 			<field name="view_type">form</field>
-		</record>
+		</record>-->
 
-		<menuitem parent="menu_partner_state_main" groups="base.group_system" action="action_partner_state2" id="menu_partner_state2" />
+		<!--<menuitem parent="menu_partner_state_main" groups="base.group_system" action="action_partner_state2" id="menu_partner_state2" />-->
 
 		<!-- 
 		===================== 
@@ -1085,6 +1085,20 @@ TODO: revoir la vue tree aussi
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_partner_form_inherit_conts">
+			<field name="name">res.partner.form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<field name="name" position="replace">
+                    <field name="name" default_focus="1" placeholder="Name" attrs="{'required':[('is_company','=',True)]}"/>
+    			    <field name="lastname" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+				    <field name="firstname" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+				    <field name="specific_address_id" attrs="{'invisible': ['|',('type','!=', 'contact'),('is_company','=',True)]}"/>
+				</field>
+			</field>
+		</record>
+
 		<record model="ir.ui.view" id="view_partner_form_inherit2">
 			<field name="name">res.partner.form</field>
 			<field name="model">res.partner</field>
@@ -1190,7 +1204,7 @@ TODO: revoir la vue tree aussi
 						</group>
 					</page>
 
-					<page string="Directory">
+					<!--<page string="Directory">
 						<group>
 							<group>
 								<field name="dir_name" />
@@ -1204,7 +1218,7 @@ TODO: revoir la vue tree aussi
 								<field name="dir_date_publication" />
 							</group>
 						</group>
-					</page>
+					</page>-->
 
 					<page string="Extra Information">
 						<group string="Miscelleanous">

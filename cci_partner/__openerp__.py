@@ -20,6 +20,8 @@
 ##############################################################################
 # Version 1.1 2011-12-09 Philmer
 #             Added the field 'vat' on members export for Jean-Pierre Trésegnie
+# Version 2.0 2017-0220 Philmer
+#             Extracted the definition of res.partner.zip to make them an stand alone module for open sourcing it
 {
     'name' : 'CCI Partner',
     'version' : '1.1',

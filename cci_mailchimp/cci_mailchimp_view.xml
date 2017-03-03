@@ -137,7 +137,7 @@
 		</record>
 
         <!-- adding new fields to res.partner.contact form -->
-        <record model="ir.ui.view" id="cci_view_partner_contact_form_inherit1">
+        <!--<record model="ir.ui.view" id="cci_view_partner_contact_form_inherit1">
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
 			<field name="inherit_id" ref="base.view_partner_form" />
@@ -158,7 +158,7 @@
 	                </page>
                 </xpath>
             </field>
-        </record>
+        </record>-->
 
         <!-- adding new field to cci_newsletter.source -->
 		<record model="ir.ui.view" id="view_cci_newsletter_source_form_inherit1">

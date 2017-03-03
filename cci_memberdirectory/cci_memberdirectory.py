@@ -119,6 +119,28 @@ def get_activity_sectors(partner, oldcateg_ids, dOldSectID2NewID):
                     break
     return secteurs
 
+class res_partner(models.Model):
+    _inherit = 'res.partner'
+
+    # old fields from cci_partner->res_partner
+    #dir_name = fields.Char('Name in Member Dir.', size=250, help='Name under wich the partner will be inserted in the members directory')
+    #dir_name2 = fields.Char('1st Shortcut name ', size=250, help='First shortcut in the members directory, pointing to the dir_name field')
+    #dir_name3 = fields.Char('2nd Shortcut name ', size=250, help='Second shortcut')
+    dir_date_last = fields.Date('Partner Data Date', help='Date of latest update of the partner data by itself (via paper or Internet)')
+    dir_date_accept = fields.Date("Good to shoot Date", help='Date of last acceptation of Bon a Tirer')
+    dir_presence = fields.Boolean('Dir. Presence', help='Present in the directory of the members') # to delete later : replaced by dir_selection
+    dir_date_publication = fields.Date('Publication Date') # = date of extraction of this data for member directory
+    dir_exclude = fields.Boolean('Dir. exclude', help='Exclusion from the Members directory') # to delete later : replaced by dir_selection
+    
+    # old fields from cci_partner->res_partner_contact and res_partner_job
+    dir_show_name = fields.Char('Directory Shown Name', size=128, help="Name of this address printed in the directory of members")
+    dir_sort_name = fields.Char('Directory Sort Name', size=128, help="Name of this address used to sort the partners in the directory of members")
+    #dir_exclude = fields.Boolean('Directory exclusion', help='Check this box to exclude this address of the directory of members')
+
+    # new fields added with V8
+    dir_fullpage = fields.Selection([('yes','Yes'),('no','No')],string='Full Page',default='yes')
+    dir_selection = fields.Selection([('normal','Normal - only if member'),('always','Always'),('never','Never')],string='Directory Presence', help='Can force the presence ofr the exclusion of an address of the member directory. This address only is always concerned, never all the partner and childs.', default='normal')
+
 class directory_address_proxy(models.Model):
     _name = 'directory.address.proxy'
     _description = "proxy partner and address 4 yearly members'directory"

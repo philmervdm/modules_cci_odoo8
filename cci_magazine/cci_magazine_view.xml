@@ -21,9 +21,9 @@
 					<field name="first_name"  readonly="1"/>
                     <separator string="Access to data to correct them" colspan="4"/>
                     <field name="partner_id"/>
-                    <field name="address_id"/>
+                    <!--<field name="address_id"/>
                     <field name="job_id"/>
-                    <field name="contact_id"/>
+                    <field name="contact_id"/>-->
 				</form>
 			</field>
 		</record>

@@ -39,63 +39,70 @@ class subscription_source(models.Model):
 
     _order = 'code'
 
-    @api.multi
-    def write(self,vals):
-        old = self.code
-        new = vals.get('code','') or old
-        res = super(subscription_source,self).write(vals)
-        if old != new:
-            self.env.cr.execute("UPDATE res_partner set magazine_subscription_source = '%s' where magazine_subscription_source = '%s'" % (new,old) )
-        return res
+#    @api.multi
+#    def write(self,vals):
+#
+#        old = self.code
+#        new = vals.get('code','') or old
+#        res = super(subscription_source,self).write(vals)
+#        if old != new:
+#            self.env.cr.execute("UPDATE res_partner set magazine_subscription_source = '%s' where magazine_subscription_source = '%s'" % (new,old) )
+#        return res
+#    
+#    @api.one
+#    def copy(self, default={}):
+#        this = self.read(['name','code'])[0]
+#        old_name = this['name']
+#        old_code = this['code']
+#        default.update({'name': old_name+ _(' (copy)'), 'code': old_code + _(' (copy)') })
+#        return super(subscription_source, self).copy(default)
     
-    @api.one
-    def copy(self, default={}):
-        this = self.read(['name','code'])[0]
-        old_name = this['name']
-        old_code = this['code']
-        default.update({'name': old_name+ _(' (copy)'), 'code': old_code + _(' (copy)') })
-        return super(subscription_source, self).copy(default)
     
-    
-    @api.multi
-    def unlink(self):
-        for source in self:
-            self.env.cr.execute("UPDATE res_partner set magazine_subscription_source = '' where magazine_subscription_source = '%s'" % source.code )
-        return super(subscription_source,self).unlink()
+#    @api.multi
+#    def unlink(self):
+#        for source in self:
+#            self.env.cr.execute("UPDATE res_partner set magazine_subscription_source = '' where magazine_subscription_source = '%s'" % source.code )
+#        return super(subscription_source,self).unlink()
 
-class res_partner_address(models.Model):
+class res_partner(models.Model):
     _inherit = "res.partner"
-
     magazine_lastprospection = fields.Date("Magazine last Sending as Prospection")
     magazine_subscription_source = fields.Selection(_get_subscription_sources,'Source',size=30)
+    magazine_subscription_source_id = fields.Many2one('cci_magazine.subscription_source',string='Source',ondelete='set null')
 
-class res_partner_job(models.Model):
-    
-    _inherit = "res.partner"
-    
-    @api.model
-    def _inactivate_old(self):
-        # this method makes jobs with pas 'date-stop' inactive
-        # it's launched every day by a cron task but can also be launched manually (not important but for testing)
-        # all checks are recorded to keep track of theses automatic changes
-        today =  fields.Date.today()
+#class res_partner_address(models.Model):
+#    _inherit = "res.partner"
+#
+#    magazine_lastprospection = fields.Date("Magazine last Sending as Prospection")
+#    magazine_subscription_source = fields.Selection(_get_subscription_sources,'Source',size=30)
+
+#class res_partner_job(models.Model):
+#    
+#    _inherit = "res.partner"
+#    
+#    @api.model
+#    def _inactivate_old(self):
+#        # this method makes jobs with pas 'date-stop' inactive
+#        # it's launched every day by a cron task but can also be launched manually (not important but for testing)
+#        # all checks are recorded to keep track of theses automatic changes
+#        today =  fields.Date.today()
 #         obj_job = self.pool.get('res.partner.job')
-        job_ids = self.search([('date_stop','<',today)])
-        if job_ids:
-            jobs = job_ids.write({'active':False})
-        
-        past_job_check = self.env['cci_magazine.past_job_check']
+#        job_ids = self.search([('date_stop','<',today)])
+#        if job_ids:
+#            jobs = job_ids.write({'active':False})
+#        
+#        past_job_check = self.env['cci_magazine.past_job_check']
 #         today = datetime.datetime.today()
-        
-        id = past_job_check.create({
-            'name': fields.Datetime.now(),
-            'count' : len(job_ids),
-            'status': '[' + ','.join( [str(x) for x in job_ids.ids] ) + ']',
-            })
-        return job_ids
-
-    magazine_subscription_source = fields.Selection(_get_subscription_sources,'Source',size=30)
-    magazine_lastprospection = fields.Date("Magazine last Sending as Prospection")
+#        
+#        id = past_job_check.create({
+#            'name': fields.Datetime.now(),
+#            'count' : len(job_ids),
+#            'status': '[' + ','.join( [str(x) for x in job_ids.ids] ) + ']',
+#            })
+#        return job_ids
+#
+#    magazine_subscription_source = fields.Selection(_get_subscription_sources,'Source',size=30)
+#    magazine_lastprospection = fields.Date("Magazine last Sending as Prospection")
 
 class cci_mag_subscription(models.Model):
     _name = "cci_mag_subscription"
@@ -112,16 +119,16 @@ class cci_mag_subscription(models.Model):
     contact_name = fields.Char("Contact name",size=60)
     first_name = fields.Char("First name",size=60)
     partner_id = fields.Many2one('res.partner',"Partner data")
-    address_id = fields.Many2one('res.partner',"Address data")
-    job_id = fields.Many2one('res.partner',"Function data")
-    contact_id = fields.Many2one('res.partner',"Contact data")
+    #address_id = fields.Many2one('res.partner',"Address data")
+    #job_id = fields.Many2one('res.partner',"Function data")
+    #contact_id = fields.Many2one('res.partner',"Contact data")
 
-class past_job_check(models.Model):
-    _name = 'cci_magazine.past_job_check'
-    _description = '''Recording of a check of past done job'''
-
-    name = fields.Char('Date',size=19,required=True)
-    count = fields.Integer('Changes count')
-    status = fields.Text('Status')
-    
-    _order = 'name desc'
+#class past_job_check(models.Model):
+#    _name = 'cci_magazine.past_job_check'
+#    _description = '''Recording of a check of past done job'''
+#
+#    name = fields.Char('Date',size=19,required=True)
+#    count = fields.Integer('Changes count')
+#    status = fields.Text('Status')
+#    
+#    _order = 'name desc'

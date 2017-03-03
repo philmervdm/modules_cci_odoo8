@@ -385,7 +385,7 @@
 			<field name="search_view_id" ref="cci_missions_embassy_folder_filter"/>
         </record>
 
-        <menuitem name="Embassy Folder" parent="main_menu_mission" action="action_cci_missions_embassy_folder" id="menu_action_cci_missions_embassy_folder"/>
+        <menuitem name="Embassy Folder" parent="menu_mission_title" action="action_cci_missions_embassy_folder" id="menu_action_cci_missions_embassy_folder" sequence="30"/>
 
 
 <!-- view for cci_missions_embassy_folder_line -->
@@ -631,7 +631,7 @@
 			<field name="search_view_id" ref="cci_missions_legalization_filter"/>
         </record>
 
-        <menuitem name="Legalizations" parent="main_menu_mission" action="action_cci_missions_legalization" id="menu_action_cci_missions_legalization"/>
+        <menuitem name="Legalizations" parent="menu_mission_title" action="action_cci_missions_legalization" id="menu_action_cci_missions_legalization" sequence="20"/>
 
 <!-- view for cci_missions_certificate -->
         <record model="ir.ui.view" id="cci_missions_certificate_form">
@@ -756,7 +756,7 @@
 			<field name="search_view_id" ref="cci_missions_certificate_filter"/>
         </record>
 
-        <menuitem name="Certificates" parent="main_menu_mission" action="action_cci_missions_certificate" id="menu_action_cci_missions_certificate"/>
+        <menuitem name="Certificates" parent="menu_mission_title" action="action_cci_missions_certificate" id="menu_action_cci_missions_certificate" sequence="10"/>
 
 <!-- view for cci_missions_area -->
 <!--        <record model="ir.ui.view" id="cci_missions_area_form">
@@ -1032,7 +1032,7 @@
 			<field name="search_view_id" ref="cci_missions_ata_carnet_filter"/>
         </record>
 
-        <menuitem name="ATA Carnet" parent="main_menu_mission" action="action_cci_missions_ata_carnet" id="menu_action_cci_missions_ata_carnet"/>
+        <menuitem name="ATA Carnet" parent="menu_mission_title" action="action_cci_missions_ata_carnet" id="menu_action_cci_missions_ata_carnet" sequence="40"/>
 
     <record model="ir.ui.view" id="view_product_line_tree">
             <field name="name">product.lines.tree</field>
@@ -1078,7 +1078,6 @@
         <record model="ir.actions.act_window" id="action_certificates_incompleted">
             <field name="name">Incompleted Certificates</field>
             <field name="res_model">cci_missions.certificate</field>
-            <!--<field name="domain">[('goods_value', '=', 0),('destination_id', '=', 0),('goods','=','')]</field>  HOWTO MAKE ONE 'OR' CONDITION ??? -->
             <field name="domain">[('goods_value', '=', 0)]</field>
         </record>
 
@@ -1095,7 +1094,7 @@
             <field name="act_window_id" ref="action_certificates_incompleted"/>
         </record>
 
-        <menuitem name="Incompleted Certificates" parent="main_menu_mission"
+        <menuitem name="Incompleted Certificates" parent="menu_action_cci_missions_certificate"
             id="menu_incompleted_certificates"
             action="action_certificates_incompleted"/>
 

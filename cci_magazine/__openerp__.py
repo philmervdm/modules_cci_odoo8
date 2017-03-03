@@ -35,7 +35,7 @@
     'init': [],
     'data': [
                     'cci_magazine_view.xml',
-                    'cci_magazine_data.xml',
+                    #'cci_magazine_data.xml',
                     'security/security.xml',
                     'security/ir.model.access.csv',
                     'wizard/inactive_old_jobs.xml',

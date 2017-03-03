@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- MENUS -->
+        <menuitem id="menu_cci_partner_main"
+                  name="Partners"
+                  sequence="5"/>
+        <menuitem id="menu_cci_partner_title"
+                  name="Partners"
+                  sequence="10"
+                  parent="menu_cci_partner_main"/>
+        <menuitem id="menu_cci_partner_all"
+                  name="All Partners"
+                  sequence="10"
+                  parent="menu_cci_partner_title"
+                  action="action_cci_partner"/>
+        <menuitem id="menu_cci_partner_config"
+                  name="Configuration"
+                  sequence="90"
+                  parent="menu_cci_partner_main"/>
+                  
+        <!-- New menus for CCI -->
+        <menuitem id="menu_cci_event_main"
+                  name="Events"
+                  sequence="10"/>
+        <menuitem id="menu_cci_event_title"
+                  name="Events"
+                  sequence="10"
+                  parent="menu_cci_event_main"/>
+        <menuitem id="menu_cci_event_configuration"
+                  name="Configuration"
+                  sequence="90"
+                  parent="menu_cci_event_main"/>
+
+        <!-- Re direct old menus to these new menus to reorganize partners data and configurations menus -->
+        <record id="cci_mission.menu_mission" model="ir.ui.menu">
+            <field name="sequence">20</field>
+        </record>
+        <record id="base.menu_association" model="ir.ui.menu">
+            <field name="sequence">30</field>
+        </record>
+        <record id="base.menu_base_partner" model="ir.ui.menu">
+            <field name="sequence">40</field>
+        </record>
+        <record id="cci_newsletter.menu_cci_newsletter" model="ir.ui.menu">
+            <field name="sequence">100</field>
+        </record>
+        <record id="base.postal_subscriber_root" model="ir.ui.menu">
+            <field name="sequence">101</field>
+        </record>
+        <record id="event.event_main_menu" model="ir.ui.menu">
+            <field name="sequence">10</field>
+            <field name="parent_id" eval="ref('menu_cci_event_title')"/>
+        </record>
+        <record id="event.menu_event_type" model="ir.ui.menu">
+            <field name="sequence">10</field>
+            <field name="parent_id" eval="ref('menu_cci_event_configuration')"/>
+        </record>
+        <record id="cci_event.menu_event_group" model="ir.ui.menu">
+            <field name="sequence">20</field>
+            <field name="parent_id" eval="ref('menu_cci_event_configuration')"/>
+        </record>
+        <record id="cci_product_template_action" model="ir.actions.act_window">
+            <field name="name">Articles</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="product.product_template_kanban_view"/>
+        </record>
+        <menuitem id="menu_configuration_articles" name="All Articles" parent="account.menu_finance_configuration" sequence="54"/>
+        <menuitem id="menu_product_template_action" name="Articles" action="cci_product_template_action" parent="menu_configuration_articles" sequence="10" />
+        <record id="cci_product_normal_action" model="ir.actions.act_window">
+            <field name="name">Product Variants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="product.product_product_tree_view"/>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new product.
+              </p><p>
+                You must define a product for everything you buy/sell, whether it's
+                a physical product, a consumable or a service you offer to
+                customers.
+              </p><p>
+                The product form contains information to simplify the purchase/sale
+                process: price, notes in the quotation, accounting data,
+                procurement methods, etc.
+              </p>
+            </field>
+        </record>
+        <menuitem id="cci_product_product_action" action="cci_product_normal_action" parent="menu_configuration_articles" sequence="20"/>
+        <record id="product.menu_product_category_action_form" model="ir.ui.menu">
+            <field name="sequence">30</field>
+            <field name="parent_id" eval="ref('menu_configuration_articles')"/>
+        </record>
+        <record id="product.menu_products_category" model="ir.ui.menu">
+            <field name="sequence">40</field>
+            <field name="parent_id" eval="ref('menu_configuration_articles')"/>
+        </record>
+        
+        <!-- Redirect translation menus inside cci missions menus-->
+        <!-- I do this here because cci_mission depends of translation, not the contrary -->
+        <record id="cci_translation.menu_translation_sub_root" model="ir.ui.menu">
+            <field name="sequence">40</field>
+            <field name="parent_id" eval="ref('cci_mission.menu_mission')"/>
+        </record>
+
+        <!-- Hide some menus no more necessary for CCI -->
+        <record id="base.marketing_menu" model="ir.ui.menu">
+            <field name="sequence">900</field>
+            <field name="groups_id" eval="[(6, 0, [ref('cci_hidden_menus')] )]"/>
+        </record>
+        <record id="base.menu_mrp_root" model="ir.ui.menu">
+            <field name="sequence">901</field>
+            <field name="groups_id" eval="[(6, 0, [ref('cci_hidden_menus')] )]"/>
+        </record>
+        <record id="stock.menu_stock_root" model="ir.ui.menu">
+            <field name="sequence">902</field>
+            <field name="groups_id" eval="[(6, 0, [ref('cci_hidden_menus')] )]"/>
+        </record>
+        <record id="cci_translation.menu_translation_root" model="ir.ui.menu">
+            <field name="sequence">899</field>
+            <field name="groups_id" eval="[(6, 0, [ref('cci_hidden_menus')] )]"/>
+        </record>
+    </data>
+</openerp>

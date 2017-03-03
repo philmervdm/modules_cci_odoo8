@@ -32,7 +32,7 @@
     "init" : [],
     "demo" : [],
 
-    "data" : ['cci_connect_view.xml','cci_connect_data.xml','security/security.xml','security/ir.model.access.csv'],
+    "data" : ['cci_connect_view.xml','security/security.xml','security/ir.model.access.csv'], # ,'cci_connect_data.xml' not more usefull
     "active": False,
     "installable": True,
     'certificate': '00938693957798992733',

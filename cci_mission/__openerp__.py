@@ -29,6 +29,8 @@
     ''',
     'depends' : ['base','crm','cci_partner','product','membership', 'sale','cci_country','cci_translation'],
                 #'cci_event','cci_account','cci_translation',
+                # cci_translation is necessary because embassy folder can have some lines of translation using
+                # translation objects to manage AWEX intervention
     'init' : [],
     'demo' : ['cci_mission_data.xml'],
     'data' : [

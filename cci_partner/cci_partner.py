@@ -21,13 +21,17 @@
 
 import time
 import datetime
+import logging
 from xlwt import *
 
 from itertools import groupby
 from operator import itemgetter
 
 from openerp import models, fields, api, _
+from openerp.osv.expression import get_unaccent_wrapper
 from openerp.exceptions import Warning
+
+_logger = logging.getLogger(__name__)
 
 def group(lst, col):
     return dict((k, [v for v in itr]) for k, itr in groupby(sorted(lst, key=lambda x: x[col]), itemgetter(col)))
@@ -81,11 +85,11 @@ class res_partner_reason(models.Model):
     
     name = fields.Char('Reason', size=50, required=True, index=True)
 
-class res_partner_state2(models.Model):
-    _name = 'res.partner.state2'
-    _description = 'res.partner.state2'
-
-    name = fields.Char('Customer Status', size=50, required=True)
+#class res_partner_state2(models.Model):
+#    _name = 'res.partner.state2'
+#    _description = 'res.partner.state2'
+#
+#    name = fields.Char('Customer Status', size=50, required=True)
 
 class res_partner_article_review(models.Model):
     _name = 'res.partner.article.review'
@@ -132,285 +136,29 @@ class res_partner_article(models.Model):
 class res_partner(models.Model):
     _inherit = 'res.partner'
     _description = 'res.partner'
-        
-    @api.model
-    def calculate_type_customer(self, excluded_accounts=[], additional_accounts=[], letters_range=[25, 9], digits_range=[5000, 1000, 0], last_period_id=None):
-        # get the concerned accounts
-        account_ids = self.env['account.account'].search([('code', 'like', '7')])  # first screening to get all accounts with '7' inside
-        accounts = account_ids.read(['code', 'id'])
-        selected_accounts = []
-        for account in accounts:
-            if account['code'][0] == '7' and account['id'] not in excluded_accounts:
-                selected_accounts.append(account['id'])
-        for id in additional_accounts:
-            if id not in selected_accounts:
-                selected_accounts.append(id)
-        # get the concerned periods, if not given as parameters, the last month excluding the current one
-        obj_period = self.env['account.period']
-
-        if not last_period_id:
-            today = datetime.date.today()
-            year = today.year
-            month = today.month
-            month -= 1
-            if month <= 0:
-                month += 12
-                year -= 1
-            last_month_date = datetime.datetime(year, month, 28).strftime('%Y-%m-%d')
-            last_period = obj_period.search([('date_start', '<=', last_month_date), ('date_stop', '>=', last_month_date), ('special', '=', False)], limit=1)
-            last_period_id = last_period.id
-            
-        last_period = obj_period.browse(last_period_id)
-        
-        if int(last_period.date_start[5:7]) < 12:
-            start_first_period = str(int(last_period.date_start[0:4]) - 1) + '-' + str(int(last_period.date_start[5:7]) + 1).rjust(2, '0') + '-01'
-        else:
-            start_first_period = last_period.date_start[0:4] + '-01-01'
-        period_ids = obj_period.search([('special', '=', False), ('date_start', '>=', start_first_period), ('date_stop', '<=', last_period.date_stop)])
-        # get the concerned journals
-        journal_ids = self.env['account.journal'].search([('type', '=', 'sale')])
-        # sum the turnover by partner
-        cjournals = '(' + (','.join([str(x) for x in journal_ids.ids])) + ')'
-        cperiods = '(' + (','.join([str(x) for x in period_ids.ids])) + ')'
-        caccounts = '(' + (','.join([str(x) for x in selected_accounts])) + ')'
-        sql = """SELECT partner_id, SUM( credit-debit ) as turnover 
-                    from account_move_line
-                    where journal_id in %s and period_id in %s and account_id in %s group by partner_id""" % (cjournals, cperiods, caccounts)
-        self.env.cr.execute(sql)        
-        res = self.env.cr.fetchall()
-        turnovers = {}
-        
-        for line in res:
-            turnovers[line[0]] = line[1]
-        # get the categs ids
-        categs = {}
-        categ_ids = []
-        obj_categ = self.env['res.partner.category']
-        for name in ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'B4', 'C1', 'C2', 'C3', 'C4']:
-            categ = obj_categ.search([('name', 'like', 'Type Client ' + name)], limit=1)
-            if len(categ) == 1:
-                categs[name] = categ.id
-                categ_ids.append(categ.id)
-        obj_partner = self.env['res.partner']
-        partners = obj_partner.search([])
-        partner_datas = partners.read(['id', 'turnover_last_12m', 'category_id', 'employee_nbr'])
-        count = 0
-        for part in partner_datas:
-            # for each partner we must calcule the new categ
-            newletter = 'C'
-            if part['employee_nbr'] > letters_range[0]:
-                newletter = 'A'
-            elif part['employee_nbr'] > letters_range[1]:
-                newletter = 'B'
-            if part['id'] in turnovers:
-                newturnover = turnovers[part['id']]
-                newdigit = '4'
-                if newturnover > digits_range[0]:
-                    newdigit = '1'
-                elif newturnover > digits_range[1]:
-                    newdigit = '2'
-                elif newturnover > digits_range[2]:
-                    newdigit = '3'
-                newvalues = {'turnover_last_12m': newturnover, 'categ_customer_id': categs.get(newletter + newdigit) }
-            else:
-                newvalues = {'turnover_last_12m': 0.0, 'categ_customer_id': categs.get(newletter + '4') }
-            # then we must verify if this partner has already the same turnover, and the right category and no others 'customer type category'
-            lModify = False
-            if part['turnover_last_12m'] <> newvalues['turnover_last_12m']:
-                lModify = True
-            else:
-                lOthers = False
-                lAlready = False
-                for categ_id in categ_ids:
-                    if categ_id in part['category_id']:
-                        if categ_id == newvalues['categ_customer_id']:
-                            lAlready = True
-                        else:
-                            lOthers = True
-                if lOthers or not lAlready:
-                    lModify = True
-            if lModify:
-                # if something has changed, we must write the new values in the partner table
-                count += 1
-                # we take all the categs not of the type 'Type of customer'
-                new_categs = []
-                for id in part['category_id']:
-                    if id not in categ_ids:
-                        new_categs.append(id)
-                # we add the new one
-                new_categs.append( newvalues['categ_customer_id'] )
-                self.write({'turnover_last_12m':newvalues['turnover_last_12m'],'category_id':[(6,0,new_categs)]} )
-        return 'The result of the re-calculation is ' + str(count) + ' partners changed.'
-    
-    @api.model
-    def export_members_excel(self, category_id=False, ftp=False):
-        def get_phone_country_prefix():
-            result = []
-            obj_country = self.env['cci.country']
-            country_ids = obj_country.search([('phoneprefix', '!=', False), ('phoneprefix', '!=', 0)])
-            if country_ids:
-                countries = country_ids.read(['phoneprefix'])
-                result = [str(x['phoneprefix']) for x in countries]
-            return result
-        
-        def convert_phone(string, PHONE_COUNTRY_PREFIX):
-            def only_digits(string):
-                cleaned = ''
-                for carac in string:
-                    if carac in '0123456789':
-                        cleaned += carac
-                return cleaned
-            result = ''
-            string = only_digits(string)
-            if len(string) > 0:
-                if len(string) == 9:
-                    if string[0:2] in ['02', '03', '04', '09']:
-                        result = string[0:2] + "/" + string[2:5] + "." + string[5:7] + "." + string[7:]
-                    else:
-                        result = string[0:3] + "/" + string[3:5] + "." + string[5:7] + "." + string[7:]
-                elif len(string) == 10:
-                    result = string[0:4] + "/" + string[4:6] + "." + string[6:8] + "." + string[8:]
-                else:
-                    # international number
-                    # print string
-                    if string[0:2] == '00':
-                        # search after a country with this prefix
-                        prefix = string[2:4]
-                        if prefix not in PHONE_COUNTRY_PREFIX:
-                            prefix = string[2:5]
-                            if prefix not in PHONE_COUNTRY_PREFIX:
-                                prefix = string[2:6]
-                                if prefix not in PHONE_COUNTRY_PREFIX:
-                                    prefix = ''
-                        if prefix:
-                            result = '+' + string[2:2 + len(prefix)] + ' ' + string[2 + len(prefix):4 + len(prefix)]
-                            rest = string[4 + len(prefix):]
-                            while len(rest) > 3:
-                                result += '.' + rest[0:2]
-                                rest = rest[2:]
-                            result += '.' + rest
-                        else:
-                            result = 'International:' + string
-            return result
-        
-        if category_id:
-            # extract all ids of activity sector categories and remove '[303]' from name
-            obj_categ = self.env['res.partner.category']
-            old_len = 0
-            categ_ids = [category_id]
-            while len(categ_ids) > old_len:
-                new_ids = categ_ids[old_len:]  # ids of categories added last time
-                new_categories = obj_categ.browse(new_ids)
-                old_len = len(categ_ids)  # the new frontier ...
-                new_categs = new_categories.read(['child_ids'])
-                for categ in new_categs:
-                    if categ['child_ids']:
-                        categ_ids.extend(categ['child_ids'])
-            
-            categoires = obj_categ.browse(categ_ids)
-            categs = categoires.read(['name'])
-            dCategs = {}
-            for categ in categs:
-                formated_name = categ['name']
-                posA = formated_name.rfind('[')
-                posB = formated_name.rfind(']')
-                if posA > 0 and posB > 0 and posA < posB:
-                    formated_name = formated_name[0:posA - 1]
-                dCategs[ categ['id'] ] = formated_name
- 
-        # extract all active members
-        obj_partner = self.env['res.partner']
-        partners = obj_partner.search([('activ_state_id', '=', 1),])
-        wb = Workbook()
-        ws = wb.add_sheet('liste')
-        ws.write(0, 0, u'Entreprise')
-        ws.write(0, 1, u'Adresse')
-        ws.write(0, 2, u'Adresse2')
-        ws.write(0, 3, u'CP')
-        ws.write(0, 4, u'Localité')
-        ws.write(0, 5, u'Tél')
-        ws.write(0, 6, u'Fax')
-        ws.write(0, 7, u'Fonction')
-        ws.write(0, 8, u'Nom')
-        ws.write(0, 9, u'Prénom')
-        ws.write(0, 10, u'Civilité')
-        ws.write(0, 11, u'Effectif')
-        ws.write(0, 12, u'TVA')
-        if category_id:
-            ws.write(0, 13, u'Secteur')
-        line = 1
-        PREFIXES = get_phone_country_prefix()
-        for partner in partners:
-            ws.write(line, 0, partner.name)
-            for address in partner.child_ids:
-                if address.type == 'default':
-                    ws.write(line, 1, address.street or '')
-                    ws.write(line, 2, address.street2 or '')
-                    ws.write(line, 3, address.zip or '')
-                    ws.write(line, 4, address.city or '')
-                    ws.write(line, 5, convert_phone(address.phone or '', PREFIXES))
-                    ws.write(line, 6, convert_phone(address.fax or '', PREFIXES))
-                    min_seq = 999
-                    id_min_seq = False
-                    id_seq0 = False
-                    for job in address.other_contact_ids:
-                        if job.sequence_yearbook < min_seq and job.sequence_yearbook > 0:
-                            min_seq = job.sequence_yearbook
-                            id_min_seq = job.id
-                        if not id_seq0 and job.sequence_yearbook == 0:
-                            id_seq0 = job.id
-                    if id_min_seq or id_seq0:
-                        selected_job_id = id_seq0
-                        if id_min_seq:
-                            selected_job_id = id_min_seq
-                        for job in address.other_contact_ids:
-                            if job.id == selected_job_id:
-                                ws.write(line, 7, job.function_label or '')
-                                if job.contact_id:
-                                    ws.write(line, 8, job.contact_id.name)
-                                    ws.write(line, 9, job.contact_id.first_name or '')
-                                    ws.write(line, 10, job.contact_id.title or '')
-                    break
-            ws.write(line, 11, max(0, partner.employee_nbr or 0) or 'nc')
-            ws.write(line, 12, partner.vat or '')
-            if category_id:
-                for categ in partner.category_id:  # # category_id is, not like his name define, an array of category ids
-                    if categ.id in categ_ids:
-                        ws.write(line, 13, dCategs[categ.id])
-                        break
-            line += 1
-        wb.save('repertoire_des_membres_excel.xls')
-        # wb.save('test.xls')
-        wb = None
- 
-        # export to FTP
-        if ftp:
-            import ftplib
-            FTP_HOST = '212.166.5.117'
-            FTP_USER = 'ccilv_files'
-            FTP_PW = 'hid5367cx'
-            FTP_CWD = 'Repertoire_des_Membres'
-            lFiles = []
-            ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PW)
-            ftp.getwelcome()
-            ftp.pwd()
-            ftp.retrlines('LIST')
-            ftp.cwd(FTP_CWD)
-            hFile = open('repertoire_des_membres_excel.xls' , 'rb')
-            # hFile = open( 'test.xls' ,'rb')
-            result = ftp.storbinary('STOR ' + 'repertoire_des_membres.xls', hFile)
-            hFile.close()
-            ftp.quit()
-        # get the concerned accounts
-        account_ids = self.env['account.account'].search([('code', 'like', '7')])  # first screening to get all accounts with '7' inside
-        accounts = account_ids.read(['code', 'id'])
      
+    #def _commercial_fields(self, cr, uid, context=None):
+    #    """ Returns the list of fields that are managed by the commercial entity
+    #    to which a partner belongs. These fields are meant to be hidden on
+    #    partners that aren't `commercial entities` themselves, and will be
+    #    delegated to the parent `commercial entity`. The list is meant to be
+    #    extended by inheriting classes. """
+    #    return ['vat', 'credit_limit','membership_state']
+
     @api.model
     def create(self, vals):
+        unaccent = get_unaccent_wrapper(cr)
+        if vals.has_key('lastname'):
+            vals['lastname'] = unaccent(vals['lastname']).upper().strip()
+        if vals.has_key('firstname'):
+            vals['firstname'] = vals['firstname'].title().strip()
         if vals.has_key('vat') and vals['vat']:
             vals.update({'vat':vals['vat'].upper()})
+        if vals.has_key('type') and vals['type'] == 'contact' and (vals.has_key('lastname') or vals.has_key('firstname')):
+            vals.update({'name':((vals.has_key('lastname') and vals['lastname'] or '') + ' ' + (vals.has_key('firstname') and vals['firstname'] or '')).strip()})
         new_id = super(res_partner, self).create(vals)
         # complete the user_id (salesman) automatically according to the zip code of the main address. Use res.partner.zip to select salesman according to zip code
+        # TODO : take the zip_id of this main partner not only in child
         if vals.has_key('child_ids') and vals['child_ids']:
             for add in vals['child_ids']:
                 if add[2]['zip_id'] and add[2]['type'] == 'default':
@@ -421,23 +169,21 @@ class res_partner(models.Model):
      
     @api.multi
     def write(self, vals):
-        partner_obj = self.env['res.partner']
-        list = []
-        if vals.has_key('vat') and vals['vat']:
-            vals.update({'vat': vals['vat'].upper()})
-        for partner in self:
-            if not partner.user_id:
-                # if not self.pool.get('res.partner').browse(cr, uid, ids)[0].user_id.id:
-                if 'child_ids' in vals:
-                    for add in vals['child_ids']:
-                        addr = partner_obj.browse(add[1])
-                        if addr.zip_id and addr.type == 'default':
-                            saleman_id = addr.zip_id.user_id.id
-                            if saleman_id:
-                                ctx = self.env.context.copy()
-                                if ctx and ('__last_update' in ctx):
-                                    del ctx['__last_update']
-                                partner.with_context(ctx).write({'user_id': saleman_id})
+        #unaccent = get_unaccent_wrapper(env.cr)
+        if vals.has_key('lastname'):
+            #vals['lastname'] = unaccent(vals['lastname']).upper().strip()
+            vals['lastname'] = vals['lastname'].upper().strip()
+        if vals.has_key('firstname'):
+            vals['firstname'] = vals['firstname'].title().strip()
+        current_type = vals.get('type',self.type or '').strip()
+        current_lastname = vals.get('lastname',self.lastname or '')
+        if not current_lastname:
+            current_lastname = ''
+        current_firstname = vals.get('firstname',self.firstname or '')
+        if not current_firstname:
+            current_lastname = ''
+        if current_type == 'contact' and (vals.has_key('lastname') or vals.has_key('firstname')):
+            vals.update({'name':(current_lastname + ' ' + current_firstname).strip()})
         return super(res_partner, self).write(vals)
      
     @api.constrains('child_ids')
@@ -462,11 +208,11 @@ class res_partner(models.Model):
                         raise Warning (_('Warning'), _('Partner Should have only one Main Activity!'))
         return True
      
-    @api.model
-    def _get_customer_state(self):
-        ids = self.env['res.partner.state2'].search([('name', 'like', 'Imputable')], limit=1)
-        return ids
-     
+    @api.multi
+    def onchange_lfname(self, lastname, firstname):
+        value = {'name':((lastname or '') + ' ' + (firstname or '')).strip()}
+        return {'value':value}
+
     def _get_followup_level(self):
         sql = '''select ml.partner_id, l.id
                  from account_followup_followup_line l
@@ -488,6 +234,42 @@ class res_partner(models.Model):
             return [('id', '=', '0')]
         return [('id', 'in', p_ids.ids)]
      
+    ## TODO Convert to new API ?
+    def name_get(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        res = []
+        for record in self.browse(cr, uid, ids, context=context):
+            name = record.name
+            if record.parent_id and not record.is_company:
+                if record.type in ('default','invoice','other'):
+                    if record.name.strip()[0:2] == '- ':
+                        name = "%s %s" % (record.parent_name, name.strip())
+                    else:
+                        if not name:
+                            if record.type == 'invoice':
+                                name = "%s (invoice address)" % record.parent_name
+                            elif record.type == 'other':
+                                name = "%s (other address)" % record.parent_name
+                            elif record.type == 'default':
+                                name = "%s (default address)" % record.parent_name
+                            else:
+                                name = record.parent_name
+                else:
+                    name = "%s, %s %s" % (record.parent_name, record.lastname, record.firstname or '')
+            if context.get('show_address_only'):
+                name = self._display_address(cr, uid, record, without_company=True, context=context)
+            if context.get('show_address'):
+                name = name + "\n" + self._display_address(cr, uid, record, without_company=True, context=context)
+            name = name.replace('\n\n','\n')
+            name = name.replace('\n\n','\n')
+            if context.get('show_email') and record.email:
+                name = "%s <%s>" % (name, record.email)
+            res.append((record.id, name))
+        return res
+
     @api.depends('user_id')
     def _get_salesman(self):
         result = {}
@@ -498,7 +280,7 @@ class res_partner(models.Model):
     employee_nbr_total = fields.Integer('Nbr of Employee (Tot)', help="Nbr of Employee all around the world")
     invoice_paper = fields.Selection([('transfert belgian', 'Transfer belgian'), ('transfert iban', 'Transfer iban'), ('none', 'No printed transfert')], 'Bank Transfer Type', size=32)
     invoice_public = fields.Boolean('Invoice Public', default=1)
-    invoice_special = fields.Boolean('Invoice Special', default=_get_customer_state)
+    invoice_special = fields.Boolean('Invoice Special', default=False)
     # new v8
     status_id = fields.Many2one('res.partner.state', string='Activity Status', help='State of activity of the partner')
     # end new v8
@@ -523,14 +305,6 @@ class res_partner(models.Model):
     alert_membership = fields.Boolean('Membership Alert', help='Partners description to be shown when inserting new ship sale')
     alert_others = fields.Boolean('Other alert', help='Partners description to be shown when inserting new sale not treated by _advertising, _events, _legalisations, _Membership')
     alert_explanation = fields.Text('Warning')
-    dir_name = fields.Char('Name in Member Dir.', size=250, help='Name under wich the partner will be inserted in the members directory')
-    dir_name2 = fields.Char('1st Shortcut name ', size=250, help='First shortcut in the members directory, pointing to the dir_name field')
-    dir_name3 = fields.Char('2nd Shortcut name ', size=250, help='Second shortcut')
-    dir_date_last = fields.Date('Partner Data Date', help='Date of latest update of the partner data by itself (via paper or Internet)')
-    dir_date_accept = fields.Date("Good to shoot Date", help='Date of last acceptation of Bon a Tirer')
-    dir_presence = fields.Boolean('Dir. Presence', help='Present in the directory of the members')
-    dir_date_publication = fields.Date('Publication Date')
-    dir_exclude = fields.Boolean('Dir. exclude', help='Exclusion from the Members directory')
  
     #country_relation = fields.One2many('res.partner.country.relation', 'partner_id', string='Country Relation') we don't keep this field but the relation is kept only in res.partner.country.relation table
 #     address = fields.One2many('res.partner', 'partner_id', 'Addresses')  # overridden just to change the name with "Addresses" instead of "Contacts"
@@ -548,7 +322,28 @@ class res_partner(models.Model):
     write_uid = fields.Many2one('res.users', string='Last Modifier', help='The last person who has modified this address')
     # Never,Always,Managed_by_Poste,Prospect
 #     # virement belge,virement iban
- 
+    
+    # new fields to manage firstname/lastname on Contacts type and specific_address_id to manage link to specific address-child on type = contact and not is_company
+    firstname = fields.Char("First name")
+    lastname = fields.Char("Last name")
+    specific_address_id = fields.Many2one('res.partner', string='Specific Address', help='Only if the working address is not the main address')
+
+    function_label = fields.Char('Function Label', size=1024)
+    function_code_label = fields.Char('Codes', size=128)
+    function_codes = fields.Char('Function Codes')
+    function_ids = fields.Many2many('res.partner.function','res_partner_functions_rel','partner_id','function_id', string='Functions')
+    
+    date_start = fields.Date(string='Date start')
+    date_end = fields.Date(string='Date end')
+    who_presence = fields.Boolean(string='In Whos Who')
+    dir_presence = fields.Boolean(string='In Directory')
+    department = fields.Char(string='Department', size=20)
+    sequence_yearbook = fields.Integer(string='Sequence Yearbook', help='Sequence for printing in the Yearbook - 99 will not be printed', default=0)
+    sequence_directory = fields.Integer(string='Sequence Directory', help='Sequence for printing in the Directory - 99 will not be printed', default=0)
+
+    sequence_partner = fields.Integer(string='Sequence (Partner)', help='order of importance of this address in the list of addresses of the linked partner')
+    notdelivered = fields.Date('Post Return', help='Date of return of mails not delivered at this address')
+
 #     _sql_constraints = [
 #         ('vat_uniq', 'unique (vat)', 'The VAT of the partner must be unique !')
 #     ]
@@ -573,6 +368,21 @@ class res_partner(models.Model):
                 other_partner = self.search([('id', 'not in', partner_list), ('vat', '=', partner.vat)])
         if len(other_partner):
             raise Warning (_('Warning'), _('The VAT of the partner must be unique !'))
+
+    @api.model
+    def on_change_phone_num(self, phone):
+        return check_phone_num(self, phone)
+
+#    @api.onchange('zip_id') 
+#    def onchange_user_id(self):
+#        # Changing the zip code can change the salesman
+#        if not self or not self.zip_id:
+#            return {}
+#        if not self.parent_id.user_id:
+#            if self.zip_id:
+#                if self.type == 'default': 
+#                    if self.zip_id.user_id:
+#                        self.parent_id.write({'user_id': self.zip_id.user_id.id})
 
 #class res_partner_zip_group_type(models.Model):
 #    _name = 'res.partner.zip.group.type'
@@ -637,7 +447,7 @@ class res_partner(models.Model):
 #    old_city = fields.Char(string='Old City Name', size=60)
 #    country_id = fields.Many2one('res.country', string='Country') # required = True à ajouter après migration une fois tous les pays manquants retrouvés
     
-class res_partner_job(models.Model):
+#class res_partner_job(models.Model):
      # what to do with res.partner.job, res.partner.function
 #     @api.multi
 #     def unlink(self):
@@ -675,25 +485,8 @@ class res_partner_job(models.Model):
 #             vals['function_id'] = self.env['res.partner.function'].search([], limti=1)
 #         return super(res_partner_job, self).write(vals)
      
-    @api.model
-    def on_change_phone_num(self, phone):
-        return check_phone_num(self, phone)
- 
-    _inherit = 'res.partner'
-         
-    function_label = fields.Char('Function Label', size=1024)
-    function_code_label = fields.Char('Codes', size=128)
-    date_start = fields.Date(string='Date start')
-    date_end = fields.Date(string='Date end')
-#     canal_id = fields.Many2one('res.partner.canal', string='Canal', help='favorite channel for communication')
-#     active = fields.Boolean('Active', default=True)
-    who_presence = fields.Boolean(string='In Whos Who')
-    dir_presence = fields.Boolean(string='In Directory')
-    department = fields.Char(string='Department', size=20)
-    sequence_yearbook = fields.Integer(string='Sequence Yearbook', help='Sequence for printing in the Yearbook - 99 will not be printed', default=0)
-    sequence_directory = fields.Integer(string='Sequence Directory', help='Sequence for printing in the Directory - 99 will not be printed', default=0)
 
-class res_partner_address(models.Model):
+#class res_partner(models.Model):
 #    _inherit = 'res.partner'
 #    _description = 'res.partner'
 #    
@@ -726,34 +519,6 @@ class res_partner_address(models.Model):
       #            res[add.id] = add.department
        # return res
     
-    @api.multi
-    def on_change_phone_num(self, phone):
-        return check_phone_num(self, phone)
- 
-    # 'name =  fields.function(_get_name, method=True, string='Contact Name',type='char',size=64)#override parent field
-    state = fields.Selection([('correct', 'Correct'), ('to check', 'To check')], string='Code', default='correct')
-    active = fields.Boolean('Active', default=1)
-    sequence_partner = fields.Integer(string='Sequence (Partner)', help='order of importance of this address in the list of addresses of the linked partner')
-#     write_date = fields.Datetime('Last Modification')
-#     write_uid = fields.Many2one('res.users', string='Last Modifier', help='The last person who has modified this address')
-    activity_description = fields.Text('Local Activity Description', translate=True)
-    local_employee = fields.Integer('Nbr of Employee (Site)', help="Nbr of Employee in the site (for the directory)")
-    dir_show_name = fields.Char('Directory Shown Name', size=128, help="Name of this address printed in the directory of members")
-    dir_sort_name = fields.Char('Directory Sort Name', size=128, help="Name of this address used to sort the partners in the directory of members")
-#     dir_exclude = fields.Boolean('Directory exclusion', help='Check this box to exclude this address of the directory of members')
-    notdelivered = fields.Date('Post Return', help='Date of return of mails not delivered at this address')
-    
-    @api.onchange('zip_id') 
-    def onchange_user_id(self):
-        # Changing the zip code can change the salesman
-        if not self or not self.zip_id:
-            return {}
-        if not self.parent_id.user_id:
-            if self.zip_id:
-                if self.type == 'default': 
-                    if self.zip_id.user_id:
-                        self.parent_id.write({'user_id': self.zip_id.user_id.id})
-
 class res_partner_activity_list(models.Model):  # new object added!
     _name = 'res.partner.activity.list'
     _description = 'res.partner.activity.list'
@@ -830,23 +595,29 @@ class res_partner_activity_relation(models.Model):
     activity_id = fields.Many2one('res.partner.activity', string='Activity', ondelete="cascade")
     partner_id = fields.Many2one('res.partner', string='Partner', ondelete="cascade")
     
-# class res_partner_function(models.Model):
-#     _inherit = 'res.partner.function'
-#     _description = 'Function of the contact inherit'
-#     
-#     @api.multi
-#     def name_get(self):
-#         if not len(ids):
-#             return []
-#         reads = self.read(['code', 'name'])
-#         res = []
-#         str1 = ''
-#         for record in reads:
-#             if record['name'] or record['code']:
-#                 str1 = record['name'] + '(' + (record['code'] or '') + ')'
-#             res.append((record['id'], str1))
-#         return res
+class res_partner_function(models.Model):
+    _name = 'res.partner.function'
+    _description = 'Function of the contact'
+    
+    name = fields.Char('Name',size=64,required=True)
+    code = fields.Char('Code',size=8,required=True)
 
+    @api.multi
+    def name_get(self):
+        reads = self.read(['code', 'name'])
+        res = []
+        for record in reads:
+            res.append((record['id'], u'%s (%s)' % (record['name'],record['code'])))
+        return res
+
+    @api.model
+    def name_search(self, name, args=None, operator='ilike', limit=None):
+        args = args or []
+        if name:
+            args = args + ['|',('name', operator, name),('code', '=', name)]
+        functions = self.search(args, limit=limit)
+        return functions.name_get()
+        
 class res_partner_relation_type(models.Model):
     _name = 'res.partner.relation.type'
     _description = 'res.partner.relation.type'

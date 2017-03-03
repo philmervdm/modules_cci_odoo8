@@ -23,7 +23,7 @@
           type="wizard"/>
 
     <!-- Philmer addition to recalculate the categories of types of customers for all the partners -->
-	<wizard string="Calculation of Customer Categories"
+<!--	<wizard string="Calculation of Customer Categories"
 		model="res.partner"
 		name="cci_partner.cci_recalc_categs"
 		id="cci_partner_recalc_categs"
@@ -31,10 +31,10 @@
 	<menuitem name="Calculation of Customer Categories" id="menu_cci_recalc_categs"
 		action="cci_partner_recalc_categs" type="wizard"
 		parent="base.menu_base_config" 
-        sequence="50" />
+        sequence="50" />-->
 
     <!-- Philmer addition to export a simplified members file -->
-	<wizard string="Export Members Excel File"
+<!--	<wizard string="Export Members Excel File"
 		model="res.partner"
 		name="cci_partner.cci_simple_members"
 		id="cci_partner_simple_members"
@@ -42,7 +42,7 @@
 	<menuitem name="Export Members Excel File" id="menu_cci_simple_members"
 		action="cci_partner_simple_members" type="wizard"
 		parent="base.menu_base_config" 
-        sequence="55" />
+        sequence="55" />-->
 
     <!-- Philmer addition to export al emails of members -->
 	<wizard string="Export Emails all Members"
