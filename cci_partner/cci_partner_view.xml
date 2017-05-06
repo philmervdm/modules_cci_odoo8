@@ -167,7 +167,7 @@ TODO: revoir la vue tree aussi
 	===============
 	-->
 
-		 <record model="ir.ui.view" id="view_partner_state_form">
+<!--		 <record model="ir.ui.view" id="view_partner_state_form">
 			<field name="name">res.partner.state.form</field>
 			<field name="model">res.partner.state</field>
 			<field name="arch" type="xml">
@@ -186,9 +186,9 @@ TODO: revoir la vue tree aussi
 			<field name="view_type">form</field>
 		</record>  -->
 
-		<menuitem name="States" groups="base.group_system" id="menu_partner_state_main" parent="base.menu_base_config" />
+<!--		<menuitem name="States" groups="base.group_system" id="menu_partner_state_main" parent="base.menu_base_config" />-->
 
-		<menuitem parent="menu_partner_state_main" groups="base.group_system" action="action_partner_state" id="menu_partner_state"/>
+		<!--<menuitem parent="menu_partner_state_main" groups="base.group_system" action="action_partner_state" id="menu_partner_state"/>-->
 
 		<record model="ir.actions.act_window" id="action_partner_reason">
 			<field name="name">Refuse Reason</field>

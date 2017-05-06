@@ -35,6 +35,9 @@ STATE = [
     ('paid', 'Paid Member'),
 ]
 
+#STATE_PRIOR is not used anywhere on Odoo8 but its defined in 
+#            base module 'membership' with less values, so we redefine it here 
+#            just for the case someone used it in module inheriting of this one
 STATE_PRIOR = {
         'none' : 0,
         'canceled' : 1,
@@ -103,59 +106,54 @@ class res_partner(models.Model):
     _inherit = 'res.partner'
     _description = 'Partner'
 
+
     @api.model
-    def _membership_state_job(self):
-        #today = datetime.date.today()
-        #yesterday = today - datetime.timedelta(days=4)
-        #membership_line_ids = self.pool.get('membership.membership_line').search(cr, uid, ['|', ('date_to','=', yesterday), ('date_from','=', today)], context=context)
-        #partner_tmp_ids = self.pool.get('membership.membership_line').read(cr, uid, membership_line_ids, ['partner'], context=context)
-        #partner_ids = partner_tmp_ids and map(lambda x:x['partner'][0],partner_tmp_ids) or False
-        #print "_membership_state_job"
-        #partner_ids = self.pool.get('res.partner').search(cr,uid,[],context=context)
-        #if partner_ids:
-        #    self.write(cr, uid, partner_ids, {}, context)
-        #return True
-        # this method is partially copied from the method cci_membership=>wizard/cci_check_membership.py=>_check_membership()
-        partner_obj = self.env['res.partner']
-        partner_ids = partner_obj.search(['|',('active','=','True'),('active','=','False')])
-        if partner_ids:
-            partners = partner_ids
-            new_mstates = partner_ids._membership_state()
-            changed_lines = []
-            for partner in partners:
-                if new_mstates.has_key( partner.id ):
-                    if partner.membership_state <> new_mstates[partner.id]:
-                        partner_name = partner.name
-                        changed_lines.append( u"Partenaire '%s' (id=%s) passe de '%s' à '%s'" % (partner_name, str(partner.id),partner.membership_state,new_mstates[partner.id]) )
-#                         partner_obj.write(cr, uid, [partner['id']], {}, context )
-            if changed_lines:
-                final_text = u'Changements hebdomadaires : \n' + ( u'\n'.join( changed_lines ) )
-            else:
-                final_text = u"Changements hebdomadaires : aucun"
-            
-            membership_check_obj = self.env['cci_membership.membership_check']
-            
-            today = datetime.datetime.today()
-            id = membership_check_obj.create({
-                'name': today.strftime('%Y-%m-%d-%H:%M:%S'),
-                'count' : len(changed_lines),
-                'status': final_text,
-                })
-        return True
+    def _membership_state8(self, partner_ids):
+        today = time.strftime('%Y-%m-%d')
+        res = {}
+        partners = self.env['res.partner'].browse(partner_ids)
+        for partner in partners:
+            res[partner.id] = 'none'
+            if (not partner.status_id.in_activity) or (not partner.active):
+                continue
+            if partner.refuse_membership:
+                res[partner.id] = 'canceled'
+                continue
+            if partner.free_member:
+                res[partner.id] = 'free'
+                continue
+            s = 'none'
+            if partner.member_lines:
+                for mline in partner.member_lines:
+                    if mline.date_from <= today and mline.date_to >= today and mline.account_invoice_line and mline.account_invoice_line.invoice_id and mline.account_invoice_line.invoice_id.type == 'out_invoice':
+                        mstate = mline.account_invoice_line.invoice_id.state
+                        if mstate == 'paid':
+                            if mline.state == 'canceled':
+                                if s!='paid' and s!='invoiced':
+                                    s = 'canceled'
+                            else:
+                                s = 'paid'
+                                break
+                        elif mstate == 'open' and s!='paid':
+                            s = 'invoiced'
+                        elif mstate == 'cancel' and s!='paid' and s!='invoiced':
+                            s = 'canceled'
+                        elif  (mstate == 'draft' or mstate == 'proforma') and s!='paid' and s!='invoiced':
+                            s = 'waiting'
+                if s=='none':
+                    for mline in partner.member_lines:
+                        if mline.date_from < today and mline.date_to < today and mline.date_from<=mline.date_to and mline.account_invoice_line and mline.account_invoice_line.invoice_id.state == 'paid' and mline.account_invoice_line.invoice_id.type == 'out_invoice' and mline.state == 'paid':
+                            s = 'old'
+                        else:
+                            s = 'none'
+                res[partner.id] = s
+            if partner.associate_member and res[partner.id] not in ('paid','invoiced','waiting'):
+                res_state = self._membership_state8([partner.associate_member.id])
+                res[partner.id] = res_state[partner.associate_member.id]
+        return res
 
-    @api.multi
-    def _membership_vcs(self):
-        '''To obtain the ID of the partner in the form of a belgian VCS for a membership offer'''
-        for rec in self:
-            value_digits = 1000000000 + rec.id
-            check_digits = value_digits % 97
-            if check_digits == 0:
-                check_digits = 97
-            pure_string = str(value_digits) + ( str(check_digits).zfill(2) )
-            rec.membership_vcs = '***' + pure_string[0:3] + '/' + pure_string[3:7] + '/' + pure_string[7:] + '***'
-
-    @api.v7
-    def _membership_state(self, cr, uid, ids, name, args, context=None):
+#    @api.v7
+    def _membership_state(self, cr, uid, ids, name, args=None, context=None):
         #the call to super is deactivated because of unresolved conflicts with the 5.0 version
         #of the membership module in state priorities. It is replaced by the ugly copy/paste below
         #res = super(res_partner, self)._membership_state(cr, uid, ids, name, args, context)
@@ -170,7 +168,7 @@ class res_partner(models.Model):
             #if partner_data.membership_cancel and today > partner_data.membership_cancel:
             #    res[id] = 'canceled'
             #    continue
-            if partner_data.state_id.id not in (1,) or not partner_data.active:
+            if not partner_data.status_id.in_activity or not partner_data.active:
                 res[id] = 'none'
                 continue
             if partner_data.refuse_membership:
@@ -185,8 +183,6 @@ class res_partner(models.Model):
                     if mline.date_from <= today and mline.date_to >= today and mline.account_invoice_line and mline.account_invoice_line.invoice_id and mline.account_invoice_line.invoice_id.type == 'out_invoice':
                             mstate = mline.account_invoice_line.invoice_id.state
                             if mstate == 'paid':
-                                #TOCHECK : if paid by a credit nota : s = 2
-                                # A quick way to check this is to check the state of the membership_line is 'canceled' or not
                                 if mline.state == 'canceled':
                                     if s!=0 and s!=1:
                                         s = 2
@@ -217,21 +213,114 @@ class res_partner(models.Model):
                     res[id] = 'old'
                 elif s==6:
                     res[id] = 'none'
-            if partner_data.membership_stop and today > partner_data.membership_stop:
-                res[id] = 'old'
-                continue
             if partner_data.associate_member and res[id] not in ('paid','invoiced','waiting'):
                 res_state = self._membership_state(cr, uid, [partner_data.associate_member.id], name, args, context)
                 res[id] = res_state[partner_data.associate_member.id]
-
         return res
 
+    @api.model
+    def _membership_state_job8(self, temp=''):
+        today = datetime.datetime.today().strftime('%Y-%m-%d')
+        partners = self.env['res.partner'].search([('parent_id','=',False),('is_company','=',True),'|',('active','=',True),('active','=',False)])
+        changed_lines = []
+        for partner in partners:
+            new_mstates = partner._membership_state8([partner.id,])
+            new_mstate = new_mstates[partner.id]
+            if new_mstate != partner.membership_state:
+                # record the change
+                changed_lines.append( u"Partenaire '%s' (id=%s) passe de '%s' à '%s'" % (partner.name, str(partner.id),partner.membership_state or '',new_mstate) )
+                partner.membership_state = new_mstate
+            if ( not partner.cci_date_start_membership ) and ( not partner.cci_date_stop_membership ) and new_mstate in ('paid','free','invoiced'):
+                # new member today
+                partner.cci_date_start_membership = today
+            elif ( partner.cci_date_start_membership ) and ( not partner.cci_date_stop_membership ) and new_mstate not in ('paid','free','invoiced'):
+                # old member today
+                partner.cci_date_stop_membership = today
+            elif ( partner.cci_date_start_membership ) and ( partner.cci_date_stop_membership ) and new_mstate in ('paid','free','invoiced'):
+                # member today again
+                partner.cci_date_stop_membership = False
+            elif ( partner.cci_date_start_membership ) and ( partner.cci_date_stop_membership ) and (partner.cci_date_start_membership >= partner.cci_date_stop_membership) and new_mstate not in ('paid','free','invoiced'):
+                # non member today again
+                partner.cci_date_stop_membership = today
+        if changed_lines:
+            final_text = u'Changements hebdomadaires : \n' + ( u'\n'.join( changed_lines ) )
+        else:
+            final_text = u"Changements hebdomadaires : aucun"
+        membership_check_obj = self.pool.get('cci_membership.membership_check')
+        id = self.env['cci_membership.membership_check'].create({
+                        'name': datetime.datetime.today().strftime('%Y-%m-%d-%H:%M:%S'),
+                        'count' : len(changed_lines),
+                        'status': final_text,
+                        })
+        return True
+
+#    @api.v7
+    def _membership_state_job(self, cr, uid):
+        today = datetime.datetime.today().strftime('%Y-%m-%d')
+        partner_obj = self.pool.get('res.partner')
+        partner_ids = partner_obj.search(cr, uid, [('parent_id','=',False),('is_company','=',True),'|',('active','=','True'),('active','=','False')])
+        if partner_ids:
+            partners = partner_obj.read(cr, uid, partner_ids, ['id','membership_state','cci_date_start_membership','cci_date_stop_membership'] )
+            new_mstates = partner_obj._membership_state(cr, uid, partner_ids, '')
+            changed_lines = []
+            for partner in partners:
+                if new_mstates.has_key( partner['id'] ):
+                    if partner['membership_state'] <> new_mstates[partner['id']]:
+                        # record the change
+                        partner_name = partner_obj.read(cr, uid, [partner['id']], ['name'] )[0]['name']
+                        changed_lines.append( u"Partenaire '%s' (id=%s) passe de '%s' à '%s'" % (partner_name, str(partner['id']),partner['membership_state'],new_mstates[partner['id']]) )
+                        partner_obj.write(cr, uid, [partner['id']], {'membership_state':new_mstates[partner['id']]} )
+                    if ( not partner['cci_date_start_membership'] ) and ( not partner['cci_date_stop_membership'] ) and new_mstates[partner['id']] in ('paid','free','invoiced'):
+                        # new member today
+                        partner_obj.write(cr, uid, [partner['id']], {'cci_date_start_membership':today} )
+                    elif ( partner['cci_date_start_membership'] ) and ( not partner['cci_date_stop_membership'] ) and new_mstates[partner['id']] not in ('paid','free','invoiced'):
+                        # old member today
+                        partner_obj.write(cr, uid, [partner['id']], {'cci_date_stop_membership':today} )
+                    elif ( partner['cci_date_start_membership'] ) and ( partner['cci_date_stop_membership'] ) and new_mstates[partner['id']] in ('paid','free','invoiced'):
+                        # member today again
+                        partner_obj.write(cr, uid, [partner['id']], {'cci_date_stop_membership':False} )
+                    elif ( partner['cci_date_start_membership'] ) and ( partner['cci_date_stop_membership'] ) and (partner['cci_date_start_membership'] >= partner['cci_date_stop_membership']) and new_mstates[partner['id']] not in ('paid','free','invoiced'):
+                        # non member today again
+                        partner_obj.write(cr, uid, [partner['id']], {'cci_date_stop_membership':today} )
+            if changed_lines:
+                final_text = u'Changements hebdomadaires : \n' + ( u'\n'.join( changed_lines ) )
+            else:
+                final_text = u"Changements hebdomadaires : aucun"
+            membership_check_obj = self.pool.get('cci_membership.membership_check')
+            id = membership_check_obj.create(cr, uid, {
+                'name': datetime.datetime.today().strftime('%Y-%m-%d-%H:%M:%S'),
+                'count' : len(changed_lines),
+                'status': final_text,
+                })
+        return True
+
+    @api.multi
+    def _membership_vcs(self):
+        '''To obtain the ID of the partner in the form of a belgian VCS for a membership offer'''
+        for rec in self:
+            value_digits = 1000000000 + rec.id
+            check_digits = value_digits % 97
+            if check_digits == 0:
+                check_digits = 97
+            pure_string = str(value_digits) + ( str(check_digits).zfill(2) )
+            rec.membership_vcs = '***' + pure_string[0:3] + '/' + pure_string[3:7] + '/' + pure_string[7:] + '***'
+
+    @api.onchange('membership_explanation')
+    def onchange_membership_explanation(self):
+        if self.membership_explanation:
+            self.read_before_next_membership_bill = True
+        else:
+            self.read_before_next_membership_bill = False
 
     membership_vcs = fields.Char(compute='_membership_vcs',string='VCS number for membership offer',size=20)
-    refuse_membership = fields.Boolean('Refuse to Become a Member')
+    refuse_membership = fields.Boolean('Refuse to Become a Member',default=False)
     membership_explanation = fields.Text('Membership Explanation',help='Here you can explain the amount asked or the special treatment for the membership of this partner')
     membership_first_year = fields.Char('First Year of membership',help='To manually give the first year of membership',size=4)
-
+    desc_add_site = fields.Char('Explanation of additional sites',help='Text inserted on invoice to explain the number of additional sites',size=200)
+    cci_date_start_membership = fields.Date('Start of Membership',help='Date of first membership') ### first date of membership. Doesn't change if become non member or new member again
+    cci_date_stop_membership = fields.Date('End of Membership',help='Last date of membership loss')  ### last date of becoming non-member
+    next_membership_bill_forced = fields.Boolean('Force the next automatic bill',help="The next time we'll use the automatic bill or call for membreship, this partner will be taken into account")
+    read_before_next_membership_bill = fields.Boolean('Re-read before billing',help="Selected if this text must be re-read before the next automatic billing")
 
 class membership_check(models.Model):
     _name = 'cci_membership.membership_check'
@@ -249,6 +338,71 @@ class Product(models.Model):
     _description = 'product.template'
 
     membership_year = fields.Integer('Membership Year', help='Year of membership concerned by this product')
+
+class membership_range(models.Model):
+    _name = 'cci_membership.membership_range'
+    _description = '''Range of employees with standard membership price'''
+    
+    year = fields.Integer('Year',required=True)
+    from_range = fields.Integer('From',help='Lower number of local employees for this range',required=True)
+    to_range = fields.Integer('To',help='Upper number of employees for this range',required=True)
+    amount = fields.Float('Standard amount',digits=(15,2),help='Amount to invoice by default for this range of employees')
+
+class membership_askedused(models.Model):
+    _name = 'cci_membership.membership_askedused'
+    _description = '''Used asked amount of membership'''
+
+    amount = fields.Float('Amount',digits=(15,2),readonly=True)
+    count = fields.Integer('Count',readonly=True)
+    total_value = fields.Float('Total Value',digits=(15,2),readonly=True)
+    type_sel = fields.Char('Type of selection',size=7)
+
+class membership_call(models.Model):
+    _name = 'cci_membership.membership_call'
+    _description = '''Data for calling membership'''
+    
+    partner_id = fields.Many2one('res.partner', string='Partner')
+    address_id = fields.Many2one('res.partner', string='Address')
+    job_id =  fields.Many2one('res.partner', string='Job')
+    contact_id = fields.Many2one('res.partner', string='Contact')
+    partner_name = fields.Char('Sending Name',size=200)
+    street = fields.Char('Street',size=250)
+    street2 = fields.Char('Street2',size=250)
+    zip_code = fields.Char('Zip Code',size=30)
+    city = fields.Char('City',size=80)
+    email_addr = fields.Char('Email Address',size=200)
+    phone_addr = fields.Char('Phone Address',size=50)
+    fax_addr = fields.Char('Fax Address',size=50)
+    name = fields.Char('Contact Name',size=120)
+    first_name = fields.Char('Contact First Name',size=120)
+    courtesy = fields.Char('Courtesy',size=20)
+    title = fields.Char('Title',size=1000)
+    title_categs = fields.Char('Categs',size=20)
+    email_contact = fields.Char('Professionnal Email',size=200)
+    base_amount = fields.Float('Base Amount',digits=(15,2))
+    count_add_sites = fields.Integer('Additional Sites')
+    unit_price_site = fields.Float('Unit Price per Site',digits=(15,2))
+    desc_add_site = fields.Char('Explanation Additional Sites',size=200)
+    wovat_amount = fields.Float('Invoiced Price without VAT',digits=(15,2))
+    wvat_amount = fields.Float('Invoiced Price with VAT',digits=(15,2))
+    salesman = fields.Char('Salesman',size=45)
+    salesman_phone = fields.Char('Salesman Phone',size=45)
+    salesman_fax = fields.Char('Salesman Fax',size=45)
+    salesman_mobile = fields.Char('Salesman Mobile',size=45)
+    salesman_email = fields.Char('Salesman Email',size=45)
+    vcs = fields.Char('VCS',size=30)
+
+class membership_by_partner(models.Model):
+    _name = 'cci_membership.membership_by_partner'
+    _description = '''Subtotal Membership by Partner'''
+
+    partner_id = fields.Many2one('res.partner','Partner')
+    user_id = fields.Many2one('res.users','Salesman')
+    year =  fields.Integer('Membership Year')
+    invoiced = fields.Float('Invoiced',digits=(15,2))
+    paid = fields.Float('Paid',digits=(15,2))
+    canceled = fields.Float('Canceled',digits=(15,2))
+    open_value = fields.Float('Open Value',digits=(15,2))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

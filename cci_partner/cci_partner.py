@@ -23,7 +23,7 @@ import time
 import datetime
 import logging
 from xlwt import *
-
+import re
 from itertools import groupby
 from operator import itemgetter
 
@@ -33,30 +33,10 @@ from openerp.exceptions import Warning
 
 _logger = logging.getLogger(__name__)
 
+BELGIAN_PHONE_PREFIX = ['0456','0460','04660','04661','04662','04681','04682','04683','0470', '0471', '0472', '0473', '0474', '0475', '0476', '0477', '0478', '0479', '0483','0484', '0485', '0486', '0487', '0488', '0489','0490','0491', '0492', '0493', '0494', '0495', '0496', '0497', '0498', '0499']
+
 def group(lst, col):
     return dict((k, [v for v in itr]) for k, itr in groupby(sorted(lst, key=lambda x: x[col]), itemgetter(col)))
-
-def check_phone_num(phone):
-    if not phone:
-        return {}
-    result = {}
-    gsm_num = ['0470', '0471', '0472', '0473', '0474', '0475', '0476', '0477', '0478', '0479', '0484', '0485', '0486', '0487', '0488', '0489', '0492', '0493', '0494', '0495', '0496', '0497', '0498', '0499']
-    if not phone.startswith('00'):
-        is_gsm = False
-        for item in gsm_num:
-            is_gsm = phone.startswith(item)
-            if is_gsm:
-                break
-        if is_gsm:
-            if not len(phone) == 10:
-                raise Warning(_('Validate Error'),
-                    _('Invalid GSM Phone number. Only 10 figures numbers are allowed.'))
-        else:
-            if not len(phone) == 9:
-                raise Warning(_('Validate Error'),
-                    _('Invalid Phone number. Only 9 figures numbers are allowed.'))
-    result['phone'] = phone
-    return {'value': result}
 
 class res_company(models.Model):
     _inherit = 'res.company'
@@ -146,19 +126,175 @@ class res_partner(models.Model):
     #    return ['vat', 'credit_limit','membership_state']
 
     @api.model
+    def strip_accents(self,text):
+        """
+        Strip accents from input String.
+
+        :param text: The input string.
+        :type text: String.
+
+        :returns: The processed String.
+        :rtype: String.
+        """
+        import unicodedata
+        try:
+            text = unicode(text, 'utf-8')
+        except NameError: # unicode is a default on python 3 
+            pass
+        except TypeError: # if text is already unicode
+            pass
+        text = unicodedata.normalize('NFD', text)
+        text = text.encode('ascii', 'ignore')
+        text = text.decode("utf-8")
+        return str(text)
+
+    @api.model
+    def only_digits(self,text):
+        result = ''
+        for caracter in text:
+            if caracter.isdigit():
+                result += caracter
+        return result
+        
+    @api.model
+    def unformat_phonenr(self,text):
+        """
+        Convert a full phone number to a 'only_digit' number. Example : "04/123.45.67" => ["041234567",""]
+        Sometimes, a number can be completed by a description between parenthesis. Example : "04/123.45.67 (office 125)" => ["041234567","office 125"]
+
+        :param text: The input string.
+        :type text: String.
+
+        :returns: The processed String and the possible extra string between parenthesis
+        :rtype: [String,String]
+        """
+        number = u''
+        extra = u''
+        text = text.strip()
+        if text[0] == u'+':
+            text = '00'+text[1:]
+        if u'(' in text:
+            base_string = text.strip()
+            extra_begin = base_string.find(u'(')
+            extra_end = base_string.find(u')')
+            base_number = base_string[0:extra_begin-1]
+            extra = base_string[extra_begin:extra_end+1].strip()
+        else:
+            base_number = text
+        number = self.only_digits(base_number)
+        return [number,extra]
+
+    @api.model
+    def check_phonenr(self,cleaned_phonenr):
+        """
+        Check if a phone number is correct
+        If international or empty, considered good
+
+        :param text: A cleaned Phone number. Cleaned = without separators and without complement of information at right between parenthesis
+        :type text: String.
+
+        :returns: True if correct, False else
+                  The string is the cleaned phone number if correct, error message if not
+        :rtype: [Boolean,String]
+        """
+        if not cleaned_phonenr:
+            return [True,'']
+        result = [True,cleaned_phonenr]
+        if not cleaned_phonenr.startswith('00'):
+            is_gsm = False
+            for item in BELGIAN_PHONE_PREFIX:
+                is_gsm = cleaned_phonenr.startswith(item)
+                if is_gsm:
+                    break
+            if is_gsm:
+                if not len(cleaned_phonenr) == 10:
+                    result = [False,_(u'Invalid GSM Phone number (%s). Only 10 figures numbers are allowed.') % cleaned_phonenr]
+            else:
+                if not len(cleaned_phonenr) == 9:
+                    result = [False, _(u'Invalid Fix Phone number (%s). Only 9 figures numbers are allowed.') % cleaned_phonenr]
+        return result
+
+    @api.model
+    def format_phonenr(self,text):
+        """
+        Strip accents from input String.
+
+        :param text: The input string.
+        :type text: String.
+
+        :returns: The processed String
+        :rtype: String
+        """
+        (base_number,extra) = self.unformat_phonenr(text)
+        (correct_phonenr,nr_or_error_msg) = self.check_phonenr(base_number)
+        result = u''
+        if correct_phonenr:
+            phonenr = nr_or_error_msg
+            if phonenr[0:2] == u'00':
+                ### international number : we check the prefix to detect its length then we format the rest with xx.xx.xx .... and we keep the '00 prefix' notation (not + prefix)
+                intl_prefix = ''
+                countries = self.env['cci.country'].search([('phoneprefix','>',0)])
+                for country in countries:
+                    if phonenr[2:2+len(str(country.phoneprefix))] == str(country.phoneprefix):
+                        intl_prefix = str(country.phoneprefix)
+                        break
+                if not intl_prefix:
+                    intl_prefix = phonenr[2:4]
+                result = phonenr[0:2+len(intl_prefix)]+' '
+                if len(phonenr) > (2+len(intl_prefix)):
+                    chunks = re.findall('.{1,2}', phonenr[2+len(intl_prefix):] )
+                    result += '.'.join(chunks)
+            else:
+                gsm_prefix = ''
+                for item in BELGIAN_PHONE_PREFIX:
+                    if phonenr.startswith(item):
+                        gsm_prefix = item
+                        break
+                if gsm_prefix:
+                    result = u'%s/%s.%s.%s' % (phonenr[0:4],phonenr[4:6],phonenr[6:8],phonenr[8:10])
+                else:
+                    if phonenr[0:2] in [u'02',u'03',u'04',u'09']:
+                        result = u'%s/%s.%s.%s' % (phonenr[0:2],phonenr[2:5],phonenr[5:7],phonenr[7:9])
+                    else:
+                        result = u'%s/%s.%s.%s' % (phonenr[0:3],phonenr[3:5],phonenr[5:7],phonenr[7:9])
+            if extra:
+                result += (u' %s' % extra)
+        return result
+
+    @api.model
+    def email_correct(self,addr):
+        """
+        Check if email is correctly formatted. The address must be in lowercase OR uppercase mixed and without leading or trailing spaces
+
+        :param addr: email address to check
+        :type text: String.
+
+        :returns: Correct or not
+        :rtype: Boolean
+        """
+        res_match = re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$)", addr)
+        return (res_match != None)
+    
+    @api.model
     def create(self, vals):
-        unaccent = get_unaccent_wrapper(cr)
-        if vals.has_key('lastname'):
-            vals['lastname'] = unaccent(vals['lastname']).upper().strip()
-        if vals.has_key('firstname'):
-            vals['firstname'] = vals['firstname'].title().strip()
         if vals.has_key('vat') and vals['vat']:
             vals.update({'vat':vals['vat'].upper()})
+        if vals.has_key('lastname'):
+            vals['lastname'] = self.strip_accents(vals['lastname']).upper().strip()
+        if vals.has_key('firstname'):
+            vals['firstname'] = vals['firstname'].title().strip()
+        if vals.has_key('phone'):
+            vals['phone'] = self.format_phonenr(vals['phone'])
+        if vals.has_key('mobile'):
+            vals['mobile'] = self.format_phonenr(vals['mobile'])
+        if vals.has_key('fax'):
+            vals['fax'] = self.format_phonenr(vals['fax'])
+        if vals.has_key('email'):
+            vals['email'] = vals['email'].strip().lower().replace ('\n','').replace('\r','')
         if vals.has_key('type') and vals['type'] == 'contact' and (vals.has_key('lastname') or vals.has_key('firstname')):
             vals.update({'name':((vals.has_key('lastname') and vals['lastname'] or '') + ' ' + (vals.has_key('firstname') and vals['firstname'] or '')).strip()})
         new_id = super(res_partner, self).create(vals)
         # complete the user_id (salesman) automatically according to the zip code of the main address. Use res.partner.zip to select salesman according to zip code
-        # TODO : take the zip_id of this main partner not only in child
         if vals.has_key('child_ids') and vals['child_ids']:
             for add in vals['child_ids']:
                 if add[2]['zip_id'] and add[2]['type'] == 'default':
@@ -169,10 +305,12 @@ class res_partner(models.Model):
      
     @api.multi
     def write(self, vals):
-        #unaccent = get_unaccent_wrapper(env.cr)
+        partner_obj = self.env['res.partner']
+        list = []
+        if vals.has_key('vat') and vals['vat']:
+            vals.update({'vat': vals['vat'].upper()})
         if vals.has_key('lastname'):
-            #vals['lastname'] = unaccent(vals['lastname']).upper().strip()
-            vals['lastname'] = vals['lastname'].upper().strip()
+            vals['lastname'] = partner_obj.strip_accents(vals['lastname']).upper().strip()
         if vals.has_key('firstname'):
             vals['firstname'] = vals['firstname'].title().strip()
         current_type = vals.get('type',self.type or '').strip()
@@ -181,10 +319,64 @@ class res_partner(models.Model):
             current_lastname = ''
         current_firstname = vals.get('firstname',self.firstname or '')
         if not current_firstname:
-            current_lastname = ''
+            current_firstname = ''
         if current_type == 'contact' and (vals.has_key('lastname') or vals.has_key('firstname')):
             vals.update({'name':(current_lastname + ' ' + current_firstname).strip()})
+        if vals.has_key('function_ids'):
+            new_function_codes = ''
+            new_functions = self.env['res.partner.function'].browse(vals['function_ids'][0][2])
+            for new_function in new_functions:
+                new_function_codes += new_function.code.strip() + ','
+            vals.update({'function_codes':new_function_codes})
+        if vals.has_key('phone'):
+            vals['phone'] = self.format_phonenr(vals['phone'])
+        if vals.has_key('mobile'):
+            vals['mobile'] = self.format_phonenr(vals['mobile'])
+        if vals.has_key('fax'):
+            vals['fax'] = self.format_phonenr(vals['fax'])
+        if vals.has_key('email'):
+            vals['email'] = vals['email'].strip().lower().replace ('\n','').replace('\r','')
+        for partner in self:
+            if not partner.user_id:
+                # if not self.pool.get('res.partner').browse(cr, uid, ids)[0].user_id.id:
+                if 'child_ids' in vals:
+                    for add in vals['child_ids']:
+                        addr = partner_obj.browse(add[1])
+                        if addr.zip_id and addr.type == 'default':
+                            saleman_id = addr.zip_id.user_id.id
+                            if saleman_id:
+                                ctx = self.env.context.copy()
+                                if ctx and ('__last_update' in ctx):
+                                    del ctx['__last_update']
+                                partner.with_context(ctx).write({'user_id': saleman_id})
         return super(res_partner, self).write(vals)
+#    @api.multi
+#    def write(self, vals):
+#        #unaccent = get_unaccent_wrapper(env.cr)
+#        if vals.has_key('lastname'):
+#            #vals['lastname'] = unaccent(vals['lastname']).upper().strip()
+#            vals['lastname'] = vals['lastname'].upper().strip()
+#        if vals.has_key('firstname'):
+#            vals['firstname'] = vals['firstname'].title().strip()
+#        current_type = vals.get('type',self.type or '').strip()
+#        current_lastname = vals.get('lastname',self.lastname or '')
+#        if not current_lastname:
+#            current_lastname = ''
+#        current_firstname = vals.get('firstname',self.firstname or '')
+#        if not current_firstname:
+#            current_lastname = ''
+#        if current_type == 'contact' and (vals.has_key('lastname') or vals.has_key('firstname')):
+#            vals.update({'name':(current_lastname + ' ' + current_firstname).strip()})
+#        super(res_partner, self).write(vals)
+#        return True
+
+    @api.constrains('email')
+    def check_email(self):
+        # constraints to ensure that the email addrss is correct (ionce stripped and lowercased
+        if self.email:
+            if not self.email_correct(self.email.strip().lower()):
+                raise Warning (_('Warning'), _('Email address seems incorrect !'))
+        return True
      
     @api.constrains('child_ids')
     def check_address(self):
@@ -242,11 +434,11 @@ class res_partner(models.Model):
             ids = [ids]
         res = []
         for record in self.browse(cr, uid, ids, context=context):
-            name = record.name
+            name = record.name.strip()
             if record.parent_id and not record.is_company:
                 if record.type in ('default','invoice','other'):
                     if record.name.strip()[0:2] == '- ':
-                        name = "%s %s" % (record.parent_name, name.strip())
+                        name = "%s %s" % (record.parent_name.strip(), name.strip())
                     else:
                         if not name:
                             if record.type == 'invoice':
@@ -258,7 +450,7 @@ class res_partner(models.Model):
                             else:
                                 name = record.parent_name
                 else:
-                    name = "%s, %s %s" % (record.parent_name, record.lastname, record.firstname or '')
+                    name = "%s, %s" % ((record.lastname + ' ' + (record.firstname or '')).strip(), record.parent_name)
             if context.get('show_address_only'):
                 name = self._display_address(cr, uid, record, without_company=True, context=context)
             if context.get('show_address'):
@@ -369,9 +561,30 @@ class res_partner(models.Model):
         if len(other_partner):
             raise Warning (_('Warning'), _('The VAT of the partner must be unique !'))
 
-    @api.model
-    def on_change_phone_num(self, phone):
-        return check_phone_num(self, phone)
+    #def onchange_phone(self, cr, uid, ids, phone):
+    #    result = {}
+    #    if phone:
+    #        (cleaned_phonenr,extra) = self.env['res.partner'].unformat_phonenr(phone)
+    #        (correct,nr_or_error_msg) = self.env['res.partner'].check_phonenr(cleaned_phonenr)
+    #        if correct:
+    #            print self.env['res.partner'].format_phonenr(phone)
+    #            result['value'] = {'phone': self.env['res.partner'].format_phonenr(phone)}
+    #        else:
+    #            result['warning'] = {'title': _('Warning'),
+    #                                 'message':nr_or_error_msg}
+    #    return result
+
+    #@api.multi
+    #@api.onchange('phone')
+    #def on_change_phone_num(self, value):
+    #    (cleaned_phonenr,extra) = self.unformat_phonenr(value)
+    #    (correct,nr_or_error_msg) = self.check_phonenr(cleaned_phonenr)
+    #    if correct:
+    #        value = {field_name:self.format_phonenr(value)}
+    #        return {'value':value}
+    #    else:
+    #        raise Warning(_('Warning'), nr_or_error_msg)
+    #        return False
 
 #    @api.onchange('zip_id') 
 #    def onchange_user_id(self):

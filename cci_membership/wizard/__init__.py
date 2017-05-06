@@ -18,11 +18,29 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import members_total_sold
-import show_partners
-import cci_invoice_membership
 import cci_check_membership
+import cci_invoice_membership
 import cci_validate_membership
+import compare_paid2years
+import compare_paid_multiple_years
+import detect_old_but_not_yet_billed
+import extract_asked_less_billed
+import extract_calls_in_excel
+import extract_membership_by_partner
+import extract_membership_by_year
+import extract_nonstandard_amounts
+import extract_partners_by_amount
+import extract_special_calls_in_excel
+import extract_sponsor_partners
+import extract_used_membership_amount
+import membership_calls
+import membership_calls_2_excel
+import membership_followup
+import membership_partners_to_invoice
+import members_total_sold
+import new_members_since
 import select_invoices_by_year
+import show_partners
+import use_membership_products
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

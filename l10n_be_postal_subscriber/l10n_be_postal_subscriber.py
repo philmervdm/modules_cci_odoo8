@@ -27,17 +27,11 @@ class res_partner_state(models.Model):
     _description = 'res.partner.state'
 
     name = fields.Char(string= 'Partner Status', required=True)
+    in_activity = fields.Boolean(string='Means active partner',help='This status means \'In activity\' partners or not. Partners not active  are still \'active\' in the sense of Odoo, but has no more economic activity.',default=False)
 
 class res_partner(models.Model):
     _inherit = "res.partner"
     
-    @api.model
-    def _get_partner_state(self):
-        ids = self.env['res.partner.state'].search([('name','like', 'En Activité')], limit=1)
-        return ids
-
-
-    activ_state_id = fields.Many2one('res.partner.state', string = 'Partner State',help='status of activity of the partner', default=_get_partner_state)
     magazine_subscription = fields.Selection( [('never','Never'),('prospect','Prospect'),('personal','Personal'), ('postal','Postal')], string="Magazine subscription", default = 'prospect')
     magazine_subscription_source = fields.Char(string = 'Mag. Subscription Source')
 

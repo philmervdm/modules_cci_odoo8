@@ -58,7 +58,7 @@ class extract_membership_by_partner(models.TransientModel):
                                  'invoiced': 0.0,
                                  'paid': 0.0,
                                  'canceled': 0.0,
-                                 'open': 0.0}
+                                 'open_value': 0.0}
                     dYearPartners[key] = newrecord
                 if iline.journal_id.id in VEN_ids.ids:
                     dYearPartners[key]['invoiced'] += (iline.credit - iline.debit)
@@ -80,7 +80,7 @@ class extract_membership_by_partner(models.TransientModel):
                         else:
                             dYearPartners[key]['canceled'] += (iline.credit - iline.debit)
                     else:
-                        dYearPartners[key]['open'] += (iline.credit - iline.debit)
+                        dYearPartners[key]['open_value'] += (iline.credit - iline.debit)
                 elif iline.journal_id.id in NCV_ids.ids:
                     # dYearPartners[ key ]['canceled'] += ( iline.debit - iline.credit )
                     pass
@@ -96,7 +96,7 @@ class extract_membership_by_partner(models.TransientModel):
                                                    'invoiced': data['invoiced'],
                                                    'paid': data['paid'],
                                                    'canceled': data['canceled'],
-                                                   'open': data['open']}).id)
+                                                   'open_value': data['open_value']}).id)
         else:
             raise Warning(_('Warning'),
                           _("There is no membership products associated with the year '%s' !" % str(year)))

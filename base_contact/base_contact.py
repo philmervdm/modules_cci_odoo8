@@ -126,6 +126,8 @@ class res_partner(osv.osv):
             contact_fields = self._contact_fields(cr, uid, context=context)
             sync_vals = self._update_fields_values(cr, uid, partner.contact_id,
                                                    contact_fields, context=context)
+            print "_contact_sync_from_parent"
+            print partner
             partner.write(sync_vals)
 
     def update_contact(self, cr, uid, ids, vals, context=None):
@@ -137,7 +139,8 @@ class res_partner(osv.osv):
         contact_vals = dict((field, vals[field]) for field in contact_fields if field in vals)
         if contact_vals:
             ctx = dict(context, __update_contact_lock=True)
-            self.write(cr, uid, ids, contact_vals, context=ctx)
+            for selected_id in ids:
+                self.write(cr, uid, [selected_id,], contact_vals, context=ctx)
 
     def _fields_sync(self, cr, uid, partner, update_values, context=None):
         """ Sync commercial fields and address fields from company and to children,

@@ -19,6 +19,6 @@
 #
 ##############################################################################
 import cci_membership_extend
-import wizard
+#import wizard
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

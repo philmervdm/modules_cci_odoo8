@@ -35,7 +35,7 @@ class extract_membership_by_year(models.TransientModel):
     def get_file(self):
         record_obj = self.env['cci_membership.membership_by_partner']
         record_ids = self.env.context.get('active_ids')
-        fields = ['partner_id', 'partner_name', 'user_id', 'user_name', 'year', 'invoiced', 'paid', 'canceled', 'open']
+        fields = ['partner_id', 'partner_name', 'user_id', 'user_name', 'year', 'invoiced', 'paid', 'canceled', 'open_value']
         records = record_obj.browse(record_ids)
         wb = Workbook()
         ws1 = wb.add_sheet('Membership by Year and Partner')
@@ -51,7 +51,7 @@ class extract_membership_by_year(models.TransientModel):
             ws1.write(line, 5, record.invoiced)
             ws1.write(line, 6, record.paid)
             ws1.write(line, 7, record.canceled)
-            ws1.write(line, 8, record.open)
+            ws1.write(line, 8, record.open_value)
             line += 1
         wb.save('membership_by_year.xls')
         result_file = open('membership_by_year.xls', 'rb').read()

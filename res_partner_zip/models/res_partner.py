@@ -22,20 +22,23 @@ class res_partner(models.Model):
                 vals['city'] = False
                 vals['country_id'] = False
                 vals['state_id'] = False
-        return super(res_partner, self).create(vals)
+        new_record = super(res_partner, self).create(vals)
+        return new_record
     
-    @api.multi
-    def write(self, vals):
-        if vals.has_key('zip_id'):
-            if vals['zip_id']:
-                vals['zip'] = self.env['res.partner.zip'].browse(vals['zip_id']).name
-                vals['city'] = self.env['res.partner.zip'].browse(vals['zip_id']).city
-                vals['country_id'] = self.env['res.partner.zip'].browse(vals['zip_id']).country_id.id
-                vals['state_id'] = self.env['res.partner.zip'].browse(vals['zip_id']).state_id.id
-            else:
-                vals['zip'] = False
-                vals['city'] = False
-                vals['country_id'] = False
-                vals['state_id'] = False
-        return super(res_partner, self).write(vals)
+#    @api.multi
+#    def write(self, vals):
+#        import pdb; pdb.set_trace()
+#        if vals.has_key('zip_id'):
+#            if vals['zip_id']:
+#                vals['zip'] = self.env['res.partner.zip'].browse(vals['zip_id']).name
+#                vals['city'] = self.env['res.partner.zip'].browse(vals['zip_id']).city
+#                vals['country_id'] = self.env['res.partner.zip'].browse(vals['zip_id']).country_id.id
+#                vals['state_id'] = self.env['res.partner.zip'].browse(vals['zip_id']).state_id.id
+#            else:
+#                vals['zip'] = False
+#                vals['city'] = False
+#                vals['country_id'] = False
+#                vals['state_id'] = False
+#        super(res_partner, self).write(vals)
+#        return True
 

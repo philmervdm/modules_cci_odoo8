@@ -40,31 +40,65 @@
         <menuitem id="menu_postal_subscriber" name="Photos"
             parent="base.postal_subscriber_root" sequence="10"/>
             
-    <record id="open_view_dated_photo" model="ir.actions.act_window">
+        <record id="open_view_dated_photo" model="ir.actions.act_window">
             <field name="name">Photos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">dated.photo</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-    </record>
+        </record>
         
-    <menuitem
-        action="open_view_dated_photo"
-        id="postal_subscriber_dated_photo_menu"
-        name="Photos"
-        parent="menu_postal_subscriber"/>
+        <menuitem
+            action="open_view_dated_photo"
+            id="postal_subscriber_dated_photo_menu"
+            name="Photos"
+            parent="menu_postal_subscriber"/>
 
-<!-- Adding state_id field on res.partner -->
-<!-- View for res.partner object inherited from base module................ -->
+		<!-- view for res.partner.state -->
+		<record model="ir.ui.view" id="view_partner_status_form">
+			<field name="name">res.partner.state.form</field>
+			<field name="model">res.partner.state</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Partner Activity Status">
+                    <sheet>
+                        <label for="name"/>
+    					<field name="name" colspan="4"/>
+                        <label for="in_activity"/>
+    					<field name="in_activity"/>
+    				</sheet>
+            	</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_partner_status_tree">
+			<field name="name">res.partner.state.tree</field>
+			<field name="model">res.partner.state</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<tree string="Partner Activity Status">
+					<field name="name"/>
+					<field name="in_activity"/>
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_partner_state">
+			<field name="name">Partner Activity Status</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner.state</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="Partner States" groups="base.group_system" id="menu_partner_state_main" parent="base.menu_config"/>
+		<menuitem name="Partner Activity Status" groups="base.group_system" action="action_partner_state" id="menu_partner_status" parent="menu_partner_state_main" />
+
+
+        <!-- View for res.partner object inherited from base module................ -->
 		<record model="ir.ui.view" id="view_pform_inherit1">
 			<field name="name">res.partner.form</field>
 			<field name="type">form</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="base.view_partner_form"/>
 			<field name="arch" type="xml">
-			    <xpath expr="//label[@string='Address']" position = "before">
-			        <field name="activ_state_id"/>
-			    </xpath>
 				<field name="title" position="after">
                     <field name="magazine_subscription"/>
                     <field name="magazine_subscription_source"/>
